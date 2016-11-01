@@ -1,0 +1,7 @@
+
+
+#set RequiredRoomSpecial[VEL502G] := A051 A069 A207;
+param hfix :=
+VEL502G A051 1
+VEL502G A069 1
+VEL502G A207 1;
