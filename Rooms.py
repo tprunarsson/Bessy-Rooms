@@ -4,7 +4,7 @@
 #Input: stofur.csv and ByggingarOgStofur.csv
 #Output: rooms.dat
 #   Makes the dat file rooms.dat which includes rooms, room capacity, computer rooms, special rooms, buildings,
-#rooms in each buildings and room priority.
+#rooms in each buildings, room priority and building names.
 #how the doctument looks like:
 #Bygging	Stofa	Sætafjöldi	Tegund	Tölvuver	Forgangur	Forgangssvið
 
@@ -120,8 +120,15 @@ with open('rooms.dat','w', encoding=_wenc) as fdat:
         for room in r:
             fdat.write(room.translate(_trans))
         fdat.write(';\n')
-    fdat.write('\n\n')
+    fdat.write('\n')
 
+    s='param BuildingNames:='
+    fdat.write(s)
+    fdat.write('\n')
+    for b,n in DII[0].items():
+        fdat.write(n+' '+b)
+        fdat.write('\n')
+    fdat.write(';\n\n')
 
 
     s='end;\n'
