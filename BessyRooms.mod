@@ -121,9 +121,9 @@ and duration[c1]!=duration[c2]}: (w[c1,r] + w[c2,r]) <= 1;
 # Don't use too many rooms for small courses!!!
 subject to NotTooManyRooms{c in CidAssign: c not in ComputerCourses and (cidCount[c]-SpeCidCount[c]) <= 8}: sum{r in Rooms} w[c,r] <= 1;
 
-subject to NotTooFewStudents{r in Rooms, c in CidAssign: c not in ComputerCourses}: 1.1*h[c,r] >= w[c,r] * min(12, (cidCount[c]-SpeCidCount[c]));
+subject to NotTooFewStudents{r in Rooms, c in CidAssign: c not in ComputerCourses}: 1.1*h[c,r] >= w[c,r] * min(13, (cidCount[c]-SpeCidCount[c]));
 
-subject to NotTooManyCourse{e in ExamSlots, r in Rooms}: sum{c in CidAssign} w[c,r] * Slot[c,e] <= 3;
+subject to NotTooManyCourse{e in ExamSlots, r in Rooms}: sum{c in CidAssign} w[c,r] * Slot[c,e] <= 2;
 
 var wb{CidAssign, Building}, >= 0, <= 1, binary;
 
@@ -131,6 +131,9 @@ var wb{CidAssign, Building}, >= 0, <= 1, binary;
 /* tells us if the course is within this building, could also be continuous, but then must be minimized on objective */
 subject to IsCidInBuilding{c in CidAssign, b in Building: c not in ComputerCourses}: 1.1 * sum{r in RoomInBuilding[b]: r not in SpecialRooms} w[c,r] <= wb[c,b] * 1000;
 subject to IsCidInBuilding2{c in CidAssign, b in Building: c not in ComputerCourses}: 1.1 * sum{r in RoomInBuilding[b]: r not in SpecialRooms} w[c,r]  >= wb[c,b];
+
+var wr{AllRooms}, >= 0;
+subject to RoomOccupied{c in CidAssign, r in AllRooms}: w[c,r] <= wr[r];
 
 
 /* this condition is made soft since it does not work allways, should be added to phase 1 */
@@ -172,8 +175,10 @@ minimize Objective:
 - 0.01*sum{c in CidAssign, r in AllRooms} w[c,r]
 #+ (1/card(CidAssign)) * sum{c in CidAssign} maxnumberofrooms[c]
 + 20 * sum{c in CidAssign, b in Building} wb[c,b]
++ 100 * sum{c in CidAssign, b in Building: b == 11 or b == 12} wb[c,b]
 - 10 * RBuild
-+ 1 * sum{c in CidAssign, r in AllRooms: r not in SpecialRooms} h[c,r] * RoomPriority[r] / cidCount[c];
++ 1 * sum{c in CidAssign, r in AllRooms: r not in SpecialRooms} h[c,r] * RoomPriority[r] / cidCount[c]
++ 10 * sum{r in AllRooms} wr[r];
 
 set UnionOfRoomsInBuildings := setof{b in Building, r in RoomInBuilding[b]} r;
 
