@@ -13,6 +13,8 @@ set CidExam;
 
 # Set of all ExamSlots and their position
 set ExamSlots:= 1..(2*n);
+set SubExamSlots within ExamSlots := setof{e in ExamSlots: e < 2} e;
+
 param SlotNames{ExamSlots}, symbolic; #  (not used here)
 param Slot {CidExam, ExamSlots} binary, default 0;
 
@@ -24,7 +26,7 @@ set ComputerCourses within CidExam;
 #Courses that should not be assigned to seats
 set CidMHR within CidExam;
 
-set CidAssign := setof{c in CidExamNew: c not in CidMHR and (Slot[c,1] > 0 or Slot[c,2] > 0)} c;
+set CidAssign := setof{c in CidExamNew, e in SubExamSlots: c not in CidMHR and Slot[c,e] > 0} c;
 # display CidAssign;
 
 # Total number of students for each course
@@ -105,14 +107,11 @@ subject to RegularCoursesReq{c in CidAssign: c not in CidAssignComp}: sum{b in B
  h[c,r] + sr[c] = cidCount[c] - SpeCidCount[c];
 
 # RequiredBuildings[c]
-subject to RoomCapacityLimit{r in AllRooms, e in ExamSlots}: sum{c in CidAssign} h[c,r] * Slot[c,e] <=  RoomCapacity[r];
-
-# If we want more than one course in rooms that have a large capactity, say greater than 25
-#subject to TwoCourses{e in ExamSlots, r in AllRooms: RoomCapacity[r]>30}: sum{c in CidAssign: Slot[c,e] == 1} w[c,r] >= 2;
+subject to RoomCapacityLimit{r in AllRooms, e in SubExamSlots}: sum{c in CidAssign} h[c,r] * Slot[c,e] <=  RoomCapacity[r];
 
 # A constraint that indicates the binary variable of which room/s a course is placed in (Big-M approach)
-subject to CourseInRoom{c in CidAssign, r in AllRooms}:  1.1*h[c,r] <= w[c,r] * sum{cc in CidAssign} cidCount[cc];
-subject to CourseInRoom2{c in CidAssign, r in AllRooms}:  1.1*h[c,r] >= w[c,r];
+subject to CourseInRoom{c in CidAssign, r in AllRooms}:  1.0001*h[c,r] <= w[c,r] * sum{cc in CidAssign} cidCount[cc];
+subject to CourseInRoom2{c in CidAssign, r in AllRooms}:  1.0001*h[c,r] >= w[c,r];
 
 # Don't put courses that do not have the same length in the same room
 subject to NotTheSameRoom{r in AllRooms, c1 in CidAssign, c2 in CidAssign: c1<c2 and c1 not in CidAssignComp and c2 not in CidAssignComp
@@ -121,23 +120,23 @@ and duration[c1]!=duration[c2]}: (w[c1,r] + w[c2,r]) <= 1;
 # Don't use too many rooms for small courses!!!
 subject to NotTooManyRooms{c in CidAssign: c not in ComputerCourses and (cidCount[c]-SpeCidCount[c]) <= 8}: sum{r in Rooms} w[c,r] <= 1;
 
-subject to NotTooFewStudents{r in Rooms, c in CidAssign: c not in ComputerCourses}: 1.1*h[c,r] >= w[c,r] * min(13, (cidCount[c]-SpeCidCount[c]));
+subject to NotTooFewStudents{r in Rooms, c in CidAssign: c not in ComputerCourses}: 1.0001*h[c,r] >= w[c,r] * min(12, (cidCount[c]-SpeCidCount[c]));
 
-subject to NotTooManyCourse{e in ExamSlots, r in Rooms}: sum{c in CidAssign} w[c,r] * Slot[c,e] <= 2;
+subject to NotTooManyCourse{e in SubExamSlots, r in Rooms}: sum{c in CidAssign} w[c,r] * Slot[c,e] <= 2;
 
 var wb{CidAssign, Building}, >= 0, <= 1, binary;
 
 #var hh,>=0;
 /* tells us if the course is within this building, could also be continuous, but then must be minimized on objective */
-subject to IsCidInBuilding{c in CidAssign, b in Building: c not in ComputerCourses}: 1.1 * sum{r in RoomInBuilding[b]: r not in SpecialRooms} w[c,r] <= wb[c,b] * 1000;
-subject to IsCidInBuilding2{c in CidAssign, b in Building: c not in ComputerCourses}: 1.1 * sum{r in RoomInBuilding[b]: r not in SpecialRooms} w[c,r]  >= wb[c,b];
+subject to IsCidInBuilding{c in CidAssign, b in Building}: 1.0001 * sum{r in RoomInBuilding[b]: r not in SpecialRooms} w[c,r] <= wb[c,b] * 10000;
+subject to IsCidInBuilding2{c in CidAssign, b in Building}: 1.0001 * sum{r in RoomInBuilding[b]: r not in SpecialRooms} w[c,r]  >= wb[c,b];
 
 var wr{AllRooms}, >= 0;
 subject to RoomOccupied{c in CidAssign, r in AllRooms}: w[c,r] <= wr[r];
 
 
 /* this condition is made soft since it does not work allways, should be added to phase 1 */
-subject to CourseMayOnlyBeInOneBuilding{c in CidAssign}: sum{b in Building} wb[c,b] <= 2;
+subject to CourseMayOnlyBeInOneBuilding{c in CidAssign: c not in ComputerCourses}: sum{b in Building} wb[c,b] <= 2;
 
 /* lets assume once you are in a different building it does not matter how far away it is: */
 #var TotalDistance2;
@@ -157,15 +156,15 @@ subject to EkkiLaugarvatn{r in RoomInBuilding[13], c in CidAssign}: h[c,r] = 0;
 subject to IfTheseThenOnlyThese{c in CidAssign, b in Building: b > 9}: sum{bb in Building: bb <> b} wb[c,bb] <= (1-wb[c,b])*card(Building);
 
 # Stofunyting
-#var emptychairs{r in AllRooms, e in ExamSlots}, >= 0;
+#var emptychairs{r in AllRooms, e in SubExamSlots}, >= 0;
 # emptychairs[r,e] =
 var maxempty, >= 0;
-subject to Nyting {r in AllRooms, e in ExamSlots}: RoomCapacity[r] - sum{c in CidAssign} h[c,r] * Slot[c,e] <= maxempty;
+subject to Nyting {r in AllRooms, e in SubExamSlots}: RoomCapacity[r] - sum{c in CidAssign} h[c,r] * Slot[c,e] <= maxempty;
 
-var NumCoursesInRoom{AllRooms, ExamSlots};
-subject to debug2{r in AllRooms,e in ExamSlots}: NumCoursesInRoom[r,e] =  sum{c in CidAssign} w[c,r] * Slot[c,e];
+var NumCoursesInRoom{AllRooms, SubExamSlots};
+subject to debug2{r in AllRooms,e in SubExamSlots}: NumCoursesInRoom[r,e] =  sum{c in CidAssign} w[c,r] * Slot[c,e];
 
-#subject to test{e in ExamSlots, c in CidAssign, r in Room, }: w[c,r] * Slot[c,e] * max(20,RoomCapacity[r]) >= h[c,r];
+#subject to test{e in SubExamSlots, c in CidAssign, r in Room, }: w[c,r] * Slot[c,e] * max(20,RoomCapacity[r]) >= h[c,r];
 
 subject to forceslacks: sum{c in CidAssign} (sc[c] + ss[c] + sr[c] + ssc[c] + sp[c]) = 0;
 
@@ -174,14 +173,13 @@ minimize Objective:
 # 100 * sum{c in CidAssign} (sc[c] + ss[c] + sr[c] + ssc[c] + sp[c])
 - 0.01*sum{c in CidAssign, r in AllRooms} w[c,r]
 #+ (1/card(CidAssign)) * sum{c in CidAssign} maxnumberofrooms[c]
-+ 20 * sum{c in CidAssign, b in Building} wb[c,b]
++ 20 * sum{c in CidAssign, b in Building: b <> 11 and b <> 12} wb[c,b]
 + 100 * sum{c in CidAssign, b in Building: b == 11 or b == 12} wb[c,b]
 - 10 * RBuild
 + 1 * sum{c in CidAssign, r in AllRooms: r not in SpecialRooms} h[c,r] * RoomPriority[r] / cidCount[c]
 + 10 * sum{r in AllRooms} wr[r];
 
 set UnionOfRoomsInBuildings := setof{b in Building, r in RoomInBuilding[b]} r;
-
 
 solve;
 
@@ -212,7 +210,7 @@ for {c in CidAssign: ss[c] > 0} {
 for {c in CidAssign: ssc[c] > 0} {
   printf : "Namskeið %s vantar %d sérúrræðisæti í tölvustofu\n", c, ssc[c];
 }
-for {e in ExamSlots: e < 3} {
+for {e in SubExamSlots} {
   printf "Dagur/tími: %s\n", SlotNames[e];
   printf : "fjöldi sæta tiltæk %d og þöfin er %d\n", sum{r in Rooms} RoomCapacity[r], sum{c in CidAssign: c not in ComputerCourses} (cidCount[c]-SpeCidCount[c]) * Slot[c,e];
   printf : "fjöldi sæta tiltæk í tölvustofum er %d og þöfin er %d\n", sum{r in ComputerRooms} RoomCapacity[r], sum{c in ComputerCourses} cidCount[c] * Slot[c,e];
@@ -226,7 +224,7 @@ for {c in CidAssign: sum{b in Building} wb[c,b] > 1} {
 }
 
 # Hvaða stofur er verið að nota og hvernig er nýtingin:
-for {e in ExamSlots: e < 3} {
+for {e in SubExamSlots} {
   printf "Dagur/tími: %s\n", SlotNames[e];
   printf "Bygging stofa; fjöldi/hámarksfjöldi (forgangur) fjöldi_námskeiða:\n";
   for {b in Building} {
@@ -240,15 +238,15 @@ for {e in ExamSlots: e < 3} {
 
 # pretty print the solution:
 printf : "ID;Námskeið;Stofa;Fjöldi;Bygging;Dagur;Tími";
-for {e in ExamSlots, c in CidAssign, r in Rooms, b in BuildingWithRoom[r]: Slot[c,e] * h[c,r] > 0} {
+for {e in SubExamSlots, c in CidAssign, r in Rooms, b in BuildingWithRoom[r]: Slot[c,e] * h[c,r] > 0} {
   printf : "%s;%s;%s;%d;%s;%s\n", CidId[c], c, r, h[c,r], BuildingNames[b], SlotNames[e];
 }
 printf : "Tölvustofur;;;;;;\n";
-for {e in ExamSlots, c in CidAssign, r in ComputerRooms, b in BuildingWithRoom[r]: Slot[c,e] * h[c,r] > 0} {
+for {e in SubExamSlots, c in CidAssign, r in ComputerRooms, b in BuildingWithRoom[r]: Slot[c,e] * h[c,r] > 0} {
   printf : "%s;%s;%s;%d;%s;%s\n", CidId[c], c, r, h[c,r], BuildingNames[b], SlotNames[e];
 }
 printf : "Sérúrræði;;;;;;;;;\n";
-for {e in ExamSlots, c in CidAssign, r in SpecialRooms, b in BuildingWithRoom[r]: Slot[c,e] * h[c,r] > 0} {
+for {e in SubExamSlots, c in CidAssign, r in SpecialRooms, b in BuildingWithRoom[r]: Slot[c,e] * h[c,r] > 0} {
   printf : "%s;%s;%s;%d;%s;%s\n", CidId[c], c, r, h[c,r], BuildingNames[b], SlotNames[e];
 }
 
