@@ -25,7 +25,7 @@ set ComputerCourses within CidExam;
 set CidMHR within CidExam;
 
 set CidAssign := setof{c in CidExamNew: c not in CidMHR and (Slot[c,1] > 0 or Slot[c,2] > 0)} c;
-display CidAssign;
+# display CidAssign;
 
 # Total number of students for each course
 param cidCount{CidExam} default 0;
@@ -75,7 +75,7 @@ param duration {CidExam} default 3;
 
 # The decision variable is to assign an exam to an exam slot (later we may add room assignments)
 var h {c in CidAssign, r in AllRooms} >= 0, integer;
-var w {c in CidAssign, r in AllRooms}, binary;
+var w {c in CidAssign, r in AllRooms},>= 0, <= 1, binary;
 
 param h_fix {c in CidAssign, r in AllRooms} default 0;
 
@@ -94,7 +94,7 @@ subject to Balance{c in CidAssign}: sum{r in AllRooms} h[c,r] + sc[c] + ss[c] + 
 # Special students need special rooms:
 subject to SpecialCoursesReq{c in CidAssignSpec: c not in CidAssignComp}: sum{r in SpecialRooms: r not in ComputerRooms} h[c,r] + ss[c] = SpeCidCount[c];
 
-# Special students need special copmuter rooms:
+# Special students need special computer rooms:
 subject to SpecialCompCoursesReq{c in CidAssignSpec: c in CidAssignComp}: sum{r in SpecialRooms: r in ComputerRooms} h[c,r] + ssc[c] = SpeCidCount[c];
 
 # Computer courses should only be assigned to computer rooms or on a dummy room if there is no space!
@@ -107,23 +107,34 @@ subject to RegularCoursesReq{c in CidAssign: c not in CidAssignComp}: sum{b in B
 # RequiredBuildings[c]
 subject to RoomCapacityLimit{r in AllRooms, e in ExamSlots}: sum{c in CidAssign} h[c,r] * Slot[c,e] <=  RoomCapacity[r];
 
+# If we want more than one course in rooms that have a large capactity, say greater than 25
+#subject to TwoCourses{e in ExamSlots, r in AllRooms: RoomCapacity[r]>30}: sum{c in CidAssign: Slot[c,e] == 1} w[c,r] >= 2;
+
 # A constraint that indicates the binary variable of which room/s a course is placed in (Big-M approach)
-subject to CourseInRoom{c in CidAssign, r in AllRooms: r not in SpecialRooms}:  h[c,r] <= w[c,r] * sum{cc in CidAssign} cidCount[cc];
+subject to CourseInRoom{c in CidAssign, r in AllRooms}:  1.1*h[c,r] <= w[c,r] * sum{cc in CidAssign} cidCount[cc];
+subject to CourseInRoom2{c in CidAssign, r in AllRooms}:  1.1*h[c,r] >= w[c,r];
 
 # Don't put courses that do not have the same length in the same room
 subject to NotTheSameRoom{r in AllRooms, c1 in CidAssign, c2 in CidAssign: c1<c2 and c1 not in CidAssignComp and c2 not in CidAssignComp
 and duration[c1]!=duration[c2]}: (w[c1,r] + w[c2,r]) <= 1;
 
-# Don't use too many rooms!!!
-var maxnumberofrooms{CidAssign}, >= 0;
-subject to NotTooManyRooms{c in CidAssign}: sum{r in AllRooms} w[c,r] <= maxnumberofrooms[c];
+# Don't use too many rooms for small courses!!!
+subject to NotTooManyRooms{c in CidAssign: c not in ComputerCourses and (cidCount[c]-SpeCidCount[c]) <= 8}: sum{r in Rooms} w[c,r] <= 1;
 
-var wb{CidAssign, Building}, binary;
+subject to NotTooFewStudents{r in Rooms, c in CidAssign: c not in ComputerCourses}: 1.1*h[c,r] >= w[c,r] * min(12, (cidCount[c]-SpeCidCount[c]));
+
+subject to NotTooManyCourse{e in ExamSlots, r in Rooms}: sum{c in CidAssign} w[c,r] * Slot[c,e] <= 3;
+
+var wb{CidAssign, Building}, >= 0, <= 1, binary;
+
 #var hh,>=0;
 /* tells us if the course is within this building, could also be continuous, but then must be minimized on objective */
-subject to IsCidInBuilding{c in CidAssign, b in Building}: sum{r in RoomInBuilding[b]} w[c,r] <= wb[c,b] * 1000000;
+subject to IsCidInBuilding{c in CidAssign, b in Building: c not in ComputerCourses}: 1.1 * sum{r in RoomInBuilding[b]: r not in SpecialRooms} w[c,r] <= wb[c,b] * 1000;
+subject to IsCidInBuilding2{c in CidAssign, b in Building: c not in ComputerCourses}: 1.1 * sum{r in RoomInBuilding[b]: r not in SpecialRooms} w[c,r]  >= wb[c,b];
 
-subject to CourseMayOnlyBeInOneBuilding{c in CidAssign}: sum{b in Building} wb[c,b] <= 1;
+
+/* this condition is made soft since it does not work allways, should be added to phase 1 */
+subject to CourseMayOnlyBeInOneBuilding{c in CidAssign}: sum{b in Building} wb[c,b] <= 2;
 
 /* lets assume once you are in a different building it does not matter how far away it is: */
 #var TotalDistance2;
@@ -139,6 +150,9 @@ subject to Reqbuild: RBuild = sum{c in CidAssign, b in RequiredBuildings[c]} wb[
 #subject to EkkiLaugarvatn{r in RoomInBuilding[13], c in CidAssign: c not in CidSport}: h[c,r] = 0;
 subject to EkkiLaugarvatn{r in RoomInBuilding[13], c in CidAssign}: h[c,r] = 0;
 
+# In in any of buildings numberd above 9 or 4?, you should really only be there!
+subject to IfTheseThenOnlyThese{c in CidAssign, b in Building: b > 9}: sum{bb in Building: bb <> b} wb[c,bb] <= (1-wb[c,b])*card(Building);
+
 # Stofunyting
 #var emptychairs{r in AllRooms, e in ExamSlots}, >= 0;
 # emptychairs[r,e] =
@@ -148,44 +162,89 @@ subject to Nyting {r in AllRooms, e in ExamSlots}: RoomCapacity[r] - sum{c in Ci
 var NumCoursesInRoom{AllRooms, ExamSlots};
 subject to debug2{r in AllRooms,e in ExamSlots}: NumCoursesInRoom[r,e] =  sum{c in CidAssign} w[c,r] * Slot[c,e];
 
+#subject to test{e in ExamSlots, c in CidAssign, r in Room, }: w[c,r] * Slot[c,e] * max(20,RoomCapacity[r]) >= h[c,r];
+
+subject to forceslacks: sum{c in CidAssign} (sc[c] + ss[c] + sr[c] + ssc[c] + sp[c]) = 0;
+
 # Objective function is simply to minimize the number of rooms used
-minimize Objective: sum{c in CidAssign} (sc[c] + ss[c] + sr[c] + ssc[c]+sp[c])
-+ 0.01* sum{c in CidAssign, r in AllRooms} w[c,r]
-+ (1/card(CidAssign)) * sum{c in CidAssign} maxnumberofrooms[c]
-+ (1/card(CidAssign)) * sum{r in AllRooms,e in ExamSlots} NumCoursesInRoom[r,e]
-+ 5*sum{c in CidAssign, b in Building} wb[c,b]
--1*RBuild;
-#+ sum{c in CidAssign, r in AllRooms: r not in SpecialRooms} h[c,r] * RoomPriority[r];
+minimize Objective:
+# 100 * sum{c in CidAssign} (sc[c] + ss[c] + sr[c] + ssc[c] + sp[c])
+- 0.01*sum{c in CidAssign, r in AllRooms} w[c,r]
+#+ (1/card(CidAssign)) * sum{c in CidAssign} maxnumberofrooms[c]
++ 20 * sum{c in CidAssign, b in Building} wb[c,b]
+- 10 * RBuild
++ 1 * sum{c in CidAssign, r in AllRooms: r not in SpecialRooms} h[c,r] * RoomPriority[r] / cidCount[c];
+
+set UnionOfRoomsInBuildings := setof{b in Building, r in RoomInBuilding[b]} r;
+
 
 solve;
 
+for {r in AllRooms: r not in UnionOfRoomsInBuildings} {
+  printf : "%s not in any building\n", r;
+}
+
+for {r in ComputerRooms: r in Rooms} {
+  printf : "computer %s  in any Rooms?!\n", r;
+}
+
+for {r in SpecialRooms: r in Rooms} {
+  printf : "computer %s  in any Rooms?!\n", r;
+}
+
+for {c in CidAssign: sr[c] > 0} {
+  printf : "Namskeið %s vantar %d sæti\n", c, sr[c];
+}
+
+for {c in CidAssign: sc[c] > 0} {
+  printf : "Namskeið %s vantar %d sæti í tölvustofu\n", c, sc[c];
+}
+
+for {c in CidAssign: ss[c] > 0} {
+  printf : "Namskeið %s vantar %d sérúrræðisæti\n", c, ss[c];
+}
+
+for {c in CidAssign: ssc[c] > 0} {
+  printf : "Namskeið %s vantar %d sérúrræðisæti í tölvustofu\n", c, ssc[c];
+}
+for {e in ExamSlots: e < 3} {
+  printf "Dagur/tími: %s\n", SlotNames[e];
+  printf : "fjöldi sæta tiltæk %d og þöfin er %d\n", sum{r in Rooms} RoomCapacity[r], sum{c in CidAssign: c not in ComputerCourses} (cidCount[c]-SpeCidCount[c]) * Slot[c,e];
+  printf : "fjöldi sæta tiltæk í tölvustofum er %d og þöfin er %d\n", sum{r in ComputerRooms} RoomCapacity[r], sum{c in ComputerCourses} cidCount[c] * Slot[c,e];
+  printf : "fjöldi sæta tiltæk í sérúræði er %d og þöfin er %d\n", sum{r in SpecialRooms} RoomCapacity[r], sum{c in CidAssign: c not in ComputerCourses} SpeCidCount[c] * Slot[c,e];
+}
+
+for {c in CidAssign: sum{b in Building} wb[c,b] > 1} {
+  printf : "Namskeið %s er í %d byggingum: ", c, sum{b in Building} wb[c,b];
+  printf {b in Building: wb[c,b] > 0}: "%s ", BuildingNames[b];
+  printf "\n";
+}
+
+# Hvaða stofur er verið að nota og hvernig er nýtingin:
+for {e in ExamSlots: e < 3} {
+  printf "Dagur/tími: %s\n", SlotNames[e];
+  printf "Bygging stofa; fjöldi/hámarksfjöldi (forgangur) fjöldi_námskeiða:\n";
+  for {b in Building} {
+    printf{r in RoomInBuilding[b]: r in Rooms} : "%s %s %d/%d (%d) %d\n", BuildingNames[b], r, sum{c in CidAssign} Slot[c,e] * h[c,r], RoomCapacity[r], RoomPriority[r], sum{c in CidAssign} w[c,r] * Slot[c,e];
+  }
+  printf "Tölvustofur:\n";
+  printf{r in ComputerRooms} : "%s %d/%d (%d) \n", r, sum{c in CidAssign} Slot[c,e] * h[c,r], RoomCapacity[r], RoomPriority[r];
+  printf "Sérúrræðistofur:\n";
+  printf{r in SpecialRooms} : "%s %d/%d (%d)\n", r, sum{c in CidAssign} Slot[c,e] * h[c,r], RoomCapacity[r], RoomPriority[r];
+}
+
 # pretty print the solution:
+printf : "ID;Námskeið;Stofa;Fjöldi;Bygging;Dagur;Tími";
 for {e in ExamSlots, c in CidAssign, r in Rooms, b in BuildingWithRoom[r]: Slot[c,e] * h[c,r] > 0} {
   printf : "%s;%s;%s;%d;%s;%s\n", CidId[c], c, r, h[c,r], BuildingNames[b], SlotNames[e];
 }
+printf : "Tölvustofur;;;;;;\n";
 for {e in ExamSlots, c in CidAssign, r in ComputerRooms, b in BuildingWithRoom[r]: Slot[c,e] * h[c,r] > 0} {
   printf : "%s;%s;%s;%d;%s;%s\n", CidId[c], c, r, h[c,r], BuildingNames[b], SlotNames[e];
 }
+printf : "Sérúrræði;;;;;;;;;\n";
 for {e in ExamSlots, c in CidAssign, r in SpecialRooms, b in BuildingWithRoom[r]: Slot[c,e] * h[c,r] > 0} {
   printf : "%s;%s;%s;%d;%s;%s\n", CidId[c], c, r, h[c,r], BuildingNames[b], SlotNames[e];
 }
-
-
-/*
-printf : "Fjöldi tölvu prófsæta: (dags = )\n";
-for {e in ExamSlots} {
-  printf : "%s = %d\n", SlotNames[e], sum{c in ComputerCourses} Slot[c,e] * cidCount[c];
-}
-
-printf : "Heildarfjöldi prófa er %d og þreytt próf eru %.0f.\n", card(CidExam), sum{c in CidExam} cidCount[c];
-printf : "Lenda í prófi samdægurs: %.0f (%.2f%%), deildir þvinga %.0f. Prófin eru:\n", obj1, 100*obj1/(sum{c in CidExam} cidCount[c]), obj1-obj1f;
-printf {c1 in CidExam, c2 in CidExam: CidCommon[c1,c2] > 0 and c1 < c2  and cidConjoined[c1,c2] != 1 and Zsame[c1,c2] > 0.1}: "%s(%011.0f) og %s(%011.0f) = %d nem.\n", c1,CidId[c1],c2,CidId[c2],CidCommon[c1,c2];
-printf : "Taka próf eftir hádegi og svo strax morguninn eftir: %.0f (%.2f%%), deildir þvinga %.0f.\n", obj2, 100*obj2/(sum{c in CidExam} cidCount[c]), obj2-obj2f;
-printf {c1 in CidExam, c2 in CidExam: CidCommon[c1,c2] > 0 and c1 < c2  and cidConjoined[c1,c2] != 1 and Zseq[c1,c2] > 0.1}: "%s(%011.0f) og %s(%011.0f) = %d nem.\n", c1,CidId[c1],c2,CidId[c2],CidCommon[c1,c2];
-printf : "Þreyta próf tvo daga í röð: %.0f (%.2f%%), deildir þvinga %.0f.\n", obj3, 100*obj3/(sum{c in CidExam} cidCount[c]), obj3-obj3f;
-# printf : "Lausnin:\n";
-printf {e in ExamSlots, c in CidExam: Slot[c,e] > 0}: "%s;%011.0f;%d;%s\n", c, CidId[c], e, SlotNames[e] > "lausn.csv";
-*/
-
 
 end;
