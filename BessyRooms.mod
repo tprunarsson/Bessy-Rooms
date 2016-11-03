@@ -171,11 +171,11 @@ subject to forceslacks: sum{c in CidAssign} (sc[c] + ss[c] + sr[c] + ssc[c] + sp
 # Objective function is simply to minimize the number of rooms used
 minimize Objective:
 # 100 * sum{c in CidAssign} (sc[c] + ss[c] + sr[c] + ssc[c] + sp[c])
-- 0.01*sum{c in CidAssign, r in AllRooms} w[c,r]
+#- 0.01*sum{c in CidAssign, r in AllRooms} w[c,r]
 #+ (1/card(CidAssign)) * sum{c in CidAssign} maxnumberofrooms[c]
-+ 20 * sum{c in CidAssign, b in Building: b <> 11 and b <> 12} wb[c,b]
-+ 100 * sum{c in CidAssign, b in Building: b == 11 or b == 12} wb[c,b]
-- 10 * RBuild
++ 30 * sum{c in CidAssign, b in Building: b <> 11 and b <> 12} wb[c,b]
++ 50 * sum{c in CidAssign, b in Building: b == 11 or b == 12} wb[c,b]
+- 20 * RBuild
 + 1 * sum{c in CidAssign, r in AllRooms: r not in SpecialRooms} h[c,r] * RoomPriority[r] / cidCount[c]
 + 10 * sum{r in AllRooms} wr[r];
 
