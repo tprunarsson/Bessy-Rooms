@@ -14,7 +14,7 @@ from collections import OrderedDict
 _trans = str.maketrans('ÁÐÉÍÓÚÝÞÆÖáðéíóúýþæö_ ','ADEIOUYTAOadeiouytao_ ')
 _wenc = 'utf_8'
 
-DI = [{} for i in range(10)]
+DI = [{} for i in range(6)]
 
 #Verdur ad vera skjal ur bordarodun..Thar koma svidsnumer og fleira fram
 with open('bordarodun2.csv',"r",encoding='latin-1', newline='') as csvfile:
@@ -22,7 +22,7 @@ with open('bordarodun2.csv',"r",encoding='latin-1', newline='') as csvfile:
     RoomData = csv.reader(csvfile, delimiter=';')
     next(RoomData)
     for rows in RoomData:
-        for i in range(10):
+        for i in range(6):
             DI[i][rows[2]] = rows[i+1]
 
             #/*
