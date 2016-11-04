@@ -81,7 +81,7 @@ with open('RequiredBuildings.dat','w', encoding=_wenc) as fdat:
             fdat.write('Arnagardur Adalbygging Haskolatorg Logberg Oddi')
             fdat.write(';')
         if blist =='41' or blist=='42' or blist=='43':
-            fdat.write('Hamar Logberg Oddi Adygging Haskolatorg Klettur Enni')
+            fdat.write('Hamar Logberg Oddi Adalbygging Haskolatorg Klettur Enni')
             fdat.write(';')
         if blist =='51' or blist =='52' or blist =='53' or blist =='54' or blist=='55' or blist=='56':
             fdat.write('VRII Askja Arnagardur Haskolatorg Oddi')
