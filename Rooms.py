@@ -6,7 +6,10 @@
 #   Makes the dat file rooms.dat which includes rooms, room capacity, computer rooms, special rooms, buildings,
 #rooms in each buildings and room priority.
 #how the doctument looks like:
+#stofur.csv
 #Bygging	Stofa	Sætafjöldi	Tegund	Tölvuver	Forgangur	Forgangssvið
+#ByggingarOgStofur.csv:
+#
 
 import os, csv
 from collections import OrderedDict
@@ -14,7 +17,7 @@ _trans = str.maketrans('ÁÐÉÍÓÚÝÞÆÖáðéíóúýþæö_ ','ADEIOUYTAOa
 _wenc = 'utf_8'
 
 DI = [{} for i in range(6)]
-DII = [{} for i in range(2)]
+DII = [{} for i in range(1)]
 with open('stofur.csv',"r",encoding='latin-1', newline='') as csvfile,\
      open('ByggingarOgStofur.csv',"r",encoding='latin-1', newline='') as csvfile2:
 
@@ -25,27 +28,48 @@ with open('stofur.csv',"r",encoding='latin-1', newline='') as csvfile,\
             DI[i][rows[1]] = rows[i+1]
 
 
+
     RoomData2 = csv.reader(csvfile2, delimiter=';')
     next(RoomData2)
     for rows in RoomData2:
-        for i in range(2):
-            DII[i][rows[1]] = rows[i+1]
+        for i in range(1):
+            DII[i][rows[0]] = rows[i+1]
 
 
 
-with open('rooms.dat','w', encoding=_wenc) as fdat:
 
 
-#Must be updated - computer rooms should not be in this list
+with open('rooms2.dat','w', encoding=_wenc) as fdat:
+
+    s='set Building:='
+    fdat.write(s)
+    fdat.write('\n')
+    for b,n in DII[0].items():
+        fdat.write(b.translate(_trans))
+        fdat.write('\n')
+    fdat.write(';\n\n')
+
+
+
+    s='param BuildingNames:='
+    fdat.write(s)
+    fdat.write('\n')
+    for b,n in DII[0].items():
+        fdat.write(b.translate(_trans)+' '+"'"+b+"'")
+        fdat.write('\n')
+    fdat.write(';\n\n')
+
+
     s='set Rooms:='
     fdat.write(s)
     fdat.write('\n')
-    for rooms,cap in DI[2].items():
-        if cap =='Almenn':
+    for rooms,t in DI[2].items():
+        if t=='Almenn':
             fdat.write(rooms.translate(_trans))
             fdat.write('\n')
     fdat.write(';\n')
     fdat.write('\n')
+
 
 
     s='param RoomCapacity:='
@@ -60,18 +84,29 @@ with open('rooms.dat','w', encoding=_wenc) as fdat:
     s='set ComputerRooms:='
     fdat.write(s)
     fdat.write('\n')
-    for room,com in DI[3].items():
-        if com =='Já':
+    for room,com in DI[2].items():
+        if com =='Tölvuver':
             fdat.write(room.translate(_trans))
             fdat.write('\n')
     fdat.write(';\n')
     fdat.write('\n')
 
+
     s='set SpecialRooms:='
     fdat.write(s)
     fdat.write('\n')
-    for room,com in DI[2].items():
-        if com =='Sér':
+    for room,t in DI[2].items():
+        if t =='Sér':
+            fdat.write(room.translate(_trans))
+            fdat.write('\n')
+    fdat.write(';\n')
+    fdat.write('\n')
+
+    s='set SpecialComputerRooms :='
+    fdat.write(s)
+    fdat.write('\n')
+    for room, t in DI[2].items():
+        if t=='Sér-Tölvuver':
             fdat.write(room.translate(_trans))
             fdat.write('\n')
     fdat.write(';\n')
@@ -87,42 +122,13 @@ with open('rooms.dat','w', encoding=_wenc) as fdat:
     fdat.write('\n')
 
 
-#/*
-#ID number for buildings
-#Adalbygging	1
-#Askja	2
-#Arnagardur	3
-#Eirberg	4
-#Gimli	5
-#Haskolatorg	6
-#Logberg	7
-#Oddi	8
-#VRII	9
-#Hamar	10
-#Klettur	11
-#Enni	12
-#Laugarvatn	13
-#Nýji Garður 14
-#*/
-
-
-    s='set Building:='
-    fdat.write(s)
-    fdat.write('\n')
-    for b,n in DII[0].items():
-        fdat.write(n)
-        fdat.write('\n')
-    fdat.write(';\n\n')
-
-    for b,r in DII[1].items():
-        s='set RoomInBuilding['+b.translate(_trans)+']:='
+    for b,r in DII[0].items():
+        s='set RoomInBuilding['+"'"+b.translate(_trans)+"'"+']:='
         fdat.write(s)
         for room in r:
             fdat.write(room.translate(_trans))
         fdat.write(';\n')
-    fdat.write('\n\n')
-
-
+    fdat.write('\n')
 
     s='end;\n'
     fdat.write(s)
