@@ -10,7 +10,7 @@ Aðalbygging;A225;18;Sér;Nei;1;0
 Aðalbygging;A229;10;Sér;Nei;1;0
 Askja;N130;20;Almenn;Nei;2;10
 Askja;N131;30;Almenn;Nei;2;10
-Askja;N166;24;Almenn;Já;2;0
+Askja;N166;24;Tölvuver;Já;2;0
 Árnagarður;Á101;15;Sér;Nei;2;0
 Árnagarður;Á201;48;Almenn;Nei;1;"30;50"
 Árnagarður;Á301;48;Almenn;Nei;1;"30;50"
@@ -18,13 +18,13 @@ Askja;N166;24;Almenn;Já;2;0
 Árnagarður;Á304;26;Almenn;Nei;1;"30;50"
 Árnagarður;Á310;14;Sér;Nei;2;"30;50"
 Árnagarður;Á311;24;Almenn;Nei;1;"30;50"
-Eirberg;E101C;12;;Nei;3;"20;50;10"
+Eirberg;E101C;12;Almenn;Nei;3;"20;50;10"
 Eirberg;E103C;50;Almenn;Nei;1;"20;50;10"
 Eirberg;E201C;44;Almenn;Nei;1;"20;50;10"
 Eirberg;E203C;50;Almenn;Nei;1;"20;50;10"
 Enni;E301;30;Almenn;Nei;3;40
 Enni;E303;20;Almenn;Nei;3;40
-Gimli;G101;21;Almenn;Já;1;0
+Gimli;G101;21;Tölvuver;Já;1;0
 Hamar;H101;20;Almenn;Nei;2;40
 Hamar;H201;25;Almenn;Nei;1;40
 Hamar;H202;16;Almenn;Nei;1;40
@@ -39,8 +39,8 @@ Háskólatorg;Ht102;80;Almenn;Nei;1;"10;50;30"
 Háskólatorg;Ht103;50;Almenn;Nei;1;"10;50;30"
 Háskólatorg;Ht104;50;Almenn;Nei;1;"10;50;30"
 Háskólatorg;Ht105;80;Almenn;Nei;1;"10;50;30"
-Háskólatorg;Ht204;40;Almenn;Já;1;0
-Háskólatorg;Ht302;10;Sér;Já;1;0
+Háskólatorg;Ht204;40;Tölvuver;Já;1;0
+Háskólatorg;Ht302;10;Sér-Tölvuver;Já;1;0
 Háskólatorg;Ht315;1;Sér;Nei;2;0
 Klettur;K204;23;Almenn;Nei;3;40
 Klettur;K205;20;Almenn;Nei;3;40
@@ -49,22 +49,22 @@ Klettur;K207;25;Almenn;Nei;3;40
 Klettur;K208;25;Almenn;Nei;3;40
 Laugarvatn;K-salur;40;Almenn;Nei;1;40
 Laugarvatn;K-salur_b;10;Sér;Nei;1;40
-Laugarvatn;Stofa 2;22;Almenn;Nei;2;40
+Laugarvatn;Stofa-2;22;Almenn;Nei;2;40
 Lögberg;L102;25;Almenn;Nei;1;"10;50;30"
 Lögberg;L103;25;Almenn;Nei;1;"10;50;30"
 Lögberg;L201;18;Sér;Nei;2;0
 Lögberg;L204;12;Sér;Nei;2;0
 Lögberg;L205;12;Sér;Nei;2;0
-Nýi Garður;NG014;10;Almenn;Já;3;0
-Nýi Garður;NG015;15;Almenn;Já;3;0
-Oddi;O102;18;Sér;Já;1;0
-Oddi;O103;10;Sér;Já;1;0
+Nýi_Garður;NG014;10;Tölvuver;Já;3;0
+Nýi_Garður;NG015;15;Tölvuver;Já;3;0
+Oddi;O102;18;Sér-Tölvuver;Já;1;0
+Oddi;O103;10;Sér-Tölvuver;Já;1;0
 Oddi;O201;44;Almenn;Nei;2;10
 Oddi;O202;20;Almenn;Nei;2;10
-Oddi;O301;38;Almenn;Nei;1;0
+Oddi;O301;38;Tölvuver;Já;1;0
 VR-II;V138;18;Almenn;Nei;2;50
 VR-II;V147;15;Almenn;Nei;2;50
 VR-II;V152;36;Almenn;Nei;1;"50;30"
 VR-II;V258;22;Almenn;Nei;1;"50;30"
-VR-II;V260;22;Almenn;Já;1;"50;30"
+VR-II;V260;22;Tölvuver;Já;1;"50;30"
 VR-II;V261;30;Almenn;Nei;1;"50;30"
