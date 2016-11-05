@@ -3,6 +3,8 @@
 # Last modified by aos at 15:03 20/9/2016
 # Last modified by tpr at 13:55 5/11/2016
 
+# TODO: conjoined courses forced together in one!
+
 # --- Parameter and Sets --- #
 
 # Total number of exam days, each day is split in two (even and odd integer)
@@ -64,6 +66,8 @@ param RoomCapacity{AllRooms} default 0;
 set Building;
 param BuildingNames{Building}, symbolic;
 
+set Torfan within Building;
+
 # These building are acceptable to the course
 set RequiredBuildings{CidExam} within Building default {};
 # These building are the most wanted buildings, not that these are also in RequiredBuildings
@@ -94,8 +98,6 @@ var wr{AllRooms}, >= 0;
 # This parameter will set a decision variable h when > 0
 param h_fix {c in CidAssign, r in AllRooms} default 0;
 
-/* var sc{CidAssign}>= 0; var ss{CidAssign}>= 0; var ssc{CidAssign}>=0; var sr{CidAssign}>= 0; var sp{CidAssign}>= 0; */
-
 # --- Constraints --- #
 
 # if you would like to fix a decision do it here with parameter h_fix > 0
@@ -105,37 +107,30 @@ subject to FixH{c in CidAssign, r in AllRooms: h_fix[c,r] > 0}:
 # Make sure that all students in the course have a seat
 subject to AssignAllCidSeats{c in CidAssign}:
   sum{r in AllRooms} h[c,r] = cidCount[c];
-/* subject to Balance{c in CidAssign}: sum{r in AllRooms} h[c,r] + sc[c] + ss[c] + sr[c] + ssc[c] + sp[c] = cidCount[c]; */
 
 # Special students need special rooms:
 subject to SpecialCoursesReq{c in CidAssignSpec: c not in CidAssignComp}:
   sum{r in SpecialRooms} h[c,r] = SpeCidCount[c];
-/* subject to SpecialCoursesReq{c in CidAssignSpec: c not in CidAssignComp}: sum{r in SpecialRooms} h[c,r] + ss[c] = SpeCidCount[c]; */
 
 # Special students need special computer rooms:
 subject to SpecialCompCoursesReq{c in CidAssignSpec: c in CidAssignComp}:
   sum{r in SpecialComputerRooms} h[c,r] = SpeCidCount[c];
-/* subject to SpecialCompCoursesReq{c in CidAssignSpec: c in CidAssignComp}: sum{r in SpecialComputerRooms} h[c,r] + ssc[c] = SpeCidCount[c]; */
 
 # Computer courses should only be assigned to computer rooms or on a dummy room if there is no space!
 subject to ComputerCoursesReq{c in CidAssignComp}:
   sum{r in ComputerRooms} h[c,r] = cidCount[c] - SpeCidCount[c];
-/* subject to ComputerCoursesReq{c in CidAssignComp}: sum{r in ComputerRooms} h[c,r] + sc[c] = cidCount[c] - SpeCidCount[c]; */
 
 # HACK THIS SHOULD NOT BE NEEDED, try to delete
-subject to ComputerCoursesReqForce{c in CidAssignComp}:
-  sum{r in Rooms} h[c,r] = 0;
+#subject to ComputerCoursesReqForce{c in CidAssignComp}:
+#  sum{r in Rooms} h[c,r] = 0;
 
 # The rest of the students should be in the other rooms in preferred building
 subject to RegularCoursesReq{c in CidAssign: c not in CidAssignComp}:
-  sum{b in Building, r in RoomInBuilding[b]: r in Rooms} h[c,r] = cidCount[c] - SpeCidCount[c];
-
-/*subject to RegularCoursesReq{c in CidAssign: c not in CidAssignComp}: sum{b in Building, r in RoomInBuilding[b]: r in Rooms}
-  h[c,r] + sr[c] = cidCount[c] - SpeCidCount[c]; */
+  sum{r in Rooms} h[c,r] = cidCount[c] - SpeCidCount[c];
 
 # HACK THIS SHOULD NOT BE NEEDED, try to delete
-subject to RegularCoursesReqForce{c in CidAssign: c not in CidAssignComp}:
-  sum{r in ComputerRooms} h[c,r] = 0;
+#subject to RegularCoursesReqForce{c in CidAssign: c not in CidAssignComp}:
+#  sum{r in ComputerRooms} h[c,r] = 0;
 
 # The number of students in a room should not go over the limit
 # n.b. this is the total number of useful seats (reduce the number is there a "bad seats" in the room)
@@ -157,6 +152,11 @@ subject to NotTheSameRoom{r in AllRooms, c1 in CidAssign, c2 in CidAssign: c1 < 
 # n.b. this applies only to Rooms which are not ComputerRooms or SpecialRooms
 subject to NotTooManyRooms{c in CidAssign: (cidCount[c]-SpeCidCount[c]) <= 12}:
   sum{r in Rooms} w[c,r] <= 1;
+# We will force the courses in many rooms within the builing, however, they
+# should be more than 12 in a room or less for a 2 way split
+# this should avoid the possibility of putting courses as singles in rooms
+subject to NotToFewStudents{c in CidAssign, r in Rooms: (cidCount[c]-SpeCidCount[c]) >= 12}:
+  h[c,r] >= w[c,r] * min(12,(cidCount[c]-SpeCidCount[c])/2);
 
 # Do not have too many different exams in the same room, more traffic from teachers
 # try to maximize the number of courses in a room !!! Helps with table assignments (different exams at each table)
@@ -172,6 +172,23 @@ subject to IsCidInBuilding{c in CidAssign, b in Building}:
 subject to IsCidInBuilding2{c in CidAssign, b in Building}:
   1.0001 * sum{r in RoomInBuilding[b]} w[c,r]  >= wb[c,b];
 
+############# TEST ZONE ##############
+
+# A constraint for the indicator binary variable is course c in building b, the 1.0001 is a hack needed ?!
+# This variable is different to wb in that it only considers regular exams as in the building!
+var wbb{CidAssign,Building}, <= 1, >= 0, binary;
+subject to IsCidInBuildingBB{c in CidAssign, b in Building}:
+  1.0001 * sum{r in RoomInBuilding[b]: r in Rooms} w[c,r] <= wbb[c,b] * 10000;
+subject to IsCidInBuildingBB2{c in CidAssign, b in Building}:
+  1.0001 * sum{r in RoomInBuilding[b]: r in Rooms} w[c,r]  >= wbb[c,b];
+
+# Can only be in one building if not on the green!
+subject to OnlyOneUnlessOnTheGreen{c in CidAssign, bb in Building: bb not in Torfan}: 
+  sum{b in Building: bb <> b} wbb[c,b] + wbb[c,bb] <= 1;
+
+#####################
+
+
 # If the room is occupied then wr is forced to 1 else it will tend to zero due to the objective function
 subject to RoomOccupied{c in CidAssign, r in AllRooms}: w[c,r] <= wr[r];
 
@@ -185,19 +202,6 @@ subject to ForceNumberInRoom{c in CidAssign, r in AllRooms: hfix[c,r]>0}: h[c,r]
 # Special condition for Laugarvatn, too far away ;)
 subject to EkkiLaugarvatn{c in CidAssign: 'Laugarvatn' not in RequiredBuildings[c]}:
   sum{r in RoomInBuilding['Laugarvatn']} h[c,r] = 0;
-
-# Stofunyting
-/*
-var freeseats{AllRooms, SubExamSlots} >= 0;
-subject to Nyting {r in AllRooms, e in SubExamSlots}:
-  RoomCapacity[r] - sum{c in CidAssign} Slot[c,e] * h[c,r] = freeseats[r,e];
-*/
-/*
-var NumCoursesInRoom{AllRooms, SubExamSlots};
-subject to debug2{r in AllRooms,e in SubExamSlots}: NumCoursesInRoom[r,e] =  sum{c in CidAssign} w[c,r] * Slot[c,e];
-*/
-
-/* subject to forceslacks: sum{c in CidAssign} (sc[c] + ss[c] + sr[c] + ssc[c] + sp[c]) = 0; */
 
 # Objective function
 minimize Objective:
@@ -216,6 +220,8 @@ minimize Objective:
 + 20 * sum{c in CidAssign, b in Building} wb[c,b]
 # 6.) Empty rooms when possible
 + 10 * sum{r in AllRooms} wr[r]
+# 7.) Use as many rooms as possible also but with smaller priority
+- (1/card(CidAssign)) * sum{c in CidAssign,r in Rooms} w[c,r]
 # 10.) all else being equal use rooms with better priority (low weight here)
 + (0.1/card(CidAssign)) * sum{c in CidAssign, r in AllRooms} w[c,r] * RoomPriority[r]
 ;
@@ -240,23 +246,7 @@ for {r in ComputerRooms: r in Rooms} {
 for {r in SpecialRooms: r in Rooms} {
   printf : "computer %s  in any Rooms?!\n", r;
 }
-/*
-for {c in CidAssign: sr[c] > 0} {
-  printf : "Namskeið %s vantar %d sæti\n", c, sr[c];
-}
 
-for {c in CidAssign: sc[c] > 0} {
-  printf : "Namskeið %s vantar %d sæti í tölvustofu\n", c, sc[c];
-}
-
-for {c in CidAssign: ss[c] > 0} {
-  printf : "Namskeið %s vantar %d sérúrræðisæti\n", c, ss[c];
-}
-
-for {c in CidAssign: ssc[c] > 0} {
-  printf : "Namskeið %s vantar %d sérúrræðisæti í tölvustofu\n", c, ssc[c];
-}
-*/
 for {e in SubExamSlots} {
   printf "Dagur/tími: %s\n", SlotNames[e];
   printf : "fjöldi sæta tiltæk %d og þöfin er %d\n", sum{r in Rooms} RoomCapacity[r], sum{c in CidAssign: c not in ComputerCourses} (cidCount[c]-SpeCidCount[c]) * Slot[c,e];
@@ -264,9 +254,9 @@ for {e in SubExamSlots} {
   printf : "fjöldi sæta tiltæk í sérúræði er %d og þöfin er %d\n", sum{r in SpecialRooms} RoomCapacity[r], sum{c in CidAssign: c not in ComputerCourses} SpeCidCount[c] * Slot[c,e];
 }
 
-for {c in CidAssign: sum{b in Building} wb[c,b] > 1} {
-  printf : "Namskeið %s er í %d byggingum: ", c, sum{b in Building} wb[c,b];
-  printf {b in Building: wb[c,b] > 0}: "%s ", BuildingNames[b];
+for {c in CidAssign: sum{b in Building} wbb[c,b] > 1} {
+  printf : "Namskeið %s er í %d byggingum: ", c, sum{b in Building} wbb[c,b];
+  printf {b in Building: wbb[c,b] > 0}: "%s ", BuildingNames[b];
   printf "\n";
 }
 
