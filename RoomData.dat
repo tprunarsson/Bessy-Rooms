@@ -33,6 +33,16 @@ Laugarvatn
 NyjiGardur
 ;
 
+set Torfan :=
+Adalbygging
+Arnagardur
+Gimli
+Haskolatorg
+Logberg
+Oddi
+NyjiGardur
+;
+
 param BuildingNames :=
 Adalbygging 'Adalbygging'
 Askja   'Askja'
@@ -52,7 +62,6 @@ NyjiGardur 'Nýji Garður'
 
 set Rooms:=
 E101C
-O301
 V147
 A051
 N130
@@ -171,6 +180,7 @@ O102 18
 ;
 
 set ComputerRooms:=
+O301
 Ht204
 V260
 NG015
