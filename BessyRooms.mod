@@ -137,7 +137,7 @@ subject to RegularCoursesReq{c in CidAssign: c not in CidAssignComp}:
 # The number of students in a room should not go over the limit
 # n.b. this is the total number of useful seats (reduce the number is there a "bad seats" in the room)
 subject to RoomCapacityLimit{r in AllRooms, e in SubExamSlots}:
-  sum{c in CidAssign} h[c,r] * Slot[c,e] <=  RoomCapacity[r];
+  sum{c in CidAssign: Slot[c,e] > 0} h[c,r] <=  RoomCapacity[r];
 
 # A constraint for the indicator binary variable is course c in room r, the 1.0001 is a hack needed ?!
 # the sum sum{cc in CidAssign} cidCount[cc] corresponds to a big value, i.e. Big-M approach
@@ -163,11 +163,11 @@ subject to NotToFewStudents{c in CidAssign, r in Rooms: (cidCount[c]-SpeCidCount
 # Do not have too many different exams in the same room, more traffic from teachers
 # try to maximize the number of courses in a room !!! Helps with table assignments (different exams at each table)
 subject to NotTooManyCourse{e in SubExamSlots, r in AllRooms: r not in SpecialRooms and r not in SpecialComputerRooms}:
-  sum{c in CidAssign} w[c,r] * Slot[c,e] <= if (RoomCapacity[r] >= 80) then 3 else 2;
+  sum{c in CidAssign: Slot[c,e] > 0} w[c,r] <= if (RoomCapacity[r] >= 80) then 3 else 2;
 
 # The same applied to Special Courses, but here we can have more teachers entering the rooms
 subject to NotTooManyCoursesSpecial{e in SubExamSlots, r in AllRooms: r in SpecialRooms or r in SpecialComputerRooms}:
-  sum{c in CidAssign} w[c,r] * Slot[c,e] <= 6;
+  sum{c in CidAssign: Slot[c,e] > 0} w[c,r]  <= 6;
 
 # A constraint for the indicator binary variable is course c in building b, the 1.0001 is a hack needed ?!
 subject to IsCidInBuilding{c in CidAssign, b in Building}:
