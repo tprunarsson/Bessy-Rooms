@@ -218,10 +218,10 @@ minimize Objective:
 # 3.) Avoid also Eirberg is not on your list
 + 50 * sum{c in CidAssign, b in Building: b == 'Eirberg' and b not in RequiredBuildings[c]} wb[c,b]
 # 4.) Avoid buildings that are not on your list, note that this adds to RequiredBuildings, so not too big please
-+ 5 * sum{c in CidAssign, b in Building: b not in PriorityBuildings[c]} wb[c,b]
++ 20 * sum{c in CidAssign, b in Building: b not in PriorityBuildings[c]} wb[c,b]
 + 20 * sum{c in CidAssign, b in Building: b not in RequiredBuildings[c]} wb[c,b]
 # 5.) minimize the number of buildings used, weight should be equal to Required or higher?
-#+ 50 * sum{c in CidAssign, b in Building: b not in Torfan} wb[c,b]
++ 40 * sum{c in CidAssign, b in Building: b not in Torfan} wb[c,b]
 + 10 * sum{c in CidAssign, b in Building} wb[c,b]
 + 1000 * sum{c in CidAssign} NumberOfBuildings[c]
 # 6.) Empty rooms when possible
