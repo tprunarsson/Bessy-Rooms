@@ -4,6 +4,7 @@
 # Last modified by tpr at 13:55 5/11/2016
 
 # TODO: conjoined courses forced together in one!
+# This needs to be resolved perhaps can also be solved by setting the conjoined courses in the same buidling?!
 
 # --- Parameter and Sets --- #
 
