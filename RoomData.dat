@@ -186,7 +186,6 @@ V260
 NG015
 NG014
 G101
-N166
 ;
 
 # Ht315
@@ -208,6 +207,7 @@ A310
 ;
 
 set SpecialComputerRooms :=
+N166
 O103
 O102
 Ht302
@@ -300,4 +300,4 @@ set RoomInBuilding['Gimli']:=G101;
 set RoomInBuilding['Eirberg']:=E101C E103C E201C E203C;
 set RoomInBuilding['VRII']:=V138 V147 V152 V258 V260 V261;
 
-end;
+
