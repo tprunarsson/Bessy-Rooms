@@ -25,7 +25,7 @@ param Slot {CidExam, ExamSlots} binary, default 0;
 param SlotNames{ExamSlots}, symbolic;
 
 # It is not necessary to solve all slots at once, select the one you want.
-set SubExamSlots within ExamSlots := setof{e in ExamSlots: e == 1} e;
+set SubExamSlots within ExamSlots := setof{e in ExamSlots: e == 4} e;
 
 # Set of all Computer Courses
 set ComputerCourses within CidExam;
@@ -36,11 +36,13 @@ set CidMHR within CidExam;
 # The actual courses than will be assigned seats
 set CidAssign := setof{c in CidExamNew, e in SubExamSlots: c not in CidMHR and Slot[c,e] > 0} c;
 
+display CidAssign;
+
 # Total number of students for each course
 param cidCount{CidExam} default 0;
 
 # The long number identification for the exam, used for printing solution
-param CidId{CidExam};
+param CidId{CidExam} default 0;
 
 # Total number of special students for each course
 param SpeCidCount{CidExam} default 0;
@@ -161,7 +163,8 @@ subject to NotToFewStudents{c in CidAssign, r in Rooms: (cidCount[c]-SpeCidCount
 # Do not have too many different exams in the same room, more traffic from teachers
 # try to maximize the number of courses in a room !!! Helps with table assignments (different exams at each table)
 subject to NotTooManyCourse{e in SubExamSlots, r in AllRooms: r not in SpecialRooms and r not in SpecialComputerRooms}:
-  sum{c in CidAssign} w[c,r] * Slot[c,e] <= 2;
+  sum{c in CidAssign} w[c,r] * Slot[c,e] <= if (RoomCapacity[r] >= 80) then 3 else 2;
+
 # The same applied to Special Courses, but here we can have more teachers entering the rooms
 subject to NotTooManyCoursesSpecial{e in SubExamSlots, r in AllRooms: r in SpecialRooms or r in SpecialComputerRooms}:
   sum{c in CidAssign} w[c,r] * Slot[c,e] <= 6;
@@ -183,18 +186,18 @@ subject to IsCidInBuildingBB2{c in CidAssign, b in Building}:
   1.0001 * sum{r in RoomInBuilding[b]: r in Rooms} w[c,r]  >= wbb[c,b];
 
 # Can only be in one building if not on the green!
-subject to OnlyOneUnlessOnTheGreen{c in CidAssign, bb in Building: bb not in Torfan}: 
-  sum{b in Building: bb <> b} wbb[c,b] + wbb[c,bb] <= 1;
+var NumberOfBuildings{CidAssign}, >= 0;
+subject to OnlyOneUnlessOnTheGreen{c in CidAssign, bb in Building: bb not in Torfan}:
+  sum{b in Building: bb <> b} wbb[c,b] + wbb[c,bb] <= NumberOfBuildings[c];
 
 #####################
-
 
 # If the room is occupied then wr is forced to 1 else it will tend to zero due to the objective function
 subject to RoomOccupied{c in CidAssign, r in AllRooms}: w[c,r] <= wr[r];
 
 # This would be a hard condition on the number this condition is made soft since it does not work allways, should be added to phase 1 */
-subject to CourseMayOnlyBeInOneBuildingSpec{c in CidAssign: SpeCidCount[c]>0}: sum{b in Building} wb[c,b] <= 3;
-subject to CourseMayOnlyBeInOneBuilding{c in CidAssign: SpeCidCount[c]==0}: sum{b in Building} wb[c,b] <= 2;
+#subject to CourseMayOnlyBeInOneBuildingSpec{c in CidAssign: SpeCidCount[c]>0}: sum{b in Building} wb[c,b] <= 3;
+#subject to CourseMayOnlyBeInOneBuilding{c in CidAssign: SpeCidCount[c]==0}: sum{b in Building} wb[c,b] <= 2;
 
 # Force a solution!
 subject to ForceNumberInRoom{c in CidAssign, r in AllRooms: hfix[c,r]>0}: h[c,r] = hfix[c,r];
@@ -213,11 +216,13 @@ minimize Objective:
 + 75 * sum{c in CidAssign, b in Building: b == 'Hamar' and b not in RequiredBuildings[c]} wb[c,b]
 # 3.) Avoid also Eirberg is not on your list
 + 50 * sum{c in CidAssign, b in Building: b == 'Eirberg' and b not in RequiredBuildings[c]} wb[c,b]
-# 4.) Avoid buildings that are not on your list, not that this add to RequiredBuildings, so not too big please
+# 4.) Avoid buildings that are not on your list, note that this adds to RequiredBuildings, so not too big please
 + 5 * sum{c in CidAssign, b in Building: b not in PriorityBuildings[c]} wb[c,b]
 + 20 * sum{c in CidAssign, b in Building: b not in RequiredBuildings[c]} wb[c,b]
 # 5.) minimize the number of buildings used, weight should be equal to Required or higher?
-+ 20 * sum{c in CidAssign, b in Building} wb[c,b]
+#+ 50 * sum{c in CidAssign, b in Building: b not in Torfan} wb[c,b]
++ 10 * sum{c in CidAssign, b in Building} wb[c,b]
++ 1000 * sum{c in CidAssign} NumberOfBuildings[c]
 # 6.) Empty rooms when possible
 + 10 * sum{r in AllRooms} wr[r]
 # 7.) Use as many rooms as possible also but with smaller priority
@@ -247,6 +252,10 @@ for {r in SpecialRooms: r in Rooms} {
   printf : "computer %s  in any Rooms?!\n", r;
 }
 
+for {c in CidAssign} {
+  printf : "Fjöldi í námskeið %s eru %d en CidCount er %d\n", c, sum{r in AllRooms} h[c,r], cidCount[c];
+}
+
 for {e in SubExamSlots} {
   printf "Dagur/tími: %s\n", SlotNames[e];
   printf : "fjöldi sæta tiltæk %d og þöfin er %d\n", sum{r in Rooms} RoomCapacity[r], sum{c in CidAssign: c not in ComputerCourses} (cidCount[c]-SpeCidCount[c]) * Slot[c,e];
@@ -254,11 +263,18 @@ for {e in SubExamSlots} {
   printf : "fjöldi sæta tiltæk í sérúræði er %d og þöfin er %d\n", sum{r in SpecialRooms} RoomCapacity[r], sum{c in CidAssign: c not in ComputerCourses} SpeCidCount[c] * Slot[c,e];
 }
 
+for {c in CidAssign: sum{b in Building} wb[c,b] > 1} {
+  printf : "Namskeið %s er í %d byggingum (með sérúrræði): ", c, sum{b in Building} wb[c,b];
+  printf {b in Building: wb[c,b] > 0}: "%s ", BuildingNames[b];
+  printf "\n";
+}
+
 for {c in CidAssign: sum{b in Building} wbb[c,b] > 1} {
   printf : "Namskeið %s er í %d byggingum: ", c, sum{b in Building} wbb[c,b];
   printf {b in Building: wbb[c,b] > 0}: "%s ", BuildingNames[b];
   printf "\n";
 }
+
 
 # Hvaða stofur er verið að nota og hvernig er nýtingin:
 for {e in SubExamSlots} {
