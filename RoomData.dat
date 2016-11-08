@@ -1,21 +1,3 @@
-/*
-ID number for buildings
-Adalbygging	1
-Askja	2
-Arnagardur	3
-Eirberg	4
-Gimli	5
-Haskolatorg	6
-Logberg	7
-Oddi	8
-VRII	9
-Hamar	10
-Klettur	11
-Enni	12
-Laugarvatn	13
-Nýji Garður 14
-*/
-
 set Building :=
 Adalbygging
 Askja
@@ -41,23 +23,6 @@ Haskolatorg
 Logberg
 Oddi
 NyjiGardur
-;
-
-param BuildingNames :=
-Adalbygging 'Adalbygging'
-Askja   'Askja'
-Arnagardur 'Arnagardur'
-Eirberg 'Eirberg'
-Gimli 'Gimli'
-Haskolatorg 'Haskolatorg'
-Logberg 'Logberg'
-Oddi 'Oddi'
-VRII 'VRII'
-Hamar 'Hamar'
-Klettur 'Klettur'
-Enni 'Enni'
-Laugarvatn 'Laugarvatn'
-NyjiGardur 'Nýji Garður'
 ;
 
 set Rooms:=
@@ -89,6 +54,7 @@ K206
 L103
 E303
 V152
+V156
 Ht103
 A304
 H207
@@ -174,6 +140,7 @@ N166 24
 O103 10
 A218 23
 V258 22
+V156 22
 H202 16
 L102 25
 O102 18
@@ -214,6 +181,7 @@ Ht302
 ;
 
 param RoomPriority:=
+V156 2
 E101C 3
 A207 1
 L205 2
@@ -298,6 +266,6 @@ set RoomInBuilding['Hamar']:=H101 H201 H202 H203 H204 H205 H206 H207 H208 H209;
 set RoomInBuilding['Arnagardur']:=A101 A201 A301 A303 A304 A310 A311;
 set RoomInBuilding['Gimli']:=G101;
 set RoomInBuilding['Eirberg']:=E101C E103C E201C E203C;
-set RoomInBuilding['VRII']:=V138 V147 V152 V258 V260 V261;
+set RoomInBuilding['VRII']:=V138 V147 V152 V156 V258 V260 V261;
 
 
