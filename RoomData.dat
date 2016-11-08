@@ -181,7 +181,7 @@ Ht302
 ;
 
 param RoomPriority:=
-V156 2
+V156 1
 E101C 3
 A207 1
 L205 2
