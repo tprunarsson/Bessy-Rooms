@@ -17,9 +17,6 @@ set ExamSlots:= 1..(2*n);
 # The set of exams to be assigned to slots
 set CidExam;
 
-# This is needed since the orginal list has changes since its publication
-set CidExamNew within CidExam;
-
 # Taken from phase one solution
 param Slot {CidExam, ExamSlots} binary, default 0;
 # The actual dates, used for printing solution
@@ -36,7 +33,7 @@ set ComputerCourses within CidExam;
 set CidMHR within CidExam;
 
 # The actual courses than will be assigned seats
-set CidAssign := setof{c in CidExamNew, e in SubExamSlots: c not in CidMHR and Slot[c,e] > 0} c;
+set CidAssign := setof{c in CidExam, e in SubExamSlots: c not in CidMHR and Slot[c,e] > 0} c;
 
 # course incidence data to constuct the matrix for courses that should be examined together"
 param cidConjoinedData {CidExam, CidExam};
