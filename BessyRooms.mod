@@ -98,14 +98,12 @@ var wb{CidAssign, Building}, >= 0, <= 1, binary;
 # variable tells us if a room is occupied or not, must be minimized in objective
 # when minimized it also tries to free rooms when possible and creating a saving for staff needed for monitoring the exams
 var wr{AllRooms}, >= 0;
-# This parameter will set a decision variable h when > 0
-param h_fix {c in CidAssign, r in AllRooms} default 0;
 
 # --- Constraints --- #
 
 # if you would like to fix a decision do it here with parameter h_fix > 0
-subject to FixH{c in CidAssign, r in AllRooms: h_fix[c,r] > 0}:
-  h[c,r] = h_fix[c,r];
+subject to FixH{c in CidAssign, r in AllRooms: hfix[c,r] > 0}:
+  h[c,r] = hfix[c,r];
 
 # Make sure that all students in the course have a seat
 subject to AssignAllCidSeats{c in CidAssign}:
@@ -200,12 +198,8 @@ subject to OnlyOneUnlessOnTheGreen{c in CidAssign, t in Torfan}:
 # If the room is occupied then wr is forced to 1 else it will tend to zero due to the objective function
 subject to RoomOccupied{c in CidAssign, r in AllRooms}: w[c,r] <= wr[r];
 
-# This would be a hard condition on the number this condition is made soft since it does not work allways, should be added to phase 1 */
-#subject to CourseMayOnlyBeInOneBuildingSpec{c in CidAssign: SpeCidCount[c]>0}: sum{b in Building} wb[c,b] <= 3;
-#subject to CourseMayOnlyBeInOneBuilding{c in CidAssign: SpeCidCount[c]==0}: sum{b in Building} wb[c,b] <= 2;
-
 # Force a solution!
-subject to ForceNumberInRoom{c in CidAssign, r in AllRooms: hfix[c,r]>0}: h[c,r] = hfix[c,r];
+#subject to ForceNumberInRoom{c in CidAssign, r in AllRooms: hfix[c,r]>0}: h[c,r] = hfix[c,r];
 
 # Special condition for Laugarvatn, too far away ;)
 subject to EkkiLaugarvatn{c in CidAssign: 'Laugarvatn' not in RequiredBuildings[c]}:
