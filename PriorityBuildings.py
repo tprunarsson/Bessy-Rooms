@@ -25,26 +25,6 @@ with open('bordarodun2.csv',"r",encoding='latin-1', newline='') as csvfile:
     for rows in RoomData:
         for i in range(6):
             DI[i][rows[2]] = rows[i+1]
-
-            #/*
-            #ID number for buildings
-            #Adalbygging	1
-            #Askja	2
-            #Arnagardur	3
-            #Eirberg	4
-            #Gimli	5
-            #Haskolatorg	6
-            #Logberg	7
-            #Oddi	8
-            #VRII	9
-            #Hamar	10
-            #Klettur	11
-            #Enni	12
-            #Laugarvatn	13
-            #Nýji Garður 14
-            #*/
-
-
 with open('RequiredBuildings.dat','w', encoding=_wenc) as fdat:
     for course, blist in DI[0].items():
         s = 'set RequiredBuildings['+course.translate(_trans)+']:='
@@ -56,7 +36,7 @@ with open('RequiredBuildings.dat','w', encoding=_wenc) as fdat:
             fdat.write('Eirberg')
             fdat.write(';')
         if blist == "16":
-            fdat.write('VRII')
+            fdat.write('Haskolatorg')
             fdat.write(';')
 # @21 Hvernig er þetta með sérúrræðanemana - þarf ekki að forgangsraða þeim sérstaklega? Málið er að þó hjúkrunarfræðin "verði" að vera í Eirbergi þá verða sérúrræðanemar þeirra að vera í Aðalbyggingu eða Háskólatorgi. Í Ht302 er t.d. sérhæfður hugbúnaður sem ekki er hægt að setja upp í öllum tölvuverum. 
         if blist=='21':
