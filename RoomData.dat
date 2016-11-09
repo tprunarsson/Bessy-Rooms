@@ -1,231 +1,271 @@
-set Rooms :=
-NG014
-NG015
-Askja166
-E103C
-A050
-A052
-A218
-Askja130
-Askja131
+set Building :=
+Adalbygging
+Askja
+Arnagardur
+Eirberg
+Gimli
+Haskolatorg
+Logberg
+Oddi
+VRII
+Hamar
+Klettur
+Enni
+Laugarvatn
+NyjiGardur
+;
+
+set Torfan :=
+Adalbygging
+Arnagardur
+Gimli
+Haskolatorg
+Logberg
+Oddi
+NyjiGardur
+;
+
+set Rooms:=
+E101C
+V147
+A051
+N130
+Ht104
 A201
 A301
-A304
-A311
-E101C
-E201C
-E203C
-E205C
-HT102
-HT103
-HT104
-HT105
-L102
-L103
-O201
-O202
+Stofa_2
+V261
+K207
 V138
-V147
+E203C
+E103C
+N131
+H101
+H204
+H206
+A050
+A311
+Ht105
+H205
+Ht102
+K208
+K204
+K206
+L103
+E303
 V152
 V156
-V258
-V261
-H101
-H201
-H202
-H203
-H204
-H205
-H206
+Ht103
+A304
 H207
-K204
-K205
-K206
-K207
-K208
+O202
+A052
 E301
-E303
+H201
+K205
+O201
+E201C
+H203
 K-salur
-Stofa_2
+A218
+V258
+H202
+L102
 ;
 
-set ComputerRooms :=
-Askja
-G101
-HT204
-O102
-O103
-O301
-V260
-;
-
-set SpecialRooms :=
-A101
-A051
-A069
-A207
-A222
-A225
-A229
-A303
-A310
-HT300
-HT301
-HT302
-HT315
-L201
-L204
-L205
-H208
-H209
-K-salur_b
-O102
-O103
-;
-
-param RoomCapacity :=
-A101 15
-E103C 50
-NG014 10
-NG015 15
-A050	24
-A051	12
-A052	22
-A069	12
-A207	18
-A218 25
-A222	16
-A225	18
-A229	10
-Askja130	20
-Askja131	30
-Askja	24
+param RoomCapacity:=
+E101C 12
+A207 18
+L205 12
+O301 38
+Ht204 40
+V147 15
+A051 12
+N130 20
+Ht104 52
 A201 48
 A301 48
-A303	10
-A304 26
-A310	12
-A311 24
-E101C	14
-E201C	41
-E203C	50
-E205C	45
-G101	21
-HT102	80
-HT103 50
-HT104 50
-HT105 80
-HT204	40
-HT300	10
-HT301	3
-HT302	10
-HT315	6
-L102	25
-L103	25
-L201	18
-L204	12
-L205	12
-O102	18
-O103	10
-O201 44
-O202	20
-O301	38
-V138	18
-V147	15
-V152	35
-V156	22
-V258	22
-V260	22
-V261	30
-H101  20
-H201  22
-H202	22
-H203	22
-H204	25
-H205 25
+Stofa_2 22
+V261 30
+K207 25
+V138 18
+#Ht315 1
+E203C 50
+E103C 50
+N131 30
+V260 22
+H101 20
+H204 25
 H206 22
-H207 35
-H208	15
-H209	15
-K204 20
-K205 20
-K206	20
-K207	25
-K208 	25
+A050 24
+A311 24
+A069 12
+Ht105 80
+L201 18
+H205 25
+A222 16
+Ht102 80
+K208 25
+H209 16
+K204 23
+K206 20
+L103 25
+E303 20
+V152 36
+Ht103 52
+A304 26
+H207 45
+NG015 15
+L204 12
+Ht302 10
+NG014 10
+K-salur_b 10
+O202 20
+A052 18
+G101 21
+A225 18
 E301 30
-E303	20
+A303 10
+H201 25
+K205 20
+H208 16
+O201 44
+A101 15
+A229 10
+A310 14
+E201C 44
+H203 16
 K-salur 40
-K-salur_b	10
-Stofa_2 11
+N166 24
+O103 10
+A218 23
+V258 22
+V156 22
+H202 16
+L102 25
+O102 18
 ;
 
-/*
-ID number for buildings
-Adalbygging	1
-Askja	2
-Arnagardur	3
-Eirberg	4
-Gimli	5
-Haskolatorg	6
-Logberg	7
-Oddi	8
-VRII	9
-Hamar	10
-Klettur	11
-Enni	12
-Laugarvatn	13
-Nýji Garður 14
-*/
-
-set Building :=
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
+set ComputerRooms:=
+O301
+Ht204
+V260
+NG015
+NG014
+G101
 ;
 
-param BuildingNames :=
-1 'Adalbygging'
-2 'Askja'
-3 'Arnagardur'
-4 'Eirberg'
-5 'Gimli'
-6 'Haskolatorg'
-7 'Logberg'
-8 'Oddi'
-9 'VRII'
-10 'Hamar'
-11 'Klettur'
-12 'Enni'
-13 'Laugarvatn'
-14 'Nýji Garður'
+# Ht315
+set SpecialRooms:=
+A207
+L205
+A069
+L201
+A222
+H209
+L204
+K-salur_b
+A225
+A303
+H208
+A101
+A229
+A310
 ;
 
+set SpecialComputerRooms :=
+N166
+O103
+O102
+Ht302
+;
+
+param RoomPriority:=
+V156 1
+E101C 3
+A207 1
+L205 2
+O301 1
+Ht204 1
+V147 2
+A051 2
+N130 2
+Ht104 1
+A201 1
+A301 1
+Stofa_2 2
+V261 1
+K207 3
+V138 2
+#Ht315 2
+E203C 1
+E103C 1
+N131 2
+V260 1
+H101 2
+H204 1
+H206 1
+A050 2
+A311 1
+A069 2
+Ht105 1
+L201 2
+H205 1
+A222 1
+Ht102 1
+K208 3
+H209 1
+K204 3
+K206 3
+L103 1
+E303 3
+V152 1
+Ht103 1
+A304 1
+H207 1
+NG015 3
+L204 2
+Ht302 1
+NG014 3
+K-salur_b 1
+O202 2
+A052 2
+G101 1
+A225 1
+E301 3
+A303 2
+H201 1
+K205 3
+H208 1
+O201 2
+A101 2
+A229 1
+A310 2
+E201C 1
+H203 1
+K-salur 1
+N166 2
+O103 1
+A218 2
+V258 1
+H202 1
+L102 1
+O102 1
+;
+
+set RoomInBuilding['NyjiGardur']:=NG014 NG015;
+set RoomInBuilding['Logberg']:=L102 L103 L201 L204 L205;
+set RoomInBuilding['Oddi']:=O102 O103 O201 O202 O301;
+set RoomInBuilding['Haskolatorg']:=Ht102 Ht103 Ht104 Ht105 Ht204 Ht302;
+set RoomInBuilding['Laugarvatn']:=K-salur K-salur_b Stofa_2;
+set RoomInBuilding['Adalbygging']:=A050 A051 A052 A069 A207 A218 A222 A225 A229;
+set RoomInBuilding['Enni']:=E301 E303;
+set RoomInBuilding['Klettur']:=K204 K205 K206 K207 K208;
+set RoomInBuilding['Askja']:=N130 N131 N166;
+set RoomInBuilding['Hamar']:=H101 H201 H202 H203 H204 H205 H206 H207 H208 H209;
+set RoomInBuilding['Arnagardur']:=A101 A201 A301 A303 A304 A310 A311;
+set RoomInBuilding['Gimli']:=G101;
+set RoomInBuilding['Eirberg']:=E101C E103C E201C E203C;
+set RoomInBuilding['VRII']:=V138 V147 V152 V156 V258 V260 V261;
 
 
-set RoomInBuilding[1] := A050 A051 A052 A069 A207 A218 A222 A225 A229;
-set RoomInBuilding[2] := Askja130 Askja131 Askja;
-set RoomInBuilding[3] := A201 A301 A303 A304 A310 A311 A101;
-set RoomInBuilding[4] := E101C E201C E203C E205C E103C;
-set RoomInBuilding[5] := G101;
-set RoomInBuilding[6] := HT102 HT103 HT104 HT105 HT204 HT300 HT301 HT302 HT315;
-set RoomInBuilding[7] := L102 L103 L201 L204 L205;
-set RoomInBuilding[8] := O102 O103 O201 O202 O301;
-set RoomInBuilding[9] := V138 V147 V152 V156 V258 V260 V261;
-set RoomInBuilding[10] := H101 H201 H202 H203 H204 H205 H206 H207 H208 H209;
-set RoomInBuilding[11] := K204 K205 K206 K207 K208;
-set RoomInBuilding[12] := E301 E303;
-set RoomInBuilding[13] := K-salur K-salur_b Stofa_2;
-set RoomInBuilding[14] := NG014 NG015;
-
-end;

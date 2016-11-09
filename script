@@ -1,0 +1,11 @@
+glpsol --check --math BessyRooms.mod -d courses.dat -d default.dat  -d resources.dat -d RoomData.dat -d SplitForPhase.dat -d RequiredBuildings.dat -d PriorityBuildings.dat -d durations.dat --wlp TEST.lp
+gurobi_cl Threads=8 ResultFile=test.sol TEST.lp
+cat test.sol | grep 'h(' | grep -v ') 0' > rusl.txt
+sed -i 's/,/ /g' rusl.txt
+sed -i 's/h(/ /g' rusl.txt
+sed -i 's/)/ /g' rusl.txt
+echo "param hfix := " >  hfix.dat
+cat rusl.txt >> hfix.dat
+echo ";" >> hfix.dat
+echo "end;" >> hfix.dat
+glpsol --math BessyRooms.mod -d courses.dat -d default.dat  -d resources.dat -d RoomData.dat -d SplitForPhase.dat -d RequiredBuildings.dat -d durations.dat -d hfix.dat
