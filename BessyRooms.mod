@@ -26,8 +26,8 @@ param Slot {CidExam, ExamSlots} binary, default 0;
 param SlotNames{ExamSlots}, symbolic;
 
 # It is not necessary to solve all slots at once, select the one you want.
-param SolveSlot default 1;
-set SubExamSlots within ExamSlots := setof{e in ExamSlots: e == SolveSlot} e;
+param SolveSlot := 1;
+set SubExamSlots within ExamSlots := setof{e in ExamSlots: e > 0} e;
 
 # Set of all Computer Courses
 set ComputerCourses within CidExam;
@@ -171,7 +171,7 @@ subject to NotToFewStudents{c in CidAssign, r in Rooms: (cidCount[c]-SpeCidCount
 # Do not have too many different exams in the same room, more traffic from teachers
 # try to maximize the number of courses in a room !!! Helps with table assignments (different exams at each table)
 subject to NotTooManyCourse{e in SubExamSlots, r in AllRooms: r not in SpecialRooms and r not in SpecialComputerRooms}:
-  sum{c in CidAssign: Slot[c,e] > 0} w[c,r] <= if (RoomCapacity[r] >= 80) then 3 else 2;
+  sum{c in CidAssign: Slot[c,e] > 0} w[c,r] <= if (RoomCapacity[r] >= 20) then 3 else 2;
 
 # The same applied to Special Courses, but here we can have more teachers entering the rooms
 subject to NotTooManyCoursesSpecial{e in SubExamSlots, r in AllRooms: r in SpecialRooms or r in SpecialComputerRooms}:
@@ -195,8 +195,8 @@ subject to IsCidInBuildingBB2{c in CidAssign, b in Building}:
 
 # Can only be in one building if not on the green!
 var NumberOfBuildings{CidAssign}, >= 0;
-subject to OnlyOneUnlessOnTheGreen{c in CidAssign, bb in Building: bb not in Torfan}:
-  sum{b in Building: bb <> b} wbb[c,b] + wbb[c,bb] <= NumberOfBuildings[c];
+subject to OnlyOneUnlessOnTheGreen{c in CidAssign, t in Torfan}:
+  sum{b in Building: b not in Torfan} wbb[c,b] + wbb[c,t] <= NumberOfBuildings[c];
 
 #####################
 
@@ -225,14 +225,14 @@ minimize Objective:
 # 3.) Avoid also Eirberg is not on your list
 + 50 * sum{c in CidAssign, b in Building: b == 'Eirberg' and b not in RequiredBuildings[c]} wb[c,b]
 # 4.) Avoid buildings that are not on your list, note that this adds to RequiredBuildings, so not too big please
-+ 10 * sum{c in CidAssign, b in Building: b not in PriorityBuildings[c]} wb[c,b]
++ 20 * sum{c in CidAssign, b in Building: b not in PriorityBuildings[c]} wb[c,b]
 + 20 * sum{c in CidAssign, b in Building: b not in RequiredBuildings[c]} wb[c,b]
 # 5.) minimize the number of buildings used, weight should be equal to Required or higher?
 + 40 * sum{c in CidAssign, b in Building: b not in Torfan} wb[c,b]
 + 10 * sum{c in CidAssign, b in Building} wb[c,b]
 + 1000 * sum{c in CidAssign} NumberOfBuildings[c]
 # 6.) Empty rooms when possible
-+ 10 * sum{r in AllRooms} wr[r]
++ 100 * sum{r in AllRooms} wr[r]
 # 7.) Use as many rooms as possible also but with smaller priority
 - (1/card(CidAssign)) * sum{c in CidAssign,r in Rooms} w[c,r]
 # 10.) all else being equal use rooms with better priority (low weight here)
@@ -319,7 +319,7 @@ printf : "Sérúrræði;;;;;;;;;;;;\n" >> "lausn.csv";
 for {e in SubExamSlots, b in Building} {
   for {r in RoomInBuilding[b]: r in SpecialRooms} {
     printf {c in CidAssign: Slot[c,e] * h[c,r] > 0} : "%s;%011.0f;%s;%s;%s;%d;%d;;;;\n", SlotNames[e], CidId[c], c, b, r, h[c,r], duration[c] >> "lausn.csv";
-    printf : ";;;;;%s;;%d;%d;%d;%d\n", r, sum{cc in CidAssign} Slot[cc,e] * h[cc,r], RoomCapacity[r], sum{cc in CidAssign} w[cc,r] * Slot[cc,e], RoomPriority[r] >> "lausn.csv";
+    printf : ";;;;;%s;;;%d;%d;%d;%d\n", r, sum{cc in CidAssign} Slot[cc,e] * h[cc,r], RoomCapacity[r], sum{cc in CidAssign} w[cc,r] * Slot[cc,e], RoomPriority[r] >> "lausn.csv";
   }
   printf : ";;;;%s;;;;%d;%d;;;\n", b, sum{rr in RoomInBuilding[b], cc in CidAssign: rr in SpecialRooms} Slot[cc,e] * h[cc,rr], sum{rr in RoomInBuilding[b]: rr in SpecialRooms} RoomCapacity[rr] >> "lausn.csv";
 }
@@ -327,7 +327,7 @@ printf : "Sérúrræði tölvustofur;;;;;;;;;\n" >> "lausn.csv";
 for {e in SubExamSlots, b in Building} {
   for {r in RoomInBuilding[b]: r in SpecialComputerRooms} {
     printf {c in CidAssign: Slot[c,e] * h[c,r] > 0} : "%s;%011.0f;%s;%s;%s;%d;%d;;;;;\n", SlotNames[e], CidId[c], c, b, r, h[c,r], duration[c] >> "lausn.csv";
-    printf : ";;;;;%s;;%d;%d;%d;%d\n", r, sum{cc in CidAssign} Slot[cc,e] * h[cc,r], RoomCapacity[r], sum{cc in CidAssign} w[cc,r] * Slot[cc,e], RoomPriority[r] >> "lausn.csv";
+    printf : ";;;;;%s;;;%d;%d;%d;%d\n", r, sum{cc in CidAssign} Slot[cc,e] * h[cc,r], RoomCapacity[r], sum{cc in CidAssign} w[cc,r] * Slot[cc,e], RoomPriority[r] >> "lausn.csv";
   }
   printf : ";;;;%s;;;;%d;%d;;;\n", b, sum{rr in RoomInBuilding[b], cc in CidAssign: rr in SpecialComputerRooms} Slot[cc,e] * h[cc,rr], sum{rr in RoomInBuilding[b]: rr in SpecialComputerRooms} RoomCapacity[rr] >> "lausn.csv";
 }
