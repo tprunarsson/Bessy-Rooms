@@ -51,19 +51,19 @@ with open('RequiredBuildings.dat','w', encoding=_wenc) as fdat:
         if blist=='24':
             fdat.write('Adalbygging Haskolatorg Oddi Logberg Gimli Arnagardur NyjiGardur')
             fdat.write(';')
-        if blist=='25' or blist=='26':
+        if blist=='25':
             fdat.write('Haskolatorg Oddi Logberg Gimli Arnagardur NyjiGardur')
             fdat.write(';')
         if blist=='26':
             fdat.write('Eirberg Haskolatorg Oddi Logberg Gimli Arnagardur NyjiGardur')
             fdat.write(';')
         if blist =='31' or blist=='32' or blist=='33' or blist=='34':
-            fdat.write('Torfan')
+            fdat.write('Haskolatorg Oddi Logberg Gimli Arnagardur NyjiGardur')
             fdat.write(';')
         if blist =='41' or blist=='42' or blist=='43':
             fdat.write('Hamar Haskolatorg Oddi Logberg Gimli Arnagardur NyjiGardur Klettur Enni')
             fdat.write(';')
-        if blist =='51' or blist =='54' or blist=='56':
+        if blist =='51' or blist =='54':
             fdat.write('VRII Haskolatorg Oddi Logberg Gimli Arnagardur NyjiGardur Askja')
             fdat.write(';')
         if blist =='52' or blist =='53':
