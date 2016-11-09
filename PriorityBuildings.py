@@ -25,9 +25,9 @@ with open('bordarodun2.csv',"r",encoding='latin-1', newline='') as csvfile:
     for rows in RoomData:
         for i in range(6):
             DI[i][rows[2]] = rows[i+1]
-with open('RequiredBuildings.dat','w', encoding=_wenc) as fdat:
+with open('PriorityBuildings.dat','w', encoding=_wenc) as fdat:
     for course, blist in DI[0].items():
-        s = 'set RequiredBuildings['+course.translate(_trans)+']:='
+        s = 'set PriorityBuildings['+course.translate(_trans)+']:='
         fdat.write(s)
         if blist =='11' or blist=='13' or blist=='14' or blist=='15':
             fdat.write('Haskolatorg')
