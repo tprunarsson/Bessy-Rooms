@@ -26,8 +26,8 @@ param Slot {CidExam, ExamSlots} binary, default 0;
 param SlotNames{ExamSlots}, symbolic;
 
 # It is not necessary to solve all slots at once, select the one you want.
-param SolveSlot := 1;
-set SubExamSlots within ExamSlots := setof{e in ExamSlots: e > 0} e;
+param SolveSlot default 1;
+set SubExamSlots within ExamSlots := setof{e in ExamSlots: e == SolveSlot} e;
 
 # Set of all Computer Courses
 set ComputerCourses within CidExam;
@@ -269,6 +269,7 @@ for {e in SubExamSlots} {
   printf : "fjöldi sæta tiltæk %d og þöfin er %d\n", sum{r in Rooms} RoomCapacity[r], sum{c in CidAssign: c not in ComputerCourses} (cidCount[c]-SpeCidCount[c]) * Slot[c,e];
   printf : "fjöldi sæta tiltæk í tölvustofum er %d og þöfin er %d\n", sum{r in ComputerRooms} RoomCapacity[r], sum{c in ComputerCourses} cidCount[c] * Slot[c,e];
   printf : "fjöldi sæta tiltæk í sérúræði er %d og þöfin er %d\n", sum{r in SpecialRooms} RoomCapacity[r], sum{c in CidAssign: c not in ComputerCourses} SpeCidCount[c] * Slot[c,e];
+  printf : "fjöldi sæta tiltæk í sérúræðitölvu er %d og þöfin er %d\n", sum{r in SpecialComputerRooms} RoomCapacity[r], sum{c in CidAssign: c in ComputerCourses} SpeCidCount[c] * Slot[c,e];
 }
 
 for {c in CidAssign: sum{b in Building} wb[c,b] > 1} {
