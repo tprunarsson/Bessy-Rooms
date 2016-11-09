@@ -30,47 +30,50 @@ with open('RequiredBuildings.dat','w', encoding=_wenc) as fdat:
         s = 'set RequiredBuildings['+course.translate(_trans)+']:='
         fdat.write(s)
         if blist =='11' or blist=='13' or blist=='14' or blist=='15':
-            fdat.write('Haskolatorg Oddi Logberg Arnagardur')
+            fdat.write('Torfan')
             fdat.write(';')
         if blist == "12":
-            fdat.write('Eirberg Haskolatorg Oddi Logberg Arnagardur')
+            fdat.write('Eirberg Torfan')
             fdat.write(';')
         if blist == "16":
-            fdat.write('Haskolatorg Oddi Logberg Arnagardur Gimli VRII')
+            fdat.write('VRII Torfan')
             fdat.write(';')
 # @21 Hvernig er þetta með sérúrræðanemana - þarf ekki að forgangsraða þeim sérstaklega? Málið er að þó hjúkrunarfræðin "verði" að vera í Eirbergi þá verða sérúrræðanemar þeirra að vera í Aðalbyggingu eða Háskólatorgi. Í Ht302 er t.d. sérhæfður hugbúnaður sem ekki er hægt að setja upp í öllum tölvuverum. 
         if blist=='21':
-            fdat.write('Eirberg Adalbygging Haskolatorg')
+            fdat.write('Eirberg Torfan')
             fdat.write(';')
         if blist=='22':
-            fdat.write('VRII Adalbygging Haskolatorg Oddi Arnagardur')
+            fdat.write('VRII Torfan')
             fdat.write(';')
         if blist=='23':
-            fdat.write('Eirberg Askja Logberg Oddi')
+            fdat.write('Eirberg Torfan')
             fdat.write(';')
         if blist=='24':
-            fdat.write('Adalbygging Oddi Askja Logberg')
+            fdat.write('Adalbygging Torfan')
             fdat.write(';')
         if blist=='25' or blist=='26':
-            fdat.write('Oddi Hamar Haskolatorg Arnagardur')
+            fdat.write('Torfan')
             fdat.write(';')
         if blist=='26':
-            fdat.write('Eirberg Logberg Oddi Haskolatorg Gimli Arnagardur')
+            fdat.write('Eirberg Torfan')
             fdat.write(';')
         if blist =='31' or blist=='32' or blist=='33' or blist=='34':
-            fdat.write('Arnagardur Adalbygging Haskolatorg Logberg Oddi')
+            fdat.write('Torfan')
             fdat.write(';')
         if blist =='41' or blist=='42' or blist=='43':
-            fdat.write('Hamar Logberg Oddi Adalbygging Haskolatorg Klettur Enni')
+            fdat.write('Hamar Torfan Klettur Enni')
             fdat.write(';')
         if blist =='51' or blist =='54' or blist=='56':
-            fdat.write('VRII Arnagardur Oddi Askja Haskolatorg Logberg Gimli')
+            fdat.write('VRII Torfan Askja')
             fdat.write(';')
         if blist =='52' or blist =='53':
-            fdat.write('Askja Arnagardur Oddi VRII Haskolatorg Logberg Gimli')
+            fdat.write('Askja Torfan VRII')
             fdat.write(';')
         if blist =='55':
-            fdat.write('VRII Haskolatorg Eirberg Arnagardur Logberg Oddi')
+            fdat.write('VRII Torfan Eirberg')
+            fdat.write(';')
+        if blist =='56':
+            fdat.write('VRII Torfan')
             fdat.write(';')
 
         fdat.write('\n')
