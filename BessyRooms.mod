@@ -82,6 +82,7 @@ set BuildingWithRoom{r in AllRooms} within Building := setof{b in Building: r in
 # The hfix variable is used for fixing a number of students in a given class room
 # can be used for post analysis also
 param hfix{CidAssign,AllRooms} default 0;
+param hdef{CidAssign,AllRooms} default 0;
 # each room has a priority, where 1 is best then 2 and worst 3
 param RoomPriority{AllRooms} default 3;
 # the length of an exam is needed since exams of same length should be in the same room
@@ -105,6 +106,10 @@ var wr{AllRooms}, >= 0;
 subject to FixH{c in CidAssign, r in AllRooms: hfix[c,r] > 0}:
   h[c,r] = hfix[c,r];
 
+# there is another possible fixing defined by the user:
+subject to FixD{c in CidAssign, r in AllRooms: hdef[c,r] > 0}:
+  h[c,r] = hdef[c,r];
+
 # Make sure that all students in the course have a seat
 subject to AssignAllCidSeats{c in CidAssign}:
   sum{r in AllRooms} h[c,r] = cidCount[c];
@@ -121,17 +126,9 @@ subject to SpecialCompCoursesReq{c in CidAssignSpec: c in CidAssignComp}:
 subject to ComputerCoursesReq{c in CidAssignComp}:
   sum{r in ComputerRooms} h[c,r] = cidCount[c] - SpeCidCount[c];
 
-# HACK THIS SHOULD NOT BE NEEDED, try to delete
-#subject to ComputerCoursesReqForce{c in CidAssignComp}:
-#  sum{r in Rooms} h[c,r] = 0;
-
 # The rest of the students should be in the other rooms in preferred building
 subject to RegularCoursesReq{c in CidAssign: c not in CidAssignComp}:
   sum{r in Rooms} h[c,r] = cidCount[c] - SpeCidCount[c];
-
-# HACK THIS SHOULD NOT BE NEEDED, try to delete
-#subject to RegularCoursesReqForce{c in CidAssign: c not in CidAssignComp}:
-#  sum{r in ComputerRooms} h[c,r] = 0;
 
 # The number of students in a room should not go over the limit
 # n.b. this is the total number of useful seats (reduce the number is there a "bad seats" in the room)
@@ -198,9 +195,6 @@ subject to OnlyOneUnlessOnTheGreen{c in CidAssign, t in Torfan}:
 # If the room is occupied then wr is forced to 1 else it will tend to zero due to the objective function
 subject to RoomOccupied{c in CidAssign, r in AllRooms}: w[c,r] <= wr[r];
 
-# Force a solution!
-#subject to ForceNumberInRoom{c in CidAssign, r in AllRooms: hfix[c,r]>0}: h[c,r] = hfix[c,r];
-
 # Special condition for Laugarvatn, too far away ;)
 subject to EkkiLaugarvatn{c in CidAssign: 'Laugarvatn' not in RequiredBuildings[c]}:
   sum{r in RoomInBuilding['Laugarvatn']} h[c,r] = 0;
@@ -210,7 +204,7 @@ minimize Objective:
 # 1.) we don't want to use Klettur and Enni (unless asked for)
 + 100 * sum{c in CidAssign, b in Building: (b == 'Klettur' or b == 'Enni') and b not in RequiredBuildings[c]} wb[c,b]
 # 1.1) even when asked for we really don't want to go here ...
-+ 10 * sum{c in CidAssign, b in Building: (b == 'Klettur' or b == 'Enni')} wb[c,b]
++ 50 * sum{c in CidAssign, b in Building: (b == 'Klettur' or b == 'Enni')} wb[c,b]
 # 2.) We don't want to use Hamar unless asked for
 + 75 * sum{c in CidAssign, b in Building: b == 'Hamar' and b not in RequiredBuildings[c]} wb[c,b]
 # 3.) Avoid also Eirberg is not on your list
@@ -323,5 +317,4 @@ for {e in SubExamSlots, b in Building} {
   }
   printf : ";;;;%s;;;;%d;%d;;;\n", b, sum{rr in RoomInBuilding[b], cc in CidAssign: rr in SpecialComputerRooms} Slot[cc,e] * h[cc,rr], sum{rr in RoomInBuilding[b]: rr in SpecialComputerRooms} RoomCapacity[rr] >> "lausn.csv";
 }
-
 end;
