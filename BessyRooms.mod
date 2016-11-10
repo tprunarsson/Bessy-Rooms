@@ -204,7 +204,7 @@ minimize Objective:
 # 1.) we don't want to use Klettur and Enni (unless asked for)
 + 100 * sum{c in CidAssign, b in Building: (b == 'Klettur' or b == 'Enni') and b not in RequiredBuildings[c]} wb[c,b]
 # 1.1) even when asked for we really don't want to go here ...
-+ 50 * sum{c in CidAssign, b in Building: (b == 'Klettur' or b == 'Enni')} wb[c,b]
++ 100 * sum{c in CidAssign, b in Building: (b == 'Klettur' or b == 'Enni')} wb[c,b]
 # 2.) We don't want to use Hamar unless asked for
 + 75 * sum{c in CidAssign, b in Building: b == 'Hamar' and b not in RequiredBuildings[c]} wb[c,b]
 # 3.) Avoid also Eirberg is not on your list
