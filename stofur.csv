@@ -1,15 +1,15 @@
 Bygging;Stofa;Sætafjöldi;Tegund;Tölvuver;Forgangur;Forgangssvið
-Aðalbygging;A050;24;Almenn;Nei;2;0
+Aðalbygging;A050;24;Almenn;Nei;1;0
 Aðalbygging;A051;12;Almenn;Nei;2;0
-Aðalbygging;A052;18;Almenn;Nei;2;0
+Aðalbygging;A052;18;Almenn;Nei;1;0
 Aðalbygging;A069;12;Sér;Nei;2;0
 Aðalbygging;A207;18;Sér;Nei;1;0
 Aðalbygging;A218;23;Almenn;Nei;2;0
 Aðalbygging;A222;16;Sér;Nei;1;0
 Aðalbygging;A225;18;Sér;Nei;1;0
 Aðalbygging;A229;10;Sér;Nei;1;0
-Askja;N130;20;Almenn;Nei;2;10
-Askja;N131;30;Almenn;Nei;2;10
+Askja;N130;20;Almenn;Nei;1;"50;10"
+Askja;N131;30;Almenn;Nei;1;"50;10"
 Askja;N166;24;Almenn;Já;2;0
 Árnagarður;Á101;15;Sér;Nei;2;0
 Árnagarður;Á201;48;Almenn;Nei;1;"30;50"
@@ -59,8 +59,8 @@ Nýi Garður;NG014;10;Almenn;Já;3;0
 Nýi Garður;NG015;15;Almenn;Já;3;0
 Oddi;O102;18;Sér;Já;1;0
 Oddi;O103;10;Sér;Já;1;0
-Oddi;O201;44;Almenn;Nei;2;10
-Oddi;O202;20;Almenn;Nei;2;10
+Oddi;O201;44;Almenn;Nei;1;10
+Oddi;O202;20;Almenn;Nei;1;10
 Oddi;O301;38;Almenn;Nei;1;0
 VR-II;V138;18;Almenn;Nei;2;50
 VR-II;V147;15;Almenn;Nei;2;50
