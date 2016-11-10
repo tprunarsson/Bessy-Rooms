@@ -16,16 +16,16 @@ NyjiGardur
 ;
 
 set Torfan :=
-Adalbygging
-Arnagardur
 Gimli
 Haskolatorg
 Logberg
 Oddi
 NyjiGardur
+Arnagardur
 ;
 
 set Rooms:=
+V156
 E101C
 V147
 A051
@@ -54,7 +54,6 @@ K206
 L103
 E303
 V152
-V156
 Ht103
 A304
 H207
@@ -74,6 +73,7 @@ L102
 ;
 
 param RoomCapacity:=
+V156 22
 E101C 12
 A207 18
 L205 12
@@ -140,7 +140,6 @@ N166 24
 O103 10
 A218 23
 V258 22
-V156 22
 H202 16
 L102 25
 O102 18
@@ -267,5 +266,3 @@ set RoomInBuilding['Arnagardur']:=A101 A201 A301 A303 A304 A310 A311;
 set RoomInBuilding['Gimli']:=G101;
 set RoomInBuilding['Eirberg']:=E101C E103C E201C E203C;
 set RoomInBuilding['VRII']:=V138 V147 V152 V156 V258 V260 V261;
-
-
