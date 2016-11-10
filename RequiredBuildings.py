@@ -17,7 +17,7 @@ _wenc = 'utf_8'
 DI = [{} for i in range(6)]
 
 #Verdur ad vera skjal ur bordarodun..Thar koma svidsnumer og fleira fram
-with open('bordarodun2.csv',"r",encoding='latin-1', newline='') as csvfile:
+with open('bordarodun4.csv',"r",encoding='latin-1', newline='') as csvfile:
 
     RoomData = csv.reader(csvfile, delimiter=';')
     next(RoomData)
@@ -26,7 +26,8 @@ with open('bordarodun2.csv',"r",encoding='latin-1', newline='') as csvfile:
             DI[i][rows[2]] = rows[i+1]
 
 with open('RequiredBuildings.dat','w', encoding=_wenc) as fdat:
-    for course, blist in DI[0].items():
+    for course, blist in DI[1].items():
+        print(course)
         s = 'set RequiredBuildings['+course.translate(_trans)+']:='
         fdat.write(s)
         if blist =='11' or blist=='13' or blist=='14' or blist=='15':
