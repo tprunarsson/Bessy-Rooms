@@ -17,7 +17,7 @@ _wenc = 'utf_8'
 DI = [{} for i in range(6)]
 
 #Verdur ad vera skjal ur bordarodun..Thar koma svidsnumer og fleira fram
-with open('bordarodun2.csv',"r",encoding='latin-1', newline='') as csvfile:
+with open('bordarodun4.csv',"r",encoding='latin-1', newline='') as csvfile:
 
     RoomData = csv.reader(csvfile, delimiter=';')
     next(RoomData)
