@@ -38,7 +38,7 @@ with open('RequiredBuildings.dat','w', encoding=_wenc) as fdat:
         if blist == "16":
             fdat.write('VRII Haskolatorg Oddi Logberg Gimli Arnagardur NyjiGardur')
             fdat.write(';')
-# @21 Hvernig er þetta með sérúrræðanemana - þarf ekki að forgangsraða þeim sérstaklega? Málið er að þó hjúkrunarfræðin "verði" að vera í Eirbergi þá verða sérúrræðanemar þeirra að vera í Aðalbyggingu eða Háskólatorgi. Í Ht302 er t.d. sérhæfður hugbúnaður sem ekki er hægt að setja upp í öllum tölvuverum. 
+# @21 Hvernig er þetta með sérúrræðanemana - þarf ekki að forgangsraða þeim sérstaklega? Málið er að þó hjúkrunarfræðin "verði" að vera í Eirbergi þá verða sérúrræðanemar þeirra að vera í Aðalbyggingu eða Háskólatorgi. Í Ht302 er t.d. sérhæfður hugbúnaður sem ekki er hægt að setja upp í öllum tölvuverum.
         if blist=='21':
             fdat.write('Eirberg Haskolatorg Oddi Logberg Gimli Arnagardur NyjiGardur')
             fdat.write(';')

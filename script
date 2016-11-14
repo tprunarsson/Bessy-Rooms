@@ -1,6 +1,6 @@
 #sed -i's/param SolveSlot := /param SolveSlot := 1;#/g' BessyRooms.mod
-glpsol --check --math BessyRooms.mod -d courses.dat -d default.dat -d RoomData.dat -d SplitForPhase.dat -d RequiredBuildings.dat -d PriorityBuildings.dat --wlp TEST.lp
-gurobi_cl Threads=8 TimeLimit=300 ResultFile=test.sol TEST.lp
+#glpsol --check --math BessyRooms.mod -d courses.dat -d default.dat -d RoomData.dat -d SplitForPhase.dat -d RequiredBuildings.dat -d PriorityBuildings.dat --wlp TEST.lp
+#gurobi_cl Threads=8 TimeLimit=300 ResultFile=test.sol TEST.lp
 #gurobi_cl Threads=8 ResultFile=test.sol TEST.lp
 cat test.sol | grep 'h(' | grep -v ') 0' > rusl.txt
 sed -i 's/,/ /g' rusl.txt
