@@ -81,7 +81,7 @@ set RoomInBuilding{Building} within AllRooms default {};
 set BuildingWithRoom{r in AllRooms} within Building := setof{b in Building: r in RoomInBuilding[b]} b;
 # The hfix variable is used for fixing a number of students in a given class room
 # can be used for post analysis also
-param hfix{CidAssign,AllRooms} default 0;
+param hfix{CidExam,AllRooms} default 0;
 param hdef{CidAssign,AllRooms} default 0;
 # each room has a priority, where 1 is best then 2 and worst 3
 param RoomPriority{AllRooms} default 3;
