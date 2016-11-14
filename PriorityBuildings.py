@@ -29,16 +29,13 @@ with open('PriorityBuildings.dat','w', encoding=_wenc) as fdat:
     for course, blist in DI[0].items():
         s = 'set PriorityBuildings['+course.translate(_trans)+']:='
         fdat.write(s)
-        if blist =='11' or blist=='13' or blist=='14' or blist=='15':
+        if blist =='11' or blist=='12' or blist=='13' or blist=='14' or blist=='15':
             fdat.write('Haskolatorg')
-            fdat.write(';')
-        if blist == "12":
-            fdat.write('Eirberg')
             fdat.write(';')
         if blist == "16":
             fdat.write('Haskolatorg')
             fdat.write(';')
-# @21 Hvernig er þetta með sérúrræðanemana - þarf ekki að forgangsraða þeim sérstaklega? Málið er að þó hjúkrunarfræðin "verði" að vera í Eirbergi þá verða sérúrræðanemar þeirra að vera í Aðalbyggingu eða Háskólatorgi. Í Ht302 er t.d. sérhæfður hugbúnaður sem ekki er hægt að setja upp í öllum tölvuverum. 
+# @21 Hvernig er þetta með sérúrræðanemana - þarf ekki að forgangsraða þeim sérstaklega? Málið er að þó hjúkrunarfræðin "verði" að vera í Eirbergi þá verða sérúrræðanemar þeirra að vera í Aðalbyggingu eða Háskólatorgi. Í Ht302 er t.d. sérhæfður hugbúnaður sem ekki er hægt að setja upp í öllum tölvuverum.
         if blist=='21':
             fdat.write('Eirberg')
             fdat.write(';')

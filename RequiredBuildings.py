@@ -26,8 +26,7 @@ with open('bordarodun4.csv',"r",encoding='latin-1', newline='') as csvfile:
             DI[i][rows[2]] = rows[i+1]
 
 with open('RequiredBuildings.dat','w', encoding=_wenc) as fdat:
-    for course, blist in DI[1].items():
-        print(course)
+    for course, blist in DI[0].items():
         s = 'set RequiredBuildings['+course.translate(_trans)+']:='
         fdat.write(s)
         if blist =='11' or blist=='13' or blist=='14' or blist=='15':
