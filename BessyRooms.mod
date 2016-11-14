@@ -107,8 +107,8 @@ subject to FixH{c in CidAssign, r in AllRooms: hfix[c,r] > 0}:
   h[c,r] = hfix[c,r];
 
 # there is another possible fixing defined by the user:
-subject to FixD{c in CidAssign, r in AllRooms: hdef[c,r] > 0}:
-  h[c,r] = hdef[c,r];
+#subject to FixD{c in CidAssign, r in AllRooms: hdef[c,r] > 0}:
+#  h[c,r] = hdef[c,r];
 
 # Make sure that all students in the course have a seat
 subject to AssignAllCidSeats{c in CidAssign}:
@@ -157,8 +157,10 @@ subject to NotTooManyRooms{c in CidAssign: (cidCount[c]-SpeCidCount[c]) <= 12}:
 # We will force the courses in many rooms within the builing, however, they
 # should be more than 12 in a room or less for a 2 way split
 # this should avoid the possibility of putting courses as singles in rooms
-subject to NotToFewStudents{c in CidAssign, r in Rooms: (cidCount[c]-SpeCidCount[c]) >= 12}:
-  h[c,r] >= w[c,r] * min(12,(cidCount[c]-SpeCidCount[c])/2);
+subject to NotTooFewStudents{c in CidAssign, r in Rooms: (cidCount[c]-SpeCidCount[c]) >= 12}:
+  h[c,r] >= w[c,r] * min(12,
+min((cidCount[c]-SpeCidCount[c])/2,
+(cidCount[c]-SpeCidCount[c]-(sum{rr in Rooms: hfix[c,rr]>0} hfix[c,rr]))));
 
 # Do not have too many different exams in the same room, more traffic from teachers
 # try to maximize the number of courses in a room !!! Helps with table assignments (different exams at each table)
@@ -228,6 +230,10 @@ minimize Objective:
 set UnionOfRoomsInBuildings := setof{b in Building, r in RoomInBuilding[b]} r;
 check card(UnionOfRoomsInBuildings) == card(AllRooms);
 check {c in CidAssign} cidCount[c] >= SpeCidCount[c];
+
+check {c in CidAssign} sum{r in AllRooms} hfix[c,r] <= cidCount[c];
+check {r in AllRooms} sum{c in CidAssign} hfix[c,r] <= RoomCapacity[r];
+
 
 # Solve the model
 solve;
