@@ -1,7 +1,7 @@
 # Messy Bessy Room allocation: Beta version 0.0.1
 # Authors: Thomas Philip Runarsson and Asgeir Orn Sigurpalsson
 # Last modified by aos at 15:03 20/9/2016
-# Last modified by tpr at 11:00 8/11/2016
+# Last modified by tpr at 11:00 16/11/2016
 
 # TODO: conjoined courses forced together in one!
 # This needs to be resolved perhaps can also be solved by setting the conjoined courses in the same buidling?!
@@ -68,8 +68,8 @@ set AllRooms := setof{r in (Rooms union ComputerRooms union SpecialRooms union S
 param RoomCapacity{AllRooms} default 0;
 
 set Building;
-
-set Torfan within Building;
+set Cluster;
+set BuildingsInCluster{Cluster} within Building;
 
 # These building are acceptable to the course
 set RequiredBuildings{CidExam} within Building default {};
@@ -189,8 +189,8 @@ subject to IsCidInBuildingBB2{c in CidAssign, b in Building}:
 
 # Can only be in one building if not on the green!
 var NumberOfBuildings{CidAssign}, >= 0;
-subject to OnlyOneUnlessOnTheGreen{c in CidAssign, t in Torfan}:
-  sum{b in Building: b not in Torfan} wbb[c,b] + wbb[c,t] <= NumberOfBuildings[c];
+subject to OnlyOneUnlessInBuildingCluster{c in CidAssign, g in Cluster, t in BuildingsInCluster[g]}:
+  sum{b in Building: b not in BuildingsInCluster[g]} wbb[c,b] + wbb[c,t] <= NumberOfBuildings[c];
 
 #####################
 
@@ -215,7 +215,6 @@ minimize Objective:
 + 20 * sum{c in CidAssign, b in Building: b not in PriorityBuildings[c]} wb[c,b]
 + 20 * sum{c in CidAssign, b in Building: b not in RequiredBuildings[c]} wb[c,b]
 # 5.) minimize the number of buildings used, weight should be equal to Required or higher?
-+ 40 * sum{c in CidAssign, b in Building: b not in Torfan} wb[c,b]
 + 10 * sum{c in CidAssign, b in Building} wb[c,b]
 + 1000 * sum{c in CidAssign} NumberOfBuildings[c]
 # 6.) Empty rooms when possible
