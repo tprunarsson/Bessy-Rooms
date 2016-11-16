@@ -15,14 +15,15 @@ Laugarvatn
 NyjiGardur
 ;
 
-set Torfan :=
-Gimli
-Haskolatorg
-Logberg
-Oddi
-NyjiGardur
-Arnagardur
+set Cluster :=
+Torfan
+Melurinn
+Holtid
 ;
+
+set BuildingsInCluster['Torfan'] := Gimli Haskolatorg Logberg Oddi NyjiGardur Arnagardur Askja;
+set BuildingsInCluster['Melurinn'] := Adalbygging Arnagardur Oddi;
+set BuildingsInCluster['Holtid'] := Hamar Klettur Enni;
 
 set Rooms:=
 V156
