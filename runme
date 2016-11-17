@@ -1,0 +1,25 @@
+#/bin/bash
+export GUROBI_HOME="/home/tpr/gurobi700/linux64"
+export PATH="${PATH}:${GUROBI_HOME}/bin"
+export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${GUROBI_HOME}/lib"
+cd /home/tpr/projects/Bessy-Rooms/
+git pull
+python3 PriorityBuildings.py
+python3 RequiredBuildings.py
+pwd
+echo "param SolveSlot := "$1";" > SolveSlot.dat
+cat SolveSlot.dat
+glpsol --check --math BessyRooms.mod -d festa.dat -d SolveSlot.dat -d courses.dat -d default.dat -d RoomData.dat -d SplitForPhase.dat -d RequiredBuildings.dat -d PriorityBuildings.dat --wlp TEST.lp
+gurobi_cl Threads=8 TimeLimit=1000 ResultFile=test.sol TEST.lp
+cat test.sol | grep 'h(' | grep -v ') 0' > rusl.txt
+sed -i 's/,/ /g' rusl.txt
+sed -i 's/h(/ /g' rusl.txt
+sed -i 's/)/ /g' rusl.txt
+echo "param hfix := " >  hfix.dat
+cat rusl.txt >> hfix.dat
+echo ";" >> hfix.dat
+echo "end;" >> hfix.dat
+glpsol --math BessyRooms.mod -d SolveSlot.dat  -d courses.dat -d default.dat -d RoomData.dat -d SplitForPhase.dat -d RequiredBuildings.dat -d hfix.dat
+cp hreinn.csv lausn$1.csv
+git commit lausn$1.csv -m "generated on `date +'%Y-%m-%d %H:%M:%S'`"
+git push
