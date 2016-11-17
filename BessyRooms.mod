@@ -322,4 +322,15 @@ for {e in SubExamSlots, b in Building} {
   }
   printf : ";;;;%s;;;;%d;%d;;;\n", b, sum{rr in RoomInBuilding[b], cc in CidAssign: rr in SpecialComputerRooms} Slot[cc,e] * h[cc,rr], sum{rr in RoomInBuilding[b]: rr in SpecialComputerRooms} RoomCapacity[rr] >> "lausn.csv";
 }
+
+printf : "Dagur;Tími;ID;Námskeið;Stofa;Bygging;Fjöldi;Lengd prófs;Forgangur\n" > "hreinn.csv";
+for {e in SubExamSlots} {
+  for {c in CidAssign} {
+     printf{r in AllRooms, b in BuildingWithRoom[r]: Slot[c,e] * h[c,r] > 0}: "%s;%011.0f;%s;%s;%s;%d;%d;%d\n",
+     SlotNames[e], CidId[c], c, b, r, h[c,r], duration[c], RoomPriority[r] >> "hreinn.csv";
+  }
+}
+
+
+
 end;
