@@ -1,7 +1,7 @@
 # Messy Bessy Room allocation: Beta version 0.0.1
 # Authors: Thomas Philip Runarsson and Asgeir Orn Sigurpalsson
 # Last modified by aos at 15:03 20/9/2016
-# Last modified by tpr at 11:00 16/11/2016
+# Last modified by tpr at 11:00 23/11/2016
 
 # TODO: conjoined courses forced together in one!
 # This needs to be resolved perhaps can also be solved by setting the conjoined courses in the same buidling?!
@@ -66,6 +66,7 @@ set SpecialComputerRooms;
 set AllRooms := setof{r in (Rooms union ComputerRooms union SpecialRooms union SpecialComputerRooms)} r;
 
 param RoomCapacity{AllRooms} default 0;
+param RoomId{AllRooms} default 0;
 
 set Building;
 set Cluster;
@@ -328,6 +329,14 @@ for {e in SubExamSlots} {
   for {c in CidAssign} {
      printf{r in AllRooms, b in BuildingWithRoom[r]: Slot[c,e] * h[c,r] > 0}: "%s;%011.0f;%s;%s;%s;%d;%d;%d\n",
      SlotNames[e], CidId[c], c, b, r, h[c,r], duration[c], RoomPriority[r] >> "hreinn.csv";
+  }
+}
+
+printf : "Dagur;Tími;Fagnúmer ID;Stofu ID;Fjöldi;Lengd\n" > "import.csv";
+for {e in SubExamSlots} {
+  for {c in CidAssign} {
+     printf{r in AllRooms, b in BuildingWithRoom[r]: Slot[c,e] * h[c,r] > 0}: "%s;%011.0f;%d;%d;%d\n",
+     SlotNames[e], CidId[c], RoomId[r], h[c,r], duration[c] >> "import.csv";
   }
 }
 
