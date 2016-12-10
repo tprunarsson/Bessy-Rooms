@@ -1,4 +1,4 @@
-# Messy Bessy Room allocation model
-Bessy room allocation for assigned exams
+# Messy-Bessy Room allocation model
+Examination room allocation
 
 See script for run details...
