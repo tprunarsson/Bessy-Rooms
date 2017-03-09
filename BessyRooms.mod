@@ -140,8 +140,10 @@ subject to RoomCapacityLimit{r in AllRooms, e in SubExamSlots}:
 # the sum sum{cc in CidAssign} cidCount[cc] corresponds to a big value, i.e. Big-M approach
 subject to CourseInRoom{c in CidAssign, r in AllRooms}:
   1.0001*h[c,r] <= w[c,r] * sum{cc in CidAssign} cidCount[cc];
-subject to CourseInRoom2{c in CidAssign, r in AllRooms}:
-  1.0001*h[c,r] >= w[c,r];
+
+#This constraint was not necessary??
+#subject to CourseInRoom2{c in CidAssign, r in AllRooms}:
+ # 1.0001*h[c,r] >= w[c,r];
 
 # Don't put courses that do not have the same length (duration) in the same room
 subject to NotTheSameRoom{r in AllRooms, c1 in CidAssign, c2 in CidAssign: c1 < c2 and duration[c1]!=duration[c2]}:
