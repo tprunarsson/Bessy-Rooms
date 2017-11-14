@@ -1,5 +1,5 @@
-glpsol --check --math BessyRooms.mod -d SolveSlot.dat -d festa.dat -d courses.dat -d default.dat -d RoomData.dat -d SplitForPhase.dat -d RequiredBuildings.dat -d PriorityBuildings.dat  --wlp TEST.lp
-gurobi_cl Threads=8 TimeLimit=1000 ResultFile=test.sol TEST.lp
+glpsol --check --math BessyRooms.mod -d SolveSlot.dat -d courses.dat -d default.dat -d RoomData.dat -d SplitForPhase.dat -d RequiredBuildings.dat -d PriorityBuildings.dat  --wlp TEST.lp
+gurobi_cl Threads=8 TimeLimit=100 ResultFile=test.sol TEST.lp
 cat test.sol | grep 'h(' | grep -v ') 0' > rusl.txt
 sed -i 's/,/ /g' rusl.txt
 sed -i 's/h(/ /g' rusl.txt
