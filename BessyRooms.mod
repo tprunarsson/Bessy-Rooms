@@ -1,11 +1,9 @@
 # Ugly Bessy Room allocation: Beta version 0.0.2
-# Author: Thomas Philip Runarsson
+# Author: Thomas Philip Runarsson and Asgeir Orn Sigurpalsson
 # Last modified by tpr at 11:00 18/11/2017
 
 # TODO: conjoined courses forced together in one!
 # This needs to be resolved perhaps can also be solved by setting the conjoined courses in the same building?!
-
-# Missing from the data : "duration"
 
 # --- Parameter and Sets --- #
 
@@ -280,7 +278,6 @@ for {c in CidAssign: sum{b in Building} wbb[c,b] > 1} {
   printf {b in Building: wbb[c,b] > 0}: "%s ", b;
   printf "\n";
 }
-
 
 # Hvaða stofur er verið að nota og hvernig er nýtingin:
 for {e in SubExamSlots} {
