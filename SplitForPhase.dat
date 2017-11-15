@@ -1,1048 +1,1004 @@
-# uppfært 29/10
-# nóg að eyða námskeiðum hér til að taka þau út
-
-param Slot :=
-VID112F	1	1
-LOG111F	1	1
-LOG123F	1	1
-TSM302G	1	1
-TAN623G	1	1
-LOG306G	1	1
-TAN107G	1	1
-UMV117F	1	1
-VID513G	1	1
-HJU109G	1	1
-RUS309G	1	1
-SAL308G	1	1
-ITA303G	1	1
-TAN401G	1	1
-SAG101G	1	1
-UMV302G	1	1
-HAG108F	1	1
-MIS105F	1	1
-ITH040G	1	1
-HAG504G	1	1
-HAG301G	1	1
-IDN121F	1	1
-STA105G	1	1
-VEL502G	1	1
-TOV501M	1	1
-REI503M	1	1
-ISE302G	1	1
-LAN108F	1	1
-LAK515G	1	1
-KYN106G	1	1
-LAN512G	1	1
-GSS075G	1	1
-STA108G	1	1
-BLF314F	1	1
-LIF523G	1	1
-GSS067G	1	1
-LIF118F	1	1
-KYN101F	1	1
-SKF204F	1	1
-ENS110G	2	1
-TRS310G	2	1
-STA107G	2	1
-ISE001G	2	1
-HJU148F	2	1
-BYG115F	2	1
-STA106G	2	1
-VID101G	2	1
-HAG105G	2	1
-SAL103G	2	1
-FEL102G	2	1
-STM022F	2	1
-ENS103G	3	1
-VID108F	3	1
-VID503G	3	1
-ITH503G	3	1
-FEL309G	3	1
-GSS0AZG	3	1
-ITA112G	3	1
-ITH320G	3	1
-GSS363G	3	1
-STA104G	3	1
-TYS104G	3	1
-HBV501G	3	1
-LOG102F	3	1
-NAR304G	3	1
-ASK110F	3	1
-LAK307G	3	1
-LEI108G	3	1
-STA304G	3	1
-HJU309G	3	1
-HJU305G	3	1
-RAF504G	3	1
-LEF302G	3	1
-NAR101G	4	1
-RUS106G	4	1
-TAK302G	4	1
-NAR501M	4	1
-JAP102G	4	1
-SPA107G	4	1
-FRG102G	4	1
-LSS302G	4	1
-TJO328G	4	1
-LAN305G	4	1
-SJU107G	4	1
-SJU509G	4	1
-LAN107G	4	1
-TAK102G	4	1
-LIS102G	4	1
-HJU701G	4	1
-HJU702G 4 1
-ISE308M	4	1
-ABF305G	4	1
-STJ317G	4	1
-OSS101F	4	1
-ISE305G	4	1
-LYF102G	4	1
-HSP107G	4	1
-VID509G	4	1
-ISL111G	4	1
-EDL520M	4	1
-JAP304G	4	1
-LOG504G	4	1
-IDN113F	4	1
-UMV101M	4	1
-BYG101M	4	1
-STJ303M	4	1
-HAG512M	4	1
-LOG146F	5	1
-HAG503G	5	1
-SAG036G	5	1
-UPP103F	5	1
-FEL321G	5	1
-FRG509G	5	1
-HAG101F	5	1
-VID166F	5	1
-VID305G	5	1
-STA101G	5	1
-GSL103G	5	1
-LEI502G	5	1
-JAR312G	5	1
-JAR129F	5	1
-GSL505G	5	1
-SAL502G	5	1
-TOL301G	5	1
-TYS311G	5	1
-FRA109G	5	1
-SPA306G	5	1
-GFR104G	5	1
-GFR062F	5	1
-GFR509M	5	1
-AMV302M	5	1
-ITH109G	5	1
-GFR212G	6	1
-EDL515M	6	1
-GSS362G	6	1
-STM301F	6	1
-KIN102G	6	1
-FER101G	6	1
-LYF508G	6	1
-HJU505G	6	1
-TAL101F	6	1
-GSS516M	6	1
-ENS445G	6	1
-ITH111F	6	1
-NSR007F	6	1
-EDL101G	6	1
-AMV105G	6	1
-VID501G	6	1
-LOG108G	6	1
-SAL135F	6	1
-DAN307G	6	1
-STA302G	6	1
-MAT105G	6	1
-LOG131F	7	1
-HSP304G	7	1
-BLF112F	7	1
-LSS501G	7	1
-LIF505M	7	1
-STA301G	7	1
-JAP303G	7	1
-REI502M	7	1
-RUS308G	7	1
-EFN112G	7	1
-LIF513M	7	1
-VID105G	7	1
-FEL403G	7	1
-EFN106G	7	1
-TRS308G	7	1
-VID114F	7	1
-GSL105G	7	1
-IDN501G	8	1
-DET102G	8	1
-MAN103G	8	1
-STJ318G	8	1
-LYF114F	8	1
-STJ102G	8	1
-BYG116F	8	1
-ISE002G	8	1
-SAL102G	8	1
-LEI303G	8	1
-LAK025M	8	1
-GSS103G	8	1
-TOL502G	8	1
-TJO104G	8	1
-UMV502G	8	1
-ASK102F	8	1
-FRG109G	8	1
-ISE309G	8	1
-VID506G	8	1
-JAR504M	8	1
-LOG110F	9	1
-GSS301F	9	1
-TOL105G	9	1
-ITH113G	9	1
-MVS110F	9	1
-EFN309G	9	1
-TOL101G	9	1
-HAG302G	9	1
-LAK212G	9	1
-JED104G	9	1
-GSS0A6G	9	1
-FRG504G	9	1
-HJU108G	9	1
-SAL501M	9	1
-TAN303G	9	1
-TAN403G	9	1
-HJU142F	10	1
-LIF311G	10	1
-FFR302M	10	1
-GRI107G	10	1
-FEL308G	10	1
-LAN104G	10	1
-MIS701F	10	1
-KIN309G	10	1
-TRS105G	10	1
-VID102G	10	1
-TYS103G	10	1
-EDL301G	10	1
-ENS506G	10	1
-TOL306G	10	1
-FRG314G	10	1
-DAN304G	10	1
-ASK103F	11	1
-LOG168F	11	1
-VID110F	11	1
-VID504G	11	1
-TJO325G	11	1
-STJ343G	11	1
-LYF111G	11	1
-LIF531M	11	1
-LEI401G	11	1
-SAG306G	11	1
-LAK121G	11	1
-BLF113F	11	1
-STJ106G	11	1
-UPP105F	11	1
-LIF301G	11	1
-LAK120G	11	1
-ITH321G	11	1
-SJU309G	11	1
-STJ101M	11	1
-SAL320G	11	1
-FEL314G	11	1
-TSM304G	11	1
-TSM502G	11	1
-LOG304G	11	1
-IDN503G	11	1
-EFN515M	11	1
-SPA101M	11	1
-BYG301G	11	1
-HAG109F	11	1
-GSS096G	11	1
-HSP310G	11	1
-LSS101G	11	1
-ISL321G	11	1
-RAF505G	11	1
-HJU703G	11	1
-FEL101G	12	1
-ENS101G	12	1
-EDL506G	12	1
-TOL303G	12	1
-UMS301G	12	1
-ITA302G	12	1
-BYG503G	12	1
-GSS359G	12	1
-FRG103G	12	1
-LSS502G	12	1
-JAR101G	12	1
-JED502M	12	1
-HJU501G	12	1
-LEI102G	12	1
-ISE502G	12	1
-TAK103G	12	1
-UAU102F	12	1
-ISE103G	12	1
-TAK307G	12	1
-LIF109G	12	1
-VID303G	12	1
-HAG101G	12	1
-DET101G	12	1
-VEL114F	12	1
-LOG152F	13	1
-LOG132F	13	1
-VID301G	13	1
-TOS301G	13	1
-SAG319G	13	1
-JAP302G	13	1
-LSS402G	13	1
-MAT504M	13	1
-HSP104G	13	1
-SAL503G	13	1
-TJO103G	13	1
-FRG508G	13	1
-GFR324M	13	1
-NAR503M	13	1
-EFN304G	13	1
-UMV120F	13	1
-SJU308G	13	1
-FEL105G	13	1
-LAK206F 13  1
-LAK514G	13	1
-STJ304G	13	1
-GSS0ANG	13	1
-TOL305G	13	1
-DAN110G	13	1
-LOG503G	13	1
-BYG302G	13	1
-LEI503G	13	1
-LAK305F	13	1
-VEL301G	13	1
-SPA302M	13	1
-GRI103G	13	1
-ASK304F	13	1
-TSM001G	13	1
-BYG501G	13	1
-SAL104G	14	1
-ENS303G	14	1
-STJ503G	14	1
-ENS134G	14	1
-ISE014G	14	1
-HAG110F	14	1
-TOL106G	14	1
-LAK310G	14	1
-TYS308G	14	1
-GSL104G	14	1
-JAR117F	14	1
-HJU106G	14	1
-STA519M	14	1
-RAF501G	14	1
-LEF508G	14	1
-HJU135F	14	1
-ASK101F	14	1
-LIF516M	14	1
-FOM001F	14	1
-MAN330G	14	1
-FRA307G	14	1
-ISE501G	14	1
-LOG118F	15	1
-MAT103G	15	1
-VID302G	15	1
-SJU508G	15	1
-LAK112G	15	1
-SAL519G	15	1
-TAN608G	15	1
-TAN110G	15	1
-ISL301G	4	1
-TYD002M	15	1
-ISL109G	15	1
-TRS515G	15	1
-LSS104G	15	1
-MEN102G	15	1
-TOV301G	15	1
-EDL302G	15	1
-EFN114G	15	1
-EDL523M	15	1
-UMV102G	15	1
-JAP101G	16	1
-UMS501G	16	1
-TAK105G	16	1
-ITA113G	16	1
-UMV114F	16	1
-UMS103F	16	1
-LIF315G	16	1
-GSL303G	16	1
-TAL103F	16	1
-VID113F	16	1
-HJU308G	16	1
-ABF316G	16	1
-HJU705G	16	1
-VID511G	16	1
-HJU502G	16	1
-LYF509G	16	1
-ITH115G	16	1
-STA303G	16	1
-GSS0AXG	16	1
-FRG101G	16	1
-GSS092G	16	1
-KIN107G	16	1
-IDN101G	16	1
-LOG103F	17	1
-LOG114F	17	1
-HAG304G	17	1
-LAN102G	17	1
-GFR513M	17	1
-RAF503G	17	1
-BYG120F	17	1
-TYS108G	17	1
-KVI101G	17	1
-RUS104G	17	1
-IDN101M	17	1
-STJ301M	17	1
-TSM101G	17	1
-SAL115G	17	1
-VID111F	17	1
-JED505G	17	1
-JED301G	17	1
-LAK115G	17	1
-HSP321G	17	1
-LAK116G	17	1
-GSS101F	17	1
-LEI103G	17	1
-FEL306G	17	1
-MAF102G	18	1
-VID103G	18	1
-ENS102G	18	1
-UAU111F	18	1
-TAN208G	18	1
-STJ325G	18	1
-TOL104G	18	1
-EFN315G	18	1
-GSL101G	18	1
-LAN514G	18	1
-MAT303M	18	1
-MAN331G	18	1
-LYF301G	18	1
-LIF108G	18	1
-LAT101G	18	1
-ISE102G	18	1
-SAN106G	18	1
-EFN307G	18	1
-FRA107G	18	1
-LOG104F	19	1
-ITH108G	19	1
-LOG303G	19	1
-NAR504M	19	1
-LIF102G	19	1
-GSL405G	19	1
-EFN311G	19	1
-TYS310G	19	1
-LIF313G	19	1
-FRG501G	19	1
-DAN313G	19	1
-LAK304F	19	1
-HJU110G	19	1
-ITA324G	19	1
-JAP103G	19	1
-UPP109F	19	1
-STA520M	19	1
-VID167F	19	1
-GSS105G	19	1
-EDL509M	19	1
-SAL504G	19	1
-VID162F	19	1
-LEI501G	19	1
-RUS201G	19	1
-DAN101G	19	1
-LYF105F	20	1
-TRS311G	20	1
-LIS004G	20	1
-MEX020G	20	1
-GFR114G	20	1
-GFR110G	20	1
-KIN302G	20	1
-ENS507G	20	1
-IDN502G	20	1
-TOL103G	20	1
-SAL136F	20	1
-GSL301G	20	1
-LEI402G	20	1
-SJU306G	20	1
-LYF507G	20	1
-ABF043G	20	1
-RAF301G	20	1
-FEL313G	20	1
-VID505G	20	1
-HAG303G	20	1
-FOR103G	20	1
-HSP103G	20	1
-LOG106F	21	1
-LOG122F	21	1
-LAN113F	21	1
-LAK306F	21	1
-LAN516G	21	1
-UAU112F	21	1
-LEI107G	21	1
-EFN108G	21	1
-SAL313G	21	1
-TAN207G	21	1
-JAP106G	21	1
-ENS329G	21	1
-TOL504M	21	1
-MVS109F	21	1
-LOG502G	21	1
-SPA105G	21	1
-HAG106F	21	1
-GSS095G	21	1
-HJU310G	21	1
-HJU219F	21	1
-HJU504G	21	1
-LAN101G	21	1
-TOL304G	22	1
-LEF501M	22	1
-ISL110G	22	1
-FRG315G	22	1
-LYF303G	22	1
-SAG103G	22	1
-GFR510M	22	1
-FRA101G	22	1
-EFN301G	22	1
-LOG103G	22	1
-HAG508G	22	1
-VID304G	22	1
-EFN316G	22	1
-HAG103G	22	1
-ISE301G	22	1
-VEL120F	22	1
-ISL320G	22	1
-STJ101G	22	1
-ASK305F	22	1
-GFR046F	22	1
-TYS105G	22	1
-SAN107G	22	1
-ITA115G	22	1
-ISE105G	22	1
+param SlotNames := 
+1 '2017.12.4;09:00'
+2 '2017.12.4;13:30'
+3 '2017.12.5;09:00'
+4 '2017.12.5;13:30'
+5 '2017.12.6;09:00'
+6 '2017.12.6;13:30'
+7 '2017.12.7;09:00'
+8 '2017.12.7;13:30'
+9 '2017.12.8;09:00'
+10 '2017.12.8;13:30'
+11 '2017.12.11;09:00'
+12 '2017.12.11;13:30'
+13 '2017.12.12;09:00'
+14 '2017.12.12;13:30'
+15 '2017.12.13;09:00'
+16 '2017.12.13;13:30'
+17 '2017.12.14;09:00'
+18 '2017.12.14;13:30'
+19 '2017.12.15;09:00'
+20 '2017.12.15;13:30'
+21 '2017.12.18;09:00'
+22 '2017.12.18;13:30'
 ;
-
-
-/*
-param Slot :=
-ENS101G 12 1
-UMV117F 1 1
-UMV302G 1 1
-TSM302G 1 1
-GSS096G 11 1
-SAL313G 21 1
-LAK515G 1 1
-HJU148F 2 1
-STA105G 1 1
-TAN401G 1 1
-TAN623G 1 1
-STA108G 1 1
-ITH040G 1 1
-ITA303G 1 1
-VID301G 13 1
-LOG123F 2 1
-LOG111F 1 1
-VEL502G 1 1
-TAN107G 1 1
-SAG101G 1 1
-ENS103G 3 1
-HJU109G 1 1
-STA107G 2 1
-FER101G 6 1
-STA106G 2 1
-FEL102G 2 1
-SAL104G 14 1
-LAN516G 21 1
-HAG105G 2 1
-FRG103G 12 1
-LOG306G 1 1
-LAN113F 21 1
-STM022F 2 1
-VID506G 8 1
-LOG102F 3 1
-LEI108G 3 1
-LOG504G 4 1
-SAL115G 17 1
-LAK307G 3 1
-FRG508G 13 1
-ITH503G 3 1
-LAK025M 8 1
-HJU309G 3 1
-LEI303G 8 1
-TOL301G 5 1
-VID105G 7 1
-ISE103G 12 1
-KYN106G 1 1
-LAN107G 4 1
-STA104G 3 1
-KYN101F 1 1
-LYF102G 4 1
-SJU107G 4 1
-HJU701G 4 1
-HAG504G 1 1
-LEF302G 3 1
-HAG108F 1 1
-BLF113F 11 1
-FEL314G 11 1
-SAG036G 5 1
-GFR110G 20 1
-LOG146F 5 1
-GFR114G 20 1
-GSS0AZG 3 1
-HJU505G 6 1
-LOG108G 6 1
-STA302G 6 1
-EFN106G 7 1
-LOG131F 8 1
-EFN112G 7 1
-ITH322G 7 1
-TAN403G 9 1
-LOG110F 9 1
-TOL105G 9 1
-TAN303G 9 1
-TOL101G 9 1
-HJU108G 9 1
-HJU703G 11 1
-HJU142F 10 1
-LAN104G 10 1
-LIF301G 11 1
-TSM502G 11 1
-TSM304G 11 1
-LOG304G 11 1
-LAK120G 11 1
-LOG168F 12 1
-HJU501G 12 1
-LAK121G 11 1
-LIF109G 12 1
-TOL303G 12 1
-LOG503G 14 1
-LOG132F 13 1
-LOG152F 14 1
-TSM001G 13 1
-SAG319G 13 1
-LAK514G 13 1
-LAK305F 13 1
-LAK206F 13 1
-HJU106G 14 1
-HJU135F 14 1
-LOG118F 16 1
-LAK112G 15 1
-HJU502G 16 1
-TAN110G 15 1
-TAN608G 15 1
-HJU308G 16 1
-LAK116G 17 1
-LOG103F 18 1
-TSM101G 17 1
-LAK115G 17 1
-LOG114F 17 1
-LOG104F 20 1
-LAK206F 13 1
-LAK304F 19 1
-HJU110G 19 1
-LOG303G 19 1
-HJU705G 16 1
-LOG106F 22 1
-HJU310G 21 1
-LOG502G 21 1
-LOG122F 21 1
-LAK306F 21 1
-HJU219F 21 1
-GFR510M 22 1
-HJU504G 21 1
-TYS105G 22 1
-LOG103G 22 1
-GFR046F 22 1
-IDN502G 20 1
-TOL106G 14 1
-EFN307G 18 1
-EFN315G 18 1
-TOL306G 10 1
-IDN503G 11 1
-HBV501G 3 1
-LIF118F 1 1
-EFN309G 9 1
-TOL304G 22 1
-VEL301G 13 1
-EDL102G 7 1
-EDL107G 7 1
-EFN301G 22 1
-EFN108G 21 1
-LIF523G 1 1
-LAN108F 1 1
-LAN512G 1 1
-JED505G 17 1
-JED301G 17 1
-TOL305G 13 1
-TOV301G 15 1
-LIF531M 11 1
-TOL104G 18 1
-IDN101G 16 1
-TOL103G 20 1
-VID103G 18 1
-VID509G 4 1
-VID303G 12 1
-VID166F 5 1
-HAG103G 22 1
-VID167F 19 1
-VID305G 5 1
-HAG101G 12 1
-VID102G 10 1
-VID302G 15 1
-FEL306G 17 1
-VID513G 1 1
-STJ101G 22 1
-VID101G 2 1
-VID505G 20 1
-VID503G 3 1
-FRG109G 7 1
-STJ102G 8 1
-FEL309G 3 1
-STJ318G 8 1
-LEI102G 12 1
-LEI107G 21 1
-SAL102G 8 1
-SAL308G 1 1
-SAL103G 2 1
-SAL320G 11 1
-GSL104G 14 1
-LEI103G 17 1
-ISE004G 17 1
-ISE501G 14 1
-ISE014G 14 1
-ABF043G 20 1
-HSP107G 4 1
-ISE001G 2 1
-ISE309G 8 1
-ABF316G 16 1
-ISE002G 8 1
-ENS102G 18 1
-ISE302G 1 1
-ISE102G 18 1
-DET102G 8 1
-ISE305G 4 1
-ENS110G 2 1
-ISE301G 22 1
-GFR062F 5 1
-GFR509M 5 1
-MIS105F 1 1
-ISE502G 12 1
-TAK307G 12 1
-GSS092G 16 1
-TRS311G 20 1
-GSS067G 1 1
-UMS501G 16 1
-GSS103G 8 1
-ITH108G 19 1
-GSS105G 19 1
-ITH115G 16 1
-UMS103F 16 1
-STA519M 14 1
-IDN501G 8 1
-HJU305G 2 1
-HAG106F 21 1
-BYG101M 4 1
-STA301G 7 1
-ENS445G 6 1
-SAL501M 9 1
-VID501G 6 1
-UMV120F 13 1
-JAP302G 13 1
-JED502M 12 1
-LAK212G 9 1
-RUS201G 19 1
-LIS004G 20 1
-LEI502G 5 1
-FRA109G 5 1
-ASK304F 13 1
-ITH109G 5 1
-MAT105G 6 1
-HSP321G 17 1
-ITA302G 12 1
-HSP103G 20 1
-LIF311G 10 1
-LAN305G 4 1
-LEF508G 14 1
-IDN101M 17 1
-RAF501G 14 1
-BYG501G 13 1
-JAR101G 12 1
-UAU102F 11 1
-RAF505G 11 1
-REI503M 1 1
-LIF102G 19 1
-LIF313G 19 1
-LAN514G 18 1
-LIF516M 14 1
-LIF505M 7 1
-UAU112F 21 1
-UMV101M 4 1
-LIF513M 7 1
-EFN515M 11 1
-LIF108G 18 1
-LEF501M 22 1
-LAN102G 17 1
-EDL506G 12 1
-VEL114F 12 1
-BYG116F 8 1
-VEL120F 22 1
-JAR117F 14 1
-EFN316G 22 1
-JED104G 9 1
-REI502M 7 1
-TOV501M 1 1
-LIF315G 16 1
-UAU111F 18 1
-BYG302G 13 1
-EDL520M 4 1
-EDL101G 6 1
-EFN311G 19 1
-JAR504M 8 1
-STA303G 16 1
-EDL302G 15 1
-IDN113F 4 1
-STA304G 3 1
-STA101G 5 1
-UMV502G 8 1
-JAR312G 5 1
-BYG115F 2 1
-UMV102G 15 1
-EDL509M 19 1
-JAR308G 10 1
-BYG503G 12 1
-BYG301G 11 1
-TOL504M 21 1
-EDL301G 10 1
-RAF504G 22 1
-EFN513M 2 1
-EFN304G 13 1
+set PriorityBuildings[ITH321G] =  Haskolatorg Stakkahlid_Hamar Stakkahlid_Klettur;
+set PriorityBuildings[GSS096G] =  Haskolatorg Stakkahlid_Klettur Stakkahlid_Hamar;
+set PriorityBuildings[IDN121F] =  Haskolatorg VR_2 Adalbygging;
+set PriorityBuildings[LOG111F] =  Adalbygging Logberg Oddi;
+set PriorityBuildings[TSM302G] =  Haskolatorg;
+set PriorityBuildings[JAP101G] =  Adalbygging Arnagardur;
+set PriorityBuildings[KIN309G] =  Haskolatorg;
+set PriorityBuildings[VEL301G] =  VR_2;
+set PriorityBuildings[SAL501M] =  Haskolatorg Adalbygging;
+set PriorityBuildings[LYF102G] =  Haskolatorg Oddi;
+set PriorityBuildings[UMV302G] =  VR_2;
+set PriorityBuildings[SAL141F] =  Haskolatorg;
+set PriorityBuildings[EFN315G] =  VR_2;
+set PriorityBuildings[LAN104G] =  Askja Haskolatorg Arnagardur VR_2;
+set PriorityBuildings[TAN608G] =  Haskolatorg;
+set PriorityBuildings[SJU107G] =  Haskolatorg Oddi;
+set PriorityBuildings[LOG304G] =  Adalbygging Oddi Logberg;
+set PriorityBuildings[ITH109G] =  Haskolatorg Stakkahlid_Hamar;
+set PriorityBuildings[TAN407G] =  Haskolatorg;
+set PriorityBuildings[TAN107G] =  Haskolatorg;
+set PriorityBuildings[DAN304G] =  Logberg;
+set PriorityBuildings[LIF516M] =  Askja;
+set PriorityBuildings[TYS108G] =  Haskolatorg;
+set PriorityBuildings[VID302G] =  Haskolatorg;
+set PriorityBuildings[LIF109G] =  Haskolatorg Askja;
+set PriorityBuildings[TOL504M] =  Haskolatorg;
+set PriorityBuildings[LAK515G] =  Haskolatorg Stakkahlid_Hamar;
+set PriorityBuildings[LAK307G] =  Haskolatorg;
+set PriorityBuildings[FEL306G] =  Oddi Arnagardur Haskolatorg;
+set PriorityBuildings[HAG101G] =  Haskolatorg Oddi VR_2;
+set PriorityBuildings[LIF540G] =  Askja;
+set PriorityBuildings[LIF533M] =  Haskolatorg Askja;
+set PriorityBuildings[LIF535M] =  Askja;
+set PriorityBuildings[EFN307G] =  Haskolatorg VR_2;
+set PriorityBuildings[MAF102G] =  Haskolatorg;
+set PriorityBuildings[TOS305G] =  Haskolatorg Stakkahlid_Hamar;
+set PriorityBuildings[GSS363G] =  Stakkahlid_Hamar Stakkahlid_Klettur;
+set PriorityBuildings[VEL120F] =  VR_2;
+set PriorityBuildings[JED505G] =  VR_2 Askja;
+set PriorityBuildings[JED301G] =  Haskolatorg VR_2;
+set PriorityBuildings[TOL303G] =  VR_2 Askja;
+set PriorityBuildings[GSL302G] =  Eirberg;
+set PriorityBuildings[LEI108G] =  Eirberg;
+set PriorityBuildings[SAL103G] =  Haskolatorg Stakkahlid_Hamar Oddi;
+set PriorityBuildings[LAK212G] =  Haskolatorg;
+set PriorityBuildings[HAG109F] =  Logberg Oddi;
+set PriorityBuildings[UMV502G] =  VR_2;
+set PriorityBuildings[GFR201G] =  Adalbygging;
+set PriorityBuildings[SAL519G] =  Askja;
+set PriorityBuildings[HJU152F] =  Eirberg;
+set PriorityBuildings[FRG104G] =  Haskolatorg;
+set PriorityBuildings[LYF508G] =  Haskolatorg;
+set PriorityBuildings[VID505G] =  Oddi;
+set PriorityBuildings[EDL301G] =  VR_2;
+set PriorityBuildings[SAG306G] =  Arnagardur;
+set PriorityBuildings[HJU309G] =  Haskolatorg Eirberg;
+set PriorityBuildings[JAP302G] =  Haskolatorg;
+set PriorityBuildings[ENS101G] =  Eirberg;
+set PriorityBuildings[VID105G] =  Arnagardur Oddi Haskolatorg;
+set PriorityBuildings[LIF118F] =  Askja;
+set PriorityBuildings[STJ325G] =  Haskolatorg Oddi Logberg Arnagardur;
+set PriorityBuildings[FOM001F] =  Logberg Oddi Askja;
+set PriorityBuildings[LSS101G] =  Stakkahlid_Klettur Stakkahlid_Enni;
+set PriorityBuildings[SPA305G] =  Haskolatorg;
+set PriorityBuildings[HAG509G] =  Oddi;
+set PriorityBuildings[LAN517G] =  Askja;
+set PriorityBuildings[LOG503G] =  Adalbygging Logberg;
+set PriorityBuildings[NAR101G] =  Adalbygging;
+set PriorityBuildings[TAK105G] =  Arnagardur;
+set PriorityBuildings[ISL109G] =  Arnagardur;
+set PriorityBuildings[BYG121F] =  Oddi VR_2;
+set PriorityBuildings[HJU701G] =  Haskolatorg Eirberg;
+set PriorityBuildings[UAU101F] =  VR_2 Logberg;
+set PriorityBuildings[ITH515G] =  Haskolatorg Stakkahlid_Klettur;
+set PriorityBuildings[LIF523G] =  Haskolatorg Askja;
+set PriorityBuildings[TYS311G] =  Oddi;
+set PriorityBuildings[GFR324M] =  Adalbygging;
+set PriorityBuildings[GSS121F] =  Haskolatorg Stakkahlid_Enni Stakkahlid_Hamar;
+set PriorityBuildings[IDN501G] =  VR_2;
+set PriorityBuildings[SAG101G] =  Haskolatorg Arnagardur VR_2;
+set PriorityBuildings[STA508M] =  VR_2;
+set PriorityBuildings[EDL102G] =  Haskolatorg VR_2 Logberg Askja;
+set PriorityBuildings[VID509G] =  Oddi;
+set PriorityBuildings[EDL101G] =  VR_2;
+set PriorityBuildings[RAF503G] =  VR_2;
+set PriorityBuildings[GSS103G] =  Haskolatorg Stakkahlid_Hamar;
+set PriorityBuildings[ISL321G] =  Arnagardur Haskolatorg;
+set PriorityBuildings[HAG301G] =  Oddi;
+set PriorityBuildings[GSS117F] =  Haskolatorg Stakkahlid_Klettur;
+set PriorityBuildings[HJU109G] =  Haskolatorg Stakkahlid_Hamar;
+set PriorityBuildings[FRG508G] =  Haskolatorg;
+set PriorityBuildings[EDL107G] =  VR_2 Askja;
+set PriorityBuildings[ISE102G] =  Haskolatorg;
+set PriorityBuildings[LOG102F] =  Adalbygging Oddi;
+set PriorityBuildings[RUS308G] =  Haskolatorg;
+set PriorityBuildings[LOG235F] =  Adalbygging Logberg;
+set PriorityBuildings[LOG108G] =  Adalbygging Logberg;
+set PriorityBuildings[FEL321G] =  Oddi Logberg;
+set PriorityBuildings[HJU153F] =  Haskolatorg Eirberg Stakkahlid_Hamar Stakkahlid_Klettur;
+set PriorityBuildings[LEI401G] =  Eirberg;
+set PriorityBuildings[GSL105G] =  Eirberg;
+set PriorityBuildings[MIS701F] =  Arnagardur Oddi Haskolatorg;
+set PriorityBuildings[MAT504M] =  Haskolatorg;
+set PriorityBuildings[SJU509G] =  Haskolatorg;
+set PriorityBuildings[LIS102G] =  Haskolatorg Arnagardur;
+set PriorityBuildings[EDL302G] =  VR_2 Askja;
+set PriorityBuildings[VID304G] =  VR_2;
+set PriorityBuildings[VID166F] =  Haskolatorg Gimli;
+set PriorityBuildings[VID114F] =  Oddi;
+set PriorityBuildings[INT101G] =  Stakkahlid_Klettur;
+set PriorityBuildings[STM301F] =  Stakkahlid_Klettur Stakkahlid_Hamar;
+set PriorityBuildings[UMS103F] =  Stakkahlid_Hamar;
+set PriorityBuildings[UMS501G] =  Haskolatorg Stakkahlid_Hamar;
+set PriorityBuildings[ITH115G] =  Haskolatorg Stakkahlid_Hamar;
+set PriorityBuildings[TOL308G] =  Arnagardur Haskolatorg;
+set PriorityBuildings[IDN113F] =  VR_2;
+set PriorityBuildings[TAN524G] =  Haskolatorg;
+set PriorityBuildings[SAN107G] =  Haskolatorg;
+set PriorityBuildings[OSS101F] =  Oddi;
+set PriorityBuildings[SAL135F] =  Oddi;
+set PriorityBuildings[TJO323G] =  Oddi Adalbygging;
+set PriorityBuildings[ASK101F] =  Logberg;
+set PriorityBuildings[DAN110G] =  Haskolatorg;
+set PriorityBuildings[HSP304G] =  Haskolatorg Adalbygging Arnagardur;
+set PriorityBuildings[HJU135F] =  Eirberg Oddi Stakkahlid_Hamar;
+set PriorityBuildings[LEI501G] =  Haskolatorg;
+set PriorityBuildings[GSS099G] =  Haskolatorg Stakkahlid_Klettur;
+set PriorityBuildings[TRS105G] =  Haskolatorg Stakkahlid_Enni Stakkahlid_Hamar;
+set PriorityBuildings[SAL313G] =  Haskolatorg Oddi;
+set PriorityBuildings[ENS329G] =  Haskolatorg;
+set PriorityBuildings[UPP105F] =  Oddi;
+set PriorityBuildings[GFR212G] =  Adalbygging;
+set PriorityBuildings[ISE002G] =  Logberg Adalbygging Arnagardur;
+set PriorityBuildings[MAN330G] =  Adalbygging Logberg;
+set PriorityBuildings[RUS106G] =  Haskolatorg;
+set PriorityBuildings[VID110F] =  Haskolatorg;
+set PriorityBuildings[STJ106F] =  Oddi;
+set PriorityBuildings[STJ107G] =  Haskolatorg Oddi;
+set PriorityBuildings[SJU308G] =  Haskolatorg;
+set PriorityBuildings[HJU702G] =  Haskolatorg Eirberg;
+set PriorityBuildings[ISE501G] =  Arnagardur Adalbygging;
+set PriorityBuildings[ISL306G] =  Arnagardur;
+set PriorityBuildings[FOR103G] =  Adalbygging Oddi;
+set PriorityBuildings[FVS102M] =  Haskolatorg Arnagardur Logberg;
+set PriorityBuildings[GSS301F] =  Haskolatorg Stakkahlid_Hamar Stakkahlid_Klettur;
+set PriorityBuildings[LIF315G] =  Askja VR_2 Arnagardur;
+set PriorityBuildings[KIN108G] =  Haskolatorg;
+set PriorityBuildings[VID503G] =  Oddi Askja Haskolatorg;
+set PriorityBuildings[DAN313G] =  Logberg;
+set PriorityBuildings[NOK034F] =  Haskolatorg Stakkahlid_Klettur;
+set PriorityBuildings[LIF301G] =  Haskolatorg Eirberg Askja;
+set PriorityBuildings[ITH323G] =  Haskolatorg Stakkahlid_Enni Stakkahlid_Klettur Stakkahlid_Hamar;
+set PriorityBuildings[EFN304G] =  VR_2;
+set PriorityBuildings[GSS092G] =  Stakkahlid_Hamar Stakkahlid_Klettur;
+set PriorityBuildings[VEL502G] =  VR_2;
+set PriorityBuildings[TSM502G] =  Haskolatorg;
+set PriorityBuildings[STJ101G] =  Haskolatorg;
+set PriorityBuildings[LAN107G] =  Askja;
+set PriorityBuildings[TOV301G] =  VR_2 Askja;
+set PriorityBuildings[TSM304G] =  Haskolatorg;
+set PriorityBuildings[HJU151F] =  Eirberg;
+set PriorityBuildings[HAG101F] =  Oddi;
+set PriorityBuildings[HAG106F] =  Oddi;
+set PriorityBuildings[UMV102G] =  VR_2;
+set PriorityBuildings[MAT304G] =  Haskolatorg;
+set PriorityBuildings[VEL114F] =  VR_2;
+set PriorityBuildings[JAR312G] =  Askja;
+set PriorityBuildings[JAP102G] =  Adalbygging;
+set PriorityBuildings[ISE014G] =  Arnagardur;
+set PriorityBuildings[FRA101G] =  Haskolatorg;
+set PriorityBuildings[LAT101G] =  Oddi;
+set PriorityBuildings[SPA107G] =  Adalbygging;
+set PriorityBuildings[JAP303G] =  Oddi;
+set PriorityBuildings[SAG108G] =  Logberg;
+set PriorityBuildings[LYF509G] =  Haskolatorg;
+set PriorityBuildings[ITA119G] =  Haskolatorg;
+set PriorityBuildings[NAR505M] =  Haskolatorg;
+set PriorityBuildings[FRG314G] =  Logberg;
+set PriorityBuildings[BYG503G] =  VR_2;
+set PriorityBuildings[GFR110G] =  Adalbygging;
+set PriorityBuildings[SAL104G] =  Haskolatorg Stakkahlid_Hamar Oddi;
+set PriorityBuildings[HAG103G] =  Haskolatorg;
+set PriorityBuildings[GSL304G] =  Eirberg Stakkahlid_Hamar;
+set PriorityBuildings[LEI103G] =  Eirberg Arnagardur Haskolatorg;
+set PriorityBuildings[LIF513M] =  Askja;
+set PriorityBuildings[TJO104G] =  Oddi Haskolatorg;
+set PriorityBuildings[GSS103M] =  Haskolatorg Stakkahlid_Enni;
+set PriorityBuildings[BLF112F] =  Haskolatorg Adalbygging;
+set PriorityBuildings[LOG174F] =  Adalbygging Logberg Haskolatorg;
+set PriorityBuildings[RAF501G] =  VR_2;
+set PriorityBuildings[GSS0A8G] =  Stakkahlid_Enni Stakkahlid_Hamar Stakkahlid_Klettur;
+set PriorityBuildings[LIF505M] =  VR_2 Askja;
+set PriorityBuildings[LOG303G] =  Adalbygging Logberg Arnagardur Haskolatorg;
+set PriorityBuildings[TRS308G] =  Stakkahlid_Hamar;
+set PriorityBuildings[ITH113G] =  Haskolatorg;
+set PriorityBuildings[EFN301G] =  Haskolatorg Arnagardur VR_2;
+set PriorityBuildings[JAR508M] =  Arnagardur Askja;
+set PriorityBuildings[SAL503G] =  Haskolatorg Adalbygging;
+set PriorityBuildings[EDL509M] =  VR_2;
+set PriorityBuildings[HBV501G] =  VR_2 Haskolatorg Logberg Askja;
+set PriorityBuildings[UMS301G] =  Haskolatorg Stakkahlid_Hamar Stakkahlid_Enni;
+set PriorityBuildings[TYS105G] =  Oddi Gimli;
+set PriorityBuildings[ITH503G] =  Haskolatorg Itrottafradasetur_Laugarvatn;
+set PriorityBuildings[LSS301F] =  Haskolatorg Stakkahlid_Klettur;
+set PriorityBuildings[TOL104G] =  Haskolatorg VR_2 Arnagardur Logberg;
+set PriorityBuildings[EFN106G] =  Haskolatorg VR_2 Arnagardur;
+set PriorityBuildings[EFN112G] =  Haskolatorg VR_2 Arnagardur;
+set PriorityBuildings[TAK103G] =  Adalbygging;
+set PriorityBuildings[TAN401G] =  Haskolatorg;
+set PriorityBuildings[FRG103G] =  Haskolatorg;
+set PriorityBuildings[ISL110G] =  Haskolatorg Arnagardur;
+set PriorityBuildings[STJ317G] =  Oddi Haskolatorg Arnagardur;
+set PriorityBuildings[EFN108G] =  Haskolatorg;
+set PriorityBuildings[MVS109F] =  Haskolatorg Stakkahlid_Hamar;
+set PriorityBuildings[ENS102G] =  Eirberg Arnagardur;
+set PriorityBuildings[IDN101G] =  Haskolatorg;
+set PriorityBuildings[ISE309G] =  Arnagardur;
+set PriorityBuildings[GSL103G] =  Haskolatorg;
+set PriorityBuildings[LAN511M] =  Askja;
+set PriorityBuildings[HAG304G] =  Oddi Askja;
+set PriorityBuildings[GSS083M] =  Stakkahlid_Klettur;
+set PriorityBuildings[GSS093G] =  Stakkahlid_Klettur;
+set PriorityBuildings[VID167F] =  Haskolatorg Oddi;
+set PriorityBuildings[VID511G] =  Haskolatorg;
+set PriorityBuildings[SAG102G] =  Haskolatorg Arnagardur;
+set PriorityBuildings[HJU108G] =  Haskolatorg Stakkahlid_Hamar;
+set PriorityBuildings[LYF301G] =  Haskolatorg;
+set PriorityBuildings[FRG501G] =  Logberg;
+set PriorityBuildings[STA301G] =  VR_2;
+set PriorityBuildings[MAN507M] =  Haskolatorg Adalbygging Oddi Arnagardur;
+set PriorityBuildings[LOG114F] =  Adalbygging Logberg;
+set PriorityBuildings[LOG176F] =  Adalbygging Logberg;
+set PriorityBuildings[TOL304G] =  Askja VR_2;
+set PriorityBuildings[RAF504G] =  VR_2;
+set PriorityBuildings[LIF313G] =  Askja VR_2;
+set PriorityBuildings[UAU112F] =  VR_2 Oddi;
+set PriorityBuildings[BYG302G] =  VR_2;
+set PriorityBuildings[STA101G] =  VR_2;
+set PriorityBuildings[LEF508G] =  Askja VR_2;
+set PriorityBuildings[LEF105F] =  Haskolatorg Askja VR_2;
+set PriorityBuildings[JED502M] =  VR_2 Askja;
+set PriorityBuildings[LOG502G] =  Adalbygging Logberg;
+set PriorityBuildings[ENS346G] =  Haskolatorg;
+set PriorityBuildings[HAG514M] =  Oddi;
+set PriorityBuildings[FEL309G] =  Arnagardur;
+set PriorityBuildings[TJO333G] =  Adalbygging Logberg;
+set PriorityBuildings[GSS362G] =  Stakkahlid_Hamar Stakkahlid_Enni Stakkahlid_Klettur;
+set PriorityBuildings[GSS105G] =  Stakkahlid_Hamar;
+set PriorityBuildings[MEX020G] =  Haskolatorg Stakkahlid_Klettur;
+set PriorityBuildings[STJ102G] =  Haskolatorg;
+set PriorityBuildings[TSM001G] =  Haskolatorg;
+set PriorityBuildings[VID504G] =  Oddi;
+set PriorityBuildings[ISE004G] =  Haskolatorg Logberg Adalbygging Oddi;
+set PriorityBuildings[ISE105G] =  Adalbygging Logberg;
+set PriorityBuildings[ISL320G] =  Arnagardur Oddi;
+set PriorityBuildings[ISL329G] =  Adalbygging Arnagardur;
+set PriorityBuildings[LAK206F] =  Adalbygging;
+set PriorityBuildings[GSL104G] =  Eirberg;
+set PriorityBuildings[LSS402G] =  Stakkahlid_Hamar;
+set PriorityBuildings[HAG106G] =  VR_2 Oddi Adalbygging Arnagardur;
+set PriorityBuildings[VID103G] =  Haskolatorg Arnagardur Oddi;
+set PriorityBuildings[NOK073F] =  Haskolatorg Stakkahlid_Klettur Stakkahlid_Enni Stakkahlid_Hamar;
+set PriorityBuildings[EFN311G] =  Oddi VR_2;
+set PriorityBuildings[GRI103G] =  Haskolatorg;
+set PriorityBuildings[ITA420G] =  Haskolatorg;
+set PriorityBuildings[HJU510G] =  Eirberg Stakkahlid_Hamar;
+set PriorityBuildings[ISE305G] =  Arnagardur;
+set PriorityBuildings[HJU308G] =  Haskolatorg Eirberg;
+set PriorityBuildings[JAR512G] =  Askja;
+set PriorityBuildings[HAG110F] =  Arnagardur;
+set PriorityBuildings[STA104G] =  Haskolatorg VR_2;
+set PriorityBuildings[GSS068G] =  Haskolatorg Stakkahlid_Enni;
+set PriorityBuildings[LOG103F] =  Adalbygging Logberg;
+set PriorityBuildings[STJ503G] =  Gimli;
+set PriorityBuildings[UMV101M] =  VR_2;
+set PriorityBuildings[NAR503M] =  Haskolatorg;
+set PriorityBuildings[IDN502G] =  VR_2;
+set PriorityBuildings[HJU703G] =  Haskolatorg Eirberg;
+set PriorityBuildings[HAG303G] =  Oddi Askja Haskolatorg;
+set PriorityBuildings[SPA105G] =  Oddi Askja;
+set PriorityBuildings[TAN403G] =  Haskolatorg;
+set PriorityBuildings[ITH518G] =  Haskolatorg Itrottafradasetur_Laugarvatn;
+set PriorityBuildings[SAG103G] =  Arnagardur;
+set PriorityBuildings[SAL115G] =  Oddi;
+set PriorityBuildings[STA304G] =  VR_2;
+set PriorityBuildings[ASK105F] =  Haskolatorg Logberg;
+set PriorityBuildings[TYS103G] =  Haskolatorg;
+set PriorityBuildings[ENS110G] =  Haskolatorg;
+set PriorityBuildings[LEI502G] =  Haskolatorg;
+set PriorityBuildings[LEI402G] =  Haskolatorg;
+set PriorityBuildings[LIS004G] =  Arnagardur;
+set PriorityBuildings[KYN101F] =  Haskolatorg Arnagardur Askja;
+set PriorityBuildings[GSL301G] =  Haskolatorg;
+set PriorityBuildings[KYN106G] =  Haskolatorg Arnagardur;
+set PriorityBuildings[LAK305F] =  Adalbygging;
+set PriorityBuildings[SAN106G] =  Haskolatorg;
+set PriorityBuildings[FRA107G] =  Haskolatorg;
+set PriorityBuildings[RUS104G] =  Haskolatorg;
+set PriorityBuildings[GSS210G] =  Stakkahlid_Hamar;
+set PriorityBuildings[NSR007F] =  Stakkahlid_Klettur;
+set PriorityBuildings[LAN101G] =  Askja;
+set PriorityBuildings[GSS0B7G] =  Haskolatorg Stakkahlid_Klettur;
+set PriorityBuildings[STA105G] =  Haskolatorg Askja;
+set PriorityBuildings[EDL520M] =  VR_2;
+set PriorityBuildings[FRG102G] =  Oddi;
+set PriorityBuildings[LYF507G] =  Haskolatorg;
+set PriorityBuildings[VID311G] =  Haskolatorg;
+set PriorityBuildings[KIN107G] =  Haskolatorg;
+set PriorityBuildings[STA108G] =  Haskolatorg;
+set PriorityBuildings[VID108F] =  Haskolatorg Logberg;
+set PriorityBuildings[REI105M] =  Arnagardur;
+set PriorityBuildings[SAG715M] =  Haskolatorg Arnagardur;
+set PriorityBuildings[TYS502G] =  Haskolatorg;
+set PriorityBuildings[SJU306G] =  Haskolatorg;
+set PriorityBuildings[DAN307G] =  Haskolatorg;
+set PriorityBuildings[LOG131F] =  Adalbygging Logberg;
+set PriorityBuildings[ITH108G] =  Haskolatorg Stakkahlid_Hamar Stakkahlid_Enni;
+set PriorityBuildings[STA302G] =  Askja Haskolatorg;
+set PriorityBuildings[TAL310F] =  Haskolatorg;
+set PriorityBuildings[SAG036G] =  Arnagardur;
+set PriorityBuildings[FEL0A1F] =  Adalbygging;
+set PriorityBuildings[STJ303M] =  Haskolatorg;
+set PriorityBuildings[BLF113F] =  Haskolatorg Logberg Oddi;
+set PriorityBuildings[LAK120G] =  Adalbygging;
+set PriorityBuildings[ISE502G] =  Arnagardur Oddi;
+set PriorityBuildings[LAK514G] =  Adalbygging Stakkahlid_Hamar;
+set PriorityBuildings[LAK121G] =  Adalbygging;
+set PriorityBuildings[GSL101G] =  Arnagardur Eirberg;
+set PriorityBuildings[NLF109F] =  Haskolatorg;
+set PriorityBuildings[VID506G] =  Oddi;
+set PriorityBuildings[SAL136F] =  Oddi;
+set PriorityBuildings[FEL323G] =  Haskolatorg Logberg Oddi;
+set PriorityBuildings[VID162F] =  Arnagardur;
+set PriorityBuildings[GSS075M] =  Haskolatorg Stakkahlid_Klettur;
+set PriorityBuildings[LAK112G] =  Haskolatorg;
+set PriorityBuildings[TYD102F] =  Adalbygging;
+set PriorityBuildings[LAK310G] =  Haskolatorg;
+set PriorityBuildings[TJO108F] =  Oddi;
+set PriorityBuildings[UPP103F] =  Oddi;
+set PriorityBuildings[GFR102F] =  Adalbygging;
+set PriorityBuildings[GFR511M] =  Haskolatorg Adalbygging;
+set PriorityBuildings[FRG315G] =  Logberg;
+set PriorityBuildings[HSP104G] =  Adalbygging Arnagardur;
+set PriorityBuildings[VEL501M] =  Logberg VR_2;
+set PriorityBuildings[MVS110F] =  Stakkahlid_Enni Stakkahlid_Hamar;
+set PriorityBuildings[SJU508G] =  Haskolatorg;
+set PriorityBuildings[STA313M] =  VR_2 Askja;
+set PriorityBuildings[KVI101G] =  Haskolatorg;
+set PriorityBuildings[TAK102G] =  Adalbygging;
+set PriorityBuildings[ISL111G] =  Arnagardur;
+set PriorityBuildings[NAR103G] =  Adalbygging;
+set PriorityBuildings[MIS105F] =  Arnagardur Logberg;
+set PriorityBuildings[FER112F] =  Askja;
+set PriorityBuildings[FER101G] =  Haskolatorg Askja;
+set PriorityBuildings[LAN514G] =  Askja Adalbygging;
+set PriorityBuildings[GSL505G] =  Haskolatorg;
+set PriorityBuildings[LIF518M] =  Askja;
+set PriorityBuildings[LYD005F] =  Haskolatorg;
+set PriorityBuildings[HJU142F] =  Eirberg;
+set PriorityBuildings[HJU110G] =  Haskolatorg Stakkahlid_Hamar Eirberg;
+set PriorityBuildings[HJU150F] =  Eirberg;
+set PriorityBuildings[LOG233F] =  Adalbygging Arnagardur;
+set PriorityBuildings[HAG105G] =  VR_2;
+set PriorityBuildings[STA107G] =  VR_2 Askja Haskolatorg Logberg;
+set PriorityBuildings[TOL305G] =  VR_2 Arnagardur;
+set PriorityBuildings[UAU102F] =  VR_2 Askja;
+set PriorityBuildings[LSS501G] =  Haskolatorg Stakkahlid_Hamar Stakkahlid_Enni Stakkahlid_Klettur;
+set PriorityBuildings[TSM101G] =  Haskolatorg;
+set PriorityBuildings[VID102G] =  Oddi Arnagardur;
+set PriorityBuildings[STA106G] =  Haskolatorg VR_2 Askja;
+set PriorityBuildings[TOV501M] =  VR_2;
+set PriorityBuildings[TAN604G] =  Haskolatorg;
+set PriorityBuildings[SAL504G] =  Haskolatorg Eirberg Adalbygging;
+set PriorityBuildings[TOL503M] =  Haskolatorg;
+set PriorityBuildings[ISE001G] =  Haskolatorg;
+set PriorityBuildings[JED104G] =  Askja Adalbygging;
+set PriorityBuildings[TRS311G] =  Stakkahlid_Hamar;
+set PriorityBuildings[KIN302G] =  Haskolatorg;
+set PriorityBuildings[ENS703M] =  Haskolatorg;
+set PriorityBuildings[ISE301G] =  Arnagardur;
+set PriorityBuildings[VID113F] =  Oddi;
+set PriorityBuildings[MAN103G] =  Logberg;
+set PriorityBuildings[LEF501M] =  VR_2;
+set PriorityBuildings[GFR104G] =  Adalbygging;
+set PriorityBuildings[JAP106G] =  Haskolatorg;
+set PriorityBuildings[ISL301G] =  Arnagardur;
+set PriorityBuildings[STJ304G] =  Arnagardur;
+set PriorityBuildings[FRG504G] =  Haskolatorg;
+set PriorityBuildings[ISL401M] =  Arnagardur;
+set PriorityBuildings[UAU111F] =  Askja Arnagardur Oddi;
+set PriorityBuildings[HAG503G] =  Oddi Logberg;
+set PriorityBuildings[GSS067G] =  Stakkahlid_Hamar;
+set PriorityBuildings[ABF305G] =  Haskolatorg Arnagardur;
+set PriorityBuildings[TJO103G] =  Adalbygging Oddi;
+set PriorityBuildings[JAR310M] =  Askja;
+set PriorityBuildings[ISL444G] =  Arnagardur;
+set PriorityBuildings[LEF302G] =  VR_2 Askja;
+set PriorityBuildings[LOG110F] =  Adalbygging Logberg;
+set PriorityBuildings[LOG119F] =  Adalbygging Logberg;
+set PriorityBuildings[SAL102G] =  Stakkahlid_Hamar Oddi;
+set PriorityBuildings[TJO107F] =  Logberg Askja;
+set PriorityBuildings[SAL320G] =  Haskolatorg Oddi Gimli;
+set PriorityBuildings[TJO506G] =  Haskolatorg Logberg Askja;
+set PriorityBuildings[ISE302G] =  Eirberg Logberg Gimli;
+set PriorityBuildings[HJU307G] =  Haskolatorg Eirberg;
+set PriorityBuildings[SPA102M] =  Haskolatorg;
+set PriorityBuildings[TAN208G] =  Haskolatorg;
+set PriorityBuildings[LSS302G] =  Stakkahlid_Klettur;
+set PriorityBuildings[LEI303G] =  Eirberg;
+set PriorityBuildings[VID111F] =  Oddi Haskolatorg Gimli;
+set PriorityBuildings[LAK025M] =  Haskolatorg;
+set PriorityBuildings[GSL303G] =  Haskolatorg;
+set PriorityBuildings[HJU705G] =  Haskolatorg Eirberg;
+set PriorityBuildings[LYF113G] =  Haskolatorg;
+set PriorityBuildings[LAK304F] =  Adalbygging;
+set PriorityBuildings[VID501G] =  Arnagardur;
+set PriorityBuildings[TOL107G] =  Haskolatorg VR_2 Askja;
+set PriorityBuildings[LEI107G] =  Eirberg Arnagardur Haskolatorg;
+set PriorityBuildings[VID170F] =  Haskolatorg Oddi;
+set PriorityBuildings[LIF108G] =  VR_2 Askja Haskolatorg;
+set PriorityBuildings[SAG334G] =  Arnagardur;
+set PriorityBuildings[HSP321G] =  VR_2 Arnagardur Adalbygging;
+set PriorityBuildings[ITH111F] =  Stakkahlid_Klettur;
+set PriorityBuildings[DET101G] =  Haskolatorg;
+set PriorityBuildings[ITH516G] =  Haskolatorg Itrottafradasetur_Laugarvatn;
+set PriorityBuildings[EFN515M] =  VR_2;
+set PriorityBuildings[DET102G] =  Haskolatorg;
+set PriorityBuildings[EDL515M] =  Oddi;
+set PriorityBuildings[VID301G] =  Haskolatorg;
+set PriorityBuildings[EDL506G] =  VR_2 Askja;
+set PriorityBuildings[EDL306G] =  VR_2 Adalbygging;
+set PriorityBuildings[FRG109G] =  Haskolatorg;
+set PriorityBuildings[STA303G] =  VR_2;
+set PriorityBuildings[ISE103G] =  Haskolatorg;
+set PriorityBuildings[LIF102G] =  Askja VR_2;
+set PriorityBuildings[BYG501G] =  VR_2;
+set PriorityBuildings[SJU309G] =  Adalbygging;
+set PriorityBuildings[LAN113F] =  Askja VR_2;
+set PriorityBuildings[LAN305G] =  Askja Oddi;
+set PriorityBuildings[IDN101M] =  VR_2;
+set PriorityBuildings[LAN516G] =  Haskolatorg Askja;
+set PriorityBuildings[GSS095G] =  Stakkahlid_Hamar Stakkahlid_Enni Stakkahlid_Klettur;
+set PriorityBuildings[FEL102G] =  Oddi;
+set PriorityBuildings[FEL308G] =  Arnagardur;
+set PriorityBuildings[LEI503G] =  Haskolatorg;
+set PriorityBuildings[TYS310G] =  Haskolatorg Askja;
+set PriorityBuildings[LOG306G] =  Adalbygging Oddi Haskolatorg;
+set PriorityBuildings[TRS310G] =  Haskolatorg Stakkahlid_Hamar;
+set PriorityBuildings[BLF314F] =  Haskolatorg;
+set PriorityBuildings[VID112F] =  Haskolatorg;
+set PriorityBuildings[LOG175F] =  Adalbygging Logberg;
+set PriorityBuildings[LAK306F] =  Adalbygging;
+set PriorityBuildings[FRG101G] =  Haskolatorg;
+set PriorityBuildings[LAK116G] =  Haskolatorg;
+set PriorityBuildings[LAK115G] =  Adalbygging;
+set PriorityBuildings[VID513G] =  Oddi;
+set PriorityBuildings[FRG509G] =  Haskolatorg;
+set PriorityBuildings[EFN309G] =  VR_2;
+set PriorityBuildings[LEI102G] =  Eirberg Haskolatorg Arnagardur;
+set PriorityBuildings[LOG504G] =  Adalbygging Logberg;
+set PriorityBuildings[KEN301G] =  Stakkahlid_Hamar;
+set PriorityBuildings[TAN207G] =  Haskolatorg;
+set PriorityBuildings[HAG508G] =  Oddi;
+set PriorityBuildings[LSS104G] =  Haskolatorg Stakkahlid_Klettur;
+set PriorityBuildings[HAG302G] =  Oddi Askja Logberg;
+set PriorityBuildings[VEL302G] =  VR_2 Askja;
+set PriorityBuildings[TOL301G] =  VR_2 Haskolatorg;
+set PriorityBuildings[TYS308G] =  Haskolatorg;
+set PriorityBuildings[BYG301G] =  VR_2 Logberg Askja;
+set PriorityBuildings[SAL308G] =  Haskolatorg;
+set PriorityBuildings[ENS103G] =  Haskolatorg;
+set PriorityBuildings[TOL105G] =  VR_2 Haskolatorg;
+set PriorityBuildings[GSS704M] =  Haskolatorg Stakkahlid_Klettur;
+set PriorityBuildings[ITH320G] =  Stakkahlid_Hamar Stakkahlid_Klettur;
+set PriorityBuildings[TOL101G] =  Haskolatorg VR_2 Askja Arnagardur Logberg;
+set PriorityBuildings[STJ301M] =  Haskolatorg Arnagardur;
+set PriorityBuildings[LOG103G] =  Adalbygging Logberg;
+set PriorityBuildings[JAR101G] =  VR_2 Askja;
+set PriorityBuildings[VID101G] =  Haskolatorg;
+set PriorityBuildings[REI502M] =  VR_2 Arnagardur;
+set PriorityBuildings[HJU310G] =  Haskolatorg Eirberg;
+set PriorityBuildings[HAG107G] =  Oddi Askja Arnagardur;
+set PriorityBuildings[GSS0B6G] =  Haskolatorg Stakkahlid_Klettur;
+set PriorityBuildings[BYG101M] =  VR_2;
+set PriorityBuildings[LIF311G] =  Askja Logberg Gimli;
+set PriorityBuildings[RAF301G] =  VR_2;
+set PriorityBuildings[EFN114G] =  VR_2;
+set PriorityBuildings[LYF126F] =  Haskolatorg;
+set PriorityBuildings[EVF301G] =  VR_2 Adalbygging;
+param Slots := 
+ITH321G 1 1
+GSS096G 1 1
 IDN121F 1 1
-STA520M 19 1
-LAN101G 21 1
-UMV114F 22 1
-RAF503G 17 1
-RAF301G 20 1
-EDL515M 6 1
-EFN103G 6 1
-JAR129F 5 1
-TOL502G 8 1
-BYG120F 17 1
-EDL523M 15 1
+LOG111F 1 1
+TSM302G 1 1
+JAP101G 1 1
+KIN309G 1 1
+VEL301G 1 1
+SAL501M 1 1
+LYF102G 1 1
+UMV302G 1 1
+SAL141F 1 1
+EFN315G 1 1
+LAN104G 1 1
+TAN608G 1 1
+SJU107G 1 1
+LOG304G 1 1
+ITH109G 1 1
+TAN407G 1 1
+TAN107G 1 1
+DAN304G 1 1
+LIF516M 1 1
+TYS108G 1 1
+VID302G 1 1
+LIF109G 1 1
+TOL504M 1 1
+LAK515G 1 1
+LAK307G 1 1
+FEL306G 1 1
+HAG101G 1 1
+LIF540G 1 1
+LIF533M 1 1
+LIF535M 1 1
+EFN307G 1 1
+MAF102G 2 1
+TOS305G 2 1
+GSS363G 2 1
+VEL120F 2 1
+JED505G 2 1
+JED301G 2 1
+TOL303G 2 1
+GSL302G 2 1
+LEI108G 2 1
+SAL103G 2 1
+LAK212G 2 1
+HAG109F 2 1
+UMV502G 2 1
+GFR201G 2 1
+SAL519G 2 1
+HJU152F 2 1
+FRG104G 2 1
+LYF508G 2 1
+VID505G 2 1
+EDL301G 2 1
+SAG306G 2 1
+HJU309G 2 1
+JAP302G 2 1
+ENS101G 2 1
+VID105G 3 1
+LIF118F 3 1
+STJ325G 3 1
+FOM001F 3 1
+LSS101G 3 1
+SPA305G 3 1
+HAG509G 3 1
+LAN517G 3 1
+LOG503G 3 1
+NAR101G 3 1
+TAK105G 3 1
+ISL109G 3 1
+BYG121F 3 1
+HJU701G 3 1
+UAU101F 3 1
+ITH515G 3 1
+LIF523G 3 1
+TYS311G 3 1
+GFR324M 3 1
+GSS121F 3 1
+IDN501G 4 1
+SAG101G 4 1
+STA508M 4 1
+EDL102G 4 1
+VID509G 4 1
+EDL101G 4 1
+RAF503G 4 1
+GSS103G 4 1
+ISL321G 4 1
+HAG301G 4 1
+GSS117F 4 1
+HJU109G 4 1
+FRG508G 4 1
+EDL107G 4 1
+ISE102G 4 1
+LOG102F 4 1
+RUS308G 4 1
+LOG235F 5 1
+LOG108G 5 1
 FEL321G 5 1
-MAN504M 21 1
-VID114F 7 1
-FEL313G 20 1
-MAN330G 14 1
-MAN331G 18 1
-NSR007F 6 1
-HAG304G 17 1
-OSS101F 4 1
-FRG316G 22 1
-TJO104G 8 1
-FRG504G 7 1
-FEL101G 12 1
-BLF314F 1 1
-ASK103F 12 1
-UPP109F 19 1
-UPP105F 11 1
-VID162F 19 1
-VID108F 3 1
-STJ106G 11 1
-HAG302G 9 1
-UPP103F 5 1
-STJ303M 4 1
-STJ101M 11 1
-HAG301G 7 1
-ASK110F 3 1
-STJ304G 13 1
-VID112F 1 1
-ASK305F 22 1
-FOM001F 14 1
-VID511G 16 1
-VID304G 22 1
-VID110F 11 1
-TJO325G 11 1
-HAG101F 5 1
-FEL308G 10 1
-FRG102G 3 1
-STJ301M 17 1
-BLF112F 7 1
-ASK102F 8 1
-TJO103G 13 1
-MAN103G 8 1
-HAG303G 20 1
-HAG109F 11 1
-FRG501G 19 1
-VID113F 16 1
-HAG110F 14 1
-FRG314G 10 1
-FEL105G 13 1
-FEL403G 7 1
-STJ317G 4 1
-ASK101F 14 1
-HAG503G 5 1
-VID504G 11 1
-HAG512M 4 1
-HAG508G 22 1
-FRG101G 15 1
-STJ325G 18 1
-FRG509G 5 1
-VID111F 17 1
-FFR302M 10 1
-STJ343G 11 1
-STJ503G 14 1
-SJU105G 8 1
-LAK314G 9 1
-SJU704G 6 1
-LEI402G 20 1
-LAK313G 13 1
-LAK502F 15 1
-LEI401G 11 1
-SAL504G 19 1
-MAT303M 18 1
-LEI503G 13 1
-SAL503G 13 1
-SJU706G 20 1
-GSL405G 19 1
-SJU309G 11 1
-LYF301G 18 1
-MAT504M 13 1
-TAL101F 6 1
-GSL105G 7 1
-SJU307G 5 1
-TAL106F 20 1
-NAR503M 13 1
-NAR501M 4 1
-TAN208G 18 1
-SAL312G 7 1
-LAK310G 14 1
-SAL136F 20 1
-SAL135F 6 1
-GSL505G 5 1
-GSL301G 20 1
-LYF105F 20 1
-MAT103G 15 1
-SJU308G 13 1
-NAR103G 20 1
-GSL103G 5 1
-LAK510F 19 1
-SJU306G 20 1
-LEI501G 19 1
-LYF509G 16 1
-LYF507G 20 1
-LYF303G 22 1
-GSL101G 18 1
-LYF111G 11 1
-SAL502G 5 1
-NAR101G 4 1
-SAL519G 15 1
-GSL303G 16 1
-TAN207G 21 1
-NAR504M 19 1
-LYF114F 6 1
-LYF508G 6 1
-SJU106G 22 1
-SJU508G 20 1
-SJU509G 4 1
-LIS102G 4 1
-TYS310G 19 1
-GFR513M 17 1
-DAN101G 19 1
-TYS308G 14 1
-RUS104G 17 1
-RUS308G 7 1
-RUS309G 1 1
-KIN102G 6 1
-SPA302M 13 1
-TYD002M 15 1
-SPA105G 21 1
-TYS104G 3 1
-ENS506G 10 1
-LAT101G 18 1
-SAN106G 18 1
-ISL301G 4 1
-ABF305G 4 1
-ITA113G 16 1
-ISL321G 11 1
-GFR324M 13 1
-SAG306G 11 1
-GFR104G 5 1
-FRA107G 18 1
-ITA324G 19 1
-SPA101M 11 1
-TYS311G 5 1
-RUS106G 4 1
-SPA107G 4 1
-TAK103G 12 1
-AMV105G 6 1
-HSP310G 11 1
-ITA115G 22 1
-KVI101G 17 1
-KIN309G 10 1
-KIN302G 20 1
-KIN107G 16 1
-JAP101G 16 1
-JAP304G 4 1
-JAP103G 19 1
-JAP106G 21 1
-JAP303G 7 1
-JAP102G 4 1
-ITA112G 3 1
-TAK105G 16 1
-ISL110G 22 1
-FOR103G 20 1
-DET101G 12 1
-SAN107G 22 1
-GRI107G 10 1
-SAG103G 22 1
+HJU153F 5 1
+LEI401G 5 1
+GSL105G 5 1
+MIS701F 5 1
+MAT504M 5 1
+SJU509G 5 1
+LIS102G 5 1
+EDL302G 5 1
+VID304G 5 1
+VID166F 5 1
+VID114F 5 1
+INT101G 5 1
+STM301F 5 1
+UMS103F 5 1
+UMS501G 5 1
+ITH115G 5 1
+TOL308G 5 1
+IDN113F 5 1
+TAN524G 5 1
+SAN107G 5 1
+OSS101F 5 1
+SAL135F 5 1
+TJO323G 5 1
+ASK101F 6 1
+DAN110G 6 1
+HSP304G 6 1
+HJU135F 6 1
+LEI501G 6 1
+GSS099G 6 1
+TRS105G 6 1
+SAL313G 6 1
+ENS329G 6 1
+UPP105F 6 1
 GFR212G 6 1
-TAK302G 4 1
-TAK102G 4 1
-FRA101G 22 1
-GRI103G 13 1
-HSP104G 13 1
-DAN313G 19 1
-DAN307G 6 1
-DAN110G 13 1
-ISL320G 22 1
-ENS303G 14 1
-MIS701F 20 1
-ENS329G 22 1
-ISL111G 4 1
-ENS507G 20 1
-ISL109G 15 1
-HSP304G 7 1
-SPA306G 5 1
-TYS103G 10 1
-TYS108G 17 1
-AMV302M 5 1
-ENS134G 14 1
-RUT801F 18 1
-FRA307G 14 1
-STM301F 6 1
-TOS301G 13 1
-TRS515G 15 1
-TRS310G 2 1
-LSS101G 11 1
-LSS402G 13 1
-ITH320G 3 1
-TRS308G 7 1
-GSS301F 2 1
-ITH113G 10 1
-GSS362G 6 1
-GSS075G 1 1
-LSS501G 7 1
-GSS516M 6 1
-MEN102G 15 1
-GSS359G 12 1
-MVS109F 21 1
-MVS110F 9 1
-UMS301G 12 1
-TRS105G 10 1
-LSS104G 15 1
-GSS095G 21 1
-LSS302G 4 1
-GSS363G 3 1
-LSS502G 12 1
-ITH111F 6 1
-GSS101F 17 1
-ITH321G 11 1
-MEX020G 20 1
+ISE002G 6 1
+MAN330G 6 1
+RUS106G 6 1
+VID110F 6 1
+STJ106F 6 1
+STJ107G 6 1
+SJU308G 6 1
+HJU702G 6 1
+ISE501G 6 1
+ISL306G 6 1
+FOR103G 6 1
+FVS102M 7 1
+GSS301F 7 1
+LIF315G 7 1
+KIN108G 7 1
+VID503G 7 1
+DAN313G 7 1
+NOK034F 7 1
+LIF301G 7 1
+ITH323G 7 1
+EFN304G 7 1
+GSS092G 7 1
+VEL502G 7 1
+TSM502G 7 1
+STJ101G 7 1
+LAN107G 7 1
+TOV301G 7 1
+TSM304G 7 1
+HJU151F 7 1
+HAG101F 7 1
+HAG106F 7 1
+UMV102G 7 1
+MAT304G 7 1
+VEL114F 7 1
+JAR312G 7 1
+JAP102G 7 1
+ISE014G 8 1
+FRA101G 8 1
+LAT101G 8 1
+SPA107G 8 1
+JAP303G 8 1
+SAG108G 8 1
+LYF509G 8 1
+ITA119G 8 1
+NAR505M 8 1
+FRG314G 8 1
+BYG503G 8 1
+GFR110G 8 1
+SAL104G 8 1
+HAG103G 8 1
+GSL304G 8 1
+LEI103G 8 1
+LIF513M 8 1
+TJO104G 8 1
+GSS103M 9 1
+BLF112F 9 1
+LOG174F 9 1
+RAF501G 9 1
+GSS0A8G 9 1
+LIF505M 9 1
+LOG303G 9 1
+TRS308G 9 1
+ITH113G 9 1
+EFN301G 9 1
+JAR508M 9 1
+SAL503G 9 1
+EDL509M 9 1
+HBV501G 9 1
+UMS301G 9 1
+TYS105G 9 1
+ITH503G 9 1
+LSS301F 9 1
+TOL104G 9 1
+EFN106G 9 1
+EFN112G 9 1
+TAK103G 9 1
+TAN401G 9 1
+FRG103G 10 1
+ISL110G 10 1
+STJ317G 10 1
+EFN108G 10 1
+MVS109F 10 1
+ENS102G 10 1
+IDN101G 10 1
+ISE309G 10 1
+GSL103G 10 1
+LAN511M 10 1
+HAG304G 10 1
+GSS083M 10 1
+GSS093G 10 1
+VID167F 10 1
+VID511G 10 1
+SAG102G 10 1
+HJU108G 10 1
+LYF301G 10 1
+FRG501G 10 1
+STA301G 10 1
+MAN507M 11 1
+LOG114F 11 1
+LOG176F 11 1
+TOL304G 11 1
+RAF504G 11 1
+LIF313G 11 1
+UAU112F 11 1
+BYG302G 11 1
+STA101G 11 1
+LEF508G 11 1
+LEF105F 11 1
+JED502M 11 1
+LOG502G 11 1
+ENS346G 11 1
+HAG514M 11 1
+FEL309G 11 1
+TJO333G 11 1
+GSS362G 11 1
+GSS105G 11 1
+MEX020G 11 1
+STJ102G 11 1
+TSM001G 11 1
+VID504G 11 1
+ISE004G 11 1
+ISE105G 11 1
+ISL320G 11 1
+ISL329G 11 1
+LAK206F 11 1
+GSL104G 11 1
+LSS402G 12 1
+HAG106G 12 1
+VID103G 12 1
+NOK073F 12 1
+EFN311G 12 1
+GRI103G 12 1
+ITA420G 12 1
+HJU510G 12 1
+ISE305G 12 1
+HJU308G 12 1
+JAR512G 12 1
+HAG110F 12 1
+STA104G 12 1
+GSS068G 13 1
+LOG103F 13 1
+STJ503G 13 1
+UMV101M 13 1
+NAR503M 13 1
+IDN502G 13 1
+HJU703G 13 1
+HAG303G 13 1
+SPA105G 13 1
+TAN403G 13 1
+ITH518G 13 1
+SAG103G 13 1
+SAL115G 13 1
+STA304G 13 1
+ASK105F 13 1
+TYS103G 13 1
+ENS110G 13 1
+LEI502G 13 1
+LEI402G 13 1
+LIS004G 13 1
+KYN101F 13 1
+GSL301G 13 1
+KYN106G 13 1
+LAK305F 13 1
+SAN106G 14 1
+FRA107G 14 1
+RUS104G 14 1
+GSS210G 14 1
+NSR007F 14 1
+LAN101G 14 1
+GSS0B7G 14 1
+STA105G 14 1
+EDL520M 14 1
+FRG102G 14 1
+LYF507G 14 1
+VID311G 14 1
+KIN107G 14 1
+STA108G 14 1
+VID108F 14 1
+REI105M 14 1
+SAG715M 14 1
+TYS502G 14 1
+SJU306G 14 1
+DAN307G 14 1
+LOG131F 15 1
+ITH108G 15 1
+STA302G 15 1
+TAL310F 15 1
+SAG036G 15 1
+FEL0A1F 15 1
+STJ303M 15 1
+BLF113F 15 1
+LAK120G 15 1
+ISE502G 15 1
+LAK514G 15 1
+LAK121G 15 1
+GSL101G 15 1
+NLF109F 15 1
+VID506G 15 1
+SAL136F 15 1
+FEL323G 15 1
+VID162F 15 1
+GSS075M 15 1
+LAK112G 15 1
+TYD102F 15 1
+LAK310G 15 1
+TJO108F 16 1
+UPP103F 16 1
+GFR102F 16 1
+GFR511M 16 1
+FRG315G 16 1
+HSP104G 16 1
+VEL501M 16 1
+MVS110F 16 1
+SJU508G 16 1
+STA313M 16 1
+KVI101G 16 1
+TAK102G 16 1
+ISL111G 16 1
+NAR103G 16 1
+MIS105F 16 1
+FER112F 16 1
+FER101G 16 1
+LAN514G 16 1
+GSL505G 16 1
+LIF518M 16 1
+LYD005F 16 1
+HJU142F 16 1
+HJU110G 16 1
+HJU150F 16 1
+LOG233F 17 1
+HAG105G 17 1
+STA107G 17 1
+TOL305G 17 1
+UAU102F 17 1
+LSS501G 17 1
+TSM101G 17 1
+VID102G 17 1
+STA106G 17 1
+TOV501M 17 1
+TAN604G 17 1
+SAL504G 17 1
+TOL503M 17 1
+ISE001G 17 1
+JED104G 18 1
+TRS311G 18 1
+KIN302G 18 1
+ENS703M 18 1
+ISE301G 18 1
+VID113F 18 1
+MAN103G 18 1
+LEF501M 18 1
+GFR104G 18 1
+JAP106G 18 1
+ISL301G 18 1
+STJ304G 18 1
+FRG504G 18 1
+ISL401M 18 1
+UAU111F 18 1
+HAG503G 18 1
+GSS067G 18 1
+ABF305G 18 1
+TJO103G 18 1
+JAR310M 18 1
+ISL444G 18 1
+LEF302G 18 1
+LOG110F 19 1
+LOG119F 19 1
+SAL102G 19 1
+TJO107F 19 1
+SAL320G 19 1
+TJO506G 19 1
+ISE302G 19 1
+HJU307G 19 1
+SPA102M 19 1
+TAN208G 19 1
+LSS302G 19 1
+LEI303G 19 1
+VID111F 19 1
+LAK025M 19 1
+GSL303G 19 1
+HJU705G 19 1
+LYF113G 19 1
+LAK304F 19 1
+VID501G 19 1
+TOL107G 19 1
+LEI107G 19 1
+VID170F 19 1
+LIF108G 20 1
+SAG334G 20 1
+HSP321G 20 1
+ITH111F 20 1
+DET101G 20 1
+ITH516G 20 1
+EFN515M 20 1
+DET102G 20 1
+EDL515M 20 1
+VID301G 20 1
+EDL506G 20 1
+EDL306G 20 1
+FRG109G 20 1
+STA303G 20 1
+ISE103G 20 1
+LIF102G 20 1
+BYG501G 20 1
+SJU309G 20 1
+LAN113F 20 1
+LAN305G 20 1
+IDN101M 20 1
+LAN516G 20 1
+GSS095G 20 1
+FEL102G 20 1
+FEL308G 20 1
+LEI503G 20 1
+TYS310G 20 1
+LOG306G 20 1
+TRS310G 21 1
+BLF314F 21 1
+VID112F 21 1
+LOG175F 21 1
+LAK306F 21 1
+FRG101G 21 1
+LAK116G 21 1
+LAK115G 21 1
+VID513G 21 1
+FRG509G 21 1
+EFN309G 21 1
+LEI102G 21 1
+LOG504G 21 1
+KEN301G 21 1
+TAN207G 21 1
+HAG508G 21 1
+LSS104G 21 1
+HAG302G 21 1
+VEL302G 21 1
+TOL301G 21 1
+TYS308G 21 1
+BYG301G 21 1
+SAL308G 21 1
+ENS103G 21 1
+TOL105G 22 1
+GSS704M 22 1
+ITH320G 22 1
+TOL101G 22 1
+STJ301M 22 1
+LOG103G 22 1
+JAR101G 22 1
+VID101G 22 1
+REI502M 22 1
+HJU310G 22 1
+HAG107G 22 1
+GSS0B6G 22 1
+BYG101M 22 1
+LIF311G 22 1
+RAF301G 22 1
+EFN114G 22 1
+
+
 ;
-*/
