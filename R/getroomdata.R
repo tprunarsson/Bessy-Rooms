@@ -85,7 +85,9 @@ write("set BuildingsInCluster['Holtid'] := Stakkahlid_Hamar Stakkahlid_Klettur S
 
 write("set Rooms := ", file="roomdata.dat", append = T)
 for (i in c(1:length(room))) {
-  write(room[i], file = "roomdata.dat", append = T)
+  if (roomType[i] == 1) {
+    write(room[i], file = "roomdata.dat", append = T)
+  }
 }
 write(";", file = "roomdata.dat", append = T)
 

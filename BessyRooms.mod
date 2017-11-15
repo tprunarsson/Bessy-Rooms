@@ -1,10 +1,11 @@
-# Messy Bessy Room allocation: Beta version 0.0.1
-# Authors: Thomas Philip Runarsson and Asgeir Orn Sigurpalsson
-# Last modified by aos at 15:03 20/9/2016
-# Last modified by tpr at 11:00 23/11/2016
+# Ugly Bessy Room allocation: Beta version 0.0.2
+# Author: Thomas Philip Runarsson
+# Last modified by tpr at 11:00 18/11/2017
 
 # TODO: conjoined courses forced together in one!
-# This needs to be resolved perhaps can also be solved by setting the conjoined courses in the same buidling?!
+# This needs to be resolved perhaps can also be solved by setting the conjoined courses in the same building?!
+
+# Missing from the data : "duration"
 
 # --- Parameter and Sets --- #
 
@@ -43,7 +44,6 @@ param cidConjoined  {c1 in CidAssign, c2 in CidAssign} := min(cidConjoinedData[c
 # Number of students taking two common courses" THIS IS NOT USED BUT IS IN courses.dat
 param CidCommonStudents {CidExam, CidExam} default 0;
 
-
 # Total number of students for each course
 param cidCount{CidExam} default 0;
 
@@ -77,7 +77,7 @@ set Cluster;
 set BuildingsInCluster{Cluster} within Building;
 
 # These building are acceptable to the course
-set RequiredBuildings{CidExam} within Building default {};
+#set RequiredBuildings{CidExam} within Building default {};
 # These building are the most wanted buildings, not that these are also in RequiredBuildings
 set PriorityBuildings{CidExam} within Building default {};
 # Tells us which rooms are in a given building
@@ -87,8 +87,8 @@ set BuildingWithRoom{r in AllRooms} within Building := setof{b in Building: r in
 # The hfix variable is used for fixing a number of students in a given class room
 # can be used for post analysis also
 param hfix{CidExam,AllRooms} default 0;
-param hdef{CidAssign,AllRooms} default 0;
-# each room has a priority, where 1 is best then 2 and worst 3
+param hdef{CidExam,AllRooms} default 0;
+# each room has a priority, where 1 is best then 2 and worst 3 NOT USED !!!
 param RoomPriority{AllRooms} default 3;
 # the length of an exam is needed since exams of same length should be in the same room
 param duration {CidExam} default 3;
@@ -112,8 +112,9 @@ subject to FixH{c in CidAssign, r in AllRooms: hfix[c,r] > 0}:
   h[c,r] = hfix[c,r];
 
 # there is another possible fixing defined by the user:
-#subject to FixD{c in CidAssign, r in AllRooms: hdef[c,r] > 0}:
-#  h[c,r] = hdef[c,r];
+check{c in CidAssign}: sum{r in AllRooms} hdef[c,r] <= cidCount[c];
+subject to FixD{c in CidAssign, r in AllRooms: hdef[c,r] > 0}:
+  h[c,r] = hdef[c,r];
 
 # Make sure that all students in the course have a seat
 subject to AssignAllCidSeats{c in CidAssign}:
@@ -159,6 +160,7 @@ subject to conjoinedCourses{b in Building, c1 in CidAssign, c2 in CidAssign: c1 
 # n.b. this applies only to Rooms which are not ComputerRooms or SpecialRooms
 subject to NotTooManyRooms{c in CidAssign: (cidCount[c]-SpeCidCount[c]) <= 12}:
   sum{r in Rooms} w[c,r] <= 1;
+
 # We will force the courses in many rooms within the builing, however, they
 # should be more than 12 in a room or less for a 2 way split
 # this should avoid the possibility of putting courses as singles in rooms
@@ -203,22 +205,22 @@ subject to OnlyOneUnlessInBuildingCluster{c in CidAssign, g in Cluster, t in Bui
 subject to RoomOccupied{c in CidAssign, r in AllRooms}: w[c,r] <= wr[r];
 
 # Special condition for Laugarvatn, too far away ;)
-subject to EkkiLaugarvatn{c in CidAssign: 'Laugarvatn' not in RequiredBuildings[c]}:
-  sum{r in RoomInBuilding['Laugarvatn']} h[c,r] = 0;
+subject to EkkiLaugarvatn{c in CidAssign: 'Itrottafradasetur_Laugarvatn' not in PriorityBuildings[c]}:
+  sum{r in RoomInBuilding['Itrottafradasetur_Laugarvatn']} h[c,r] = 0;
 
 # Objective function
 minimize Objective:
 # 1.) we don't want to use Klettur and Enni (unless asked for)
-+ 100 * sum{c in CidAssign, b in Building: (b == 'Klettur' or b == 'Enni') and b not in RequiredBuildings[c]} wb[c,b]
++ 100 * sum{c in CidAssign, b in Building: (b == 'Stakkahlid_Klettur' or b == 'Stakkahlid_Enni') and b not in PriorityBuildings[c]} wb[c,b]
 # 1.1) even when asked for we really don't want to go here ...
-+ 100 * sum{c in CidAssign, b in Building: (b == 'Klettur' or b == 'Enni')} wb[c,b]
++ 100 * sum{c in CidAssign, b in Building: (b == 'Stakkahlid_Klettur' or b == 'Stakkahlid_Enni')} wb[c,b]
 # 2.) We don't want to use Hamar unless asked for
-+ 75 * sum{c in CidAssign, b in Building: b == 'Hamar' and b not in RequiredBuildings[c]} wb[c,b]
++ 75 * sum{c in CidAssign, b in Building: b == 'Stakkahlid_Hamar' and b not in PriorityBuildings[c]} wb[c,b]
 # 3.) Avoid also Eirberg is not on your list
-+ 50 * sum{c in CidAssign, b in Building: b == 'Eirberg' and b not in RequiredBuildings[c]} wb[c,b]
++ 50 * sum{c in CidAssign, b in Building: b == 'Eirberg' and b not in PriorityBuildings[c]} wb[c,b]
 # 4.) Avoid buildings that are not on your list, note that this adds to RequiredBuildings, so not too big please
 + 20 * sum{c in CidAssign, b in Building: b not in PriorityBuildings[c]} wb[c,b]
-+ 20 * sum{c in CidAssign, b in Building: b not in RequiredBuildings[c]} wb[c,b]
+#+ 20 * sum{c in CidAssign, b in Building: b not in RequiredBuildings[c]} wb[c,b]
 # 5.) minimize the number of buildings used, weight should be equal to Required or higher?
 + 10 * sum{c in CidAssign, b in Building} wb[c,b]
 + 1000 * sum{c in CidAssign} NumberOfBuildings[c]

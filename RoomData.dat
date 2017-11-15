@@ -22,43 +22,26 @@ set Rooms :=
 A050
 A051
 A052
-A069
-A207
-A229
 Askja130
 Askja131
-Askja166
-A101
 A201
 A301
-A303
 A304
-A310
 A311
 E101
 E103C
 E201C
 E203C
-G101
 HT102
 HT103
 HT104
 HT105
-HT204
 K_salur
-K_salur_special
-K_salurb
 Stofa2
 L102
 L103
-L201
-L204
-L205
-O102
-O103
 O201
 O202
-O301
 E_301
 E_303
 H_101
@@ -68,25 +51,17 @@ H_203
 H_204
 H_205
 H_206
-H208
-H209
 K204
 K205
 K_206
 K_207
 K_208
 VHV007
-VHV103
-VHV104
-VHV107
-VHV108
-VHV_231Tungumalamidstod
 V138
 V147
 V152
 V156
 V258
-V260
 V261
 ;
 param RoomId := 
@@ -110,6 +85,7 @@ E101 1395
 E103C 1396
 E201C 1397
 E203C 1398
+EIR105C_tolvuver 218
 G101 1458
 HT102 1311
 HT103 1313
@@ -181,6 +157,7 @@ E101 12
 E103C 50
 E201C 44
 E203C 50
+EIR105C_tolvuver 8
 G101 21
 HT102 80
 HT103 54
@@ -259,13 +236,14 @@ VHV107
 VHV108
 ;
 set SpecialComputerRooms := 
+EIR105C_tolvuver
 O102
 O103
 ;
 set RoomInBuilding['Adalbygging'] :=  A050 A051 A052 A069 A207 A229;
 set RoomInBuilding['Arnagardur'] :=  A101 A201 A301 A303 A304 A310 A311;
 set RoomInBuilding['Askja'] :=  Askja130 Askja131 Askja166;
-set RoomInBuilding['Eirberg'] :=  E101 E103C E201C E203C;
+set RoomInBuilding['Eirberg'] :=  E101 E103C E201C E203C EIR105C_tolvuver;
 set RoomInBuilding['Gimli'] :=  G101;
 set RoomInBuilding['Haskolatorg'] :=  HT102 HT103 HT104 HT105 HT204;
 set RoomInBuilding['HusVigdisar'] :=  VHV007 VHV103 VHV104 VHV107 VHV108 VHV_231Tungumalamidstod;

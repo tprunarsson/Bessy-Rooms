@@ -30,7 +30,7 @@ for (i in c(1:length(uudates))) {
 }
 write(";", file = "SplitForPhase.dat", append = T)
 
-write("param hfix := ", file = "SplitForPhase.dat", append = T)
+write("param hdef := ", file = "SplitForPhase.dat", append = T)
 for (c in cid) {
   cname <- Data[[c]]$'courseName'
   cname <- chartr(c('ÍÁÆÖÝÐÞÓÚÉ'),c('IAAOYDTOUE'), cname)
@@ -45,6 +45,23 @@ for (c in cid) {
   }
 }
 write(";", file = "SplitForPhase.dat", append = T)
+
+write("param duration := ", file = "SplitForPhase.dat", append = T)
+for (c in cid) {
+  cname <- Data[[c]]$'courseName'
+  cname <- chartr(c('ÍÁÆÖÝÐÞÓÚÉ'),c('IAAOYDTOUE'), cname)
+  if ((cname %in% MHR) == FALSE) {
+    if ((length(as.numeric(Data[[c]]$duration))>0)) {
+      strcat = cname
+      strcat = sprintf("%s %.1f", cname, as.numeric(Data[[c]]$duration) )
+      if (as.numeric(Data[[c]]$duration) != 3) {
+        write(strcat, file = "SplitForPhase.dat", append = T)
+      }
+    }
+  }
+}
+write(";", file = "SplitForPhase.dat", append = T)
+
 
 for (c in cid) {
   strcat = ""
@@ -77,7 +94,7 @@ for (c in cid) {
 }
 
 
-write("param Slots := ", file="SplitForPhase.dat", append = T)
+write("param Slot := ", file="SplitForPhase.dat", append = T)
 for (c in cid) {
   cname <- Data[[c]]$'courseName'
   cname <- chartr(c('ÍÁÆÖÝÐÞÓÚÉ'),c('IAAOYDTOUE'), cname)

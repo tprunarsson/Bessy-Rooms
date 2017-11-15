@@ -22,11 +22,21 @@ param SlotNames :=
 21 '2017.12.18;09:00'
 22 '2017.12.18;13:30'
 ;
-param hfix := 
+param hdef := 
 TOL104G HT102 80
 MIS105F A201 48
 TOL107G HT102 40
 TOL101G HT102 80
+;
+param duration := 
+ENS101G 2.0
+SJU509G 2.0
+HSP304G 2.0
+ENS102G 2.0
+VID167F 4.0
+HJU510G 2.5
+SJU306G 2.0
+LSS104G 2.0
 ;
 set PriorityBuildings[TSM302G] :=  Haskolatorg;
 set PriorityBuildings[JAP101G] :=  Adalbygging Arnagardur;
@@ -478,7 +488,7 @@ set PriorityBuildings[RAF301G] :=  VR_2;
 set PriorityBuildings[EFN114G] :=  VR_2;
 set PriorityBuildings[LYF126F] :=  Haskolatorg;
 set PriorityBuildings[EVF301G] :=  VR_2 Adalbygging;
-param Slots := 
+param Slot := 
 ITH321G 1 1
 GSS096G 1 1
 IDN121F 1 1

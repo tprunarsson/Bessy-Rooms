@@ -1,4 +1,4 @@
-glpsol --check --math BessyRooms.mod -d SolveSlot.dat -d courses.dat -d RoomData.dat -d SplitForPhase.dat --wlp TEST.lp
+glpsol --check --math BessyRooms.mod -d conjoined.dat -d SolveSlot.dat -d resources.dat -d courses.dat -d RoomData.dat -d SplitForPhase.dat --wlp TEST.lp
 gurobi_cl Threads=8 TimeLimit=100 ResultFile=test.sol TEST.lp
 cat test.sol | grep 'h(' | grep -v ') 0' > rusl.txt
 sed -i 's/,/ /g' rusl.txt
@@ -8,4 +8,4 @@ echo "param hfix := " >  hfix.dat
 cat rusl.txt >> hfix.dat
 echo ";" >> hfix.dat
 echo "end;" >> hfix.dat
-glpsol --math BessyRooms.mod -d SolveSlot.dat -d courses.dat -d RoomData.dat -d SplitForPhase.dat -d hfix.dat
+glpsol --math BessyRooms.mod -d conjoined.dat -d SolveSlot.dat  -d resources.dat -d courses.dat -d RoomData.dat -d SplitForPhase.dat -d hfix.dat
