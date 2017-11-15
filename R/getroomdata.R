@@ -1,21 +1,3 @@
-#vantar:
-
-#set Cluster :=
-#  Torfan
-#Melurinn
-#Holtid
-#;
-#
-#set BuildingsInCluster['Torfan'] := Gimli Haskolatorg Logberg Oddi NyjiGardur Arnagardur Askja;
-#set BuildingsInCluster['Melurinn'] := Adalbygging Arnagardur Oddi;
-#set BuildingsInCluster['Holtid'] := Hamar Klettur Enni;
-
-#param RoomPriority:=
-#Ht315 2
-#A050 1
-#A051 2
-
-
 rm(list=ls())
 require(rjson)
 Ugla.Url <- paste0("https://ugla.hi.is/service/proftafla/?request=rooms")
@@ -93,6 +75,13 @@ for (i in c(1:length(ubuildings))) {
 }
 write(";", file = "roomdata.dat", append = T)
 
+write("set Cluster :=  Torfan Melurinn Holtid ;", file = "roomdata.dat", append = T)
+
+write("set BuildingsInCluster['Torfan'] := Gimli Haskolatorg Logberg Oddi HusVigdisar Arnagardur Askja;", file = "roomdata.dat", append = T)
+write("set BuildingsInCluster['Melurinn'] := Adalbygging Arnagardur Oddi;", file = "roomdata.dat", append = T)
+write("set BuildingsInCluster['Holtid'] := Stakkahlid_Hamar Stakkahlid_Klettur Stakkahlid_Enni;", file = "roomdata.dat", append = T)
+
+
 
 write("set Rooms := ", file="roomdata.dat", append = T)
 for (i in c(1:length(room))) {
@@ -153,3 +142,5 @@ for (i in c(1:length(ubuildings))) {
   strcat <- sprintf('%s%s',strcat,";")
   write(strcat, file = "roomdata.dat", append = T)
 }
+
+save(file = "ubuildings.Rdata", list=c("ubuildings"))

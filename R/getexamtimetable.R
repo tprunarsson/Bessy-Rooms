@@ -8,14 +8,55 @@ Data <- Ugla.Raw$data
 cid <- names(Data)
 props <- names(Data[[cid[1]]])
 
+load(file = c('ubuildings.Rdata'))
+
 # quickly extract all potential exam dates:
 dates = rep(ymd_hms(Data[[cid[1]]]$start),length(cid))
 for (i in c(1:length(cid))) {
   dates[i] <- ymd_hms(Data[[cid[i]]]$start)
 }
 udates = sort(unique(yday(dates)))
+uudates = as.Date(udates-1, origin = sprintf("%d-01-01",year(dates[1])))
+uhours = sort(table(sprintf("%02d:%02d",hour(dates),minute(dates))),decreasing = TRUE)
+morningafternoon = sort(hm(names(uhours)[1:2]))
+morningafternoon = sprintf("%02d:%02d",hour(morningafternoon),minute(morningafternoon))
+cat("param SlotNames := ", file="SplitForPhase.dat",sep="\n")
+for (i in c(1:length(uudates))) {
+  strcat = sprintf("%d '%d.%d.%d;%s'",1+2*(i-1),year(uudates[i]),month(uudates[i]),day(uudates[i]),morningafternoon[1])
+  write(strcat, file = "SplitForPhase.dat", append = T)
+  strcat = sprintf("%d '%d.%d.%d;%s'",2*i,year(uudates[i]),month(uudates[i]),day(uudates[i]),morningafternoon[2])
+  write(strcat, file = "SplitForPhase.dat", append = T)
+}
+write(";", file = "SplitForPhase.dat", append = T)
+
+for (c in cid) {
+  strcat = ""
+  usedbefore = character(0)
+  cname <- Data[[c]]$'courseName'
+  cname <- chartr(c('ÍÁÆÖÝÐÞÓÚÉ'),c('IAAOYDTOUE'), cname)
+  if (Data[[c]]$preferredBuildingName != "") {
+    buildingname <- Data[[c]]$preferredBuildingName
+    buildingname <- chartr(c('ÍÁÆÖÝÐÞÓÚÉíáæöýðþóúé-'),c('IAAOYDTOUEiaaoydtoue_'), buildingname)
+    buildingname <- gsub(" ", "", buildingname, fixed = TRUE)
+    usedbefore = buildingname
+  }
+  for (i in Data[[c]]$priorityRooms) {
+    buildingname <- i$building # Data[[c]]$priorityRooms[[i]]
+    buildingname <- chartr(c('ÍÁÆÖÝÐÞÓÚÉíáæöýðþóúé-'),c('IAAOYDTOUEiaaoydtoue_'), buildingname)
+    buildingname <- gsub(" ", "", buildingname, fixed = TRUE)
+    if (buildingname %in% ubuildings) {
+      usedbefore = c(usedbefore, buildingname)
+    }
+  }
+  for (b in unique(usedbefore)) {
+    strcat = sprintf("%s %s", strcat, b)
+  }
+  write(sprintf("set PriorityBuildings[%s] = %s;",cname,strcat), file = "SplitForPhase.dat", append = T)
   
-cat("param Slots := ", file="SplitForPhase.dat",sep="\n")
+}
+
+
+write("param Slots := ", file="SplitForPhase.dat", append = T)
 for (c in cid) {
   cname <- Data[[c]]$'courseName'
   cname <- chartr(c('ÍÁÆÖÝÐÞÓÚÉ'),c('IAAOYDTOUE'), cname)
@@ -26,3 +67,4 @@ for (c in cid) {
   write(strcat, file = "SplitForPhase.dat", append = T)
 }
 write(";", file = "SplitForPhase.dat", append = T)
+
