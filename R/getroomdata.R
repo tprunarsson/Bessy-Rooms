@@ -1,3 +1,21 @@
+#vantar:
+
+#set Cluster :=
+#  Torfan
+#Melurinn
+#Holtid
+#;
+#
+#set BuildingsInCluster['Torfan'] := Gimli Haskolatorg Logberg Oddi NyjiGardur Arnagardur Askja;
+#set BuildingsInCluster['Melurinn'] := Adalbygging Arnagardur Oddi;
+#set BuildingsInCluster['Holtid'] := Hamar Klettur Enni;
+
+#param RoomPriority:=
+#Ht315 2
+#A050 1
+#A051 2
+
+
 rm(list=ls())
 require(rjson)
 Ugla.Url <- paste0("https://ugla.hi.is/service/proftafla/?request=rooms")
