@@ -40,6 +40,10 @@ param cidConjoinedData {CidExam, CidExam};
 # The set of courses that should be examined together, this script forces symmetry for the matrix (if needed)
 param cidConjoined  {c1 in CidAssign, c2 in CidAssign} := min(cidConjoinedData[c1,c2] + cidConjoinedData[c2,c1],1);
 
+# Number of students taking two common courses" THIS IS NOT USED BUT IS IN courses.dat
+param CidCommonStudents {CidExam, CidExam} default 0;
+
+
 # Total number of students for each course
 param cidCount{CidExam} default 0;
 

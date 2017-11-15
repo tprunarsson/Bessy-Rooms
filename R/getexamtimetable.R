@@ -72,7 +72,7 @@ for (c in cid) {
     for (b in unique(usedbefore)) {
       strcat = sprintf("%s %s", strcat, b)
     }
-    write(sprintf("set PriorityBuildings[%s] = %s;",cname,strcat), file = "SplitForPhase.dat", append = T)
+    write(sprintf("set PriorityBuildings[%s] := %s;",cname,strcat), file = "SplitForPhase.dat", append = T)
   }
 }
 
