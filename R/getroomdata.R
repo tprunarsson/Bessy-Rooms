@@ -142,5 +142,5 @@ for (i in c(1:length(ubuildings))) {
   strcat <- sprintf('%s%s',strcat,";")
   write(strcat, file = "roomdata.dat", append = T)
 }
-
-save(file = "ubuildings.Rdata", list=c("ubuildings"))
+roomID = as.numeric(roomID)
+save(file = "ubuildings.Rdata", list=c("ubuildings", "room", "roomID"))

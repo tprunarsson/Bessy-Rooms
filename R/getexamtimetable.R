@@ -9,6 +9,7 @@ cid <- names(Data)
 props <- names(Data[[cid[1]]])
 
 load(file = c('ubuildings.Rdata'))
+load(file = c('mhr.Rdata'))
 
 # quickly extract all potential exam dates:
 dates = rep(ymd_hms(Data[[cid[1]]]$start),length(cid))
@@ -29,33 +30,50 @@ for (i in c(1:length(uudates))) {
 }
 write(";", file = "SplitForPhase.dat", append = T)
 
+write("param hfix := ", file = "SplitForPhase.dat", append = T)
+for (c in cid) {
+  cname <- Data[[c]]$'courseName'
+  cname <- chartr(c('ÍÁÆÖÝÐÞÓÚÉ'),c('IAAOYDTOUE'), cname)
+  if ((cname %in% MHR) == FALSE) {
+    if (Data[[c]]$preferredRoom != "" & (length(as.numeric(Data[[c]]$preferredRoomSeats))>0)) {
+      strcat = cname
+      roomname = room[which(as.numeric(Data[[c]]$preferredRoom)==roomID)]
+      print(roomname)
+      strcat = sprintf("%s %s %d", cname, roomname, as.numeric(Data[[c]]$preferredRoomSeats) )
+      write(strcat, file = "SplitForPhase.dat", append = T)
+    }
+  }
+}
+write(";", file = "SplitForPhase.dat", append = T)
+
 for (c in cid) {
   strcat = ""
   usedbefore = character(0)
   cname <- Data[[c]]$'courseName'
   cname <- chartr(c('ÍÁÆÖÝÐÞÓÚÉ'),c('IAAOYDTOUE'), cname)
-  if (Data[[c]]$preferredBuildingName != "") {
-    buildingname <- Data[[c]]$preferredBuildingName
-    buildingname <- chartr(c('ÍÁÆÖÝÐÞÓÚÉíáæöýðþóúé-'),c('IAAOYDTOUEiaaoydtoue_'), buildingname)
-    buildingname <- gsub(" ", "", buildingname, fixed = TRUE)
-    usedbefore = buildingname
-  }
-  for (i in Data[[c]]$priorityRooms) {
-    buildingname <- i$building # Data[[c]]$priorityRooms[[i]]
-    buildingname <- chartr(c('ÍÁÆÖÝÐÞÓÚÉíáæöýðþóúé-'),c('IAAOYDTOUEiaaoydtoue_'), buildingname)
-    buildingname <- gsub(" ", "", buildingname, fixed = TRUE)
-    if (buildingname %in% ubuildings) {
-      usedbefore = c(usedbefore, buildingname)
+  if ((cname %in% MHR) == FALSE) {
+    if (Data[[c]]$preferredBuildingName != "") {
+      buildingname <- Data[[c]]$preferredBuildingName
+      buildingname <- chartr(c('ÍÁÆÖÝÐÞÓÚÉíáæöýðþóúé-'),c('IAAOYDTOUEiaaoydtoue_'), buildingname)
+      buildingname <- gsub(" ", "", buildingname, fixed = TRUE)
+      usedbefore = buildingname
     }
+    for (i in Data[[c]]$priorityRooms) {
+      buildingname <- i$building # Data[[c]]$priorityRooms[[i]]
+      buildingname <- chartr(c('ÍÁÆÖÝÐÞÓÚÉíáæöýðþóúé-'),c('IAAOYDTOUEiaaoydtoue_'), buildingname)
+      buildingname <- gsub(" ", "", buildingname, fixed = TRUE)
+      if (buildingname %in% ubuildings) {
+        usedbefore = c(usedbefore, buildingname)
+      }
+    }
+    if (length(usedbefore) == 0) {
+      usedbefore = c('Haskolatorg') # if nothing has been chosen ...
+    }
+    for (b in unique(usedbefore)) {
+      strcat = sprintf("%s %s", strcat, b)
+    }
+    write(sprintf("set PriorityBuildings[%s] = %s;",cname,strcat), file = "SplitForPhase.dat", append = T)
   }
-  if (length(usedbefore) == 0) {
-    usedbefore = c('Haskolatorg') # if nothing has been chosen ...
-  }
-  for (b in unique(usedbefore)) {
-    strcat = sprintf("%s %s", strcat, b)
-  }
-  write(sprintf("set PriorityBuildings[%s] = %s;",cname,strcat), file = "SplitForPhase.dat", append = T)
-  
 }
 
 
