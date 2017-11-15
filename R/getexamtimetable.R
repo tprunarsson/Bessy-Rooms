@@ -48,6 +48,9 @@ for (c in cid) {
       usedbefore = c(usedbefore, buildingname)
     }
   }
+  if (length(usedbefore) == 0) {
+    usedbefore = c('Haskolatorg') # if nothing has been chosen ...
+  }
   for (b in unique(usedbefore)) {
     strcat = sprintf("%s %s", strcat, b)
   }
