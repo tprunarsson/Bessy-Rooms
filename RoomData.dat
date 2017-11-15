@@ -14,10 +14,15 @@ Stakkahlid_Hamar
 Stakkahlid_Klettur
 VR_2
 ;
+set Cluster :=  Torfan Melurinn Holtid ;
+set BuildingsInCluster['Torfan'] := Gimli Haskolatorg Logberg Oddi HusVigdisar Arnagardur Askja;
+set BuildingsInCluster['Melurinn'] := Adalbygging Arnagardur Oddi;
+set BuildingsInCluster['Holtid'] := Stakkahlid_Hamar Stakkahlid_Klettur Stakkahlid_Enni;
 set Rooms := 
 A050
 A051
 A052
+A069
 A207
 A229
 Askja130
@@ -88,6 +93,7 @@ param RoomId :=
 A050 60
 A051 61
 A052 15
+A069 1446
 A207 62
 A229 67
 Askja130 1245
@@ -158,6 +164,7 @@ param RoomCapacity :=
 A050 24
 A051 12
 A052 18
+A069 12
 A207 18
 A229 10
 Askja130 20
@@ -233,6 +240,7 @@ VHV_231Tungumalamidstod
 V260
 ;
 set SpecialRooms := 
+A069
 A207
 A229
 A101
@@ -254,7 +262,7 @@ set SpecialComputerRooms :=
 O102
 O103
 ;
-set RoomInBuilding['Adalbygging'] :=  A050 A051 A052 A207 A229;
+set RoomInBuilding['Adalbygging'] :=  A050 A051 A052 A069 A207 A229;
 set RoomInBuilding['Arnagardur'] :=  A101 A201 A301 A303 A304 A310 A311;
 set RoomInBuilding['Askja'] :=  Askja130 Askja131 Askja166;
 set RoomInBuilding['Eirberg'] :=  E101 E103C E201C E203C;
