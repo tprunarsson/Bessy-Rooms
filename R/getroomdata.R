@@ -68,69 +68,67 @@ for (i in c(1:length(Data))) {
   }
 }
 
-cat("set Building := ", file="roomdata.dat",sep="\n")
+cat("set Building := ", file="RoomData.dat",sep="\n")
 ubuildings = sort(unique(buildingName))
 for (i in c(1:length(ubuildings))) {
-  write(ubuildings[i], file = "roomdata.dat", append = T)
+  write(ubuildings[i], file = "RoomData.dat", append = T)
 }
-write(";", file = "roomdata.dat", append = T)
+write(";", file = "RoomData.dat", append = T)
 
-write("set Cluster :=  Torfan Melurinn Holtid ;", file = "roomdata.dat", append = T)
+write("set Cluster :=  Torfan Holtid ;", file = "RoomData.dat", append = T)
 
-write("set BuildingsInCluster['Torfan'] := Gimli Haskolatorg Logberg Oddi HusVigdisar Arnagardur Askja;", file = "roomdata.dat", append = T)
-write("set BuildingsInCluster['Melurinn'] := Adalbygging Arnagardur Oddi;", file = "roomdata.dat", append = T)
-write("set BuildingsInCluster['Holtid'] := Stakkahlid_Hamar Stakkahlid_Klettur Stakkahlid_Enni;", file = "roomdata.dat", append = T)
+write("set BuildingsInCluster['Torfan'] := Gimli Haskolatorg Logberg Oddi HusVigdisar Arnagardur Askja;", file = "RoomData.dat", append = T)
+#write("set BuildingsInCluster['Melurinn'] := Adalbygging Arnagardur Oddi;", file = "RoomData.dat", append = T)
+write("set BuildingsInCluster['Holtid'] := Stakkahlid_Hamar Stakkahlid_Klettur Stakkahlid_Enni;", file = "RoomData.dat", append = T)
 
-
-
-write("set Rooms := ", file="roomdata.dat", append = T)
+write("set Rooms := ", file="RoomData.dat", append = T)
 for (i in c(1:length(room))) {
   if (roomType[i] == 1) {
-    write(room[i], file = "roomdata.dat", append = T)
+    write(room[i], file = "RoomData.dat", append = T)
   }
 }
-write(";", file = "roomdata.dat", append = T)
+write(";", file = "RoomData.dat", append = T)
 
-write("param RoomId := ", file = "roomdata.dat", append = T)
+write("param RoomId := ", file = "RoomData.dat", append = T)
 for (i in c(1:length(room))) {
   strcat <- sprintf('%s %s', room[i], roomID[i])
-  write(strcat, file = "roomdata.dat", append = T)
+  write(strcat, file = "RoomData.dat", append = T)
 }
-write(";", file = "roomdata.dat", append = T)
+write(";", file = "RoomData.dat", append = T)
 
-write("param RoomCapacity := ", file = "roomdata.dat", append = T)
+write("param RoomCapacity := ", file = "RoomData.dat", append = T)
 for (i in c(1:length(room))) {
   strcat <- sprintf('%s %d', room[i], roomCapacity[i])
-  write(strcat, file = "roomdata.dat", append = T)
+  write(strcat, file = "RoomData.dat", append = T)
 }
-write(";", file = "roomdata.dat", append = T)
+write(";", file = "RoomData.dat", append = T)
 
-write("set ComputerRooms := ", file = "roomdata.dat", append = T)
+write("set ComputerRooms := ", file = "RoomData.dat", append = T)
 for (i in c(1:length(room))) {
   if (roomType[i] == 2) {
     strcat <- sprintf('%s', room[i])
-    write(strcat, file = "roomdata.dat", append = T)
+    write(strcat, file = "RoomData.dat", append = T)
   }
 }
-write(";", file = "roomdata.dat", append = T)
+write(";", file = "RoomData.dat", append = T)
 
-write("set SpecialRooms := ", file = "roomdata.dat", append = T)
+write("set SpecialRooms := ", file = "RoomData.dat", append = T)
 for (i in c(1:length(room))) {
   if (roomType[i] == 3) {
     strcat <- sprintf('%s', room[i])
-    write(strcat, file = "roomdata.dat", append = T)
+    write(strcat, file = "RoomData.dat", append = T)
   }
 }
-write(";", file = "roomdata.dat", append = T)
+write(";", file = "RoomData.dat", append = T)
 
-write("set SpecialComputerRooms := ", file = "roomdata.dat", append = T)
+write("set SpecialComputerRooms := ", file = "RoomData.dat", append = T)
 for (i in c(1:length(room))) {
   if (roomType[i] == 4) {
     strcat <- sprintf('%s', room[i])
-    write(strcat, file = "roomdata.dat", append = T)
+    write(strcat, file = "RoomData.dat", append = T)
   }
 }
-write(";", file = "roomdata.dat", append = T)
+write(";", file = "RoomData.dat", append = T)
 
 for (i in c(1:length(ubuildings))) {
   strcat = "set RoomInBuilding['";
@@ -142,7 +140,7 @@ for (i in c(1:length(ubuildings))) {
     }
   }
   strcat <- sprintf('%s%s',strcat,";")
-  write(strcat, file = "roomdata.dat", append = T)
+  write(strcat, file = "RoomData.dat", append = T)
 }
 roomID = as.numeric(roomID)
 save(file = "ubuildings.Rdata", list=c("ubuildings", "room", "roomID"))

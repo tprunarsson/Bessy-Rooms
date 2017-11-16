@@ -64,17 +64,10 @@ write(";", file = "SplitForPhase.dat", append = T)
 
 
 for (c in cid) {
-  strcat = ""
   usedbefore = character(0)
   cname <- Data[[c]]$'courseName'
   cname <- chartr(c('ÍÁÆÖÝÐÞÓÚÉ'),c('IAAOYDTOUE'), cname)
   if ((cname %in% MHR) == FALSE) {
-    if (Data[[c]]$preferredBuildingName != "") {
-      buildingname <- Data[[c]]$preferredBuildingName
-      buildingname <- chartr(c('ÍÁÆÖÝÐÞÓÚÉíáæöýðþóúé-'),c('IAAOYDTOUEiaaoydtoue_'), buildingname)
-      buildingname <- gsub(" ", "", buildingname, fixed = TRUE)
-      usedbefore = buildingname
-    }
     for (i in Data[[c]]$priorityRooms) {
       buildingname <- i$building # Data[[c]]$priorityRooms[[i]]
       buildingname <- chartr(c('ÍÁÆÖÝÐÞÓÚÉíáæöýðþóúé-'),c('IAAOYDTOUEiaaoydtoue_'), buildingname)
@@ -83,13 +76,44 @@ for (c in cid) {
         usedbefore = c(usedbefore, buildingname)
       }
     }
-    if (length(usedbefore) == 0) {
-      usedbefore = c('Haskolatorg') # if nothing has been chosen ...
+    requiredBuilding = usedbefore
+    if (Data[[c]]$preferredBuildingName != "") {
+      buildingname <- Data[[c]]$preferredBuildingName
+      buildingname <- chartr(c('ÍÁÆÖÝÐÞÓÚÉíáæöýðþóúé-'),c('IAAOYDTOUEiaaoydtoue_'), buildingname)
+      buildingname <- gsub(" ", "", buildingname, fixed = TRUE)
+      upile = unique(usedbefore)
+      usedbefore = c(usedbefore,buildingname)
+      if (buildingname == 'Haskolatorg' & length(requiredBuilding) == 0) {
+        usedbefore = c('Gimli','Haskolatorg','Logberg','Oddi','HusVigdisar','Arnagardur','Askja')
+      }
+      if (buildingname == 'Haskolatorg' & length(upile) == 1) {
+        usedbefore = c(usedbefore,'Gimli','Haskolatorg','Logberg','Oddi','HusVigdisar','Arnagardur','Askja')
+      }
     }
+    # Special additions:
+    cnameshort = substr(cname[1],1,3)
+    if (cnameshort == 'LAK' | cnameshort == 'TAN' | cnameshort == 'SJU' | cnameshort == 'HJU') {
+      usedbefore = c(usedbefore, 'Eirberg')
+    }
+    usedbefore = unique(usedbefore)
+    if (length(usedbefore) == 0) {
+      usedbefore = c('Gimli','Haskolatorg','Logberg','Oddi','HusVigdisar','Arnagardur','Askja') # if nothing has been chosen ...
+    }
+    if (length(usedbefore) == 1) {
+      usedbefore = c(usedbefore,'Gimli','Haskolatorg','Logberg','Oddi','HusVigdisar','Arnagardur','Askja')
+    }
+    strcat = ""
     for (b in unique(usedbefore)) {
       strcat = sprintf("%s %s", strcat, b)
     }
     write(sprintf("set PriorityBuildings[%s] := %s;",cname,strcat), file = "SplitForPhase.dat", append = T)
+    strcat = ""
+    for (b in unique(requiredBuilding)) {
+      strcat = sprintf("%s %s", strcat, b)
+    }
+    if (strcat != "") {
+      write(sprintf("set RequiredBuildings[%s] := %s;",cname,strcat), file = "SplitForPhase.dat", append = T)
+    }
   }
 }
 

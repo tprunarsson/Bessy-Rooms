@@ -75,7 +75,7 @@ set Cluster;
 set BuildingsInCluster{Cluster} within Building;
 
 # These building are acceptable to the course
-#set RequiredBuildings{CidExam} within Building default {};
+set RequiredBuildings{CidExam} within Building default {};
 # These building are the most wanted buildings, not that these are also in RequiredBuildings
 set PriorityBuildings{CidExam} within Building default {};
 # Tells us which rooms are in a given building
@@ -114,17 +114,20 @@ check{c in CidAssign}: sum{r in AllRooms} hdef[c,r] <= cidCount[c];
 subject to FixD{c in CidAssign, r in AllRooms: hdef[c,r] > 0}:
   h[c,r] = hdef[c,r];
 
+# this boolean will dictate it we want to arrage also special students
+param AssignSpec := 0;
+
 # Make sure that all students in the course have a seat
 subject to AssignAllCidSeats{c in CidAssign}:
-  sum{r in AllRooms} h[c,r] = cidCount[c];
+  sum{r in Rooms} h[c,r] = cidCount[c] - SpeCidCount[c] ;
 
 # Special students need special rooms:
 subject to SpecialCoursesReq{c in CidAssignSpec: c not in CidAssignComp}:
-  sum{r in SpecialRooms} h[c,r] = SpeCidCount[c];
+  sum{r in SpecialRooms} h[c,r] = AssignSpec*SpeCidCount[c];
 
 # Special students need special computer rooms:
 subject to SpecialCompCoursesReq{c in CidAssignSpec: c in CidAssignComp}:
-  sum{r in SpecialComputerRooms} h[c,r] = SpeCidCount[c];
+  sum{r in SpecialComputerRooms} h[c,r] = AssignSpec*SpeCidCount[c];
 
 # Computer courses should only be assigned to computer rooms or on a dummy room if there is no space!
 subject to ComputerCoursesReq{c in CidAssignComp}:
@@ -163,9 +166,8 @@ subject to NotTooManyRooms{c in CidAssign: (cidCount[c]-SpeCidCount[c]) <= 12}:
 # should be more than 12 in a room or less for a 2 way split
 # this should avoid the possibility of putting courses as singles in rooms
 subject to NotTooFewStudents{c in CidAssign, r in Rooms: (cidCount[c]-SpeCidCount[c]) >= 12}:
-  h[c,r] >= w[c,r] * min(12,
-min((cidCount[c]-SpeCidCount[c])/2,
-(cidCount[c]-SpeCidCount[c]-(sum{rr in Rooms: hfix[c,rr]>0} hfix[c,rr]))));
+  h[c,r] >= w[c,r] * min(12,min((cidCount[c]-SpeCidCount[c])/2,
+                          (cidCount[c]-SpeCidCount[c]-(sum{rr in Rooms: hdef[c,rr]>0} hdef[c,rr]))));
 
 # Do not have too many different exams in the same room, more traffic from teachers
 # try to maximize the number of courses in a room !!! Helps with table assignments (different exams at each table)
@@ -192,7 +194,7 @@ subject to IsCidInBuildingBB{c in CidAssign, b in Building}:
 subject to IsCidInBuildingBB2{c in CidAssign, b in Building}:
   1.0001 * sum{r in RoomInBuilding[b]: r in Rooms} w[c,r]  >= wbb[c,b];
 
-# Can only be in one building if not on the green!
+# Can only be in one building if not then on the green!
 var NumberOfBuildings{CidAssign}, >= 0;
 subject to OnlyOneUnlessInBuildingCluster{c in CidAssign, g in Cluster, t in BuildingsInCluster[g]}:
   sum{b in Building: b not in BuildingsInCluster[g]} wbb[c,b] + wbb[c,t] <= NumberOfBuildings[c];
@@ -217,8 +219,8 @@ minimize Objective:
 # 3.) Avoid also Eirberg is not on your list
 + 50 * sum{c in CidAssign, b in Building: b == 'Eirberg' and b not in PriorityBuildings[c]} wb[c,b]
 # 4.) Avoid buildings that are not on your list, note that this adds to RequiredBuildings, so not too big please
-+ 20 * sum{c in CidAssign, b in Building: b not in PriorityBuildings[c]} wb[c,b]
-#+ 20 * sum{c in CidAssign, b in Building: b not in RequiredBuildings[c]} wb[c,b]
++ 50 * sum{c in CidAssign, b in Building: b not in PriorityBuildings[c]} wb[c,b]
++ 50 * sum{c in CidAssign, b in Building: b not in RequiredBuildings[c]} wb[c,b]
 # 5.) minimize the number of buildings used, weight should be equal to Required or higher?
 + 10 * sum{c in CidAssign, b in Building} wb[c,b]
 + 1000 * sum{c in CidAssign} NumberOfBuildings[c]
@@ -226,8 +228,6 @@ minimize Objective:
 + 100 * sum{r in AllRooms} wr[r]
 # 7.) Use as many rooms as possible also but with smaller priority
 - (1/card(CidAssign)) * sum{c in CidAssign,r in Rooms} w[c,r]
-# 10.) all else being equal use rooms with better priority (low weight here)
-+ (0.1/card(CidAssign)) * sum{c in CidAssign, r in AllRooms} w[c,r] * RoomPriority[r]
 ;
 
 # Some debugging now for the data supplied:
@@ -235,7 +235,7 @@ set UnionOfRoomsInBuildings := setof{b in Building, r in RoomInBuilding[b]} r;
 check card(UnionOfRoomsInBuildings) == card(AllRooms);
 check {c in CidAssign} cidCount[c] >= SpeCidCount[c];
 
-check {c in CidAssign} sum{r in AllRooms} hfix[c,r] <= cidCount[c];
+check {c in CidAssign} sum{r in Rooms} hfix[c,r] <= cidCount[c];
 check {r in AllRooms} sum{c in CidAssign} hfix[c,r] <= RoomCapacity[r];
 
 
@@ -293,45 +293,49 @@ for {e in SubExamSlots} {
 }
 
 # pretty print the solution for file "lausn.csv"
-printf : "Dagur;Tími;ID;Námskeið;Stofa;Bygging;Fjöldi;Lengd prófs;" > "lausn.csv";
-printf : "Heildarfjöldi;Hámarksfjöldi;Fjöldi námskeiða;Forgangur\n" >> "lausn.csv";
+printf : "Dagur;Tími;ID;Námskeið;Bygging;Stofa;Fjöldi;Lengd prófs;" > "lausn.csv";
+printf : "Heildarfjöldi;Hámarksfjöldi;Fjöldi námskeiða í stofu\n" >> "lausn.csv";
 for {e in SubExamSlots, b in Building} {
   for {r in RoomInBuilding[b]: r in Rooms} {
-    printf {c in CidAssign: Slot[c,e] * h[c,r] > 0} : "%s;%011.0f;%s;%s;%s;%d;%d;;;;;\n", SlotNames[e], CidId[c], c, b, r, h[c,r], duration[c] >> "lausn.csv";
-    printf : ";;;;;%s;;;%d;%d;%d;%d\n", r, sum{cc in CidAssign} Slot[cc,e] * h[cc,r], RoomCapacity[r], sum{cc in CidAssign} w[cc,r] * Slot[cc,e], RoomPriority[r] >> "lausn.csv";
+    printf {c in CidAssign: Slot[c,e] * h[c,r] > 0} : "%s;%011.0f;%s;%s;%s;%d;%d;;;;\n", SlotNames[e], CidId[c], c, b, r, h[c,r], duration[c] >> "lausn.csv";
+    printf : ";;;;;%s;;;%d;%d;%d\n", r, sum{cc in CidAssign} Slot[cc,e] * h[cc,r], RoomCapacity[r], sum{cc in CidAssign} w[cc,r] * Slot[cc,e] >> "lausn.csv";
   }
-  printf : ";;;;%s;;;;%d;%d;;;\n", b, sum{rr in RoomInBuilding[b], cc in CidAssign: rr in Rooms} Slot[cc,e] * h[cc,rr], sum{rr in RoomInBuilding[b]: rr in Rooms} RoomCapacity[rr] >> "lausn.csv";
+  printf : ";;;;%s;;;;%d;%d;;\n", b, sum{rr in RoomInBuilding[b], cc in CidAssign: rr in Rooms} Slot[cc,e] * h[cc,rr], sum{rr in RoomInBuilding[b]: rr in Rooms} RoomCapacity[rr] >> "lausn.csv";
 }
-printf : "Tölvustofur;;;;;;;;;;;;\n" >> "lausn.csv";
+printf : "Tölvustofur;;;;;;;;;;;\n" >> "lausn.csv";
 for {e in SubExamSlots, b in Building} {
   for {r in RoomInBuilding[b]: r in ComputerRooms} {
-    printf {c in CidAssign: Slot[c,e] * h[c,r] > 0} : "%s;%011.0f;%s;%s;%s;%d;%d;;;;;\n", SlotNames[e], CidId[c], c, b, r, h[c,r], duration[c] >> "lausn.csv";
-    printf : ";;;;;%s;;;%d;%d;%d;%d;%d\n", r, sum{cc in CidAssign} Slot[cc,e] * h[cc,r], RoomCapacity[r], sum{cc in CidAssign} w[cc,r] * Slot[cc,e], RoomPriority[r] >> "lausn.csv";
+    printf {c in CidAssign: Slot[c,e] * h[c,r] > 0} : "%s;%011.0f;%s;%s;%s;%d;%d;;;;\n", SlotNames[e], CidId[c], c, b, r, h[c,r], duration[c] >> "lausn.csv";
+    printf : ";;;;;%s;;;%d;%d;%d;%d\n", r, sum{cc in CidAssign} Slot[cc,e] * h[cc,r], RoomCapacity[r], sum{cc in CidAssign} w[cc,r] * Slot[cc,e] >> "lausn.csv";
   }
-  printf : ";;;;%s;;;;%d;%d;;;\n", b, sum{rr in RoomInBuilding[b], cc in CidAssign: rr in ComputerRooms} Slot[cc,e] * h[cc,rr], sum{rr in RoomInBuilding[b]: rr in ComputerRooms} RoomCapacity[rr] >> "lausn.csv";
+  printf : ";;;;%s;;;;%d;%d;;\n", b, sum{rr in RoomInBuilding[b], cc in CidAssign: rr in ComputerRooms} Slot[cc,e] * h[cc,rr], sum{rr in RoomInBuilding[b]: rr in ComputerRooms} RoomCapacity[rr] >> "lausn.csv";
 }
-printf : "Sérúrræði;;;;;;;;;;;;\n" >> "lausn.csv";
+printf : "Sérúrræði;;;;;;;;;;;\n" >> "lausn.csv";
 for {e in SubExamSlots, b in Building} {
   for {r in RoomInBuilding[b]: r in SpecialRooms} {
     printf {c in CidAssign: Slot[c,e] * h[c,r] > 0} : "%s;%011.0f;%s;%s;%s;%d;%d;;;;\n", SlotNames[e], CidId[c], c, b, r, h[c,r], duration[c] >> "lausn.csv";
-    printf : ";;;;;%s;;;%d;%d;%d;%d\n", r, sum{cc in CidAssign} Slot[cc,e] * h[cc,r], RoomCapacity[r], sum{cc in CidAssign} w[cc,r] * Slot[cc,e], RoomPriority[r] >> "lausn.csv";
+    printf : ";;;;;%s;;;%d;%d;%d\n", r, sum{cc in CidAssign} Slot[cc,e] * h[cc,r], RoomCapacity[r], sum{cc in CidAssign} w[cc,r] * Slot[cc,e] >> "lausn.csv";
   }
-  printf : ";;;;%s;;;;%d;%d;;;\n", b, sum{rr in RoomInBuilding[b], cc in CidAssign: rr in SpecialRooms} Slot[cc,e] * h[cc,rr], sum{rr in RoomInBuilding[b]: rr in SpecialRooms} RoomCapacity[rr] >> "lausn.csv";
+  printf : ";;;;%s;;;;%d;%d;;\n", b, sum{rr in RoomInBuilding[b], cc in CidAssign: rr in SpecialRooms} Slot[cc,e] * h[cc,rr], sum{rr in RoomInBuilding[b]: rr in SpecialRooms} RoomCapacity[rr] >> "lausn.csv";
 }
-printf : "Sérúrræði tölvustofur;;;;;;;;;\n" >> "lausn.csv";
+printf : "Sérúrræði tölvustofur;;;;;;;;\n" >> "lausn.csv";
 for {e in SubExamSlots, b in Building} {
   for {r in RoomInBuilding[b]: r in SpecialComputerRooms} {
-    printf {c in CidAssign: Slot[c,e] * h[c,r] > 0} : "%s;%011.0f;%s;%s;%s;%d;%d;;;;;\n", SlotNames[e], CidId[c], c, b, r, h[c,r], duration[c] >> "lausn.csv";
-    printf : ";;;;;%s;;;%d;%d;%d;%d\n", r, sum{cc in CidAssign} Slot[cc,e] * h[cc,r], RoomCapacity[r], sum{cc in CidAssign} w[cc,r] * Slot[cc,e], RoomPriority[r] >> "lausn.csv";
+    printf {c in CidAssign: Slot[c,e] * h[c,r] > 0} : "%s;%011.0f;%s;%s;%s;%d;%d;;;;\n", SlotNames[e], CidId[c], c, b, r, h[c,r], duration[c] >> "lausn.csv";
+    printf : ";;;;;%s;;;%d;%d;%d\n", r, sum{cc in CidAssign} Slot[cc,e] * h[cc,r], RoomCapacity[r], sum{cc in CidAssign} w[cc,r] * Slot[cc,e] >> "lausn.csv";
   }
   printf : ";;;;%s;;;;%d;%d;;;\n", b, sum{rr in RoomInBuilding[b], cc in CidAssign: rr in SpecialComputerRooms} Slot[cc,e] * h[cc,rr], sum{rr in RoomInBuilding[b]: rr in SpecialComputerRooms} RoomCapacity[rr] >> "lausn.csv";
 }
 
-printf : "Dagur;Tími;ID;Námskeið;Stofa;Bygging;Fjöldi;Lengd prófs;Forgangur\n" > "hreinn.csv";
+printf : "Dagur;Tími;ID;Námskeið;Bygging;Stofa;Fjöldi;Lengd prófs;Sérnemar\n" > "hreinn.csv";
 for {e in SubExamSlots} {
   for {c in CidAssign} {
-     printf{r in AllRooms, b in BuildingWithRoom[r]: Slot[c,e] * h[c,r] > 0}: "%s;%011.0f;%s;%s;%s;%d;%d;%d\n",
-     SlotNames[e], CidId[c], c, b, r, h[c,r], duration[c], RoomPriority[r] >> "hreinn.csv";
+     printf{r in AllRooms, b in BuildingWithRoom[r]: Slot[c,e] * h[c,r] > 0 and r not in SpecialRooms and r not in SpecialComputerRooms}:
+     "%s;%011.0f;%s;%s;%s;%d;%d;FALSE;%d;%d;%d\n",
+     SlotNames[e], CidId[c], c, b, r, h[c,r], duration[c],sum{cc in CidAssign} Slot[cc,e] * h[cc,r], RoomCapacity[r], sum{cc in CidAssign} w[cc,r] * Slot[cc,e] >> "hreinn.csv";
+     printf{r in AllRooms, b in BuildingWithRoom[r]: Slot[c,e] * h[c,r] > 0 and (r in SpecialRooms or r in SpecialComputerRooms)}:
+     "%s;%011.0f;%s;%s;%s;%d;%d;TRUE;%d;%d;%d\n",
+     SlotNames[e], CidId[c], c, b, r, h[c,r], duration[c],sum{cc in CidAssign} Slot[cc,e] * h[cc,r], RoomCapacity[r], sum{cc in CidAssign} w[cc,r] * Slot[cc,e] >> "hreinn.csv";
   }
 }
 

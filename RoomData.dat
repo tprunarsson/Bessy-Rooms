@@ -14,14 +14,11 @@ Stakkahlid_Hamar
 Stakkahlid_Klettur
 VR_2
 ;
-set Cluster :=  Torfan Melurinn Holtid ;
+set Cluster :=  Torfan Holtid ;
 set BuildingsInCluster['Torfan'] := Gimli Haskolatorg Logberg Oddi HusVigdisar Arnagardur Askja;
-set BuildingsInCluster['Melurinn'] := Adalbygging Arnagardur Oddi;
 set BuildingsInCluster['Holtid'] := Stakkahlid_Hamar Stakkahlid_Klettur Stakkahlid_Enni;
 set Rooms := 
 A050
-A051
-A052
 Askja130
 Askja131
 A201
@@ -217,6 +214,8 @@ VHV_231Tungumalamidstod
 V260
 ;
 set SpecialRooms := 
+A051
+A052
 A069
 A207
 A229
