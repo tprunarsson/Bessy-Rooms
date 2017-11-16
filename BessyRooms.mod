@@ -110,7 +110,8 @@ subject to FixH{c in CidAssign, r in AllRooms: hfix[c,r] > 0}:
   h[c,r] = hfix[c,r];
 
 # there is another possible fixing defined by the user:
-check{c in CidAssign}: sum{r in AllRooms} hdef[c,r] <= cidCount[c];
+printf{c in CidAssign}: "%s %d %d\n", c, sum{r in Rooms} hdef[c,r], cidCount[c]-SpeCidCount[c];
+check{c in CidAssign}: sum{r in Rooms} hdef[c,r] <= cidCount[c];
 subject to FixD{c in CidAssign, r in AllRooms: hdef[c,r] > 0}:
   h[c,r] = hdef[c,r];
 
@@ -236,7 +237,7 @@ check card(UnionOfRoomsInBuildings) == card(AllRooms);
 check {c in CidAssign} cidCount[c] >= SpeCidCount[c];
 
 check {c in CidAssign} sum{r in Rooms} hfix[c,r] <= cidCount[c];
-check {r in AllRooms} sum{c in CidAssign} hfix[c,r] <= RoomCapacity[r];
+check {r in Rooms} sum{c in CidAssign} hfix[c,r] <= RoomCapacity[r];
 
 
 # Solve the model
@@ -327,7 +328,9 @@ for {e in SubExamSlots, b in Building} {
   printf : ";;;;%s;;;;%d;%d;;;\n", b, sum{rr in RoomInBuilding[b], cc in CidAssign: rr in SpecialComputerRooms} Slot[cc,e] * h[cc,rr], sum{rr in RoomInBuilding[b]: rr in SpecialComputerRooms} RoomCapacity[rr] >> "lausn.csv";
 }
 
-printf : "Dagur;Tími;ID;Námskeið;Bygging;Stofa;Fjöldi;Lengd prófs;Sérnemar\n" > "hreinn.csv";
+printf : "Dagur;Tími;ID;Námskeið;Bygging;Stofa;Fjöldi;Lengd prófs;Sérnemar;" > "hreinn.csv";
+printf : "Fjöldinema; Hámarksæti; Fjöldinámskeiða\n" >> "hreinn.csv";
+
 for {e in SubExamSlots} {
   for {c in CidAssign} {
      printf{r in AllRooms, b in BuildingWithRoom[r]: Slot[c,e] * h[c,r] > 0 and r not in SpecialRooms and r not in SpecialComputerRooms}:
