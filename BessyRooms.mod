@@ -117,6 +117,10 @@ subject to FixH{c in CidAssign, r in AllRooms: hfix[c,r] > 0}:
 # there is another possible fixing defined by the user:
 printf{c in CidAssign}: "%s %d %d\n", c, sum{r in Rooms} hdef[c,r], cidCount[c]-SpeCidCount[c];
 check{c in CidAssign}: sum{r in Rooms} hdef[c,r] <= (cidCount[c]-SpeCidCount[c]);
+
+check: 'LOG504G' in CidAssignComp;
+
+
 subject to FixD{c in CidAssign, r in AllRooms: hdef[c,r] > 0}:
   h[c,r] = hdef[c,r];
 
@@ -125,7 +129,7 @@ param AssignSpec := 0;
 
 # Make sure that all students in the course have a seat
 subject to AssignAllCidSeats{c in CidAssign}:
-  sum{r in Rooms} h[c,r] = cidCount[c] - SpeCidCount[c] ;
+  sum{r in AllRooms} h[c,r] = cidCount[c] - SpeCidCount[c] ;
 
 # Special students need special rooms:
 subject to SpecialCoursesReq{c in CidAssignSpec: c not in CidAssignComp}:
