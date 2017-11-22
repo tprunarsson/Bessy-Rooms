@@ -11,12 +11,15 @@ roomCapacity = numeric(0)
 roomType = numeric(0)
 buildingID = numeric(0)
 buildingName = character(0)
+roomFloor = numeric(0)
 for (i in c(1:length(Data))) {
   # create room name but with no spaces and icelandic characters
   tmp <- Data[[i]]$room
   tmp <- chartr(c('ÍÁÆÖÝÐÞÓÚÉíáæöýðþóúé-'),c('IAAOYDTOUEiaaoydtoue_'), tmp)
   tmp <- gsub(" ", "", tmp, fixed = TRUE)
+  tmp <- gsub("_", "", tmp, fixed = TRUE)
   room <- c(room,tmp)
+  roomFloor <- c(roomFloor,floor(as.numeric(sub("\\D*(\\d+).*", "\\1", tmp))/100))
   capacity <- as.numeric(Data[[i]]$capacity)
   capacitySpecial <- as.numeric(Data[[i]]$capacitySpecial)
   capacity <- as.numeric(Data[[i]]$capacity)
@@ -39,6 +42,7 @@ for (i in c(1:length(Data))) {
       roomType = c(roomType,1)
     }
     room <- c(room,paste0(tmp,'_special'))
+    roomFloor <- c(roomFloor,NA)
     roomCapacity = c(roomCapacity,capacitySpecial)
     roomID <- c(roomID,roomid) # has same room id
     buildingName = c(buildingName,buildingname)
@@ -67,6 +71,8 @@ for (i in c(1:length(Data))) {
     error("room has no capacity")
   }
 }
+# FIX NA
+roomFloor[is.na(roomFloor)] = 0
 
 cat("set Building := ", file="RoomData.dat",sep="\n")
 ubuildings = sort(unique(buildingName))
@@ -88,6 +94,7 @@ for (i in c(1:length(room))) {
   }
 }
 write(";", file = "RoomData.dat", append = T)
+
 
 write("param RoomId := ", file = "RoomData.dat", append = T)
 for (i in c(1:length(room))) {
@@ -142,5 +149,28 @@ for (i in c(1:length(ubuildings))) {
   strcat <- sprintf('%s%s',strcat,";")
   write(strcat, file = "RoomData.dat", append = T)
 }
+
+for (i in c(1:length(ubuildings))) {
+  for (flo in c(0:3)){
+    success = FALSE
+    strcat = "set RoomInBuildingFloor['";
+    strcat <- sprintf("%s%s",strcat,ubuildings[i])
+    strcat <- sprintf("%s',%d] := ",strcat,flo)
+    for (j in c(1:length(room))) {
+      if (buildingName[j] == ubuildings[i]) {
+        if (roomFloor[j] == flo) {
+          success = TRUE
+          strcat <- sprintf('%s %s',strcat,room[j])
+        }
+      }
+    }
+    strcat <- sprintf('%s%s',strcat,";")
+    if (success == TRUE) {
+      write(strcat, file = "RoomData.dat", append = T)
+    }
+  }
+}
+
+
 roomID = as.numeric(roomID)
 save(file = "ubuildings.Rdata", list=c("ubuildings", "room", "roomID"))

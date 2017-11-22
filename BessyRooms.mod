@@ -1,6 +1,6 @@
 # Ugly Bessy Room allocation: Beta version 0.0.2
 # Author: Thomas Philip Runarsson and Asgeir Orn Sigurpalsson
-# Last modified by tpr at 11:00 18/11/2017
+# Last modified by tpr at 11:00 21/11/2017 added floors in buildings
 
 # TODO: conjoined courses forced together in one!
 # This needs to be resolved perhaps can also be solved by setting the conjoined courses in the same building?!
@@ -8,7 +8,7 @@
 # --- Parameter and Sets --- #
 
 # Total number of exam days, each day is split in two (even and odd integer)
-param n := 11;
+param n := 12;
 
 # Set of all ExamSlots and their position
 set ExamSlots:= 1..(2*n);
@@ -73,13 +73,15 @@ param RoomId{AllRooms} default 0;
 set Building;
 set Cluster;
 set BuildingsInCluster{Cluster} within Building;
-
+set Floors := {0..3};
 # These building are acceptable to the course
 set RequiredBuildings{CidExam} within Building default {};
 # These building are the most wanted buildings, not that these are also in RequiredBuildings
 set PriorityBuildings{CidExam} within Building default {};
 # Tells us which rooms are in a given building
 set RoomInBuilding{Building} within AllRooms default {};
+# Tells us which rooms are on the same floor in the same building
+set RoomInBuildingFloor{Building,Floors} within AllRooms default {};
 # Tells us in which building has a given room
 set BuildingWithRoom{r in AllRooms} within Building := setof{b in Building: r in RoomInBuilding[b]} b;
 # The hfix variable is used for fixing a number of students in a given class room
@@ -101,7 +103,10 @@ var w {c in CidAssign, r in AllRooms}, >= 0, <= 1, binary;
 var wb{CidAssign, Building}, >= 0, <= 1, binary;
 # variable tells us if a room is occupied or not, must be minimized in objective
 # when minimized it also tries to free rooms when possible and creating a saving for staff needed for monitoring the exams
-var wr{AllRooms}, >= 0;
+var wr{AllRooms}, >= 0, <= 1;
+
+# This indicator variable tells us when a floor is occumpied within a building
+var wf{Floors, Building} >= 0, <= 1;
 
 # --- Constraints --- #
 
@@ -111,7 +116,7 @@ subject to FixH{c in CidAssign, r in AllRooms: hfix[c,r] > 0}:
 
 # there is another possible fixing defined by the user:
 printf{c in CidAssign}: "%s %d %d\n", c, sum{r in Rooms} hdef[c,r], cidCount[c]-SpeCidCount[c];
-check{c in CidAssign}: sum{r in Rooms} hdef[c,r] <= cidCount[c];
+check{c in CidAssign}: sum{r in Rooms} hdef[c,r] <= (cidCount[c]-SpeCidCount[c]);
 subject to FixD{c in CidAssign, r in AllRooms: hdef[c,r] > 0}:
   h[c,r] = hdef[c,r];
 
@@ -180,10 +185,12 @@ subject to NotTooManyCoursesSpecial{e in SubExamSlots, r in AllRooms: r in Speci
   sum{c in CidAssign: Slot[c,e] > 0} w[c,r]  <= 6;
 
 # A constraint for the indicator binary variable is course c in building b, the 1.0001 is a hack needed ?!
-subject to IsCidInBuilding{c in CidAssign, b in Building}:
-  1.0001 * sum{r in RoomInBuilding[b]} w[c,r] <= wb[c,b] * 10000;
-subject to IsCidInBuilding2{c in CidAssign, b in Building}:
-  1.0001 * sum{r in RoomInBuilding[b]} w[c,r]  >= wb[c,b];
+subject to IsCidInBuilding{c in CidAssign, b in Building, r in RoomInBuilding[b]}:
+  w[c,r] <= wb[c,b];
+
+# A constraint for the indicator binary variable is course c in building b and floor, the 1.0001 is a hack needed ?!
+subject to IsCidInBuildingFloor{b in Building, f in Floors,c in CidAssign, r in RoomInBuildingFloor[b,f]}:
+  w[c,r] <= wf[f,b];
 
 ############# TEST ZONE ##############
 
@@ -194,6 +201,7 @@ subject to IsCidInBuildingBB{c in CidAssign, b in Building}:
   1.0001 * sum{r in RoomInBuilding[b]: r in Rooms} w[c,r] <= wbb[c,b] * 10000;
 subject to IsCidInBuildingBB2{c in CidAssign, b in Building}:
   1.0001 * sum{r in RoomInBuilding[b]: r in Rooms} w[c,r]  >= wbb[c,b];
+
 
 # Can only be in one building if not then on the green!
 var NumberOfBuildings{CidAssign}, >= 0;
@@ -227,7 +235,9 @@ minimize Objective:
 + 1000 * sum{c in CidAssign} NumberOfBuildings[c]
 # 6.) Empty rooms when possible
 + 100 * sum{r in AllRooms} wr[r]
-# 7.) Use as many rooms as possible also but with smaller priority
+# 7.) Leave also empty floors!!!
++ 100 * sum{f in Floors, b in Building} wf[f,b]
+# 8.) Use as many rooms as possible also but with smaller priority
 - (1/card(CidAssign)) * sum{c in CidAssign,r in Rooms} w[c,r]
 ;
 
