@@ -62,6 +62,17 @@ for (c in cid) {
 }
 write(";", file = "SplitForPhase.dat", append = T)
 
+FEL = c('ASK','BLF','FEL','FOR','FRA','FRG','FVS','HAG','KYN','LOG','MAN','NSR','OSS','STJ','VID','TJO')
+HEL = c('GSL','HJU','LEI','LYF','LYD','LAK','MAT','NAR','SAL','SJU','TAL','TAN','TSM')
+HUG = c('ABF','DAN','DET','ENS','GRF','GRI','HSP','ISE','ISL','ITA','JAP','KIN','KVI','LAT','LIS','MAF','MIS','NLF','RUS','SAG','SPA','SAN','TAK','TYD','TYS')
+MEN = c('GSS','INT','ITH','KEN','LSS','MEX','MVS','NOK','STM','TOS','UMS','TRS')
+VON = c('BYG','EDL','EFN','EVF','FER','HBV','IDN','JAR','JED','LAN','LEF','LIF','RAF','REI','STA','TOL','UAU','UPP','VEL')
+
+FELBUILDINGS = c('Haskolatorg','Logberg','Oddi','Arnagardur')
+HELBUILDINGS = c('Eirberg','Askja','Haskolatorg') # 'Stakkahlid_Hamar')
+HUGBUILDINGS = c('Arnagardur','Logberg','Oddi','HusVigdisar')
+MENBUILDINGS = c('Stakkahlid_Hamar','Stakkahlid_Enni','Stakkahlid_Klettur')
+VONBUILDINGS = c('VR_2', 'Askja','HusVigdisar','Haskolatorg')
 
 for (c in cid) {
   usedbefore = character(0)
@@ -76,37 +87,48 @@ for (c in cid) {
         usedbefore = c(usedbefore, buildingname)
       }
     }
-    requiredBuilding = usedbefore
+    priorityBuilding = unique(usedbefore)
     if (Data[[c]]$preferredBuildingName != "") {
       buildingname <- Data[[c]]$preferredBuildingName
       buildingname <- chartr(c('ÍÁÆÖÝÐÞÓÚÉíáæöýðþóúé-'),c('IAAOYDTOUEiaaoydtoue_'), buildingname)
       buildingname <- gsub(" ", "", buildingname, fixed = TRUE)
       upile = unique(usedbefore)
-      usedbefore = c(usedbefore,buildingname)
-      if (buildingname == 'Haskolatorg' & length(requiredBuilding) == 0) {
-        usedbefore = c('Gimli','Haskolatorg','Logberg','Oddi','HusVigdisar','Arnagardur','Askja')
-      }
-      if (buildingname == 'Haskolatorg' & length(upile) == 1) {
-        usedbefore = c(usedbefore,'Gimli','Haskolatorg','Logberg','Oddi','HusVigdisar','Arnagardur','Askja')
-      }
+      priorityBuilding = unique(c(priorityBuilding,buildingname))
     }
     # Special additions:
     cnameshort = substr(cname[1],1,3)
-    if (cnameshort == 'LAK' | cnameshort == 'TAN' | cnameshort == 'SJU' | cnameshort == 'HJU') {
-      usedbefore = c(usedbefore, 'Eirberg')
-    }
-    usedbefore = unique(usedbefore)
-    if (length(usedbefore) == 0) {
-      usedbefore = c('Gimli','Haskolatorg','Logberg','Oddi','HusVigdisar','Arnagardur','Askja') # if nothing has been chosen ...
-    }
-    if (length(usedbefore) == 1) {
-      usedbefore = c(usedbefore,'Gimli','Haskolatorg','Logberg','Oddi','HusVigdisar','Arnagardur','Askja')
-    }
+      if (cnameshort %in% VON) {
+        priorityBuilding = c(priorityBuilding,VONBUILDINGS[1])
+      } else if (cnameshort %in% FEL) {
+        priorityBuilding = c(priorityBuilding,FELBUILDINGS[1])
+      } else if (cnameshort %in% HUG) {
+        priorityBuilding = c(priorityBuilding,HUGBUILDINGS[1])
+      } else if (cnameshort %in% MEN) {
+        priorityBuilding = c(priorityBuilding,MENBUILDINGS[1])
+      } else if (cnameshort %in% HEL) {
+        priorityBuilding = c(priorityBuilding,HELBUILDINGS[1])
+      } else {
+        priorityBuilding = 'Haskolatorg'
+      }
+    
     strcat = ""
-    for (b in unique(usedbefore)) {
+    for (b in unique(priorityBuilding)) {
       strcat = sprintf("%s %s", strcat, b)
     }
     write(sprintf("set PriorityBuildings[%s] := %s;",cname,strcat), file = "SplitForPhase.dat", append = T)
+    if (cnameshort %in% VON) {
+      requiredBuilding = VONBUILDINGS
+    } else if (cnameshort %in% FEL) {
+      requiredBuilding = FELBUILDINGS
+    } else if (cnameshort %in% HUG) {
+      requiredBuilding = HUGBUILDINGS
+    } else if (cnameshort %in% MEN) {
+      requiredBuilding = MENBUILDINGS
+    } else if (cnameshort %in% HEL) {
+      requiredBuilding = HELBUILDINGS
+    } else {
+      requiredBuilding = c('Gimli','Haskolatorg','Logberg','Oddi','HusVigdisar','Arnagardur','Askja')
+    }
     strcat = ""
     for (b in unique(requiredBuilding)) {
       strcat = sprintf("%s %s", strcat, b)

@@ -74,6 +74,14 @@ for (i in c(1:length(Data))) {
 # FIX NA
 roomFloor[is.na(roomFloor)] = 0
 
+FEL = c('ASK','BLF','FEL','FOR','FRA','FRG','FVS','HAG','KYN','LOG','MAN','NSR','OSS','STJ','VID','TJO')
+HEL = c('GSL','HJU','LEI','LYF','LYD','LAK','MAT','NAR','SAL','SJU','TAL','TAN','TSM')
+HUG = c('ABF','DAN','DET','ENS','GRF','GRI','HSP','ISE','ISL','ITA','JAP','KIN','KVI','LAT','LIS','MAF','MIS','NLF','RUS','SAG','SPA','SAN','TAK','TYD','TYS')
+MEN = c('GSS','INT','ITH','KEN','LSS','MEX','MVS','NOK','STM','TOS','UMS','TRS')
+VON = c('BYG','EDL','EFN','EVF','FER','HBV','IDN','JAR','JED','LAN','LEF','LIF','RAF','REI','STA','TOL','UAU','UPP','VEL')
+
+
+
 cat("set Building := ", file="RoomData.dat",sep="\n")
 ubuildings = sort(unique(buildingName))
 for (i in c(1:length(ubuildings))) {
