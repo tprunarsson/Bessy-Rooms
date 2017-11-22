@@ -118,9 +118,6 @@ subject to FixH{c in CidAssign, r in AllRooms: hfix[c,r] > 0}:
 printf{c in CidAssign}: "%s %d %d\n", c, sum{r in Rooms} hdef[c,r], cidCount[c]-SpeCidCount[c];
 check{c in CidAssign}: sum{r in Rooms} hdef[c,r] <= (cidCount[c]-SpeCidCount[c]);
 
-check: 'LOG504G' in CidAssignComp;
-
-
 subject to FixD{c in CidAssign, r in AllRooms: hdef[c,r] > 0}:
   h[c,r] = hdef[c,r];
 
