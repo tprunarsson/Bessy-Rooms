@@ -1,6 +1,6 @@
-R CMD BATCH getcourses.R
-R CMD BATCH getresource.R
-R CMD BATCH getconjoined.R
-R CMD BATCH getmhr.R
-R CMD BATCH getroomdata.R
+# R CMD BATCH getcourses.R
+# R CMD BATCH getresource.R
+# R CMD BATCH getconjoined.R
+# R CMD BATCH getmhr.R
+# R CMD BATCH getroomdata.R
 R CMD BATCH getexamtimetable.R
