@@ -32,7 +32,8 @@ set ComputerCourses within CidExam;
 set CidMHR within CidExam;
 
 # The actual courses than will be assigned seats
-set CidAssign := setof{c in CidExam, e in SubExamSlots: c not in CidMHR and Slot[c,e] > 0} c;
+#set CidAssign := setof{c in CidExam, e in SubExamSlots: c not in CidMHR and Slot[c,e] > 0} c;
+set CidAssign := setof{c in CidExam, e in SubExamSlots: c not in CidMHR and c not in ComputerCourses and Slot[c,e] > 0} c;
 
 # course incidence data to constuct the matrix for courses that should be examined together"
 param cidConjoinedData {CidExam, CidExam};
@@ -52,7 +53,7 @@ param CidId{CidExam} default 0;
 param SpeCidCount{CidExam} default 0;
 
 # These are the subset of stusints within CidAssign that belong to special groups: Computer and Special
-set CidAssignComp := setof{c in ComputerCourses: c not in CidMHR and c in CidAssign} c;
+set CidAssignComp := {}; #setof{c in ComputerCourses: c not in CidMHR and c in CidAssign} c;
 set CidAssignSpec := setof{c in CidAssign: SpeCidCount[c] > 0} c;
 
 # Missing perhaps is to consider courses that are taught together and that they should be in the same Building
@@ -139,6 +140,8 @@ subject to SpecialCompCoursesReq{c in CidAssignSpec: c in CidAssignComp}:
 # Computer courses should only be assigned to computer rooms or on a dummy room if there is no space!
 subject to ComputerCoursesReq{c in CidAssignComp}:
   sum{r in ComputerRooms} h[c,r] = cidCount[c] - SpeCidCount[c];
+
+printf: sum{c in CidAssignComp} (cidCount[c] - SpeCidCount[c]);
 
 # The rest of the students should be in the other rooms in preferred building
 subject to RegularCoursesReq{c in CidAssign: c not in CidAssignComp}:
@@ -240,6 +243,7 @@ minimize Objective:
 + 100 * sum{f in Floors, b in Building} wf[f,b]
 # 8.) Use as many rooms as possible also but with smaller priority
 - (1/card(CidAssign)) * sum{c in CidAssign,r in Rooms} w[c,r]
++ 100*sum{c in CidAssign} w[c,'HT204']
 ;
 
 # Some debugging now for the data supplied:
