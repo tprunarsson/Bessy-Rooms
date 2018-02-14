@@ -8,7 +8,7 @@
 # --- Parameter and Sets --- #
 
 # Total number of exam days, each day is split in two (even and odd integer)
-param n := 11;
+param n := 12; # point outside normal range....
 
 # Set of all ExamSlots and their position
 set ExamSlots:= 1..(2*n);
