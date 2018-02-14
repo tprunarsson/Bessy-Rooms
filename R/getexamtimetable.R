@@ -1,7 +1,7 @@
 rm(list=ls())
 require(rjson)
 require(lubridate)
-Ugla.Url <- paste0("https://ugla.hi.is/service/proftafla/?request=courses&proftaflaID=34")
+Ugla.Url <- paste0("https://ugla.hi.is/service/proftafla/?request=courses&proftaflaID=37")
 Ugla.Data <- readLines(Ugla.Url,  warn = "F")
 Ugla.Raw <- fromJSON(Ugla.Data)
 Data <- Ugla.Raw$data

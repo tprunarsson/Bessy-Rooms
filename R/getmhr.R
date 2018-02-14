@@ -1,4 +1,4 @@
-Ugla.Url <- paste0("https://ugla.hi.is/service/proftafla/?request=getFile&file=resourcesMessy&proftaflaID=34")
+Ugla.Url <- paste0("https://ugla.hi.is/service/proftafla/?request=getFile&file=resourcesMessy&proftaflaID=37")
 Ugla.resource <- readLines(Ugla.Url,  warn = "F")
 
 for (i in c(2:length(Ugla.resource))) {
