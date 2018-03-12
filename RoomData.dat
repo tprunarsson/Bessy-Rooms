@@ -4,7 +4,6 @@ Arnagardur
 Askja
 Eirberg
 Gimli
-Haskolabio
 Haskolatorg
 HusVigdisar
 Itrottafradasetur_Laugarvatn
@@ -22,25 +21,22 @@ set Rooms :=
 A050
 A051
 A052
-A207
-A229
 Askja130
 Askja131
 A201
 A301
 A304
 A311
+E101
 E103C
 E201C
 E203C
-HB1
 HT102
 HT103
 HT104
 HT105
 Ksalur
 Stofa2
-L101
 L102
 L103
 O201
@@ -71,17 +67,13 @@ V261
 param RoomId := 
 A050 60
 A051 61
-A051_special 61
 A052 15
 A069 1446
 A207 62
-A207_special 62
 A229 67
-A229_special 67
 Askja130 1245
 Askja131 1246
 Askja166 1290
-Askja166_special 1290
 A101 913
 A201 914
 A301 915
@@ -92,12 +84,8 @@ A311 1277
 E101 1395
 E103C 1396
 E201C 1397
-E201C_special 1397
 E203C 1398
-EIR105Ctolvuver 218
 G101 1458
-G101_special 1458
-HB1 1263
 HT102 1311
 HT103 1313
 HT104 1314
@@ -107,12 +95,8 @@ Ksalur 1371
 Ksalur_special 1371
 Ksalurb 1370
 Stofa2 1369
-L101 470
-L101_special 470
 L102 471
-L102_special 471
 L103 472
-L103_special 472
 L201 475
 L204 478
 L205 479
@@ -121,7 +105,6 @@ O102_special 581
 O103 582
 O201 608
 O202 609
-O202_special 609
 O301 638
 E301 1343
 E303 1348
@@ -157,17 +140,13 @@ V261 767
 param RoomCapacity := 
 A050 18
 A051 12
-A051_special 8
 A052 18
 A069 12
 A207 18
-A207_special 18
-A229 1
-A229_special 10
+A229 10
 Askja130 20
 Askja131 30
 Askja166 24
-Askja166_special 6
 A101 15
 A201 48
 A301 48
@@ -175,30 +154,22 @@ A303 10
 A304 26
 A310 15
 A311 24
-E101 13
+E101 12
 E103C 50
-E201C 28
-E201C_special 16
+E201C 44
 E203C 50
-EIR105Ctolvuver 8
-G101 18
-G101_special 3
-HB1 150
-HT102 150
+G101 21
+HT102 82
 HT103 54
 HT104 54
-HT105 90
+HT105 82
 HT204 40
 Ksalur 41
 Ksalur_special 11
 Ksalurb 15
 Stofa2 22
-L101 43
-L101_special 3
-L102 6
-L102_special 22
-L103 13
-L103_special 12
+L102 25
+L103 25
 L201 18
 L204 12
 L205 12
@@ -207,7 +178,6 @@ O102_special 18
 O103 10
 O201 44
 O202 20
-O202_special 1
 O301 38
 E301 30
 E303 20
@@ -250,24 +220,17 @@ VHV231Tungumalamidstod
 V260
 ;
 set SpecialRooms := 
-A051_special
 A069
-A207_special
-A229_special
+A207
+A229
 A101
 A303
 A310
-E101
-E201C_special
 Ksalur_special
 Ksalurb
-L101_special
-L102_special
-L103_special
 L201
 L204
 L205
-O202_special
 H208
 H209
 VHV103
@@ -276,50 +239,41 @@ VHV107
 VHV108
 ;
 set SpecialComputerRooms := 
-Askja166_special
-EIR105Ctolvuver
-G101_special
 O102_special
 O103
 ;
-set RoomInBuilding['Adalbygging'] :=  A050 A051 A051_special A052 A069 A207 A207_special A229 A229_special;
+set RoomInBuilding['Adalbygging'] :=  A050 A051 A052 A069 A207 A229;
 set RoomInBuilding['Arnagardur'] :=  A101 A201 A301 A303 A304 A310 A311;
-set RoomInBuilding['Askja'] :=  Askja130 Askja131 Askja166 Askja166_special;
-set RoomInBuilding['Eirberg'] :=  E101 E103C E201C E201C_special E203C EIR105Ctolvuver;
-set RoomInBuilding['Gimli'] :=  G101 G101_special;
-set RoomInBuilding['Haskolabio'] :=  HB1;
+set RoomInBuilding['Askja'] :=  Askja130 Askja131 Askja166;
+set RoomInBuilding['Eirberg'] :=  E101 E103C E201C E203C;
+set RoomInBuilding['Gimli'] :=  G101;
 set RoomInBuilding['Haskolatorg'] :=  HT102 HT103 HT104 HT105 HT204;
 set RoomInBuilding['HusVigdisar'] :=  VHV007 VHV103 VHV104 VHV107 VHV108 VHV231Tungumalamidstod;
 set RoomInBuilding['Itrottafradasetur_Laugarvatn'] :=  Ksalur Ksalur_special Ksalurb Stofa2;
-set RoomInBuilding['Logberg'] :=  L101 L101_special L102 L102_special L103 L103_special L201 L204 L205;
-set RoomInBuilding['Oddi'] :=  O102 O102_special O103 O201 O202 O202_special O301;
+set RoomInBuilding['Logberg'] :=  L102 L103 L201 L204 L205;
+set RoomInBuilding['Oddi'] :=  O102 O102_special O103 O201 O202 O301;
 set RoomInBuilding['Stakkahlid_Enni'] :=  E301 E303;
 set RoomInBuilding['Stakkahlid_Hamar'] :=  H101 H201 H202 H203 H204 H205 H206 H207 H208 H209;
 set RoomInBuilding['Stakkahlid_Klettur'] :=  K204 K205 K206 K207 K208;
 set RoomInBuilding['VR_2'] :=  V138 V147 V152 V156 V258 V260 V261;
-set RoomInBuildingFloor['Adalbygging',0] :=  A050 A051 A051_special A052 A069 A207_special A229_special;
+set RoomInBuildingFloor['Adalbygging',0] :=  A050 A051 A052 A069;
 set RoomInBuildingFloor['Adalbygging',2] :=  A207 A229;
 set RoomInBuildingFloor['Arnagardur',1] :=  A101;
 set RoomInBuildingFloor['Arnagardur',2] :=  A201;
 set RoomInBuildingFloor['Arnagardur',3] :=  A301 A303 A304 A310 A311;
-set RoomInBuildingFloor['Askja',0] :=  Askja166_special;
 set RoomInBuildingFloor['Askja',1] :=  Askja130 Askja131 Askja166;
-set RoomInBuildingFloor['Eirberg',0] :=  E201C_special;
-set RoomInBuildingFloor['Eirberg',1] :=  E101 E103C EIR105Ctolvuver;
+set RoomInBuildingFloor['Eirberg',1] :=  E101 E103C;
 set RoomInBuildingFloor['Eirberg',2] :=  E201C E203C;
-set RoomInBuildingFloor['Gimli',0] :=  G101_special;
 set RoomInBuildingFloor['Gimli',1] :=  G101;
-set RoomInBuildingFloor['Haskolabio',0] :=  HB1;
 set RoomInBuildingFloor['Haskolatorg',1] :=  HT102 HT103 HT104 HT105;
 set RoomInBuildingFloor['Haskolatorg',2] :=  HT204;
 set RoomInBuildingFloor['HusVigdisar',0] :=  VHV007;
 set RoomInBuildingFloor['HusVigdisar',1] :=  VHV103 VHV104 VHV107 VHV108;
 set RoomInBuildingFloor['HusVigdisar',2] :=  VHV231Tungumalamidstod;
 set RoomInBuildingFloor['Itrottafradasetur_Laugarvatn',0] :=  Ksalur Ksalur_special Ksalurb Stofa2;
-set RoomInBuildingFloor['Logberg',0] :=  L101_special L102_special L103_special;
-set RoomInBuildingFloor['Logberg',1] :=  L101 L102 L103;
+set RoomInBuildingFloor['Logberg',1] :=  L102 L103;
 set RoomInBuildingFloor['Logberg',2] :=  L201 L204 L205;
-set RoomInBuildingFloor['Oddi',0] :=  O102_special O202_special;
+set RoomInBuildingFloor['Oddi',0] :=  O102_special;
 set RoomInBuildingFloor['Oddi',1] :=  O102 O103;
 set RoomInBuildingFloor['Oddi',2] :=  O201 O202;
 set RoomInBuildingFloor['Oddi',3] :=  O301;
