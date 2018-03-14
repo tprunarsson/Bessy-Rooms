@@ -117,10 +117,10 @@ subject to FixH{c in CidAssign, r in AllRooms: hfix[c,r] > 0}:
 
 # there is another possible fixing defined by the user:
 printf{c in CidAssign}: "%s %d %d\n", c, sum{r in Rooms} hdef[c,r], cidCount[c]-SpeCidCount[c];
-check{c in CidAssign}: sum{r in Rooms} hdef[c,r] <= (cidCount[c]-SpeCidCount[c]);
+#check{c in CidAssign}: sum{r in Rooms} hdef[c,r] <= (cidCount[c]-SpeCidCount[c]);
 
 subject to FixD{c in CidAssign, r in AllRooms: hdef[c,r] > 0}:
-  h[c,r] = hdef[c,r];
+  h[c,r] = min(hdef[c,r],cidCount[c]-SpeCidCount[c]);
 
 # this boolean will dictate it we want to arrage also special students
 param AssignSpec := 0;
