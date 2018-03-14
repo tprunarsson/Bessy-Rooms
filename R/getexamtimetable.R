@@ -13,9 +13,12 @@ load(file = c('mhr.Rdata'))
 
 # quickly extract all potential exam dates:
 dates = rep(ymd_hms(Data[[cid[1]]]$start),length(cid))
+vikudagur = rep(0,length(cid))
 for (i in c(1:length(cid))) {
   dates[i] <- ymd_hms(Data[[cid[i]]]$start)
+  vikudagur[i] <- wday(dates[i])
 }
+dates <- dates[vikudagur != 7 & vikudagur != 1]
 udates = sort(unique(yday(dates)))
 uudates = as.Date(udates-1, origin = sprintf("%d-01-01",year(dates[1])))
 uhours = sort(table(sprintf("%02d:%02d",hour(dates),minute(dates))),decreasing = TRUE)
@@ -139,16 +142,24 @@ for (c in cid) {
   }
 }
 
-
 write("param Slot := ", file="SplitForPhase.dat", append = T)
 for (c in cid) {
   cname <- Data[[c]]$'courseName'
+  print(cname)
   cname <- chartr(c('ÍÁÆÖÝÐÞÓÚÉ'),c('IAAOYDTOUE'), cname)
   start <- ymd_hms(Data[[c]]$start)
+  print(start)
   examday <- which(yday(start)==udates) - 1
-  slot <- 1 + 2*examday + ((hour(start)) > 12)
-  strcat <- sprintf('%s %d 1', cname, slot)
-  write(strcat, file = "SplitForPhase.dat", append = T)
+  if (length(examday)==0) {
+    print(yday(start))
+  }
+  else {
+    slot <- 1 + 2*examday + ((hour(start)) > 12)
+    print(slot)
+    print(wday(start))
+    strcat <- sprintf('%s %d 1', cname, slot)
+    write(strcat, file = "SplitForPhase.dat", append = T)
+  }
 }
 write(";", file = "SplitForPhase.dat", append = T)
 

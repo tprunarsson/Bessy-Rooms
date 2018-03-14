@@ -224,6 +224,8 @@ subject to RoomOccupied{c in CidAssign, r in AllRooms}: w[c,r] <= wr[r];
 subject to EkkiLaugarvatn{c in CidAssign: 'Itrottafradasetur_Laugarvatn' not in PriorityBuildings[c]}:
   sum{r in RoomInBuilding['Itrottafradasetur_Laugarvatn']} h[c,r] = 0;
 
+display CidAssign;
+
 # Objective function
 minimize Objective:
 # 1.) we don't want to use Klettur and Enni (unless asked for)
