@@ -31,7 +31,9 @@ VEL202G V152 18
 TOV201G HT102 80
 LOG604G HT204 36
 HJU212G E103C 42
-GSS0A5G H207 1
+ISE405G VHV007 38
+HSP201G A201 35
+GSS0A5G H207 25
 ITH411G H207 25
 HBV403G V152 30
 MIS801F VHV007 42
@@ -110,7 +112,7 @@ set PriorityBuildings[FEL262G] :=  Logberg Haskolatorg;
 set RequiredBuildings[FEL262G] :=  Haskolatorg Logberg Oddi Arnagardur;
 set PriorityBuildings[ISE405G] :=  Adalbygging Arnagardur HusVigdisar;
 set RequiredBuildings[ISE405G] :=  Arnagardur Logberg Oddi HusVigdisar;
-set PriorityBuildings[HSP201G] :=  Arnagardur Adalbygging Eirberg;
+set PriorityBuildings[HSP201G] :=  Arnagardur Adalbygging;
 set RequiredBuildings[HSP201G] :=  Arnagardur Logberg Oddi HusVigdisar;
 set PriorityBuildings[SPA204G] :=  Arnagardur Eirberg;
 set RequiredBuildings[SPA204G] :=  Arnagardur Logberg Oddi HusVigdisar;
