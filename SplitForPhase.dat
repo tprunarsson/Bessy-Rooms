@@ -24,6 +24,7 @@ param SlotNames :=
 ;
 param hdef := 
 ITH213G H207 17
+FRG204G O201 1
 TAN204G E103C 8
 VID601G A201 24
 VEL202G V152 18
@@ -68,7 +69,7 @@ set PriorityBuildings[VID601G] :=  Oddi Arnagardur Haskolatorg;
 set RequiredBuildings[VID601G] :=  Haskolatorg Logberg Oddi Arnagardur;
 set PriorityBuildings[VEL402G] :=  VR_2;
 set RequiredBuildings[VEL402G] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[VEL202G] :=  VR_2;
+set PriorityBuildings[VEL202G] :=  VR_2 Askja;
 set RequiredBuildings[VEL202G] :=  VR_2 Askja HusVigdisar Haskolatorg;
 set PriorityBuildings[TYS201G] :=  Arnagardur;
 set RequiredBuildings[TYS201G] :=  Arnagardur Logberg Oddi HusVigdisar;
@@ -260,7 +261,7 @@ set PriorityBuildings[FRA417M] :=  Haskolatorg;
 set RequiredBuildings[FRA417M] :=  Haskolatorg Logberg Oddi Arnagardur;
 set PriorityBuildings[VID209F] :=  Oddi Haskolatorg;
 set RequiredBuildings[VID209F] :=  Haskolatorg Logberg Oddi Arnagardur;
-set PriorityBuildings[FEL416G] :=  Oddi Eirberg Haskolatorg;
+set PriorityBuildings[FEL416G] :=  Oddi Haskolatorg Eirberg;
 set RequiredBuildings[FEL416G] :=  Haskolatorg Logberg Oddi Arnagardur;
 set PriorityBuildings[JAR621G] :=  Askja Adalbygging Haskolatorg VR_2;
 set RequiredBuildings[JAR621G] :=  VR_2 Askja HusVigdisar Haskolatorg;
@@ -396,7 +397,7 @@ set PriorityBuildings[ISE403G] :=  Arnagardur;
 set RequiredBuildings[ISE403G] :=  Arnagardur Logberg Oddi HusVigdisar;
 set PriorityBuildings[TYS408G] :=  Arnagardur;
 set RequiredBuildings[TYS408G] :=  Arnagardur Logberg Oddi HusVigdisar;
-set PriorityBuildings[VEL201G] :=  VR_2 Haskolatorg Askja;
+set PriorityBuildings[VEL201G] :=  VR_2 Haskolatorg;
 set RequiredBuildings[VEL201G] :=  VR_2 Askja HusVigdisar Haskolatorg;
 set PriorityBuildings[RAF201G] :=  VR_2;
 set RequiredBuildings[RAF201G] :=  VR_2 Askja HusVigdisar Haskolatorg;
