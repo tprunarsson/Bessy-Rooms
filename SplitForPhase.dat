@@ -34,6 +34,7 @@ HJU212G E103C 42
 ISE405G VHV007 38
 HSP201G A201 35
 GSS0A5G H207 25
+EDL401G O201 1
 ITH411G H207 25
 HBV403G V152 30
 MIS801F VHV007 42
@@ -45,7 +46,7 @@ GSS084G H207 1
 ITH211G H207 1
 GSS090G H207 1
 GSS091G H207 1
-RAF201G O201 1
+RAF201G O201 27
 MVS202F H207 1
 GSS471G H207 1
 TRS208G H207 1
@@ -122,7 +123,7 @@ set PriorityBuildings[JED201G] :=  Askja VR_2;
 set RequiredBuildings[JED201G] :=  VR_2 Askja HusVigdisar Haskolatorg;
 set PriorityBuildings[GSS0A5G] :=  Stakkahlid_Hamar;
 set RequiredBuildings[GSS0A5G] :=  Stakkahlid_Hamar Stakkahlid_Enni Stakkahlid_Klettur;
-set PriorityBuildings[EDL401G] :=  VR_2 Eirberg;
+set PriorityBuildings[EDL401G] :=  VR_2 Oddi;
 set RequiredBuildings[EDL401G] :=  VR_2 Askja HusVigdisar Haskolatorg;
 set PriorityBuildings[HAG208G] :=  Oddi Haskolatorg;
 set RequiredBuildings[HAG208G] :=  Haskolatorg Logberg Oddi Arnagardur;
