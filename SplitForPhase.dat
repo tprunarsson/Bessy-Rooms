@@ -23,20 +23,20 @@ param SlotNames :=
 22 '2018.5.9;13:30'
 ;
 param hdef := 
+ITH213G H207 17
+TAN204G E103C 8
 VID601G A201 24
 VEL202G V152 18
-TAN204G E103C 8
 TOV201G HT102 80
-HJU212G E103C 42
-ITH213G H207 17
 LOG604G HT204 36
+HJU212G E103C 42
 ITH411G H207 25
 HBV403G V152 30
 MIS801F VHV007 42
 ;
 param duration := 
-SPA204G 2.0
 HSP201G 2.0
+SPA204G 2.0
 ENS202G 2.0
 SJU409G 2.0
 IDN402G 2.0
@@ -47,93 +47,91 @@ TYS206G 2.0
 HBV601G 2.0
 HBV401G 2.0
 FEL204G 2.0
-SJU407G 2.0
 MAN602M 2.0
+SJU407G 2.0
 ISL205G 1.5
 ISL211G 2.0
 ;
-set PriorityBuildings[VID601G] :=  Oddi Arnagardur Haskolatorg;
-set RequiredBuildings[VID601G] :=  Haskolatorg Logberg Oddi Arnagardur;
-set PriorityBuildings[VEL202G] :=  VR_2;
-set RequiredBuildings[VEL202G] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[VEL402G] :=  VR_2;
-set RequiredBuildings[VEL402G] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[TAN310G] :=  Eirberg;
-set RequiredBuildings[TAN310G] :=  Eirberg Askja Haskolatorg;
+set PriorityBuildings[ITH213G] :=  Stakkahlid_Enni Stakkahlid_Hamar;
+set RequiredBuildings[ITH213G] :=  Stakkahlid_Hamar Stakkahlid_Enni Stakkahlid_Klettur;
+set PriorityBuildings[TSM401G] :=  Eirberg;
+set RequiredBuildings[TSM401G] :=  Eirberg Askja Haskolatorg;
+set PriorityBuildings[LIF401G] :=  Askja VR_2;
+set RequiredBuildings[LIF401G] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[FRG204G] :=  Oddi Haskolatorg;
+set RequiredBuildings[FRG204G] :=  Haskolatorg Logberg Oddi Arnagardur;
 set PriorityBuildings[LOG234F] :=  Logberg Eirberg Haskolatorg;
 set RequiredBuildings[LOG234F] :=  Haskolatorg Logberg Oddi Arnagardur;
 set PriorityBuildings[TAN204G] :=  Eirberg;
 set RequiredBuildings[TAN204G] :=  Eirberg Askja Haskolatorg;
+set PriorityBuildings[VID601G] :=  Oddi Arnagardur Haskolatorg;
+set RequiredBuildings[VID601G] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[VEL402G] :=  VR_2;
+set RequiredBuildings[VEL402G] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[VEL202G] :=  VR_2;
+set RequiredBuildings[VEL202G] :=  VR_2 Askja HusVigdisar Haskolatorg;
 set PriorityBuildings[TYS201G] :=  Arnagardur;
 set RequiredBuildings[TYS201G] :=  Arnagardur Logberg Oddi HusVigdisar;
-set PriorityBuildings[FRG204G] :=  Oddi Haskolatorg;
-set RequiredBuildings[FRG204G] :=  Haskolatorg Logberg Oddi Arnagardur;
 set PriorityBuildings[TOV201G] :=  Haskolatorg;
 set RequiredBuildings[TOV201G] :=  Gimli Haskolatorg Logberg Oddi HusVigdisar Arnagardur Askja;
-set PriorityBuildings[HJU212G] :=  Stakkahlid_Hamar Eirberg;
-set RequiredBuildings[HJU212G] :=  Eirberg Askja Haskolatorg;
-set PriorityBuildings[EVF602M] :=  VR_2;
-set RequiredBuildings[EVF602M] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[ITH213G] :=  Stakkahlid_Enni Stakkahlid_Hamar;
-set RequiredBuildings[ITH213G] :=  Stakkahlid_Hamar Stakkahlid_Enni Stakkahlid_Klettur;
 set PriorityBuildings[LOG604G] :=  Logberg Haskolatorg;
 set RequiredBuildings[LOG604G] :=  Haskolatorg Logberg Oddi Arnagardur;
-set PriorityBuildings[LIF401G] :=  Askja VR_2;
-set RequiredBuildings[LIF401G] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[TSM401G] :=  Eirberg;
-set RequiredBuildings[TSM401G] :=  Eirberg Askja Haskolatorg;
+set PriorityBuildings[HJU212G] :=  Stakkahlid_Hamar Eirberg;
+set RequiredBuildings[HJU212G] :=  Eirberg Askja Haskolatorg;
 set PriorityBuildings[TSM004G] :=  Eirberg;
 set RequiredBuildings[TSM004G] :=  Eirberg Askja Haskolatorg;
-set PriorityBuildings[EDL401G] :=  VR_2 Eirberg;
-set RequiredBuildings[EDL401G] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[SPA204G] :=  Arnagardur Eirberg;
-set RequiredBuildings[SPA204G] :=  Arnagardur Logberg Oddi HusVigdisar;
-set PriorityBuildings[LIF654G] :=  Askja VR_2;
-set RequiredBuildings[LIF654G] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[HAG208G] :=  Oddi Haskolatorg;
-set RequiredBuildings[HAG208G] :=  Haskolatorg Logberg Oddi Arnagardur;
-set PriorityBuildings[STA207G] :=  VR_2;
-set RequiredBuildings[STA207G] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[VID258G] :=  Haskolatorg Arnagardur Oddi;
-set RequiredBuildings[VID258G] :=  Haskolatorg Logberg Oddi Arnagardur;
-set PriorityBuildings[MAT401G] :=  Adalbygging Eirberg;
-set RequiredBuildings[MAT401G] :=  Eirberg Askja Haskolatorg;
-set PriorityBuildings[BYG203M] :=  VR_2;
-set RequiredBuildings[BYG203M] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[GSS0A5G] :=  Stakkahlid_Hamar;
-set RequiredBuildings[GSS0A5G] :=  Stakkahlid_Hamar Stakkahlid_Enni Stakkahlid_Klettur;
-set PriorityBuildings[TAN303G] :=  Eirberg;
-set RequiredBuildings[TAN303G] :=  Eirberg Askja Haskolatorg;
-set PriorityBuildings[UMV201G] :=  Haskolatorg;
-set RequiredBuildings[UMV201G] :=  Gimli Haskolatorg Logberg Oddi HusVigdisar Arnagardur Askja;
-set PriorityBuildings[IDN401G] :=  VR_2 Arnagardur;
-set RequiredBuildings[IDN401G] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[LEI304G] :=  Eirberg;
-set RequiredBuildings[LEI304G] :=  Eirberg Askja Haskolatorg;
-set PriorityBuildings[EFN208G] :=  Haskolatorg VR_2;
-set RequiredBuildings[EFN208G] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[JAP203G] :=  Logberg Arnagardur;
-set RequiredBuildings[JAP203G] :=  Arnagardur Logberg Oddi HusVigdisar;
-set PriorityBuildings[RAF402G] :=  VR_2 Eirberg;
-set RequiredBuildings[RAF402G] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[EVF602M] :=  VR_2;
+set RequiredBuildings[EVF602M] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[TAN310G] :=  Eirberg;
+set RequiredBuildings[TAN310G] :=  Eirberg Askja Haskolatorg;
 set PriorityBuildings[FEL262G] :=  Logberg Haskolatorg;
 set RequiredBuildings[FEL262G] :=  Haskolatorg Logberg Oddi Arnagardur;
-set PriorityBuildings[JED201G] :=  Askja VR_2;
-set RequiredBuildings[JED201G] :=  VR_2 Askja HusVigdisar Haskolatorg;
 set PriorityBuildings[ISE405G] :=  Adalbygging Arnagardur Eirberg;
 set RequiredBuildings[ISE405G] :=  Arnagardur Logberg Oddi HusVigdisar;
 set PriorityBuildings[HSP201G] :=  Arnagardur Adalbygging Eirberg;
 set RequiredBuildings[HSP201G] :=  Arnagardur Logberg Oddi HusVigdisar;
-set PriorityBuildings[UAU206M] :=  VR_2 Askja;
-set RequiredBuildings[UAU206M] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[SPA204G] :=  Arnagardur Eirberg;
+set RequiredBuildings[SPA204G] :=  Arnagardur Logberg Oddi HusVigdisar;
+set PriorityBuildings[VID258G] :=  Haskolatorg Arnagardur Oddi;
+set RequiredBuildings[VID258G] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[JED201G] :=  Askja VR_2;
+set RequiredBuildings[JED201G] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[GSS0A5G] :=  Stakkahlid_Hamar;
+set RequiredBuildings[GSS0A5G] :=  Stakkahlid_Hamar Stakkahlid_Enni Stakkahlid_Klettur;
+set PriorityBuildings[EDL401G] :=  VR_2 Eirberg;
+set RequiredBuildings[EDL401G] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[HAG208G] :=  Oddi Haskolatorg;
+set RequiredBuildings[HAG208G] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[STA207G] :=  VR_2;
+set RequiredBuildings[STA207G] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[RAF402G] :=  VR_2 Eirberg;
+set RequiredBuildings[RAF402G] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[IDN401G] :=  VR_2 Arnagardur;
+set RequiredBuildings[IDN401G] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[LEI304G] :=  Eirberg;
+set RequiredBuildings[LEI304G] :=  Eirberg Askja Haskolatorg;
+set PriorityBuildings[LIF654G] :=  Askja VR_2;
+set RequiredBuildings[LIF654G] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[BYG203M] :=  VR_2;
+set RequiredBuildings[BYG203M] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[UMV201G] :=  Haskolatorg;
+set RequiredBuildings[UMV201G] :=  Gimli Haskolatorg Logberg Oddi HusVigdisar Arnagardur Askja;
+set PriorityBuildings[TAN303G] :=  Eirberg;
+set RequiredBuildings[TAN303G] :=  Eirberg Askja Haskolatorg;
+set PriorityBuildings[MAT401G] :=  Adalbygging Eirberg;
+set RequiredBuildings[MAT401G] :=  Eirberg Askja Haskolatorg;
+set PriorityBuildings[EFN208G] :=  Haskolatorg VR_2;
+set RequiredBuildings[EFN208G] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[JAP203G] :=  Logberg Arnagardur;
+set RequiredBuildings[JAP203G] :=  Arnagardur Logberg Oddi HusVigdisar;
+set PriorityBuildings[VEL601G] :=  VR_2;
+set RequiredBuildings[VEL601G] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[LIF201G] :=  Askja Haskolatorg VR_2;
+set RequiredBuildings[LIF201G] :=  VR_2 Askja HusVigdisar Haskolatorg;
 set PriorityBuildings[ITA248G] :=  Eirberg Arnagardur;
 set RequiredBuildings[ITA248G] :=  Arnagardur Logberg Oddi HusVigdisar;
 set PriorityBuildings[HAG211F] :=  Oddi Haskolatorg;
 set RequiredBuildings[HAG211F] :=  Haskolatorg Logberg Oddi Arnagardur;
-set PriorityBuildings[LIF201G] :=  Askja Haskolatorg VR_2;
-set RequiredBuildings[LIF201G] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[SAL202G] :=  Haskolatorg Eirberg;
-set RequiredBuildings[SAL202G] :=  Eirberg Askja Haskolatorg;
 set PriorityBuildings[ITH411G] :=  Stakkahlid_Hamar;
 set RequiredBuildings[ITH411G] :=  Stakkahlid_Hamar Stakkahlid_Enni Stakkahlid_Klettur;
 set PriorityBuildings[HAG606G] :=  Oddi Haskolatorg;
@@ -142,224 +140,238 @@ set PriorityBuildings[LOG403G] :=  Logberg Eirberg Haskolatorg;
 set RequiredBuildings[LOG403G] :=  Haskolatorg Logberg Oddi Arnagardur;
 set PriorityBuildings[HBV403G] :=  Logberg Askja VR_2;
 set RequiredBuildings[HBV403G] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[UAU206M] :=  VR_2 Askja;
+set RequiredBuildings[UAU206M] :=  VR_2 Askja HusVigdisar Haskolatorg;
 set PriorityBuildings[MIS801F] :=  Arnagardur Oddi HusVigdisar;
 set RequiredBuildings[MIS801F] :=  Arnagardur Logberg Oddi HusVigdisar;
-set PriorityBuildings[VEL601G] :=  VR_2;
-set RequiredBuildings[VEL601G] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[RUS408G] :=  Arnagardur;
-set RequiredBuildings[RUS408G] :=  Arnagardur Logberg Oddi HusVigdisar;
-set PriorityBuildings[ABF210G] :=  Adalbygging Arnagardur;
-set RequiredBuildings[ABF210G] :=  Arnagardur Logberg Oddi HusVigdisar;
-set PriorityBuildings[TJO436G] :=  Oddi Haskolatorg;
-set RequiredBuildings[TJO436G] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[SAL202G] :=  Haskolatorg Eirberg;
+set RequiredBuildings[SAL202G] :=  Eirberg Askja Haskolatorg;
 set PriorityBuildings[EFN612M] :=  VR_2;
 set RequiredBuildings[EFN612M] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[JAR253F] :=  Askja VR_2;
+set RequiredBuildings[JAR253F] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[ISE601G] :=  Arnagardur;
+set RequiredBuildings[ISE601G] :=  Arnagardur Logberg Oddi HusVigdisar;
+set PriorityBuildings[NAR605G] :=  Eirberg;
+set RequiredBuildings[NAR605G] :=  Eirberg Askja Haskolatorg;
+set PriorityBuildings[MEN404G] :=  Haskolatorg;
+set RequiredBuildings[MEN404G] :=  Gimli Haskolatorg Logberg Oddi HusVigdisar Arnagardur Askja;
 set PriorityBuildings[LIS243G] :=  Adalbygging Arnagardur;
 set RequiredBuildings[LIS243G] :=  Arnagardur Logberg Oddi HusVigdisar;
 set PriorityBuildings[JAR420G] :=  Askja VR_2;
 set RequiredBuildings[JAR420G] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[ENS202G] :=  Eirberg Arnagardur;
-set RequiredBuildings[ENS202G] :=  Arnagardur Logberg Oddi HusVigdisar;
-set PriorityBuildings[SJU409G] :=  Adalbygging Eirberg;
-set RequiredBuildings[SJU409G] :=  Eirberg Askja Haskolatorg;
-set PriorityBuildings[NAR605G] :=  Eirberg;
-set RequiredBuildings[NAR605G] :=  Eirberg Askja Haskolatorg;
+set PriorityBuildings[TJO436G] :=  Oddi Haskolatorg;
+set RequiredBuildings[TJO436G] :=  Haskolatorg Logberg Oddi Arnagardur;
 set PriorityBuildings[GFR513M] :=  Haskolatorg;
 set RequiredBuildings[GFR513M] :=  Gimli Haskolatorg Logberg Oddi HusVigdisar Arnagardur Askja;
-set PriorityBuildings[LEI206G] :=  Eirberg;
-set RequiredBuildings[LEI206G] :=  Eirberg Askja Haskolatorg;
-set PriorityBuildings[ISE601G] :=  Arnagardur;
-set RequiredBuildings[ISE601G] :=  Arnagardur Logberg Oddi HusVigdisar;
-set PriorityBuildings[LYF610G] :=  Eirberg;
-set RequiredBuildings[LYF610G] :=  Eirberg Askja Haskolatorg;
-set PriorityBuildings[MEN404G] :=  Haskolatorg;
-set RequiredBuildings[MEN404G] :=  Gimli Haskolatorg Logberg Oddi HusVigdisar Arnagardur Askja;
 set PriorityBuildings[SAN203G] :=  Arnagardur;
 set RequiredBuildings[SAN203G] :=  Arnagardur Logberg Oddi HusVigdisar;
 set PriorityBuildings[DAN204G] :=  Arnagardur;
 set RequiredBuildings[DAN204G] :=  Arnagardur Logberg Oddi HusVigdisar;
-set PriorityBuildings[FEL099F] :=  Adalbygging Haskolatorg;
-set RequiredBuildings[FEL099F] :=  Haskolatorg Logberg Oddi Arnagardur;
 set PriorityBuildings[GSL403G] :=  Eirberg;
 set RequiredBuildings[GSL403G] :=  Eirberg Askja Haskolatorg;
-set PriorityBuildings[ISL416M] :=  Arnagardur;
-set RequiredBuildings[ISL416M] :=  Arnagardur Logberg Oddi HusVigdisar;
-set PriorityBuildings[IDN402G] :=  VR_2 Eirberg;
-set RequiredBuildings[IDN402G] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[KIN409G] :=  Arnagardur;
-set RequiredBuildings[KIN409G] :=  Arnagardur Logberg Oddi HusVigdisar;
-set PriorityBuildings[MAT204G] :=  Eirberg;
-set RequiredBuildings[MAT204G] :=  Eirberg Askja Haskolatorg;
-set PriorityBuildings[LEI601G] :=  Eirberg;
-set RequiredBuildings[LEI601G] :=  Eirberg Askja Haskolatorg;
-set PriorityBuildings[VID415G] :=  Haskolatorg Arnagardur;
-set RequiredBuildings[VID415G] :=  Haskolatorg Logberg Oddi Arnagardur;
-set PriorityBuildings[FRA215G] :=  Haskolatorg;
-set RequiredBuildings[FRA215G] :=  Haskolatorg Logberg Oddi Arnagardur;
-set PriorityBuildings[STA403M] :=  Askja VR_2;
-set RequiredBuildings[STA403M] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[MAN004G] :=  Askja Haskolatorg;
-set RequiredBuildings[MAN004G] :=  Haskolatorg Logberg Oddi Arnagardur;
-set PriorityBuildings[LAN604M] :=  Askja VR_2;
-set RequiredBuildings[LAN604M] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[JAR253F] :=  Askja VR_2;
-set RequiredBuildings[JAR253F] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[FEL099F] :=  Adalbygging Haskolatorg;
+set RequiredBuildings[FEL099F] :=  Haskolatorg Logberg Oddi Arnagardur;
 set PriorityBuildings[UMS101F] :=  Stakkahlid_Hamar;
 set RequiredBuildings[UMS101F] :=  Stakkahlid_Hamar Stakkahlid_Enni Stakkahlid_Klettur;
+set PriorityBuildings[ISL416M] :=  Arnagardur;
+set RequiredBuildings[ISL416M] :=  Arnagardur Logberg Oddi HusVigdisar;
+set PriorityBuildings[ENS202G] :=  Eirberg Arnagardur;
+set RequiredBuildings[ENS202G] :=  Arnagardur Logberg Oddi HusVigdisar;
+set PriorityBuildings[LYF610G] :=  Eirberg;
+set RequiredBuildings[LYF610G] :=  Eirberg Askja Haskolatorg;
+set PriorityBuildings[SJU409G] :=  Adalbygging Eirberg;
+set RequiredBuildings[SJU409G] :=  Eirberg Askja Haskolatorg;
+set PriorityBuildings[LAN604M] :=  Askja VR_2;
+set RequiredBuildings[LAN604M] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[FRA215G] :=  Haskolatorg;
+set RequiredBuildings[FRA215G] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[MAT204G] :=  Eirberg;
+set RequiredBuildings[MAT204G] :=  Eirberg Askja Haskolatorg;
+set PriorityBuildings[RUS408G] :=  Arnagardur;
+set RequiredBuildings[RUS408G] :=  Arnagardur Logberg Oddi HusVigdisar;
+set PriorityBuildings[ABF210G] :=  Adalbygging Arnagardur;
+set RequiredBuildings[ABF210G] :=  Arnagardur Logberg Oddi HusVigdisar;
+set PriorityBuildings[VID415G] :=  Haskolatorg Arnagardur;
+set RequiredBuildings[VID415G] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[MAN004G] :=  Askja Haskolatorg;
+set RequiredBuildings[MAN004G] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[LEI601G] :=  Eirberg;
+set RequiredBuildings[LEI601G] :=  Eirberg Askja Haskolatorg;
+set PriorityBuildings[IDN402G] :=  VR_2 Eirberg;
+set RequiredBuildings[IDN402G] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[LEI206G] :=  Eirberg;
+set RequiredBuildings[LEI206G] :=  Eirberg Askja Haskolatorg;
+set PriorityBuildings[STA403M] :=  Askja VR_2;
+set RequiredBuildings[STA403M] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[KIN409G] :=  Arnagardur;
+set RequiredBuildings[KIN409G] :=  Arnagardur Logberg Oddi HusVigdisar;
+set PriorityBuildings[HJU219F] :=  Eirberg;
+set RequiredBuildings[HJU219F] :=  Eirberg Askja Haskolatorg;
 set PriorityBuildings[HAG617M] :=  Haskolatorg;
 set RequiredBuildings[HAG617M] :=  Haskolatorg Logberg Oddi Arnagardur;
 set PriorityBuildings[LSS602G] :=  Stakkahlid_Klettur Eirberg Stakkahlid_Hamar;
 set RequiredBuildings[LSS602G] :=  Stakkahlid_Hamar Stakkahlid_Enni Stakkahlid_Klettur;
-set PriorityBuildings[HJU701G] :=  Eirberg Stakkahlid_Hamar;
-set RequiredBuildings[HJU701G] :=  Eirberg Askja Haskolatorg;
-set PriorityBuildings[SAL605G] :=  Haskolatorg Eirberg;
-set RequiredBuildings[SAL605G] :=  Eirberg Askja Haskolatorg;
-set PriorityBuildings[TAN410G] :=  Eirberg;
-set RequiredBuildings[TAN410G] :=  Eirberg Askja Haskolatorg;
-set PriorityBuildings[LSS404G] :=  Stakkahlid_Klettur Stakkahlid_Hamar;
-set RequiredBuildings[LSS404G] :=  Stakkahlid_Hamar Stakkahlid_Enni Stakkahlid_Klettur;
-set PriorityBuildings[STJ206G] :=  Haskolatorg;
-set RequiredBuildings[STJ206G] :=  Haskolatorg Logberg Oddi Arnagardur;
 set PriorityBuildings[HBV201G] :=  VR_2 Askja Haskolatorg;
 set RequiredBuildings[HBV201G] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[STJ206G] :=  Haskolatorg;
+set RequiredBuildings[STJ206G] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[LSS404G] :=  Stakkahlid_Klettur Stakkahlid_Hamar;
+set RequiredBuildings[LSS404G] :=  Stakkahlid_Hamar Stakkahlid_Enni Stakkahlid_Klettur;
+set PriorityBuildings[FEL312G] :=  Oddi Haskolatorg;
+set RequiredBuildings[FEL312G] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[SPA405M] :=  Oddi Arnagardur;
+set RequiredBuildings[SPA405M] :=  Arnagardur Logberg Oddi HusVigdisar;
+set PriorityBuildings[LIF412M] :=  Askja VR_2;
+set RequiredBuildings[LIF412M] :=  VR_2 Askja HusVigdisar Haskolatorg;
 set PriorityBuildings[VID214F] :=  Oddi Logberg Haskolatorg Eirberg;
 set RequiredBuildings[VID214F] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[SAL605G] :=  Haskolatorg Eirberg;
+set RequiredBuildings[SAL605G] :=  Eirberg Askja Haskolatorg;
 set PriorityBuildings[HJU410G] :=  Eirberg;
 set RequiredBuildings[HJU410G] :=  Eirberg Askja Haskolatorg;
 set PriorityBuildings[KIN202G] :=  Arnagardur;
 set RequiredBuildings[KIN202G] :=  Arnagardur Logberg Oddi HusVigdisar;
-set PriorityBuildings[SPA405M] :=  Oddi Arnagardur;
-set RequiredBuildings[SPA405M] :=  Arnagardur Logberg Oddi HusVigdisar;
+set PriorityBuildings[TAN410G] :=  Eirberg;
+set RequiredBuildings[TAN410G] :=  Eirberg Askja Haskolatorg;
 set PriorityBuildings[TAN518G] :=  Eirberg;
 set RequiredBuildings[TAN518G] :=  Eirberg Askja Haskolatorg;
-set PriorityBuildings[LIF412M] :=  Askja VR_2;
-set RequiredBuildings[LIF412M] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[HJU219F] :=  Eirberg;
-set RequiredBuildings[HJU219F] :=  Eirberg Askja Haskolatorg;
-set PriorityBuildings[FEL312G] :=  Oddi Haskolatorg;
-set RequiredBuildings[FEL312G] :=  Haskolatorg Logberg Oddi Arnagardur;
-set PriorityBuildings[ISL209G] :=  Arnagardur Eirberg;
-set RequiredBuildings[ISL209G] :=  Arnagardur Logberg Oddi HusVigdisar;
-set PriorityBuildings[FEL416G] :=  Oddi Eirberg Haskolatorg;
-set RequiredBuildings[FEL416G] :=  Haskolatorg Logberg Oddi Arnagardur;
-set PriorityBuildings[LOG201G] :=  Logberg Eirberg Haskolatorg;
-set RequiredBuildings[LOG201G] :=  Haskolatorg Logberg Oddi Arnagardur;
-set PriorityBuildings[MAN203G] :=  Adalbygging Gimli Eirberg Haskolatorg;
-set RequiredBuildings[MAN203G] :=  Haskolatorg Logberg Oddi Arnagardur;
-set PriorityBuildings[HBV206M] :=  Eirberg VR_2;
-set RequiredBuildings[HBV206M] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[ISE007G] :=  Logberg Arnagardur;
-set RequiredBuildings[ISE007G] :=  Arnagardur Logberg Oddi HusVigdisar;
-set PriorityBuildings[TAK201G] :=  Askja Oddi Arnagardur;
-set RequiredBuildings[TAK201G] :=  Arnagardur Logberg Oddi HusVigdisar;
-set PriorityBuildings[SJU608G] :=  Eirberg;
-set RequiredBuildings[SJU608G] :=  Eirberg Askja Haskolatorg;
+set PriorityBuildings[HJU701G] :=  Eirberg Stakkahlid_Hamar;
+set RequiredBuildings[HJU701G] :=  Eirberg Askja Haskolatorg;
 set PriorityBuildings[GSS213F] :=  Stakkahlid_Hamar Eirberg;
 set RequiredBuildings[GSS213F] :=  Stakkahlid_Hamar Stakkahlid_Enni Stakkahlid_Klettur;
+set PriorityBuildings[ISL209G] :=  Arnagardur Eirberg;
+set RequiredBuildings[ISL209G] :=  Arnagardur Logberg Oddi HusVigdisar;
+set PriorityBuildings[TAK201G] :=  Askja Oddi Arnagardur;
+set RequiredBuildings[TAK201G] :=  Arnagardur Logberg Oddi HusVigdisar;
+set PriorityBuildings[MAN203G] :=  Adalbygging Gimli Eirberg Haskolatorg;
+set RequiredBuildings[MAN203G] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[ISE204G] :=  Logberg Arnagardur;
+set RequiredBuildings[ISE204G] :=  Arnagardur Logberg Oddi HusVigdisar;
 set PriorityBuildings[LAT202G] :=  Arnagardur;
 set RequiredBuildings[LAT202G] :=  Arnagardur Logberg Oddi HusVigdisar;
+set PriorityBuildings[SJU608G] :=  Eirberg;
+set RequiredBuildings[SJU608G] :=  Eirberg Askja Haskolatorg;
+set PriorityBuildings[HBV206M] :=  Eirberg VR_2;
+set RequiredBuildings[HBV206M] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[LOG201G] :=  Logberg Eirberg Haskolatorg;
+set RequiredBuildings[LOG201G] :=  Haskolatorg Logberg Oddi Arnagardur;
 set PriorityBuildings[FRA417M] :=  Haskolatorg;
 set RequiredBuildings[FRA417M] :=  Haskolatorg Logberg Oddi Arnagardur;
 set PriorityBuildings[VID209F] :=  Oddi Haskolatorg;
 set RequiredBuildings[VID209F] :=  Haskolatorg Logberg Oddi Arnagardur;
-set PriorityBuildings[ISE204G] :=  Logberg Arnagardur;
-set RequiredBuildings[ISE204G] :=  Arnagardur Logberg Oddi HusVigdisar;
+set PriorityBuildings[FEL416G] :=  Oddi Eirberg Haskolatorg;
+set RequiredBuildings[FEL416G] :=  Haskolatorg Logberg Oddi Arnagardur;
 set PriorityBuildings[JAR621G] :=  Askja Adalbygging Haskolatorg VR_2;
 set RequiredBuildings[JAR621G] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[STA203G] :=  Haskolatorg VR_2;
-set RequiredBuildings[STA203G] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[LIF633G] :=  Askja VR_2;
-set RequiredBuildings[LIF633G] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[SAL414G] :=  Haskolatorg Oddi Arnagardur Eirberg;
-set RequiredBuildings[SAL414G] :=  Eirberg Askja Haskolatorg;
-set PriorityBuildings[LIF216G] :=  Askja Stakkahlid_Hamar Eirberg VR_2;
-set RequiredBuildings[LIF216G] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[LIF643M] :=  Eirberg VR_2;
-set RequiredBuildings[LIF643M] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[MAS201F] :=  Haskolatorg;
-set RequiredBuildings[MAS201F] :=  Gimli Haskolatorg Logberg Oddi HusVigdisar Arnagardur Askja;
-set PriorityBuildings[VID609G] :=  Oddi Haskolatorg;
-set RequiredBuildings[VID609G] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[ISE007G] :=  Logberg Arnagardur;
+set RequiredBuildings[ISE007G] :=  Arnagardur Logberg Oddi HusVigdisar;
 set PriorityBuildings[FER208G] :=  Askja VR_2;
 set RequiredBuildings[FER208G] :=  VR_2 Askja HusVigdisar Haskolatorg;
 set PriorityBuildings[HAG206G] :=  Haskolatorg VR_2 Logberg Askja Eirberg;
 set RequiredBuildings[HAG206G] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[SAL414G] :=  Haskolatorg Oddi Arnagardur Eirberg;
+set RequiredBuildings[SAL414G] :=  Eirberg Askja Haskolatorg;
 set PriorityBuildings[LIF227F] :=  Askja VR_2 Eirberg;
 set RequiredBuildings[LIF227F] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[STA401G] :=  Askja VR_2 Haskolatorg;
-set RequiredBuildings[STA401G] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[MAS201F] :=  Haskolatorg;
+set RequiredBuildings[MAS201F] :=  Gimli Haskolatorg Logberg Oddi HusVigdisar Arnagardur Askja;
+set PriorityBuildings[LIF216G] :=  Askja Stakkahlid_Hamar Eirberg VR_2;
+set RequiredBuildings[LIF216G] :=  VR_2 Askja HusVigdisar Haskolatorg;
 set PriorityBuildings[LEI302G] :=  Eirberg;
 set RequiredBuildings[LEI302G] :=  Eirberg Askja Haskolatorg;
-set PriorityBuildings[KYN202G] :=  Logberg Gimli Arnagardur Eirberg Haskolatorg;
-set RequiredBuildings[KYN202G] :=  Haskolatorg Logberg Oddi Arnagardur;
-set PriorityBuildings[KYN211F] :=  Logberg Gimli Arnagardur Stakkahlid_Hamar Haskolatorg;
-set RequiredBuildings[KYN211F] :=  Haskolatorg Logberg Oddi Arnagardur;
-set PriorityBuildings[LAK213G] :=  Eirberg;
-set RequiredBuildings[LAK213G] :=  Eirberg Askja Haskolatorg;
+set PriorityBuildings[LIF633G] :=  Askja VR_2;
+set RequiredBuildings[LIF633G] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[STA401G] :=  Askja VR_2 Haskolatorg;
+set RequiredBuildings[STA401G] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[VID609G] :=  Oddi Haskolatorg;
+set RequiredBuildings[VID609G] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[STA203G] :=  Haskolatorg VR_2;
+set RequiredBuildings[STA203G] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[LIF643M] :=  Eirberg VR_2;
+set RequiredBuildings[LIF643M] :=  VR_2 Askja HusVigdisar Haskolatorg;
 set PriorityBuildings[GSS084G] :=  Stakkahlid_Klettur Eirberg Stakkahlid_Hamar;
 set RequiredBuildings[GSS084G] :=  Stakkahlid_Hamar Stakkahlid_Enni Stakkahlid_Klettur;
-set PriorityBuildings[TYS206G] :=  Eirberg Arnagardur;
-set RequiredBuildings[TYS206G] :=  Arnagardur Logberg Oddi HusVigdisar;
-set PriorityBuildings[REI602M] :=  VR_2;
-set RequiredBuildings[REI602M] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[EFN406G] :=  VR_2;
-set RequiredBuildings[EFN406G] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[VID263G] :=  Haskolatorg Oddi Askja;
-set RequiredBuildings[VID263G] :=  Haskolatorg Logberg Oddi Arnagardur;
-set PriorityBuildings[RAF404G] :=  VR_2;
-set RequiredBuildings[RAF404G] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[JAP208G] :=  Logberg Arnagardur;
-set RequiredBuildings[JAP208G] :=  Arnagardur Logberg Oddi HusVigdisar;
-set PriorityBuildings[HJU702G] :=  Eirberg;
-set RequiredBuildings[HJU702G] :=  Eirberg Askja Haskolatorg;
-set PriorityBuildings[HAG618M] :=  Oddi Haskolatorg;
-set RequiredBuildings[HAG618M] :=  Haskolatorg Logberg Oddi Arnagardur;
-set PriorityBuildings[FRG202G] :=  Oddi Haskolatorg;
-set RequiredBuildings[FRG202G] :=  Haskolatorg Logberg Oddi Arnagardur;
-set PriorityBuildings[GRI251G] :=  Oddi Arnagardur;
-set RequiredBuildings[GRI251G] :=  Arnagardur Logberg Oddi HusVigdisar;
 set PriorityBuildings[LIF410G] :=  Askja VR_2;
 set RequiredBuildings[LIF410G] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[LAK213G] :=  Eirberg;
+set RequiredBuildings[LAK213G] :=  Eirberg Askja Haskolatorg;
 set PriorityBuildings[ITH211G] :=  Stakkahlid_Enni Stakkahlid_Hamar Eirberg;
 set RequiredBuildings[ITH211G] :=  Stakkahlid_Hamar Stakkahlid_Enni Stakkahlid_Klettur;
-set PriorityBuildings[JAR202G] :=  Askja VR_2;
-set RequiredBuildings[JAR202G] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[HAG618M] :=  Oddi Haskolatorg;
+set RequiredBuildings[HAG618M] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[JAP208G] :=  Logberg Arnagardur;
+set RequiredBuildings[JAP208G] :=  Arnagardur Logberg Oddi HusVigdisar;
+set PriorityBuildings[VID263G] :=  Haskolatorg Oddi Askja;
+set RequiredBuildings[VID263G] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[KYN202G] :=  Logberg Gimli Arnagardur Eirberg Haskolatorg;
+set RequiredBuildings[KYN202G] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[TYS206G] :=  Eirberg Arnagardur;
+set RequiredBuildings[TYS206G] :=  Arnagardur Logberg Oddi HusVigdisar;
+set PriorityBuildings[EFN406G] :=  VR_2;
+set RequiredBuildings[EFN406G] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[REI602M] :=  VR_2;
+set RequiredBuildings[REI602M] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[GRI251G] :=  Oddi Arnagardur;
+set RequiredBuildings[GRI251G] :=  Arnagardur Logberg Oddi HusVigdisar;
 set PriorityBuildings[IDN403G] :=  VR_2;
 set RequiredBuildings[IDN403G] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[EDL203G] :=  VR_2;
-set RequiredBuildings[EDL203G] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[HJU219G] :=  Eirberg Stakkahlid_Hamar;
-set RequiredBuildings[HJU219G] :=  Eirberg Askja Haskolatorg;
-set PriorityBuildings[FRA214G] :=  Haskolatorg;
-set RequiredBuildings[FRA214G] :=  Haskolatorg Logberg Oddi Arnagardur;
-set PriorityBuildings[HAG228F] :=  Oddi Logberg Haskolatorg;
-set RequiredBuildings[HAG228F] :=  Haskolatorg Logberg Oddi Arnagardur;
-set PriorityBuildings[JAR416G] :=  VR_2 Askja;
-set RequiredBuildings[JAR416G] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[EFN205G] :=  Haskolatorg Eirberg VR_2;
-set RequiredBuildings[EFN205G] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[LEF406G] :=  VR_2 Haskolatorg;
-set RequiredBuildings[LEF406G] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[UMV203G] :=  Haskolatorg;
-set RequiredBuildings[UMV203G] :=  Gimli Haskolatorg Logberg Oddi HusVigdisar Arnagardur Askja;
-set PriorityBuildings[LIF226F] :=  Askja Eirberg VR_2;
-set RequiredBuildings[LIF226F] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[BYG201M] :=  VR_2;
-set RequiredBuildings[BYG201M] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[TSM005G] :=  Eirberg;
-set RequiredBuildings[TSM005G] :=  Eirberg Askja Haskolatorg;
+set PriorityBuildings[RAF404G] :=  VR_2;
+set RequiredBuildings[RAF404G] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[JAR202G] :=  Askja VR_2;
+set RequiredBuildings[JAR202G] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[HJU702G] :=  Eirberg;
+set RequiredBuildings[HJU702G] :=  Eirberg Askja Haskolatorg;
+set PriorityBuildings[KYN211F] :=  Logberg Gimli Arnagardur Stakkahlid_Hamar Haskolatorg;
+set RequiredBuildings[KYN211F] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[FRG202G] :=  Oddi Haskolatorg;
+set RequiredBuildings[FRG202G] :=  Haskolatorg Logberg Oddi Arnagardur;
 set PriorityBuildings[VEL401G] :=  VR_2;
 set RequiredBuildings[VEL401G] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[LIF226F] :=  Askja Eirberg VR_2;
+set RequiredBuildings[LIF226F] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[HBV601G] :=  VR_2 Askja Logberg Eirberg;
+set RequiredBuildings[HBV601G] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[GSS090G] :=  Stakkahlid_Hamar Stakkahlid_Klettur Eirberg;
+set RequiredBuildings[GSS090G] :=  Stakkahlid_Hamar Stakkahlid_Enni Stakkahlid_Klettur;
+set PriorityBuildings[BYG201M] :=  VR_2;
+set RequiredBuildings[BYG201M] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[UMV203G] :=  Haskolatorg;
+set RequiredBuildings[UMV203G] :=  Gimli Haskolatorg Logberg Oddi HusVigdisar Arnagardur Askja;
+set PriorityBuildings[HAG402G] :=  Oddi Haskolatorg;
+set RequiredBuildings[HAG402G] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[TSM005G] :=  Eirberg;
+set RequiredBuildings[TSM005G] :=  Eirberg Askja Haskolatorg;
 set PriorityBuildings[TAN308G] :=  Eirberg;
 set RequiredBuildings[TAN308G] :=  Eirberg Askja Haskolatorg;
+set PriorityBuildings[STJ204G] :=  Oddi Haskolatorg;
+set RequiredBuildings[STJ204G] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[STA202G] :=  VR_2;
+set RequiredBuildings[STA202G] :=  VR_2 Askja HusVigdisar Haskolatorg;
 set PriorityBuildings[TAN302G] :=  Eirberg;
 set RequiredBuildings[TAN302G] :=  Eirberg Askja Haskolatorg;
 set PriorityBuildings[TSM404G] :=  Eirberg;
 set RequiredBuildings[TSM404G] :=  Eirberg Askja Haskolatorg;
-set PriorityBuildings[LIF635G] :=  Askja VR_2;
-set RequiredBuildings[LIF635G] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[HAG228F] :=  Oddi Logberg Haskolatorg;
+set RequiredBuildings[HAG228F] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[FER613G] :=  Askja VR_2;
+set RequiredBuildings[FER613G] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[LEI202G] :=  Eirberg;
+set RequiredBuildings[LEI202G] :=  Eirberg Askja Haskolatorg;
+set PriorityBuildings[FRA214G] :=  Haskolatorg;
+set RequiredBuildings[FRA214G] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[HAG202G] :=  Arnagardur Haskolatorg;
+set RequiredBuildings[HAG202G] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[EDL203G] :=  VR_2;
+set RequiredBuildings[EDL203G] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[LEF406G] :=  VR_2 Haskolatorg;
+set RequiredBuildings[LEF406G] :=  VR_2 Askja HusVigdisar Haskolatorg;
 set PriorityBuildings[MIS803F] :=  Arnagardur Eirberg;
 set RequiredBuildings[MIS803F] :=  Arnagardur Logberg Oddi HusVigdisar;
+set PriorityBuildings[EFN205G] :=  Haskolatorg Eirberg VR_2;
+set RequiredBuildings[EFN205G] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[HJU219G] :=  Eirberg Stakkahlid_Hamar;
+set RequiredBuildings[HJU219G] :=  Eirberg Askja Haskolatorg;
 set PriorityBuildings[EFN214G] :=  Haskolatorg Eirberg VR_2;
 set RequiredBuildings[EFN214G] :=  VR_2 Askja HusVigdisar Haskolatorg;
 set PriorityBuildings[UMV602M] :=  Haskolatorg;
@@ -368,24 +380,12 @@ set PriorityBuildings[RUS204G] :=  Arnagardur;
 set RequiredBuildings[RUS204G] :=  Arnagardur Logberg Oddi HusVigdisar;
 set PriorityBuildings[ENS205G] :=  Arnagardur;
 set RequiredBuildings[ENS205G] :=  Arnagardur Logberg Oddi HusVigdisar;
-set PriorityBuildings[HBV601G] :=  VR_2 Askja Logberg Eirberg;
-set RequiredBuildings[HBV601G] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[HAG402G] :=  Oddi Haskolatorg;
-set RequiredBuildings[HAG402G] :=  Haskolatorg Logberg Oddi Arnagardur;
-set PriorityBuildings[STA202G] :=  VR_2;
-set RequiredBuildings[STA202G] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[GSS090G] :=  Stakkahlid_Hamar Stakkahlid_Klettur Eirberg;
-set RequiredBuildings[GSS090G] :=  Stakkahlid_Hamar Stakkahlid_Enni Stakkahlid_Klettur;
-set PriorityBuildings[FER613G] :=  Askja VR_2;
-set RequiredBuildings[FER613G] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[STJ204G] :=  Oddi Haskolatorg;
-set RequiredBuildings[STJ204G] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[JAR416G] :=  VR_2 Askja;
+set RequiredBuildings[JAR416G] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[LIF635G] :=  Askja VR_2;
+set RequiredBuildings[LIF635G] :=  VR_2 Askja HusVigdisar Haskolatorg;
 set PriorityBuildings[GSS091G] :=  Stakkahlid_Hamar Stakkahlid_Klettur;
 set RequiredBuildings[GSS091G] :=  Stakkahlid_Hamar Stakkahlid_Enni Stakkahlid_Klettur;
-set PriorityBuildings[LEI202G] :=  Eirberg;
-set RequiredBuildings[LEI202G] :=  Eirberg Askja Haskolatorg;
-set PriorityBuildings[HAG202G] :=  Arnagardur Haskolatorg;
-set RequiredBuildings[HAG202G] :=  Haskolatorg Logberg Oddi Arnagardur;
 set PriorityBuildings[SAL416G] :=  Oddi Haskolatorg Eirberg;
 set RequiredBuildings[SAL416G] :=  Eirberg Askja Haskolatorg;
 set PriorityBuildings[GSL606G] :=  Eirberg;
@@ -424,570 +424,570 @@ set PriorityBuildings[HJU409G] :=  Eirberg;
 set RequiredBuildings[HJU409G] :=  Eirberg Askja Haskolatorg;
 set PriorityBuildings[KVI406G] :=  Eirberg Arnagardur;
 set RequiredBuildings[KVI406G] :=  Arnagardur Logberg Oddi HusVigdisar;
-set PriorityBuildings[FER210F] :=  Logberg Askja VR_2;
-set RequiredBuildings[FER210F] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[NAR606G] :=  Eirberg;
-set RequiredBuildings[NAR606G] :=  Eirberg Askja Haskolatorg;
-set PriorityBuildings[LYF114F] :=  Askja Eirberg;
-set RequiredBuildings[LYF114F] :=  Eirberg Askja Haskolatorg;
+set PriorityBuildings[TAN407G] :=  Eirberg;
+set RequiredBuildings[TAN407G] :=  Eirberg Askja Haskolatorg;
+set PriorityBuildings[VID604G] :=  Oddi Haskolatorg;
+set RequiredBuildings[VID604G] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[ISE602G] :=  Logberg Arnagardur;
+set RequiredBuildings[ISE602G] :=  Arnagardur Logberg Oddi HusVigdisar;
+set PriorityBuildings[SAL629G] :=  Haskolatorg Eirberg;
+set RequiredBuildings[SAL629G] :=  Eirberg Askja Haskolatorg;
 set PriorityBuildings[HJU801G] :=  Eirberg;
 set RequiredBuildings[HJU801G] :=  Eirberg Askja Haskolatorg;
+set PriorityBuildings[GSS471G] :=  Stakkahlid_Hamar Stakkahlid_Klettur Eirberg;
+set RequiredBuildings[GSS471G] :=  Stakkahlid_Hamar Stakkahlid_Enni Stakkahlid_Klettur;
 set PriorityBuildings[TOL203M] :=  VR_2 Haskolatorg;
 set RequiredBuildings[TOL203M] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[HAG207F] :=  Oddi Haskolatorg;
-set RequiredBuildings[HAG207F] :=  Haskolatorg Logberg Oddi Arnagardur;
-set PriorityBuildings[LAK024M] :=  Askja Eirberg;
-set RequiredBuildings[LAK024M] :=  Eirberg Askja Haskolatorg;
+set PriorityBuildings[EFN404G] :=  VR_2;
+set RequiredBuildings[EFN404G] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[FER210F] :=  Logberg Askja VR_2;
+set RequiredBuildings[FER210F] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[DET202G] :=  Haskolatorg Eirberg Arnagardur;
+set RequiredBuildings[DET202G] :=  Arnagardur Logberg Oddi HusVigdisar;
 set PriorityBuildings[GFR211G] :=  Haskolatorg;
 set RequiredBuildings[GFR211G] :=  Gimli Haskolatorg Logberg Oddi HusVigdisar Arnagardur Askja;
 set PriorityBuildings[STA627M] :=  VR_2 Adalbygging Askja;
 set RequiredBuildings[STA627M] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[TAN407G] :=  Eirberg;
-set RequiredBuildings[TAN407G] :=  Eirberg Askja Haskolatorg;
 set PriorityBuildings[FER409G] :=  Logberg Askja Eirberg VR_2;
 set RequiredBuildings[FER409G] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[ISL440G] :=  Arnagardur;
-set RequiredBuildings[ISL440G] :=  Arnagardur Logberg Oddi HusVigdisar;
-set PriorityBuildings[DET202G] :=  Haskolatorg Eirberg Arnagardur;
-set RequiredBuildings[DET202G] :=  Arnagardur Logberg Oddi HusVigdisar;
-set PriorityBuildings[ISE602G] :=  Logberg Arnagardur;
-set RequiredBuildings[ISE602G] :=  Arnagardur Logberg Oddi HusVigdisar;
-set PriorityBuildings[VID604G] :=  Oddi Haskolatorg;
-set RequiredBuildings[VID604G] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[NAR606G] :=  Eirberg;
+set RequiredBuildings[NAR606G] :=  Eirberg Askja Haskolatorg;
 set PriorityBuildings[UAU214M] :=  Askja VR_2;
 set RequiredBuildings[UAU214M] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[SAL629G] :=  Haskolatorg Eirberg;
-set RequiredBuildings[SAL629G] :=  Eirberg Askja Haskolatorg;
-set PriorityBuildings[GSS471G] :=  Stakkahlid_Hamar Stakkahlid_Klettur Eirberg;
-set RequiredBuildings[GSS471G] :=  Stakkahlid_Hamar Stakkahlid_Enni Stakkahlid_Klettur;
 set PriorityBuildings[FEL430G] :=  Logberg Oddi Haskolatorg;
 set RequiredBuildings[FEL430G] :=  Haskolatorg Logberg Oddi Arnagardur;
-set PriorityBuildings[EFN404G] :=  VR_2;
-set RequiredBuildings[EFN404G] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[SAN403G] :=  Arnagardur;
-set RequiredBuildings[SAN403G] :=  Arnagardur Logberg Oddi HusVigdisar;
-set PriorityBuildings[EDL402M] :=  VR_2;
-set RequiredBuildings[EDL402M] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[FRG603G] :=  Oddi Haskolatorg;
-set RequiredBuildings[FRG603G] :=  Haskolatorg Logberg Oddi Arnagardur;
-set PriorityBuildings[SAL201G] :=  Arnagardur Eirberg;
-set RequiredBuildings[SAL201G] :=  Eirberg Askja Haskolatorg;
-set PriorityBuildings[STJ427G] :=  Oddi Haskolatorg;
-set RequiredBuildings[STJ427G] :=  Haskolatorg Logberg Oddi Arnagardur;
-set PriorityBuildings[SAG438G] :=  Arnagardur;
-set RequiredBuildings[SAG438G] :=  Arnagardur Logberg Oddi HusVigdisar;
-set PriorityBuildings[STA405G] :=  Askja VR_2;
-set RequiredBuildings[STA405G] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[LOG605G] :=  Logberg Eirberg Haskolatorg;
-set RequiredBuildings[LOG605G] :=  Haskolatorg Logberg Oddi Arnagardur;
-set PriorityBuildings[VID210F] :=  Haskolatorg;
-set RequiredBuildings[VID210F] :=  Haskolatorg Logberg Oddi Arnagardur;
-set PriorityBuildings[LYF403G] :=  Eirberg;
-set RequiredBuildings[LYF403G] :=  Eirberg Askja Haskolatorg;
-set PriorityBuildings[JAR419G] :=  VR_2;
-set RequiredBuildings[JAR419G] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[JAR211G] :=  Askja VR_2;
-set RequiredBuildings[JAR211G] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[LIF413G] :=  Askja VR_2;
-set RequiredBuildings[LIF413G] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[SPA401M] :=  Arnagardur;
-set RequiredBuildings[SPA401M] :=  Arnagardur Logberg Oddi HusVigdisar;
-set PriorityBuildings[KIN101G] :=  Arnagardur;
-set RequiredBuildings[KIN101G] :=  Arnagardur Logberg Oddi HusVigdisar;
+set PriorityBuildings[LYF114F] :=  Askja Eirberg;
+set RequiredBuildings[LYF114F] :=  Eirberg Askja Haskolatorg;
+set PriorityBuildings[LAK024M] :=  Askja Eirberg;
+set RequiredBuildings[LAK024M] :=  Eirberg Askja Haskolatorg;
+set PriorityBuildings[HAG207F] :=  Oddi Haskolatorg;
+set RequiredBuildings[HAG207F] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[ISL440G] :=  Arnagardur;
+set RequiredBuildings[ISL440G] :=  Arnagardur Logberg Oddi HusVigdisar;
 set PriorityBuildings[TYS203G] :=  Arnagardur;
 set RequiredBuildings[TYS203G] :=  Arnagardur Logberg Oddi HusVigdisar;
-set PriorityBuildings[SAF201G] :=  Haskolatorg;
-set RequiredBuildings[SAF201G] :=  Gimli Haskolatorg Logberg Oddi HusVigdisar Arnagardur Askja;
-set PriorityBuildings[MIS204F] :=  Arnagardur Eirberg;
-set RequiredBuildings[MIS204F] :=  Arnagardur Logberg Oddi HusVigdisar;
-set PriorityBuildings[MEX202G] :=  Stakkahlid_Klettur Stakkahlid_Enni Stakkahlid_Hamar;
-set RequiredBuildings[MEX202G] :=  Stakkahlid_Hamar Stakkahlid_Enni Stakkahlid_Klettur;
-set PriorityBuildings[VEL215F] :=  VR_2;
-set RequiredBuildings[VEL215F] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[LEI403G] :=  Eirberg;
-set RequiredBuildings[LEI403G] :=  Eirberg Askja Haskolatorg;
+set PriorityBuildings[KIN101G] :=  Arnagardur;
+set RequiredBuildings[KIN101G] :=  Arnagardur Logberg Oddi HusVigdisar;
+set PriorityBuildings[SAL201G] :=  Arnagardur Eirberg;
+set RequiredBuildings[SAL201G] :=  Eirberg Askja Haskolatorg;
+set PriorityBuildings[SAG438G] :=  Arnagardur;
+set RequiredBuildings[SAG438G] :=  Arnagardur Logberg Oddi HusVigdisar;
+set PriorityBuildings[FRG603G] :=  Oddi Haskolatorg;
+set RequiredBuildings[FRG603G] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[LOG605G] :=  Logberg Eirberg Haskolatorg;
+set RequiredBuildings[LOG605G] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[STA405G] :=  Askja VR_2;
+set RequiredBuildings[STA405G] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[STJ427G] :=  Oddi Haskolatorg;
+set RequiredBuildings[STJ427G] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[VID210F] :=  Haskolatorg;
+set RequiredBuildings[VID210F] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[JAR419G] :=  VR_2;
+set RequiredBuildings[JAR419G] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[SPA401M] :=  Arnagardur;
+set RequiredBuildings[SPA401M] :=  Arnagardur Logberg Oddi HusVigdisar;
+set PriorityBuildings[LYF403G] :=  Eirberg;
+set RequiredBuildings[LYF403G] :=  Eirberg Askja Haskolatorg;
+set PriorityBuildings[LIF413G] :=  Askja VR_2;
+set RequiredBuildings[LIF413G] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[EDL402M] :=  VR_2;
+set RequiredBuildings[EDL402M] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[SAN403G] :=  Arnagardur;
+set RequiredBuildings[SAN403G] :=  Arnagardur Logberg Oddi HusVigdisar;
+set PriorityBuildings[JAR211G] :=  Askja VR_2;
+set RequiredBuildings[JAR211G] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[LEI603G] :=  Eirberg Arnagardur;
+set RequiredBuildings[LEI603G] :=  Eirberg Askja Haskolatorg;
 set PriorityBuildings[TRS208G] :=  Stakkahlid_Hamar;
 set RequiredBuildings[TRS208G] :=  Stakkahlid_Hamar Stakkahlid_Enni Stakkahlid_Klettur;
-set PriorityBuildings[LIF614M] :=  Askja Eirberg VR_2;
-set RequiredBuildings[LIF614M] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[UMS201F] :=  Stakkahlid_Klettur Stakkahlid_Hamar;
-set RequiredBuildings[UMS201F] :=  Stakkahlid_Hamar Stakkahlid_Enni Stakkahlid_Klettur;
-set PriorityBuildings[VID204G] :=  Arnagardur Haskolatorg;
-set RequiredBuildings[VID204G] :=  Haskolatorg Logberg Oddi Arnagardur;
-set PriorityBuildings[STJ201F] :=  Oddi Haskolatorg;
-set RequiredBuildings[STJ201F] :=  Haskolatorg Logberg Oddi Arnagardur;
-set PriorityBuildings[LSS502G] :=  Stakkahlid_Klettur Stakkahlid_Hamar;
-set RequiredBuildings[LSS502G] :=  Stakkahlid_Hamar Stakkahlid_Enni Stakkahlid_Klettur;
-set PriorityBuildings[MEN201G] :=  Haskolatorg;
-set RequiredBuildings[MEN201G] :=  Gimli Haskolatorg Logberg Oddi HusVigdisar Arnagardur Askja;
+set PriorityBuildings[MIS204F] :=  Arnagardur Eirberg;
+set RequiredBuildings[MIS204F] :=  Arnagardur Logberg Oddi HusVigdisar;
 set PriorityBuildings[RAF219F] :=  VR_2;
 set RequiredBuildings[RAF219F] :=  VR_2 Askja HusVigdisar Haskolatorg;
 set PriorityBuildings[RUS301G] :=  Arnagardur;
 set RequiredBuildings[RUS301G] :=  Arnagardur Logberg Oddi HusVigdisar;
-set PriorityBuildings[LEI603G] :=  Eirberg Arnagardur;
-set RequiredBuildings[LEI603G] :=  Eirberg Askja Haskolatorg;
+set PriorityBuildings[LEI403G] :=  Eirberg;
+set RequiredBuildings[LEI403G] :=  Eirberg Askja Haskolatorg;
+set PriorityBuildings[LIF614M] :=  Askja Eirberg VR_2;
+set RequiredBuildings[LIF614M] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[SAF201G] :=  Haskolatorg;
+set RequiredBuildings[SAF201G] :=  Gimli Haskolatorg Logberg Oddi HusVigdisar Arnagardur Askja;
+set PriorityBuildings[MEN201G] :=  Haskolatorg;
+set RequiredBuildings[MEN201G] :=  Gimli Haskolatorg Logberg Oddi HusVigdisar Arnagardur Askja;
+set PriorityBuildings[MEX202G] :=  Stakkahlid_Klettur Stakkahlid_Enni Stakkahlid_Hamar;
+set RequiredBuildings[MEX202G] :=  Stakkahlid_Hamar Stakkahlid_Enni Stakkahlid_Klettur;
+set PriorityBuildings[VID204G] :=  Arnagardur Haskolatorg;
+set RequiredBuildings[VID204G] :=  Haskolatorg Logberg Oddi Arnagardur;
 set PriorityBuildings[JAP403G] :=  Arnagardur;
 set RequiredBuildings[JAP403G] :=  Arnagardur Logberg Oddi HusVigdisar;
+set PriorityBuildings[VEL215F] :=  VR_2;
+set RequiredBuildings[VEL215F] :=  VR_2 Askja HusVigdisar Haskolatorg;
 set PriorityBuildings[VID207F] :=  Oddi Eirberg Haskolatorg;
 set RequiredBuildings[VID207F] :=  Haskolatorg Logberg Oddi Arnagardur;
-set PriorityBuildings[TAK204G] :=  Arnagardur Haskolatorg;
-set RequiredBuildings[TAK204G] :=  Arnagardur Logberg Oddi HusVigdisar;
-set PriorityBuildings[KVI401G] :=  Arnagardur;
-set RequiredBuildings[KVI401G] :=  Arnagardur Logberg Oddi HusVigdisar;
-set PriorityBuildings[STM302F] :=  Stakkahlid_Hamar;
-set RequiredBuildings[STM302F] :=  Stakkahlid_Hamar Stakkahlid_Enni Stakkahlid_Klettur;
-set PriorityBuildings[GFR330M] :=  Haskolatorg;
-set RequiredBuildings[GFR330M] :=  Gimli Haskolatorg Logberg Oddi HusVigdisar Arnagardur Askja;
-set PriorityBuildings[GSL402G] :=  Eirberg;
-set RequiredBuildings[GSL402G] :=  Eirberg Askja Haskolatorg;
+set PriorityBuildings[STJ201F] :=  Oddi Haskolatorg;
+set RequiredBuildings[STJ201F] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[UMS201F] :=  Stakkahlid_Klettur Stakkahlid_Hamar;
+set RequiredBuildings[UMS201F] :=  Stakkahlid_Hamar Stakkahlid_Enni Stakkahlid_Klettur;
+set PriorityBuildings[LSS502G] :=  Stakkahlid_Klettur Stakkahlid_Hamar;
+set RequiredBuildings[LSS502G] :=  Stakkahlid_Hamar Stakkahlid_Enni Stakkahlid_Klettur;
+set PriorityBuildings[TOL202M] :=  VR_2;
+set RequiredBuildings[TOL202M] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[MAN602M] :=  Logberg Eirberg Haskolatorg;
+set RequiredBuildings[MAN602M] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[FOR204G] :=  Arnagardur Askja Haskolatorg;
+set RequiredBuildings[FOR204G] :=  Haskolatorg Logberg Oddi Arnagardur;
 set PriorityBuildings[LOG404G] :=  Haskolatorg Eirberg;
 set RequiredBuildings[LOG404G] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[RUS411G] :=  Arnagardur;
+set RequiredBuildings[RUS411G] :=  Arnagardur Logberg Oddi HusVigdisar;
+set PriorityBuildings[TAK204G] :=  Arnagardur Haskolatorg;
+set RequiredBuildings[TAK204G] :=  Arnagardur Logberg Oddi HusVigdisar;
 set PriorityBuildings[GRI201G] :=  Arnagardur;
 set RequiredBuildings[GRI201G] :=  Arnagardur Logberg Oddi HusVigdisar;
 set PriorityBuildings[SJU407G] :=  Adalbygging Eirberg;
 set RequiredBuildings[SJU407G] :=  Eirberg Askja Haskolatorg;
+set PriorityBuildings[STM302F] :=  Stakkahlid_Hamar;
+set RequiredBuildings[STM302F] :=  Stakkahlid_Hamar Stakkahlid_Enni Stakkahlid_Klettur;
 set PriorityBuildings[KIN401M] :=  Arnagardur;
 set RequiredBuildings[KIN401M] :=  Arnagardur Logberg Oddi HusVigdisar;
-set PriorityBuildings[GSL204G] :=  Eirberg;
-set RequiredBuildings[GSL204G] :=  Eirberg Askja Haskolatorg;
+set PriorityBuildings[GFR330M] :=  Haskolatorg;
+set RequiredBuildings[GFR330M] :=  Gimli Haskolatorg Logberg Oddi HusVigdisar Arnagardur Askja;
 set PriorityBuildings[LSS002F] :=  Stakkahlid_Hamar Stakkahlid_Klettur Eirberg;
 set RequiredBuildings[LSS002F] :=  Stakkahlid_Hamar Stakkahlid_Enni Stakkahlid_Klettur;
-set PriorityBuildings[FOR204G] :=  Arnagardur Askja Haskolatorg;
-set RequiredBuildings[FOR204G] :=  Haskolatorg Logberg Oddi Arnagardur;
-set PriorityBuildings[LYF612G] :=  Eirberg;
-set RequiredBuildings[LYF612G] :=  Eirberg Askja Haskolatorg;
-set PriorityBuildings[MAN602M] :=  Logberg Eirberg Haskolatorg;
-set RequiredBuildings[MAN602M] :=  Haskolatorg Logberg Oddi Arnagardur;
-set PriorityBuildings[ISL205G] :=  Arnagardur Askja Eirberg;
-set RequiredBuildings[ISL205G] :=  Arnagardur Logberg Oddi HusVigdisar;
-set PriorityBuildings[TOL202M] :=  VR_2;
-set RequiredBuildings[TOL202M] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[UPP204F] :=  Oddi VR_2;
-set RequiredBuildings[UPP204F] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[RUS411G] :=  Arnagardur;
-set RequiredBuildings[RUS411G] :=  Arnagardur Logberg Oddi HusVigdisar;
+set PriorityBuildings[GSL204G] :=  Eirberg;
+set RequiredBuildings[GSL204G] :=  Eirberg Askja Haskolatorg;
 set PriorityBuildings[LSS305G] :=  Stakkahlid_Hamar Stakkahlid_Klettur;
 set RequiredBuildings[LSS305G] :=  Stakkahlid_Hamar Stakkahlid_Enni Stakkahlid_Klettur;
-set PriorityBuildings[VID402G] :=  Haskolatorg;
-set RequiredBuildings[VID402G] :=  Haskolatorg Logberg Oddi Arnagardur;
-set PriorityBuildings[EFN410G] :=  VR_2;
-set RequiredBuildings[EFN410G] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[FRG206G] :=  Arnagardur Haskolatorg;
-set RequiredBuildings[FRG206G] :=  Haskolatorg Logberg Oddi Arnagardur;
-set PriorityBuildings[ISE404G] :=  Arnagardur Eirberg;
-set RequiredBuildings[ISE404G] :=  Arnagardur Logberg Oddi HusVigdisar;
-set PriorityBuildings[EDL401M] :=  VR_2;
-set RequiredBuildings[EDL401M] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[NAR406G] :=  Eirberg;
-set RequiredBuildings[NAR406G] :=  Eirberg Askja Haskolatorg;
-set PriorityBuildings[KYN201G] :=  Haskolatorg Oddi;
-set RequiredBuildings[KYN201G] :=  Haskolatorg Logberg Oddi Arnagardur;
-set PriorityBuildings[HBV402G] :=  VR_2;
-set RequiredBuildings[HBV402G] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[TYS426G] :=  Arnagardur;
-set RequiredBuildings[TYS426G] :=  Arnagardur Logberg Oddi HusVigdisar;
-set PriorityBuildings[ITA249G] :=  Eirberg Arnagardur;
-set RequiredBuildings[ITA249G] :=  Arnagardur Logberg Oddi HusVigdisar;
-set PriorityBuildings[TAN412G] :=  Eirberg;
-set RequiredBuildings[TAN412G] :=  Eirberg Askja Haskolatorg;
-set PriorityBuildings[EDL612M] :=  VR_2;
-set RequiredBuildings[EDL612M] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[ISL205G] :=  Arnagardur Askja Eirberg;
+set RequiredBuildings[ISL205G] :=  Arnagardur Logberg Oddi HusVigdisar;
+set PriorityBuildings[GSL402G] :=  Eirberg;
+set RequiredBuildings[GSL402G] :=  Eirberg Askja Haskolatorg;
+set PriorityBuildings[LYF612G] :=  Eirberg;
+set RequiredBuildings[LYF612G] :=  Eirberg Askja Haskolatorg;
+set PriorityBuildings[KVI401G] :=  Arnagardur;
+set RequiredBuildings[KVI401G] :=  Arnagardur Logberg Oddi HusVigdisar;
+set PriorityBuildings[UPP204F] :=  Oddi VR_2;
+set RequiredBuildings[UPP204F] :=  VR_2 Askja HusVigdisar Haskolatorg;
 set PriorityBuildings[SAG201G] :=  Arnagardur;
 set RequiredBuildings[SAG201G] :=  Arnagardur Logberg Oddi HusVigdisar;
+set PriorityBuildings[EDL401M] :=  VR_2;
+set RequiredBuildings[EDL401M] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[EDL612M] :=  VR_2;
+set RequiredBuildings[EDL612M] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[FRG206G] :=  Arnagardur Haskolatorg;
+set RequiredBuildings[FRG206G] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[KYN201G] :=  Haskolatorg Oddi;
+set RequiredBuildings[KYN201G] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[NAR406G] :=  Eirberg;
+set RequiredBuildings[NAR406G] :=  Eirberg Askja Haskolatorg;
+set PriorityBuildings[TAN412G] :=  Eirberg;
+set RequiredBuildings[TAN412G] :=  Eirberg Askja Haskolatorg;
 set PriorityBuildings[TAN206G] :=  Eirberg;
 set RequiredBuildings[TAN206G] :=  Eirberg Askja Haskolatorg;
+set PriorityBuildings[TYS426G] :=  Arnagardur;
+set RequiredBuildings[TYS426G] :=  Arnagardur Logberg Oddi HusVigdisar;
+set PriorityBuildings[EFN410G] :=  VR_2;
+set RequiredBuildings[EFN410G] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[ISE404G] :=  Arnagardur Eirberg;
+set RequiredBuildings[ISE404G] :=  Arnagardur Logberg Oddi HusVigdisar;
+set PriorityBuildings[HBV402G] :=  VR_2;
+set RequiredBuildings[HBV402G] :=  VR_2 Askja HusVigdisar Haskolatorg;
 set PriorityBuildings[VID403G] :=  Haskolatorg Oddi;
 set RequiredBuildings[VID403G] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[VID402G] :=  Haskolatorg;
+set RequiredBuildings[VID402G] :=  Haskolatorg Logberg Oddi Arnagardur;
 set PriorityBuildings[SPA267G] :=  Arnagardur;
 set RequiredBuildings[SPA267G] :=  Arnagardur Logberg Oddi HusVigdisar;
 set PriorityBuildings[FEL264G] :=  Logberg Arnagardur Haskolatorg;
 set RequiredBuildings[FEL264G] :=  Haskolatorg Logberg Oddi Arnagardur;
-set PriorityBuildings[LIF619M] :=  Askja VR_2;
-set RequiredBuildings[LIF619M] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[EDL201G] :=  Askja VR_2 Eirberg;
-set RequiredBuildings[EDL201G] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[ITA249G] :=  Eirberg Arnagardur;
+set RequiredBuildings[ITA249G] :=  Arnagardur Logberg Oddi HusVigdisar;
 set PriorityBuildings[STA209G] :=  Arnagardur Haskolatorg VR_2 Eirberg;
 set RequiredBuildings[STA209G] :=  VR_2 Askja HusVigdisar Haskolatorg;
 set PriorityBuildings[TOL403G] :=  VR_2;
 set RequiredBuildings[TOL403G] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[RAF403G] :=  Askja VR_2;
-set RequiredBuildings[RAF403G] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[BYG202M] :=  VR_2;
-set RequiredBuildings[BYG202M] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[LIF619M] :=  Askja VR_2;
+set RequiredBuildings[LIF619M] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[EDL206G] :=  VR_2;
+set RequiredBuildings[EDL206G] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[HJU220G] :=  Stakkahlid_Hamar Eirberg;
+set RequiredBuildings[HJU220G] :=  Eirberg Askja Haskolatorg;
+set PriorityBuildings[HAG203G] :=  Haskolatorg Oddi;
+set RequiredBuildings[HAG203G] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[HAG401G] :=  Oddi Haskolatorg;
+set RequiredBuildings[HAG401G] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[HSP203G] :=  Arnagardur;
+set RequiredBuildings[HSP203G] :=  Arnagardur Logberg Oddi HusVigdisar;
 set PriorityBuildings[BYG201G] :=  VR_2;
 set RequiredBuildings[BYG201G] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[HJU411G] :=  Stakkahlid_Hamar Eirberg;
+set RequiredBuildings[HJU411G] :=  Eirberg Askja Haskolatorg;
+set PriorityBuildings[EDL208G] :=  Askja VR_2;
+set RequiredBuildings[EDL208G] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[RAF403G] :=  Askja VR_2;
+set RequiredBuildings[RAF403G] :=  VR_2 Askja HusVigdisar Haskolatorg;
 set PriorityBuildings[LYF201G] :=  Haskolatorg Eirberg;
 set RequiredBuildings[LYF201G] :=  Eirberg Askja Haskolatorg;
 set PriorityBuildings[RAF613G] :=  VR_2;
 set RequiredBuildings[RAF613G] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[HSP203G] :=  Arnagardur;
-set RequiredBuildings[HSP203G] :=  Arnagardur Logberg Oddi HusVigdisar;
-set PriorityBuildings[EDL206G] :=  VR_2;
-set RequiredBuildings[EDL206G] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[HAG401G] :=  Oddi Haskolatorg;
-set RequiredBuildings[HAG401G] :=  Haskolatorg Logberg Oddi Arnagardur;
-set PriorityBuildings[HAG203G] :=  Haskolatorg Oddi;
-set RequiredBuildings[HAG203G] :=  Haskolatorg Logberg Oddi Arnagardur;
-set PriorityBuildings[HJU411G] :=  Stakkahlid_Hamar Eirberg;
-set RequiredBuildings[HJU411G] :=  Eirberg Askja Haskolatorg;
-set PriorityBuildings[LEI203G] :=  Eirberg;
-set RequiredBuildings[LEI203G] :=  Eirberg Askja Haskolatorg;
-set PriorityBuildings[EDL208G] :=  Askja VR_2;
-set RequiredBuildings[EDL208G] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[HJU220G] :=  Stakkahlid_Hamar Eirberg;
-set RequiredBuildings[HJU220G] :=  Eirberg Askja Haskolatorg;
 set PriorityBuildings[LAN203G] :=  Oddi VR_2 Askja;
 set RequiredBuildings[LAN203G] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[STA213G] :=  Arnagardur Askja Eirberg VR_2;
-set RequiredBuildings[STA213G] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[LAN209F] :=  VR_2 Haskolatorg;
-set RequiredBuildings[LAN209F] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[LAN410G] :=  VR_2 Haskolatorg Eirberg;
-set RequiredBuildings[LAN410G] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[STA419M] :=  VR_2;
-set RequiredBuildings[STA419M] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[BYG202M] :=  VR_2;
+set RequiredBuildings[BYG202M] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[LEI203G] :=  Eirberg;
+set RequiredBuildings[LEI203G] :=  Eirberg Askja Haskolatorg;
+set PriorityBuildings[EDL201G] :=  Askja VR_2 Eirberg;
+set RequiredBuildings[EDL201G] :=  VR_2 Askja HusVigdisar Haskolatorg;
 set PriorityBuildings[LOG203G] :=  Logberg Eirberg Haskolatorg;
 set RequiredBuildings[LOG203G] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[STA419M] :=  VR_2;
+set RequiredBuildings[STA419M] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[LAN209F] :=  VR_2 Haskolatorg;
+set RequiredBuildings[LAN209F] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[TAN301G] :=  Eirberg;
+set RequiredBuildings[TAN301G] :=  Eirberg Askja Haskolatorg;
+set PriorityBuildings[STA205G] :=  Arnagardur Askja Haskolatorg VR_2;
+set RequiredBuildings[STA205G] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[STA213G] :=  Arnagardur Askja Eirberg VR_2;
+set RequiredBuildings[STA213G] :=  VR_2 Askja HusVigdisar Haskolatorg;
 set PriorityBuildings[LAK207F] :=  Eirberg;
 set RequiredBuildings[LAK207F] :=  Eirberg Askja Haskolatorg;
 set PriorityBuildings[REI201G] :=  VR_2 Askja;
 set RequiredBuildings[REI201G] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[HAG201G] :=  Haskolatorg Oddi VR_2;
-set RequiredBuildings[HAG201G] :=  Haskolatorg Logberg Oddi Arnagardur;
-set PriorityBuildings[TAN301G] :=  Eirberg;
-set RequiredBuildings[TAN301G] :=  Eirberg Askja Haskolatorg;
 set PriorityBuildings[TAN517G] :=  Eirberg;
 set RequiredBuildings[TAN517G] :=  Eirberg Askja Haskolatorg;
-set PriorityBuildings[STA205G] :=  Arnagardur Askja Haskolatorg VR_2;
-set RequiredBuildings[STA205G] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[ISL211G] :=  Arnagardur Eirberg;
-set RequiredBuildings[ISL211G] :=  Arnagardur Logberg Oddi HusVigdisar;
+set PriorityBuildings[HAG201G] :=  Haskolatorg Oddi VR_2;
+set RequiredBuildings[HAG201G] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[LAN410G] :=  VR_2 Haskolatorg Eirberg;
+set RequiredBuildings[LAN410G] :=  VR_2 Askja HusVigdisar Haskolatorg;
 set PriorityBuildings[FRG408G] :=  Haskolatorg;
 set RequiredBuildings[FRG408G] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[EFN408G] :=  VR_2;
+set RequiredBuildings[EFN408G] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[TYS205G] :=  Arnagardur;
+set RequiredBuildings[TYS205G] :=  Arnagardur Logberg Oddi HusVigdisar;
+set PriorityBuildings[RAF620M] :=  VR_2;
+set RequiredBuildings[RAF620M] :=  VR_2 Askja HusVigdisar Haskolatorg;
 set PriorityBuildings[BYG601G] :=  VR_2;
 set RequiredBuildings[BYG601G] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[TJO437G] :=  Arnagardur Oddi Haskolatorg;
-set RequiredBuildings[TJO437G] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[GSS461G] :=  Stakkahlid_Klettur Stakkahlid_Hamar;
+set RequiredBuildings[GSS461G] :=  Stakkahlid_Hamar Stakkahlid_Enni Stakkahlid_Klettur;
+set PriorityBuildings[ISL211G] :=  Arnagardur Eirberg;
+set RequiredBuildings[ISL211G] :=  Arnagardur Logberg Oddi HusVigdisar;
 set PriorityBuildings[ITH210G] :=  Stakkahlid_Enni Stakkahlid_Klettur Stakkahlid_Hamar;
 set RequiredBuildings[ITH210G] :=  Stakkahlid_Hamar Stakkahlid_Enni Stakkahlid_Klettur;
-set PriorityBuildings[HAG403G] :=  Oddi Haskolatorg;
-set RequiredBuildings[HAG403G] :=  Haskolatorg Logberg Oddi Arnagardur;
 set PriorityBuildings[TJO203F] :=  Arnagardur Oddi Eirberg Haskolatorg;
 set RequiredBuildings[TJO203F] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[TJO437G] :=  Arnagardur Oddi Haskolatorg;
+set RequiredBuildings[TJO437G] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[HAG403G] :=  Oddi Haskolatorg;
+set RequiredBuildings[HAG403G] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[LAK610F] :=  Eirberg;
+set RequiredBuildings[LAK610F] :=  Eirberg Askja Haskolatorg;
 set PriorityBuildings[VID603G] :=  Oddi Haskolatorg;
 set RequiredBuildings[VID603G] :=  Haskolatorg Logberg Oddi Arnagardur;
 set PriorityBuildings[LIF214G] :=  Askja VR_2;
 set RequiredBuildings[LIF214G] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[LAK610F] :=  Eirberg;
-set RequiredBuildings[LAK610F] :=  Eirberg Askja Haskolatorg;
-set PriorityBuildings[REI202M] :=  VR_2;
-set RequiredBuildings[REI202M] :=  VR_2 Askja HusVigdisar Haskolatorg;
 set PriorityBuildings[UPP209F] :=  Logberg VR_2;
 set RequiredBuildings[UPP209F] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[REI202M] :=  VR_2;
+set RequiredBuildings[REI202M] :=  VR_2 Askja HusVigdisar Haskolatorg;
 set PriorityBuildings[STJ452G] :=  Haskolatorg;
 set RequiredBuildings[STJ452G] :=  Haskolatorg Logberg Oddi Arnagardur;
 set PriorityBuildings[EDL403G] :=  VR_2;
 set RequiredBuildings[EDL403G] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[RAF620M] :=  VR_2;
-set RequiredBuildings[RAF620M] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[TYS205G] :=  Arnagardur;
-set RequiredBuildings[TYS205G] :=  Arnagardur Logberg Oddi HusVigdisar;
-set PriorityBuildings[GSS461G] :=  Stakkahlid_Klettur Stakkahlid_Hamar;
-set RequiredBuildings[GSS461G] :=  Stakkahlid_Hamar Stakkahlid_Enni Stakkahlid_Klettur;
-set PriorityBuildings[EFN408G] :=  VR_2;
-set RequiredBuildings[EFN408G] :=  VR_2 Askja HusVigdisar Haskolatorg;
 set PriorityBuildings[JAP202G] :=  Adalbygging Arnagardur;
 set RequiredBuildings[JAP202G] :=  Arnagardur Logberg Oddi HusVigdisar;
-set PriorityBuildings[TOL401G] :=  Haskolatorg VR_2 Logberg Arnagardur;
-set RequiredBuildings[TOL401G] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[LEI201G] :=  Eirberg;
+set RequiredBuildings[LEI201G] :=  Eirberg Askja Haskolatorg;
 set PriorityBuildings[KIN207G] :=  Arnagardur;
 set RequiredBuildings[KIN207G] :=  Arnagardur Logberg Oddi HusVigdisar;
 set PriorityBuildings[VID212F] :=  Haskolatorg;
 set RequiredBuildings[VID212F] :=  Haskolatorg Logberg Oddi Arnagardur;
-set PriorityBuildings[KVI201G] :=  Arnagardur;
-set RequiredBuildings[KVI201G] :=  Arnagardur Logberg Oddi HusVigdisar;
+set PriorityBuildings[SAL203G] :=  Haskolatorg Eirberg;
+set RequiredBuildings[SAL203G] :=  Eirberg Askja Haskolatorg;
+set PriorityBuildings[ENS455M] :=  Eirberg Arnagardur;
+set RequiredBuildings[ENS455M] :=  Arnagardur Logberg Oddi HusVigdisar;
 set PriorityBuildings[HJU218G] :=  Eirberg Stakkahlid_Hamar;
 set RequiredBuildings[HJU218G] :=  Eirberg Askja Haskolatorg;
 set PriorityBuildings[LAK408G] :=  Eirberg;
 set RequiredBuildings[LAK408G] :=  Eirberg Askja Haskolatorg;
-set PriorityBuildings[ENS455M] :=  Eirberg Arnagardur;
-set RequiredBuildings[ENS455M] :=  Arnagardur Logberg Oddi HusVigdisar;
+set PriorityBuildings[TOL401G] :=  Haskolatorg VR_2 Logberg Arnagardur;
+set RequiredBuildings[TOL401G] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[KVI201G] :=  Arnagardur;
+set RequiredBuildings[KVI201G] :=  Arnagardur Logberg Oddi HusVigdisar;
 set PriorityBuildings[LOG603G] :=  Logberg Eirberg Haskolatorg;
 set RequiredBuildings[LOG603G] :=  Haskolatorg Logberg Oddi Arnagardur;
-set PriorityBuildings[SAL203G] :=  Haskolatorg Eirberg;
-set RequiredBuildings[SAL203G] :=  Eirberg Askja Haskolatorg;
-set PriorityBuildings[LEI201G] :=  Eirberg;
-set RequiredBuildings[LEI201G] :=  Eirberg Askja Haskolatorg;
-set PriorityBuildings[TJO205G] :=  Logberg Oddi Arnagardur Haskolatorg;
-set RequiredBuildings[TJO205G] :=  Haskolatorg Logberg Oddi Arnagardur;
-set PriorityBuildings[ISE009G] :=  Haskolatorg Eirberg Arnagardur;
-set RequiredBuildings[ISE009G] :=  Arnagardur Logberg Oddi HusVigdisar;
+set PriorityBuildings[TAK202G] :=  Arnagardur;
+set RequiredBuildings[TAK202G] :=  Arnagardur Logberg Oddi HusVigdisar;
+set PriorityBuildings[LIF620M] :=  Askja VR_2;
+set RequiredBuildings[LIF620M] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[JAP404G] :=  Arnagardur;
+set RequiredBuildings[JAP404G] :=  Arnagardur Logberg Oddi HusVigdisar;
 set PriorityBuildings[MAF204G] :=  Adalbygging Oddi Arnagardur;
 set RequiredBuildings[MAF204G] :=  Arnagardur Logberg Oddi HusVigdisar;
 set PriorityBuildings[RUS210G] :=  Arnagardur;
 set RequiredBuildings[RUS210G] :=  Arnagardur Logberg Oddi HusVigdisar;
-set PriorityBuildings[HSP808F] :=  Arnagardur;
-set RequiredBuildings[HSP808F] :=  Arnagardur Logberg Oddi HusVigdisar;
-set PriorityBuildings[JAP404G] :=  Arnagardur;
-set RequiredBuildings[JAP404G] :=  Arnagardur Logberg Oddi HusVigdisar;
-set PriorityBuildings[GSL206G] :=  Eirberg;
-set RequiredBuildings[GSL206G] :=  Eirberg Askja Haskolatorg;
-set PriorityBuildings[ISE406G] :=  Haskolatorg Arnagardur;
-set RequiredBuildings[ISE406G] :=  Arnagardur Logberg Oddi HusVigdisar;
-set PriorityBuildings[LAT253G] :=  Arnagardur;
-set RequiredBuildings[LAT253G] :=  Arnagardur Logberg Oddi HusVigdisar;
-set PriorityBuildings[JAR213G] :=  VR_2 Arnagardur Askja;
-set RequiredBuildings[JAR213G] :=  VR_2 Askja HusVigdisar Haskolatorg;
 set PriorityBuildings[FEL209G] :=  Logberg Haskolatorg;
 set RequiredBuildings[FEL209G] :=  Haskolatorg Logberg Oddi Arnagardur;
 set PriorityBuildings[HSP202G] :=  Arnagardur Askja Eirberg;
 set RequiredBuildings[HSP202G] :=  Arnagardur Logberg Oddi HusVigdisar;
-set PriorityBuildings[LEI602G] :=  Eirberg;
-set RequiredBuildings[LEI602G] :=  Eirberg Askja Haskolatorg;
+set PriorityBuildings[GSL206G] :=  Eirberg;
+set RequiredBuildings[GSL206G] :=  Eirberg Askja Haskolatorg;
+set PriorityBuildings[TJO205G] :=  Logberg Oddi Arnagardur Haskolatorg;
+set RequiredBuildings[TJO205G] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[LAT253G] :=  Arnagardur;
+set RequiredBuildings[LAT253G] :=  Arnagardur Logberg Oddi HusVigdisar;
 set PriorityBuildings[STJ201G] :=  Oddi Arnagardur Haskolatorg;
 set RequiredBuildings[STJ201G] :=  Haskolatorg Logberg Oddi Arnagardur;
-set PriorityBuildings[LEI301G] :=  Eirberg;
-set RequiredBuildings[LEI301G] :=  Eirberg Askja Haskolatorg;
-set PriorityBuildings[TAK202G] :=  Arnagardur;
-set RequiredBuildings[TAK202G] :=  Arnagardur Logberg Oddi HusVigdisar;
-set PriorityBuildings[KIN403G] :=  Arnagardur;
-set RequiredBuildings[KIN403G] :=  Arnagardur Logberg Oddi HusVigdisar;
 set PriorityBuildings[FRG605G] :=  Haskolatorg;
 set RequiredBuildings[FRG605G] :=  Haskolatorg Logberg Oddi Arnagardur;
-set PriorityBuildings[LIF620M] :=  Askja VR_2;
-set RequiredBuildings[LIF620M] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[ISE406G] :=  Haskolatorg Arnagardur;
+set RequiredBuildings[ISE406G] :=  Arnagardur Logberg Oddi HusVigdisar;
+set PriorityBuildings[LEI602G] :=  Eirberg;
+set RequiredBuildings[LEI602G] :=  Eirberg Askja Haskolatorg;
+set PriorityBuildings[KIN403G] :=  Arnagardur;
+set RequiredBuildings[KIN403G] :=  Arnagardur Logberg Oddi HusVigdisar;
+set PriorityBuildings[LEI301G] :=  Eirberg;
+set RequiredBuildings[LEI301G] :=  Eirberg Askja Haskolatorg;
+set PriorityBuildings[ISE009G] :=  Haskolatorg Eirberg Arnagardur;
+set RequiredBuildings[ISE009G] :=  Arnagardur Logberg Oddi HusVigdisar;
 set PriorityBuildings[GSL408G] :=  Eirberg;
 set RequiredBuildings[GSL408G] :=  Eirberg Askja Haskolatorg;
+set PriorityBuildings[JAR213G] :=  VR_2 Arnagardur Askja;
+set RequiredBuildings[JAR213G] :=  VR_2 Askja HusVigdisar Haskolatorg;
 set PriorityBuildings[LAN416M] :=  Askja VR_2;
 set RequiredBuildings[LAN416M] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[TOL203G] :=  VR_2 Haskolatorg;
-set RequiredBuildings[TOL203G] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[STJ439G] :=  Logberg Oddi Arnagardur Haskolatorg;
-set RequiredBuildings[STJ439G] :=  Haskolatorg Logberg Oddi Arnagardur;
-set PriorityBuildings[ISE201G] :=  Haskolatorg Eirberg Arnagardur;
-set RequiredBuildings[ISE201G] :=  Arnagardur Logberg Oddi HusVigdisar;
+set PriorityBuildings[HSP808F] :=  Arnagardur;
+set RequiredBuildings[HSP808F] :=  Arnagardur Logberg Oddi HusVigdisar;
+set PriorityBuildings[HAG212F] :=  Oddi Haskolatorg;
+set RequiredBuildings[HAG212F] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[VID202G] :=  VR_2 Haskolatorg;
+set RequiredBuildings[VID202G] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[SAL627G] :=  Adalbygging Eirberg;
+set RequiredBuildings[SAL627G] :=  Eirberg Askja Haskolatorg;
 set PriorityBuildings[ASK220F] :=  Logberg Oddi Arnagardur Eirberg Haskolatorg;
 set RequiredBuildings[ASK220F] :=  Haskolatorg Logberg Oddi Arnagardur;
 set PriorityBuildings[LIF403G] :=  VR_2 Askja;
 set RequiredBuildings[LIF403G] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[BYG401G] :=  VR_2;
-set RequiredBuildings[BYG401G] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[SAL627G] :=  Adalbygging Eirberg;
-set RequiredBuildings[SAL627G] :=  Eirberg Askja Haskolatorg;
-set PriorityBuildings[HAG212F] :=  Oddi Haskolatorg;
-set RequiredBuildings[HAG212F] :=  Haskolatorg Logberg Oddi Arnagardur;
 set PriorityBuildings[VID401G] :=  Haskolatorg Arnagardur;
 set RequiredBuildings[VID401G] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[STJ439G] :=  Logberg Oddi Arnagardur Haskolatorg;
+set RequiredBuildings[STJ439G] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[BYG401G] :=  VR_2;
+set RequiredBuildings[BYG401G] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[TOL203G] :=  VR_2 Haskolatorg;
+set RequiredBuildings[TOL203G] :=  VR_2 Askja HusVigdisar Haskolatorg;
 set PriorityBuildings[RAF601G] :=  VR_2;
 set RequiredBuildings[RAF601G] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[ISE201G] :=  Haskolatorg Eirberg Arnagardur;
+set RequiredBuildings[ISE201G] :=  Arnagardur Logberg Oddi HusVigdisar;
 set PriorityBuildings[DET201G] :=  Arnagardur;
 set RequiredBuildings[DET201G] :=  Arnagardur Logberg Oddi HusVigdisar;
-set PriorityBuildings[VID202G] :=  VR_2 Haskolatorg;
-set RequiredBuildings[VID202G] :=  Haskolatorg Logberg Oddi Arnagardur;
-set PriorityBuildings[VID205G] :=  Haskolatorg Eirberg;
-set RequiredBuildings[VID205G] :=  Haskolatorg Logberg Oddi Arnagardur;
 set PriorityBuildings[HAG605G] :=  Oddi Logberg Haskolatorg;
 set RequiredBuildings[HAG605G] :=  Haskolatorg Logberg Oddi Arnagardur;
-set PriorityBuildings[NSR203F] :=  Oddi Eirberg Haskolatorg;
-set RequiredBuildings[NSR203F] :=  Haskolatorg Logberg Oddi Arnagardur;
-set PriorityBuildings[EDL402G] :=  VR_2;
-set RequiredBuildings[EDL402G] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[SAN206G] :=  Arnagardur;
+set RequiredBuildings[SAN206G] :=  Arnagardur Logberg Oddi HusVigdisar;
+set PriorityBuildings[LOG405G] :=  Haskolatorg Logberg Eirberg;
+set RequiredBuildings[LOG405G] :=  Haskolatorg Logberg Oddi Arnagardur;
 set PriorityBuildings[HBV602M] :=  Oddi VR_2;
 set RequiredBuildings[HBV602M] :=  VR_2 Askja HusVigdisar Haskolatorg;
 set PriorityBuildings[FRG205G] :=  Haskolatorg Oddi;
 set RequiredBuildings[FRG205G] :=  Haskolatorg Logberg Oddi Arnagardur;
-set PriorityBuildings[HJU408G] :=  Eirberg Haskolatorg;
-set RequiredBuildings[HJU408G] :=  Eirberg Askja Haskolatorg;
-set PriorityBuildings[SAN206G] :=  Arnagardur;
-set RequiredBuildings[SAN206G] :=  Arnagardur Logberg Oddi HusVigdisar;
+set PriorityBuildings[VID205G] :=  Haskolatorg Eirberg;
+set RequiredBuildings[VID205G] :=  Haskolatorg Logberg Oddi Arnagardur;
 set PriorityBuildings[NAR606M] :=  Eirberg;
 set RequiredBuildings[NAR606M] :=  Eirberg Askja Haskolatorg;
 set PriorityBuildings[IDN603G] :=  VR_2;
 set RequiredBuildings[IDN603G] :=  VR_2 Askja HusVigdisar Haskolatorg;
-set PriorityBuildings[LOG405G] :=  Haskolatorg Logberg Eirberg;
-set RequiredBuildings[LOG405G] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[EDL402G] :=  VR_2;
+set RequiredBuildings[EDL402G] :=  VR_2 Askja HusVigdisar Haskolatorg;
+set PriorityBuildings[NSR203F] :=  Oddi Eirberg Haskolatorg;
+set RequiredBuildings[NSR203F] :=  Haskolatorg Logberg Oddi Arnagardur;
+set PriorityBuildings[HJU408G] :=  Eirberg Haskolatorg;
+set RequiredBuildings[HJU408G] :=  Eirberg Askja Haskolatorg;
 param Slot := 
-VID601G 1 1
-VEL202G 1 1
-VEL402G 1 1
-TAN310G 1 1
+ITH213G 1 1
+TSM401G 1 1
+LIF401G 1 1
+FRG204G 1 1
 LOG234F 1 1
 TAN204G 1 1
+VID601G 1 1
+VEL402G 1 1
+VEL202G 1 1
 TYS201G 1 1
-VID242F 1 1
-FRG204G 1 1
 TOV201G 1 1
-HJU212G 1 1
-EVF602M 1 1
-ITH213G 1 1
+VID242F 1 1
 LOG604G 1 1
-LIF401G 1 1
-TSM401G 1 1
 GSS470G 1 1
+HJU212G 1 1
 TSM004G 1 1
-EDL401G 2 1
+EVF602M 1 1
+TAN310G 1 1
+KEN213F 2 1
+FEL262G 2 1
+ISE405G 2 1
+HSP201G 2 1
 SPA204G 2 1
-LIF654G 2 1
+VID258G 2 1
+JED201G 2 1
+GSS0A5G 2 1
+MEN202G 2 1
+EDL401G 2 1
 HAG208G 2 1
 STA207G 2 1
-VID258G 2 1
-MAT401G 2 1
-BYG203M 2 1
-GSS0A5G 2 1
-TAN303G 2 1
-MEN202G 2 1
-UMV201G 2 1
-LSS202G 2 1
+RAF402G 2 1
 IDN401G 2 1
 BLF204M 2 1
 LEI304G 2 1
+LIF654G 2 1
+BYG203M 2 1
+UMV201G 2 1
+TAN303G 2 1
+MAT401G 2 1
+LSS202G 2 1
 EFN208G 2 1
 JAP203G 2 1
-KEN213F 2 1
-RAF402G 2 1
-FEL262G 2 1
-JED201G 2 1
-ISE405G 2 1
-HSP201G 2 1
 LOG239F 3 1
-UAU206M 3 1
+VEL601G 3 1
+LIF201G 3 1
 ITA248G 3 1
 HAG211F 3 1
-LIF201G 3 1
-SAL202G 3 1
 ITH411G 3 1
 HAG606G 3 1
 LOG403G 3 1
 HBV403G 3 1
+UAU206M 3 1
 MIS801F 3 1
-VEL601G 3 1
-RUS408G 4 1
-ABF210G 4 1
-TJO436G 4 1
+SAL202G 3 1
 EFN612M 4 1
+JAR253F 4 1
+ISE601G 4 1
+NAR605G 4 1
+MEN404G 4 1
 LIS243G 4 1
 JAR420G 4 1
-ENS202G 4 1
-SJU409G 4 1
-NAR605G 4 1
+TJO436G 4 1
 GFR513M 4 1
-LEI206G 4 1
-ISE601G 4 1
-LYF610G 4 1
-MEN404G 4 1
 SAN203G 4 1
 DAN204G 4 1
-FEL099F 4 1
 GSL403G 4 1
-ISL416M 4 1
-IDN402G 4 1
-KIN409G 4 1
-MAT204G 4 1
-LEI601G 4 1
-VID415G 4 1
-FRA215G 4 1
-STA403M 4 1
-MAN004G 4 1
-LAN604M 4 1
-JAR253F 4 1
+FEL099F 4 1
 UMS101F 4 1
+ISL416M 4 1
+ENS202G 4 1
+LYF610G 4 1
+SJU409G 4 1
+LAN604M 4 1
+FRA215G 4 1
+MAT204G 4 1
+RUS408G 4 1
+ABF210G 4 1
+VID415G 4 1
+MAN004G 4 1
+LEI601G 4 1
+IDN402G 4 1
+LEI206G 4 1
+STA403M 4 1
+KIN409G 4 1
+HJU219F 5 1
 HAG617M 5 1
 LSS602G 5 1
-HJU701G 5 1
-SAL605G 5 1
-TAN410G 5 1
-LSS404G 5 1
-STJ206G 5 1
 HBV201G 5 1
+STJ206G 5 1
+LSS404G 5 1
+FEL312G 5 1
+SPA405M 5 1
+LIF412M 5 1
 VID214F 5 1
+SAL605G 5 1
 HJU410G 5 1
 KIN202G 5 1
-SPA405M 5 1
+TAN410G 5 1
 TAN518G 5 1
 BYG603G 5 1
-LIF412M 5 1
-HJU219F 5 1
-FEL312G 5 1
-ISL209G 6 1
-FEL416G 6 1
-LOG201G 6 1
-MAN203G 6 1
-HBV206M 6 1
-ISE007G 6 1
-TAK201G 6 1
-SJU608G 6 1
+HJU701G 5 1
 GSS213F 6 1
+ISL209G 6 1
+TAK201G 6 1
+MAN203G 6 1
+ISE204G 6 1
 LAT202G 6 1
+SJU608G 6 1
+HBV206M 6 1
+LOG201G 6 1
 FRA417M 6 1
 VID209F 6 1
-ISE204G 6 1
+FEL416G 6 1
 JAR621G 6 1
+ISE007G 6 1
 LOG206F 7 1
-STA203G 7 1
-LIF633G 7 1
-SAL414G 7 1
-LIF216G 7 1
-LIF643M 7 1
-MAS201F 7 1
-VID609G 7 1
 FER208G 7 1
 HAG206G 7 1
+SAL414G 7 1
 LIF227F 7 1
-STA401G 7 1
+MAS201F 7 1
+LIF216G 7 1
 LEI302G 7 1
-NAR203G 8 1
-KYN202G 8 1
-KYN211F 8 1
-GSS519G 8 1
-LAK213G 8 1
+LIF633G 7 1
+STA401G 7 1
+VID609G 7 1
+STA203G 7 1
+LIF643M 7 1
 GSS084G 8 1
-TYS206G 8 1
-REI602M 8 1
-EFN406G 8 1
-VID263G 8 1
-RAF404G 8 1
-JAP208G 8 1
-HJU702G 8 1
-HAG618M 8 1
-FRG202G 8 1
-GRI251G 8 1
 LIF410G 8 1
+LAK213G 8 1
 ITH211G 8 1
-JAR202G 8 1
+HAG618M 8 1
+JAP208G 8 1
+VID263G 8 1
+KYN202G 8 1
+TYS206G 8 1
+EFN406G 8 1
+REI602M 8 1
+NAR203G 8 1
+GRI251G 8 1
 IDN403G 8 1
+RAF404G 8 1
+JAR202G 8 1
+GSS519G 8 1
+HJU702G 8 1
+KYN211F 8 1
+FRG202G 8 1
 LOG212F 9 1
-EDL203G 9 1
-HJU219G 9 1
-FRA214G 9 1
-HAG228F 9 1
-JAR416G 9 1
-EFN205G 9 1
-LEF406G 9 1
-UMV203G 9 1
-LIF226F 9 1
-BYG201M 9 1
-TSM005G 9 1
 VEL401G 9 1
+LIF226F 9 1
+HBV601G 9 1
+GSS090G 9 1
+BYG201M 9 1
+UMV203G 9 1
+HAG402G 9 1
+TSM005G 9 1
 TAN308G 9 1
+STJ204G 9 1
+STA202G 9 1
 TAN302G 9 1
 TSM404G 9 1
-LIF635G 9 1
-GSS0A0M 9 1
+HAG228F 9 1
+FER613G 9 1
+LEI202G 9 1
+FRA214G 9 1
+HAG202G 9 1
+EDL203G 9 1
+LEF406G 9 1
 MIS803F 9 1
+EFN205G 9 1
+HJU219G 9 1
 EFN214G 9 1
-ITH602G 9 1
 UMV602M 9 1
 RUS204G 9 1
 ENS205G 9 1
-HBV601G 9 1
-HAG402G 9 1
-STA202G 9 1
-GSS090G 9 1
-FER613G 9 1
-STJ204G 9 1
+ITH602G 9 1
+JAR416G 9 1
+GSS0A0M 9 1
+LIF635G 9 1
 GSS091G 9 1
-LEI202G 9 1
-HAG202G 9 1
 SAL416G 10 1
 GSL606G 10 1
 VID404G 10 1
@@ -1009,216 +1009,216 @@ ITH215G 10 1
 HJU409G 10 1
 KVI406G 10 1
 LOG240F 11 1
-FER210F 11 1
+TAN407G 11 1
 HJU262F 11 1
-NAR606G 11 1
-LYF114F 11 1
+VID604G 11 1
+ISE602G 11 1
+SAL629G 11 1
 HJU801G 11 1
+GSS471G 11 1
 TOL203M 11 1
-HAG207F 11 1
-LAK024M 11 1
+EFN404G 11 1
+FER210F 11 1
+DET202G 11 1
 GFR211G 11 1
 STA627M 11 1
-TAN407G 11 1
 FER409G 11 1
-ISL440G 11 1
-DET202G 11 1
-ISE602G 11 1
-VID604G 11 1
+NAR606G 11 1
 UAU214M 11 1
-SAL629G 11 1
-TRS207G 11 1
-GSS471G 11 1
 FEL430G 11 1
-EFN404G 11 1
-SAN403G 12 1
-EDL402M 12 1
-FRG603G 12 1
-SAL201G 12 1
-STJ427G 12 1
-SAG438G 12 1
-STA405G 12 1
-LOG605G 12 1
-VID210F 12 1
-LYF403G 12 1
-JAR419G 12 1
-JAR211G 12 1
-LIF413G 12 1
-SPA401M 12 1
-KIN101G 12 1
+TRS207G 11 1
+LYF114F 11 1
+LAK024M 11 1
+HAG207F 11 1
+ISL440G 11 1
 TYS203G 12 1
-SAF201G 13 1
-MIS204F 13 1
-MEX202G 13 1
-VEL215F 13 1
-LEI403G 13 1
+KIN101G 12 1
+SAL201G 12 1
+SAG438G 12 1
+FRG603G 12 1
+LOG605G 12 1
+STA405G 12 1
+STJ427G 12 1
+VID210F 12 1
+JAR419G 12 1
+SPA401M 12 1
+LYF403G 12 1
+LIF413G 12 1
+EDL402M 12 1
+SAN403G 12 1
+JAR211G 12 1
+LEI603G 13 1
 TRS208G 13 1
-LIF614M 13 1
-UMS201F 13 1
-VID204G 13 1
-STJ201F 13 1
-LSS502G 13 1
-MEN201G 13 1
+MIS204F 13 1
 RAF219F 13 1
 RUS301G 13 1
-LEI603G 13 1
+LEI403G 13 1
+LIF614M 13 1
+SAF201G 13 1
+MEN201G 13 1
+MEX202G 13 1
+VID204G 13 1
 JAP403G 13 1
+VEL215F 13 1
 VID207F 13 1
-TAK204G 14 1
-KVI401G 14 1
-STM302F 14 1
-GFR330M 14 1
-GSL402G 14 1
+STJ201F 13 1
+UMS201F 13 1
+LSS502G 13 1
+TOL202M 14 1
+MAN602M 14 1
+FOR204G 14 1
 LOG404G 14 1
+RUS411G 14 1
+TAK204G 14 1
 GRI201G 14 1
 SJU407G 14 1
+STM302F 14 1
 KIN401M 14 1
-GSL204G 14 1
+GFR330M 14 1
 LSS002F 14 1
-FOR204G 14 1
-LYF612G 14 1
-MAN602M 14 1
-ISL205G 14 1
-TOL202M 14 1
-UPP204F 14 1
-RUS411G 14 1
+GSL204G 14 1
 LSS305G 14 1
+ISL205G 14 1
+GSL402G 14 1
+LYF612G 14 1
+KVI401G 14 1
+UPP204F 14 1
 ITH212G 15 1
 LOG202F 15 1
 VID211F 15 1
-VID402G 15 1
-EFN410G 15 1
-FRG206G 15 1
-ISE404G 15 1
-EDL401M 15 1
-NAR406G 15 1
-KYN201G 15 1
-MEN208F 15 1
-HBV402G 15 1
-TYS426G 15 1
-ITA249G 15 1
-TAN412G 15 1
-EDL612M 15 1
 SAG201G 15 1
+EDL401M 15 1
+EDL612M 15 1
+FRG206G 15 1
+MEN208F 15 1
+KYN201G 15 1
+NAR406G 15 1
+TAN412G 15 1
 TAN206G 15 1
+TYS426G 15 1
+EFN410G 15 1
+ISE404G 15 1
+HBV402G 15 1
 VID403G 15 1
+VID402G 15 1
 SPA267G 15 1
 FEL264G 15 1
-LIF619M 16 1
-EDL201G 16 1
+ITA249G 15 1
 STA209G 16 1
 TOL403G 16 1
-RAF403G 16 1
-BYG202M 16 1
+LIF619M 16 1
+EDL206G 16 1
+HJU220G 16 1
+GSS094G 16 1
+HAG203G 16 1
+HAG401G 16 1
+BLF211F 16 1
+HSP203G 16 1
 BYG201G 16 1
+HJU411G 16 1
+EDL208G 16 1
+RAF403G 16 1
 LYF201G 16 1
 RAF613G 16 1
-HSP203G 16 1
-EDL206G 16 1
-BLF211F 16 1
-HAG401G 16 1
-HAG203G 16 1
-GSS094G 16 1
-HJU411G 16 1
-LEI203G 16 1
-EDL208G 16 1
-HJU220G 16 1
 LAN203G 16 1
-LOG284F 17 1
+BYG202M 16 1
+LEI203G 16 1
+EDL201G 16 1
 SKF017F 17 1
-STA213G 17 1
-LAN209F 17 1
-LAN410G 17 1
-STA419M 17 1
+LOG284F 17 1
+LSS202F 17 1
 LOG203G 17 1
-STM018F 17 1
+STA419M 17 1
+LAN209F 17 1
+TAN301G 17 1
+STA205G 17 1
+STA213G 17 1
 LAK207F 17 1
 REI201G 17 1
-HAG201G 17 1
-LSS202F 17 1
-TAN301G 17 1
 TAN517G 17 1
-STA205G 17 1
+STM018F 17 1
+HAG201G 17 1
 INT201G 17 1
-ISL211G 18 1
+LAN410G 17 1
 FRG408G 18 1
+EFN408G 18 1
+TYS205G 18 1
+RAF620M 18 1
 BYG601G 18 1
-TJO437G 18 1
+GSS461G 18 1
+ISL211G 18 1
 ITH210G 18 1
-HAG403G 18 1
 NOK201F 18 1
 TJO203F 18 1
+TJO437G 18 1
+HAG403G 18 1
+LAK610F 18 1
 VID603G 18 1
 LIF214G 18 1
-LAK610F 18 1
-REI202M 18 1
 UPP209F 18 1
+REI202M 18 1
 STJ452G 18 1
 EDL403G 18 1
-RAF620M 18 1
-TYS205G 18 1
-GSS461G 18 1
-EFN408G 18 1
 JAP202G 18 1
 LOG213F 19 1
-TOL401G 19 1
+LEI201G 19 1
 KIN207G 19 1
 VID212F 19 1
-KVI201G 19 1
+SAL203G 19 1
+ENS455M 19 1
 HJU218G 19 1
 LAK408G 19 1
-ENS455M 19 1
+TOL401G 19 1
+KVI201G 19 1
 LOG603G 19 1
-SAL203G 19 1
-LEI201G 19 1
-TJO205G 20 1
-ISE009G 20 1
+TAK202G 20 1
+LIF620M 20 1
+JAP404G 20 1
 MAF204G 20 1
 RUS210G 20 1
-HSP808F 20 1
-JAP404G 20 1
-GSL206G 20 1
-ISE406G 20 1
-LAT253G 20 1
-JAR213G 20 1
 FEL209G 20 1
 HSP202G 20 1
-LEI602G 20 1
+GSL206G 20 1
+TJO205G 20 1
+LAT253G 20 1
 STJ201G 20 1
-LEI301G 20 1
-TAK202G 20 1
-KIN403G 20 1
 FRG605G 20 1
-LIF620M 20 1
+ISE406G 20 1
+LEI602G 20 1
+KIN403G 20 1
+LEI301G 20 1
+ISE009G 20 1
 GSL408G 20 1
+JAR213G 20 1
 LAN416M 20 1
+HSP808F 20 1
 LOG285F 21 1
-ITH412G 21 1
-TOL203G 21 1
-STJ439G 21 1
-ISE201G 21 1
+HAG212F 21 1
+VID202G 21 1
+SAL627G 21 1
 ASK220F 21 1
 LIF403G 21 1
-BYG401G 21 1
-SAL627G 21 1
-HAG212F 21 1
 VID401G 21 1
+STJ439G 21 1
+BYG401G 21 1
+TOL203G 21 1
+ITH412G 21 1
 RAF601G 21 1
+ISE201G 21 1
 DET201G 21 1
-VID202G 21 1
-VID205G 22 1
 HAG605G 22 1
-NSR203F 22 1
-EDL402G 22 1
-HBV602M 22 1
-FRG205G 22 1
-MVS009F 22 1
-TOS207G 22 1
 ENS201G 22 1
-HJU408G 22 1
 SAN206G 22 1
-GSS076M 22 1
-NAR606M 22 1
-IDN603G 22 1
 LOG405G 22 1
+HBV602M 22 1
+GSS076M 22 1
+FRG205G 22 1
+VID205G 22 1
+NAR606M 22 1
+TOS207G 22 1
+IDN603G 22 1
+EDL402G 22 1
+MVS009F 22 1
+NSR203F 22 1
+HJU408G 22 1
 ;
