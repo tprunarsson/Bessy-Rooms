@@ -1,7 +1,14 @@
 rm(list=ls())
 require(rjson)
 require(lubridate)
-Ugla.Url <- paste0("https://ugla.hi.is/service/proftafla/?request=courses&proftaflaID=37")
+
+Ugla.Url <- paste0("https://ugla.hi.is/service/proftafla/?request=activeProftafla")
+Ugla.Data <- readLines(Ugla.Url,  warn = "F")
+Ugla.Raw <- fromJSON(Ugla.Data)
+Proftafla_id <- Ugla.Raw$data$proftafla_id
+
+
+Ugla.Url <- paste0("https://ugla.hi.is/service/proftafla/?request=courses&proftaflaID=", Proftafla_id)
 Ugla.Data <- readLines(Ugla.Url,  warn = "F")
 Ugla.Raw <- fromJSON(Ugla.Data)
 Data <- Ugla.Raw$data
@@ -113,7 +120,7 @@ for (c in cid) {
       } else {
         priorityBuilding = 'Haskolatorg'
       }
-    
+
     strcat = ""
     for (b in unique(priorityBuilding)) {
       strcat = sprintf("%s %s", strcat, b)
@@ -162,4 +169,3 @@ for (c in cid) {
   }
 }
 write(";", file = "SplitForPhase.dat", append = T)
-

@@ -20,12 +20,11 @@ for (i in c(1:length(Data))) {
   tmp <- gsub("_", "", tmp, fixed = TRUE)
   room <- c(room,tmp)
   roomFloor <- c(roomFloor,floor(as.numeric(sub("\\D*(\\d+).*", "\\1", tmp))/100))
-  capacity <- as.numeric(Data[[i]]$capacity)
-  capacitySpecial <- as.numeric(Data[[i]]$capacitySpecial)
-  capacity <- as.numeric(Data[[i]]$capacity)
+  capacity <- as.numeric(Data[[i]]$bord_almennir)
+  capacitySpecial <- as.numeric(Data[[i]]$bord_sernemar)
   computerRoom <- Data[[i]]$computerRoom
   computerRoomSpecial <- Data[[i]]$computerRoomSpecial
-  roomid <- Data[[i]]$roomID
+  roomid <- Data[[i]]$bord_sernemar
   roomID <- c(roomID,roomid)
   buildingname <- Data[[i]]$building
   buildingname <- chartr(c('ÍÁÆÖÝÐÞÓÚÉíáæöýðþóúé-'),c('IAAOYDTOUEiaaoydtoue_'), buildingname)
@@ -33,7 +32,7 @@ for (i in c(1:length(Data))) {
   buildingName = c(buildingName,buildingname)
   buildingID = c(buildingID, as.numeric(Data[[i]]$buildingID))
   # split the room in two if can take both normal and special students
-  
+
   if (capacity > 0 & capacitySpecial > 0) {
     roomCapacity = c(roomCapacity,capacity)
     if (computerRoom == TRUE) {
@@ -47,7 +46,7 @@ for (i in c(1:length(Data))) {
     roomID <- c(roomID,roomid) # has same room id
     buildingName = c(buildingName,buildingname)
     buildingID = c(buildingID, as.numeric(Data[[i]]$buildingID))
-    
+
     if (computerRoomSpecial == TRUE) {
       roomType = c(roomType,4)
     } else {
