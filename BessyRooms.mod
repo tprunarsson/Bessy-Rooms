@@ -220,10 +220,6 @@ subject to OnlyOneUnlessInBuildingCluster{c in CidAssign, g in Cluster, t in Bui
 # If the room is occupied then wr is forced to 1 else it will tend to zero due to the objective function
 subject to RoomOccupied{c in CidAssign, r in AllRooms}: w[c,r] <= wr[r];
 
-# Special condition for Laugarvatn, too far away ;)
-subject to EkkiLaugarvatn{c in CidAssign: 'Itrottafradasetur_Laugarvatn' not in PriorityBuildings[c]}:
-  sum{r in RoomInBuilding['Itrottafradasetur_Laugarvatn']} h[c,r] = 0;
-
 display CidAssign;
 
 # Objective function

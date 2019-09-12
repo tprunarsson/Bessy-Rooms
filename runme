@@ -1,10 +1,10 @@
 #/bin/bash
-export GUROBI_HOME="/opt/gurobi751/linux64"
-export PATH="${PATH}:${GUROBI_HOME}/bin"
-export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${GUROBI_HOME}/lib"
-cd /home/tpr/projects/Bessy-Rooms/
-git pull
-sh R/rscript
+#export GUROBI_HOME="/opt/gurobi751/linux64"
+#export PATH="${PATH}:${GUROBI_HOME}/bin"
+#export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${GUROBI_HOME}/lib"
+#cd /home/tpr/projects/Bessy-Rooms/
+#git pull
+#sh R/rscript
 pwd
 echo "param SolveSlot := "$1";" > SolveSlot.dat
 cat SolveSlot.dat
@@ -20,5 +20,5 @@ echo ";" >> hfix.dat
 echo "end;" >> hfix.dat
 glpsol --math BessyRooms.mod -d SolveSlot.dat  -d courses.dat -d resources.dat -d conjoined.dat -d RoomData.dat -d SplitForPhase.dat -d hfix.dat
 cp hreinn.csv lausn$1.csv
-git commit lausn$1.csv -m "generated on `date +'%Y-%m-%d %H:%M:%S'`"
-git push
+#git commit lausn$1.csv -m "generated on `date +'%Y-%m-%d %H:%M:%S'`"
+#git push

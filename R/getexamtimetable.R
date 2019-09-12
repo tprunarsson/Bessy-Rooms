@@ -7,6 +7,7 @@ Ugla.Data <- readLines(Ugla.Url,  warn = "F")
 Ugla.Raw <- fromJSON(Ugla.Data)
 Proftafla_id <- Ugla.Raw$data$proftafla_id
 
+Proftafla_id = 58
 
 Ugla.Url <- paste0("https://ugla.hi.is/service/proftafla/?request=courses&proftaflaID=", Proftafla_id)
 Ugla.Data <- readLines(Ugla.Url,  warn = "F")
