@@ -52,7 +52,7 @@ param CidId{CidExam} default 0;
 # Total number of special students for each course
 param SpeCidCount{CidExam} default 0;
 
-# These are the subset of stusints within CidAssign that belong to special groups: Computer and Special
+# These are the subset of students within CidAssign that belong to special groups: Computer and Special
 set CidAssignComp := {}; #setof{c in ComputerCourses: c not in CidMHR and c in CidAssign} c;
 set CidAssignSpec := setof{c in CidAssign: SpeCidCount[c] > 0} c;
 
@@ -77,13 +77,13 @@ set BuildingsInCluster{Cluster} within Building;
 set Floors := {0..3};
 # These building are acceptable to the course
 set RequiredBuildings{CidExam} within Building default {};
-# These building are the most wanted buildings, not that these are also in RequiredBuildings
+# These building are the most wanted buildings, note that these are also in RequiredBuildings
 set PriorityBuildings{CidExam} within Building default {};
 # Tells us which rooms are in a given building
 set RoomInBuilding{Building} within AllRooms default {};
 # Tells us which rooms are on the same floor in the same building
 set RoomInBuildingFloor{Building,Floors} within AllRooms default {};
-# Tells us in which building has a given room
+# Tells us which building has a given room
 set BuildingWithRoom{r in AllRooms} within Building := setof{b in Building: r in RoomInBuilding[b]} b;
 # The hfix variable is used for fixing a number of students in a given class room
 # can be used for post analysis also
@@ -96,7 +96,7 @@ param duration {CidExam} default 3;
 
 # --- Decision variables ---#
 
-# The decision variable is to assign an exam to an exam slot (later we may add room assignments)
+# The number of students assigned to a given room.
 var h {c in CidAssign, r in AllRooms} >= 0, integer;
 # indicator variable tells us if a course is assigned to a room
 var w {c in CidAssign, r in AllRooms}, >= 0, <= 1, binary;
@@ -105,8 +105,7 @@ var wb{CidAssign, Building}, >= 0, <= 1, binary;
 # variable tells us if a room is occupied or not, must be minimized in objective
 # when minimized it also tries to free rooms when possible and creating a saving for staff needed for monitoring the exams
 var wr{AllRooms}, >= 0, <= 1;
-
-# This indicator variable tells us when a floor is occumpied within a building
+# This indicator variable tells us when a floor is occumpied within a building, we would like to minimize the number of floors used
 var wf{Floors, Building} >= 0, <= 1;
 
 # --- Constraints --- #
@@ -115,20 +114,23 @@ var wf{Floors, Building} >= 0, <= 1;
 subject to FixH{c in CidAssign, r in AllRooms: hfix[c,r] > 0}:
   h[c,r] = hfix[c,r];
 
-# there is another possible fixing defined by the user:
+# there is another possible fixing defined by the user, you can't fix more students than that registered
 printf{c in CidAssign}: "%s %d %d\n", c, sum{r in Rooms} hdef[c,r], cidCount[c]-SpeCidCount[c];
 #check{c in CidAssign}: sum{r in Rooms} hdef[c,r] <= (cidCount[c]-SpeCidCount[c]);
 
+# this min trick will only work if the user has fixed only one room!
 subject to FixD{c in CidAssign, r in AllRooms: hdef[c,r] > 1}:
   h[c,r] = min(hdef[c,r],cidCount[c]-SpeCidCount[c]);
 
+# perhaps this should be used instead
 subject to ForceRoom{c in CidAssign, r in AllRooms: hdef[c,r] == 1}:
  h[c,r] >= 1;
 
-# this boolean will dictate it we want to arrage also special students
+# this boolean will dictate if we want to arrange also special students
 param AssignSpec := 0;
 
 # Make sure that all students in the course have a seat
+# *** This constraint may be satisified by ones below
 subject to AssignAllCidSeats{c in CidAssign}:
   sum{r in AllRooms} h[c,r] = cidCount[c] - SpeCidCount[c] ;
 
@@ -140,7 +142,7 @@ subject to SpecialCoursesReq{c in CidAssignSpec: c not in CidAssignComp}:
 subject to SpecialCompCoursesReq{c in CidAssignSpec: c in CidAssignComp}:
   sum{r in SpecialComputerRooms} h[c,r] = AssignSpec*SpeCidCount[c];
 
-# Computer courses should only be assigned to computer rooms or on a dummy room if there is no space!
+# Computer courses should only be assigned to computer rooms or to a dummy room if there is no space!
 subject to ComputerCoursesReq{c in CidAssignComp}:
   sum{r in ComputerRooms} h[c,r] = cidCount[c] - SpeCidCount[c];
 
@@ -191,11 +193,11 @@ subject to NotTooManyCourse{e in SubExamSlots, r in AllRooms: r not in SpecialRo
 subject to NotTooManyCoursesSpecial{e in SubExamSlots, r in AllRooms: r in SpecialRooms or r in SpecialComputerRooms}:
   sum{c in CidAssign: Slot[c,e] > 0} w[c,r]  <= 6;
 
-# A constraint for the indicator binary variable is course c in building b, the 1.0001 is a hack needed ?!
+# A constraint for the indicator binary variable is course c in building b
 subject to IsCidInBuilding{c in CidAssign, b in Building, r in RoomInBuilding[b]}:
   w[c,r] <= wb[c,b];
 
-# A constraint for the indicator binary variable is course c in building b and floor, the 1.0001 is a hack needed ?!
+# A constraint for the indicator binary variable is course c in building b and floor
 subject to IsCidInBuildingFloor{b in Building, f in Floors,c in CidAssign, r in RoomInBuildingFloor[b,f]}:
   w[c,r] <= wf[f,b];
 

@@ -24,7 +24,7 @@ for (i in c(1:length(Data))) {
   capacitySpecial <- as.numeric(Data[[i]]$bord_sernemar)
   computerRoom <- Data[[i]]$computerRoom
   computerRoomSpecial <- Data[[i]]$computerRoomSpecial
-  roomid <- Data[[i]]$bord_sernemar
+  roomid <- Data[[i]]$room_id
   roomID <- c(roomID,roomid)
   buildingname <- Data[[i]]$building
   buildingname <- chartr(c('ÍÁÆÖÝÐÞÓÚÉíáæöýðþóúé-'),c('IAAOYDTOUEiaaoydtoue_'), buildingname)
@@ -78,7 +78,6 @@ HEL = c('GSL','HJU','LEI','LYF','LYD','LAK','MAT','NAR','SAL','SJU','TAL','TAN',
 HUG = c('ABF','DAN','DET','ENS','GRF','GRI','HSP','ISE','ISL','ITA','JAP','KIN','KVI','LAT','LIS','MAF','MIS','NLF','RUS','SAG','SPA','SAN','TAK','TYD','TYS')
 MEN = c('GSS','INT','ITH','KEN','LSS','MEX','MVS','NOK','STM','TOS','UMS','TRS')
 VON = c('BYG','EDL','EFN','EVF','FER','HBV','IDN','JAR','JED','LAN','LEF','LIF','RAF','REI','STA','TOL','UAU','UPP','VEL')
-
 
 
 cat("set Building := ", file="RoomData.dat",sep="\n")
@@ -180,4 +179,4 @@ for (i in c(1:length(ubuildings))) {
 
 
 roomID = as.numeric(roomID)
-save(file = "ubuildings.Rdata", list=c("ubuildings", "room", "roomID"))
+save(file = "ubuildings.Rdata", list=c("ubuildings", "room", "roomID", "buildingName", "buildingID"))
