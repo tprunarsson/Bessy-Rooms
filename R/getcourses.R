@@ -52,6 +52,7 @@ for (i in c(1:nrow(namsid))) {
   if (length(Ugla.Raw$data) > 0) {
     Ugla.Raw$data[[1]]$name
     ids = NULL
+    bn = NULL
     for (j in c(1:length(Ugla.Raw$data))) {
       ids = c(ids, as.numeric(Ugla.Raw$data[[j]]$room_id))
       idn = c(idn, Ugla.Raw$data[[j]]$name)
@@ -70,9 +71,10 @@ for (i in c(1:nrow(namsid))) {
       strcat <- sprintf("%s %s;",strcat,paste0(unique(buildingName[idx]),collapse = " "))
       cat(strcat, file="courses.dat",append=TRUE)
       cat(c("\n"), file="courses.dat", append=TRUE)
+      bn = paste0(unique(buildingName[idx]),collapse = " ")
     }
   }
-  DEBUGSTR = c(DEBUGSTR, sprintf('%s "%s"', namsid$V1[i], paste0(idn,collapse = " ")))
+  DEBUGSTR = c(DEBUGSTR, sprintf('%s "%s:%s"', namsid$V1[i], paste0(idn,collapse = " "), bn))
 }
 strcat = "param DebugCourseRooms :=";
 cat(strcat, file="courses.dat",append=TRUE)
