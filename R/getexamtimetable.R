@@ -7,7 +7,7 @@ Ugla.Data <- readLines(Ugla.Url,  warn = "F")
 Ugla.Raw <- fromJSON(Ugla.Data)
 Proftafla_id <- Ugla.Raw$data$proftafla_id
 
-Proftafla_id = 58
+#Proftafla_id = 58
 
 Ugla.Url <- paste0("https://ugla.hi.is/service/proftafla/?request=courses&proftaflaID=", Proftafla_id)
 Ugla.Data <- readLines(Ugla.Url,  warn = "F")
@@ -28,6 +28,11 @@ for (i in c(1:length(cid))) {
 }
 dates <- dates[vikudagur != 7 & vikudagur != 1]
 udates = sort(unique(yday(dates)))
+
+# PATCH for using only dates that have many exams, more than 10 (not a good solution)
+udates = udates[which(summary(as.factor(format(dates, format='%Y-%m-%d')))>10)]
+
+
 uudates = as.Date(udates-1, origin = sprintf("%d-01-01",year(dates[1])))
 uhours = sort(table(sprintf("%02d:%02d",hour(dates),minute(dates))),decreasing = TRUE)
 morningafternoon = sort(hm(names(uhours)[1:2]))

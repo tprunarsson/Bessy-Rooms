@@ -30,7 +30,7 @@ for (i in c(1:length(Data))) {
   buildingname <- chartr(c('ÍÁÆÖÝÐÞÓÚÉíáæöýðþóúé-'),c('IAAOYDTOUEiaaoydtoue_'), buildingname)
   buildingname <- gsub(" ", "", buildingname, fixed = TRUE)
   buildingName = c(buildingName,buildingname)
-  buildingID = c(buildingID, as.numeric(Data[[i]]$buildingID))
+  buildingID = c(buildingID, as.numeric(Data[[i]]$building_id))
   # split the room in two if can take both normal and special students
 
   if (capacity > 0 & capacitySpecial > 0) {
@@ -45,7 +45,7 @@ for (i in c(1:length(Data))) {
     roomCapacity = c(roomCapacity,capacitySpecial)
     roomID <- c(roomID,roomid) # has same room id
     buildingName = c(buildingName,buildingname)
-    buildingID = c(buildingID, as.numeric(Data[[i]]$buildingID))
+    buildingID = c(buildingID, as.numeric(Data[[i]]$building_id))
 
     if (computerRoomSpecial == TRUE) {
       roomType = c(roomType,4)
@@ -87,11 +87,15 @@ for (i in c(1:length(ubuildings))) {
 }
 write(";", file = "RoomData.dat", append = T)
 
-write("set Cluster :=  Torfan Holtid ;", file = "RoomData.dat", append = T)
+write("set Cluster :=  Holtid Eirberg;", file = "RoomData.dat", append = T)
 
-write("set BuildingsInCluster['Torfan'] := Gimli Haskolatorg Logberg Oddi HusVigdisar Arnagardur Askja;", file = "RoomData.dat", append = T)
+#write("set BuildingsInCluster['Torfan'] := Gimli Haskolatorg Logberg HusVigdisar;", file = "RoomData.dat", append = T)
 #write("set BuildingsInCluster['Melurinn'] := Adalbygging Arnagardur Oddi;", file = "RoomData.dat", append = T)
 write("set BuildingsInCluster['Holtid'] := Stakkahlid_Hamar Stakkahlid_Klettur Stakkahlid_Enni;", file = "RoomData.dat", append = T)
+#write("set BuildingsInCluster['Haskolabio'] := Haskolabio;", file = "RoomData.dat", append = T)
+write("set BuildingsInCluster['Eirberg'] := Eirberg;", file = "RoomData.dat", append = T)
+
+
 
 write("set Rooms := ", file="RoomData.dat", append = T)
 for (i in c(1:length(room))) {

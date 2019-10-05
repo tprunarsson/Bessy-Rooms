@@ -4,7 +4,7 @@ Ugla.Data <- readLines(Ugla.Url,  warn = "F")
 Ugla.Raw <- fromJSON(Ugla.Data)
 Proftafla_id <- Ugla.Raw$data$proftafla_id
 
-Proftafla_id = 58
+#Proftafla_id = 58
 
 Ugla.Url <- paste0("https://ugla.hi.is/service/proftafla/?request=getFile&file=coursesMessy&proftaflaID=", Proftafla_id)
 Ugla.course <- readLines(Ugla.Url,  warn = "F")
@@ -49,16 +49,20 @@ for (i in c(1:nrow(namsid))) {
   Ugla.Data <- readLines(Ugla.Url,  warn = "F")
   Ugla.Raw <- fromJSON(Ugla.Data)
   idn = NULL
+  idbn = NULL
   if (length(Ugla.Raw$data) > 0) {
     Ugla.Raw$data[[1]]$name
     ids = NULL
-    bn = NULL
+    idb = NULL
     for (j in c(1:length(Ugla.Raw$data))) {
       ids = c(ids, as.numeric(Ugla.Raw$data[[j]]$room_id))
       idn = c(idn, Ugla.Raw$data[[j]]$name)
+      idb = c(idb, as.numeric(Ugla.Raw$data[[j]]$building_id))
+      idbn = c(idbn, Ugla.Raw$data[[j]]$building)
     }
     idx = which(roomID %in% ids)
     print(idn)
+    bn = NULL
     if (length(idx) > 0) {
       print(paste0(sort(room[idx]),collapse = " "))
       strcat = "set CourseInRoom[";
@@ -66,6 +70,10 @@ for (i in c(1:nrow(namsid))) {
       strcat <- sprintf("%s %s;",strcat,paste0(room[idx],collapse = " "))
       cat(strcat, file="courses.dat",append=TRUE)
       cat(c("\n"), file="courses.dat", append=TRUE)
+    }
+    idx = which(buildingID %in% idb)
+    if (length(idx) > 0) {
+      print(paste0(sort(buildingName[idx]),collapse = " "))
       strcat = "set CourseInBuilding[";
       strcat <- sprintf("%s%s] := ",strcat,namsid$V1[i])
       strcat <- sprintf("%s %s;",strcat,paste0(unique(buildingName[idx]),collapse = " "))
