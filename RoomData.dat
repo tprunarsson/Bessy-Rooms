@@ -15,10 +15,9 @@ Stakkahlid_Hamar
 Stakkahlid_Klettur
 VR_2
 ;
-set Cluster :=  Holtid Eirberg Rest;
+set Cluster :=  Holtid Eirberg;
 set BuildingsInCluster['Holtid'] := Stakkahlid_Hamar Stakkahlid_Klettur Stakkahlid_Enni;
-set BuildingsInCluster['Eirberg'] := Eirberg Laknagardur;
-set BuildingsInCluster['Rest'] := Adalbygging Arnagardur Askja Gimli Haskolatorg HusVigdisar Logberg Oddi VR_2  Haskolabio;
+set BuildingsInCluster['Eirberg'] := Eirberg;
 set Rooms := 
 A050
 A051
