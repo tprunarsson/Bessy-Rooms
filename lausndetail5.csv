@@ -18,31 +18,29 @@ Dagur;Tími;ID;Námskeið;Bygging;Stofa;Fjöldi;Lengd prófs;Heildarfjöldi;Hám
 ;;;;;EIR223B;;;0;12;0;
 ;;;;Eirberg;;;;0;168;;;
 ;;;;Gimli;;;;0;0;;;
-2019.12.4;09:00;70706520196;TSM502G;Haskolabio;HB1;5;3;;;;; 
-2019.12.4;09:00;10021320196;SAL504G;Haskolabio;HB1;82;3;;;;; 
-2019.12.4;09:00;70939320196;HIT001G;Haskolabio;HB1;75;3;;;;; 
-;;;;;HB1;;;162;170;3;
-2019.12.4;09:00;70891920196;HJU151F;Haskolabio;HB2;44;3;;;;; 
-2019.12.4;09:00;70185820196;NSR007F;Haskolabio;HB2;35;3;;;;; 
-2019.12.4;09:00;02061320196;GSL101G;Haskolabio;HB2;32;3;;;;; 
-;;;;;HB2;;;111;114;3;
-;;;;Haskolabio;;;;273;284;;;
-2019.12.4;09:00;70055120196;MIS105F;Haskolatorg;HT102;31;3;;;;; 
-2019.12.4;09:00;70982720196;HAG512G;Haskolatorg;HT102;19;3;;;;; 
-2019.12.4;09:00;71006520196;TAN632G;Haskolatorg;HT102;7;3;;;;; 
-;;;;;HT102;;;57;80;3;
-2019.12.4;09:00;02083320196;LEI502G;Haskolatorg;HT103;16;3;;;;; 
-2019.12.4;09:00;02010820196;LAK307G;Haskolatorg;HT103;7;3;;;;; 
-2019.12.4;09:00;70012520196;SAL136F;Haskolatorg;HT103;21;3;;;;; 
-;;;;;HT103;;;44;54;3;
-2019.12.4;09:00;70976720196;VID523G;Haskolatorg;HT104;27;3;;;;; 
-2019.12.4;09:00;31000320196;MVS202F;Haskolatorg;HT104;24;3;;;;; 
-;;;;;HT104;;;51;53;2;
-2019.12.4;09:00;08212620196;IDN501G;Haskolatorg;HT105;33;3;;;;; 
-2019.12.4;09:00;09122120196;STA313M;Haskolatorg;HT105;4;3;;;;; 
-2019.12.4;09:00;70978620196;SAG339G;Haskolatorg;HT105;33;3;;;;; 
-;;;;;HT105;;;70;85;3;
-;;;;Haskolatorg;;;;222;272;;;
+2019.12.4;09:00;10021320196;SAL504G;Haskolabio;HB1;82;3;;;;;HT105 HB-4 E201C:Eirberg Haskolabio Haskolatorg
+2019.12.4;09:00;07095520196;TAN524G;Haskolabio;HB1;6;3;;;;;Lg-218-5 (klínik) Lg-312, sérstofa:Laknagardur
+2019.12.4;09:00;70939320196;HIT001G;Haskolabio;HB1;75;3;;;;;Bratti E-301 H-207 Skriða H209:Stakkahlid_Enni Stakkahlid_Ham
+;;;;;HB1;;;163;170;3;
+2019.12.4;09:00;08212620196;IDN501G;Haskolabio;HB2;33;3;;;;;V02-262, heimast.:VR_2
+2019.12.4;09:00;70891920196;HJU151F;Haskolabio;HB2;44;3;;;;;E201C Lg-124:Eirberg Laknagardur
+2019.12.4;09:00;70185820196;NSR007F;Haskolabio;HB2;35;3;;;;;L201:Logberg
+;;;;;HB2;;;112;114;3;
+;;;;Haskolabio;;;;275;284;;;
+2019.12.4;09:00;02083320196;LEI502G;Haskolatorg;HT102;16;3;;;;; 
+2019.12.4;09:00;70982720196;HAG512G;Haskolatorg;HT102;19;3;;;;;A069:Adalbygging
+2019.12.4;09:00;70978620196;SAG339G;Haskolatorg;HT102;33;3;;;;;Á304:Arnagardur
+;;;;;HT102;;;68;80;3;
+;;;;;HT103;;;0;54;0;
+2019.12.4;09:00;09122120196;STA313M;Haskolatorg;HT104;4;3;;;;; 
+2019.12.4;09:00;70976720196;VID523G;Haskolatorg;HT104;27;3;;;;;G-102:Gimli
+2019.12.4;09:00;05502920196;ISE501G;Haskolatorg;HT104;14;3;;;;;Á310 Á303:Arnagardur
+;;;;;HT104;;;45;53;3;
+2019.12.4;09:00;70012520196;SAL136F;Haskolatorg;HT105;21;3;;;;;O-206:Oddi
+2019.12.4;09:00;70055120196;MIS105F;Haskolatorg;HT105;31;3;;;;;Á311:Arnagardur
+2019.12.4;09:00;02061320196;GSL101G;Haskolatorg;HT105;32;3;;;;;Askja132 Askja130 Stapi 210:Askja
+;;;;;HT105;;;84;85;3;
+;;;;Haskolatorg;;;;197;272;;;
 ;;;;;VHV007;;;0;44;0;
 ;;;;HusVigdisar;;;;0;44;;;
 ;;;;;Lg229;;;0;14;0;
@@ -60,24 +58,27 @@ Dagur;Tími;ID;Námskeið;Bygging;Stofa;Fjöldi;Lengd prófs;Heildarfjöldi;Hám
 ;;;;;E303;;;0;14;0;
 ;;;;Stakkahlid_Enni;;;;0;44;;;
 ;;;;;H101;;;0;22;0;
-2019.12.4;09:00;70890920196;SAL137F;Stakkahlid_Hamar;H201;4;3;;;;; 
-2019.12.4;09:00;07095520196;TAN524G;Stakkahlid_Hamar;H201;6;3;;;;; 
-2019.12.4;09:00;70755420196;DAN313G;Stakkahlid_Hamar;H201;3;3;;;;; 
-;;;;;H201;;;13;25;3;
-2019.12.4;09:00;70742420196;SJU509G;Stakkahlid_Hamar;H202;10;2;;;;; 
+2019.12.4;09:00;02010820196;LAK307G;Stakkahlid_Hamar;H201;7;3;;;;; 
+2019.12.4;09:00;70546120196;SPA305G;Stakkahlid_Hamar;H201;5;3;;;;;VHV-222:HusVigdisar
+2019.12.4;09:00;31000320196;MVS202F;Stakkahlid_Hamar;H201;12;3;;;;;H-207 K-103:Stakkahlid_Hamar Stakkahlid_Klettur
+;;;;;H201;;;24;25;3;
+2019.12.4;09:00;70742420196;SJU509G;Stakkahlid_Hamar;H202;10;2;;;;;Stapi 210 Lg-201 Verklegt utan H.Í. Lg-124 H202 H203:Laknagar
 ;;;;;H202;;;10;19;1;
-2019.12.4;09:00;70742420196;SJU509G;Stakkahlid_Hamar;H203;10;2;;;;; 
+2019.12.4;09:00;70742420196;SJU509G;Stakkahlid_Hamar;H203;10;2;;;;;Stapi 210 Lg-201 Verklegt utan H.Í. Lg-124 H202 H203:Laknagar
 ;;;;;H203;;;10;19;1;
 ;;;;;H204;;;0;20;0;
-;;;;;H205;;;0;25;0;
+2019.12.4;09:00;70761920196;NLF109F;Stakkahlid_Hamar;H205;3;3;;;;;VHV-228:HusVigdisar
+2019.12.4;09:00;70755420196;DAN313G;Stakkahlid_Hamar;H205;3;3;;;;;VHV-223:HusVigdisar
+2019.12.4;09:00;71006520196;TAN632G;Stakkahlid_Hamar;H205;7;3;;;;;:Arnagardur
+;;;;;H205;;;13;25;3;
 ;;;;;H206;;;0;21;0;
-2019.12.4;09:00;70215320196;TSM302G;Stakkahlid_Hamar;H207;5;3;;;;; 
-2019.12.4;09:00;05502920196;ISE501G;Stakkahlid_Hamar;H207;14;3;;;;; 
-2019.12.4;09:00;70546120196;SPA305G;Stakkahlid_Hamar;H207;5;3;;;;; 
-;;;;;H207;;;24;34;3;
-2019.12.4;09:00;70742420196;SJU509G;Stakkahlid_Hamar;H209;8;2;;;;; 
+2019.12.4;09:00;70890920196;SAL137F;Stakkahlid_Hamar;H207;4;3;;;;; 
+2019.12.4;09:00;70315620196;TAL307F;Stakkahlid_Hamar;H207;14;3;;;;;Lg-229 Lg-310:Laknagardur
+2019.12.4;09:00;31000320196;MVS202F;Stakkahlid_Hamar;H207;12;3;;;;;H-207 K-103:Stakkahlid_Hamar Stakkahlid_Klettur
+;;;;;H207;;;30;34;3;
+2019.12.4;09:00;70742420196;SJU509G;Stakkahlid_Hamar;H209;8;2;;;;;Stapi 210 Lg-201 Verklegt utan H.Í. Lg-124 H202 H203:Laknagar
 ;;;;;H209;;;8;16;1;
-;;;;Stakkahlid_Hamar;;;;65;201;;;
+;;;;Stakkahlid_Hamar;;;;95;201;;;
 ;;;;;K202;;;0;15;0;
 ;;;;;K204;;;0;15;0;
 ;;;;;K205;;;0;20;0;
@@ -85,17 +86,17 @@ Dagur;Tími;ID;Námskeið;Bygging;Stofa;Fjöldi;Lengd prófs;Heildarfjöldi;Hám
 ;;;;;K207;;;0;25;0;
 ;;;;;K208;;;0;25;0;
 ;;;;Stakkahlid_Klettur;;;;0;120;;;
-2019.12.4;09:00;70742420196;SJU509G;VR_2;V147;5;2;;;;; 
+2019.12.4;09:00;70742420196;SJU509G;VR_2;V147;5;2;;;;;Stapi 210 Lg-201 Verklegt utan H.Í. Lg-124 H202 H203:Laknagar
 ;;;;;V147;;;5;15;1;
-2019.12.4;09:00;70315620196;TAL307F;VR_2;V152;14;3;;;;; 
-2019.12.4;09:00;09313220196;EFN304G;VR_2;V152;10;3;;;;; 
-2019.12.4;09:00;70761920196;NLF109F;VR_2;V152;3;3;;;;; 
-;;;;;V152;;;27;36;3;
-;;;;;V155;;;0;22;0;
+;;;;;V152;;;0;36;0;
+2019.12.4;09:00;70706520196;TSM502G;VR_2;V155;5;3;;;;;Utan H.Í. Lg-227 Lg-312, sérstofa:Laknagardur
+2019.12.4;09:00;70215320196;TSM302G;VR_2;V155;5;3;;;;;Lg-327 Lg-312, sérstofa:Laknagardur
+2019.12.4;09:00;09313220196;EFN304G;VR_2;V155;10;3;;;;;V138 V147:VR_2
+;;;;;V155;;;20;22;3;
 ;;;;;V156;;;0;22;0;
 ;;;;;V258;;;0;22;0;
 ;;;;;V261;;;0;30;0;
-;;;;VR_2;;;;32;147;;;
+;;;;VR_2;;;;25;147;;;
 Tölvustofur;;;;;;;;;;;;
 ;;;;Adalbygging;;;;0;0;;;
 ;;;;Arnagardur;;;;0;0;;;
