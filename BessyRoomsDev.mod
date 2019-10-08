@@ -282,7 +282,7 @@ minimize Objective:
 # 6.) Empty rooms when possible, will cost one staff member 100%
 + objec * sum{r in AllRooms} wr[r] * RoomStaff[r]
 # 7.) Leave also empty floors!!! each floor cost one staff member
-+ objec * (sum{f in Floors, b in Building} wf[f,b]
++ objec * sum{f in Floors, b in Building} wf[f,b]
 # 8.) Use as many rooms as possible also but with smaller priority
 #+ (1/card(CidAssign)) * sum{c in CidAssign,r in Rooms} w[c,r]
 #- 10 * sum{c in CidAssign,r in Rooms} w[c,r]
