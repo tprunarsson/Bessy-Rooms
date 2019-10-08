@@ -79,7 +79,7 @@ set SpecialComputerRooms;
 set AllRooms := setof{r in (Rooms union ComputerRooms union SpecialRooms union SpecialComputerRooms)} r;
 
 param RoomCapacity{AllRooms} default 0;
-param RoomStaff{r in AllRooms} := ceil(RoomCapacity[r/20]);
+param RoomStaff{r in AllRooms} := max(1,round(RoomCapacity[r/20]));
 param RoomId{AllRooms} default 0;
 
 set Building;
