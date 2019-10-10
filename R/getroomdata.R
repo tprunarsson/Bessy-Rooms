@@ -1,6 +1,11 @@
 rm(list=ls())
 require(rjson)
-Ugla.Url <- paste0("https://ugla.hi.is/service/proftafla/?request=rooms")
+Ugla.Url <- paste0("https://ugla.hi.is/service/proftafla/?request=activeProftafla")
+Ugla.Data <- readLines(Ugla.Url,  warn = "F")
+Ugla.Raw <- fromJSON(Ugla.Data)
+Proftafla_id <- Ugla.Raw$data$proftafla_id
+
+Ugla.Url <- paste0("https://ugla.hi.is/service/proftafla/?request=rooms&proftaflaID=", Proftafla_id)
 Ugla.Data <- readLines(Ugla.Url,  warn = "F")
 Ugla.Raw <- fromJSON(Ugla.Data)
 Data <- Ugla.Raw$data
