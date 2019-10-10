@@ -96,9 +96,12 @@ write("set Cluster :=  Holtid Eirberg;", file = "RoomData.dat", append = T)
 
 #write("set BuildingsInCluster['Torfan'] := Gimli Haskolatorg Logberg HusVigdisar;", file = "RoomData.dat", append = T)
 #write("set BuildingsInCluster['Melurinn'] := Adalbygging Arnagardur Oddi;", file = "RoomData.dat", append = T)
-write("set BuildingsInCluster['Holtid'] := Stakkahlid_Hamar Stakkahlid_Klettur Stakkahlid_Enni;", file = "RoomData.dat", append = T)
+Stakkahlid = c("Stakkahlid_Hamar","Stakkahlid_Klettur","Stakkahlid_Enni")
+write(paste0("set BuildingsInCluster['Holtid'] := ", paste(Stakkahlid[Stakkahlid %in% ubuildings], collapse = " "),";"), file = "RoomData.dat", append = T)
+
 #write("set BuildingsInCluster['Haskolabio'] := Haskolabio;", file = "RoomData.dat", append = T)
-write("set BuildingsInCluster['Eirberg'] := Eirberg;", file = "RoomData.dat", append = T)
+Eirberg = c("Eirberg")
+write(paste0("set BuildingsInCluster['Eirberg'] := ", paste(Eirberg[Eirberg %in% ubuildings], collapse = " "),";"), file = "RoomData.dat", append = T)
 
 
 
