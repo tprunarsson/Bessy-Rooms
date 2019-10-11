@@ -323,7 +323,7 @@ printf : "the staff required %d\n", sum{r in Rooms} wr[r] * RoomStaff[r];
 printf : "total number of buildings used is %d\n", sum{b in Building} wbused[b];
 
 printf : "param objec := 0;\n" > "phase2.dat";
-printf : "param numberofstaff := %d;\n", sum{r in Rooms} wr[r] + sum{f in Floors, b in Building} wf[f,b] >> "phase2.dat";
+printf : "param numberofstaff := %d;\n", sum{r in Rooms} wr[r] * RoomStaff[r] >> "phase2.dat";
 
 
 for {e in SubExamSlots} {
