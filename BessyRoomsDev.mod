@@ -240,8 +240,9 @@ var wbused{Building}, binary;
 subject to isBuildingUsed{b in Building, c in CidAssign}: wb[c,b] <= wbused[b];
 
 var wcu{CidAssign, Cluster}, binary, <= 1, >= 0;
+var maxcu >= 0;
 subject to inCluster{cu in Cluster, c in CidAssign}: sum{b in BuildingsInCluster[cu]} wb[c,b] <= wcu[c,cu] * card(Building);
-subject to maxCluster{c in CidAssign}: sum{cu in Cluster} wcu[c,cu] <= 1;
+subject to maxCluster{c in CidAssign}: sum{cu in Cluster} wcu[c,cu] <= maxcu;
 
 #####################
 
@@ -287,6 +288,7 @@ minimize Objective:
 #+ (1/card(CidAssign)) * sum{c in CidAssign,r in Rooms} w[c,r]
 #- 10 * sum{c in CidAssign,r in Rooms} w[c,r]
 #+ 100*sum{c in CidAssign} w[c,'HT204']
++ 100*maxcu
 ;
 
 # Some debugging now for the data supplied:
