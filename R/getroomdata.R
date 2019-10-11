@@ -92,7 +92,7 @@ for (i in c(1:length(ubuildings))) {
 }
 write(";", file = "RoomData.dat", append = T)
 
-write("set Cluster :=  Holtid Eirberg;", file = "RoomData.dat", append = T)
+write("set Cluster :=  Holtid Eirberg Other;", file = "RoomData.dat", append = T)
 
 #write("set BuildingsInCluster['Torfan'] := Gimli Haskolatorg Logberg HusVigdisar;", file = "RoomData.dat", append = T)
 #write("set BuildingsInCluster['Melurinn'] := Adalbygging Arnagardur Oddi;", file = "RoomData.dat", append = T)
@@ -102,8 +102,8 @@ write(paste0("set BuildingsInCluster['Holtid'] := ", paste(Stakkahlid[Stakkahlid
 #write("set BuildingsInCluster['Haskolabio'] := Haskolabio;", file = "RoomData.dat", append = T)
 Eirberg = c("Eirberg")
 write(paste0("set BuildingsInCluster['Eirberg'] := ", paste(Eirberg[Eirberg %in% ubuildings], collapse = " "),";"), file = "RoomData.dat", append = T)
-
-
+Rest = ubuildings[!(ubuildings %in% c(Eirberg,Stakkahlid))]
+write(paste0("set BuildingsInCluster['Other'] := ", paste(Rest, collapse = " "),";"), file = "RoomData.dat", append = T)
 
 write("set Rooms := ", file="RoomData.dat", append = T)
 for (i in c(1:length(room))) {
