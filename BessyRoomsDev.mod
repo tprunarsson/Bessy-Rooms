@@ -250,7 +250,7 @@ subject to maxCluster{c in CidAssign}: sum{cu in Cluster} wcu[c,cu] <= 1 + maxcu
 subject to RoomOccupied{c in CidAssign, r in AllRooms}: w[c,r] <= wr[r];
 
 param numberofstaff, default 1000;
-subject to totcost: sum{r in Rooms} wr[r] + sum{f in Floors, b in Building} wf[f,b] <= numberofstaff;
+subject to totcost: sum{r in Rooms} wr[r] * RoomStaff[r]  <= numberofstaff;
 
 param objec, default 1;
 
