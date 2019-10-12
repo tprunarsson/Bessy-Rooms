@@ -363,7 +363,7 @@ printf : "Dagur;Tími;ID;Námskeið;Bygging;Stofa;Fjöldi;Lengd prófs;" > "laus
 printf : "Heildarfjöldi;Hámarksfjöldi;Fjöldi námskeiða í stofu;Ósk um stofu\n" >> "lausn.csv";
 for {e in SubExamSlots, b in Building} {
   for {r in RoomInBuilding[b]: r in Rooms} {
-    printf {c in CidAssign: Slot[c,e] * h[c,r] > 0} : "%s;%011.0f;%s;%s;%s;%d;%d;;;;;%s\n", SlotNames[e], CidId[c], c, b, r, h[c,r], duration[c], DebugCourseRooms[c] >> "lausn.csv";
+    printf {c in CidAssign: Slot[c,e] * h[c,r] > 0} : "%s;%011.0f;%s;%s;%s;%d;%d;;;;%d;%s\n", SlotNames[e], CidId[c], c, b, r, h[c,r], duration[c], hdef[c,r], DebugCourseRooms[c] >> "lausn.csv";
     printf : ";;;;;%s;;;%d;%d;%d;\n", r, sum{cc in CidAssign} Slot[cc,e] * h[cc,r], RoomCapacity[r], sum{cc in CidAssign} w[cc,r] * Slot[cc,e] >> "lausn.csv";
   }
   printf : ";;;;%s;;;;%d;%d;;;\n", b, sum{rr in RoomInBuilding[b], cc in CidAssign: rr in Rooms} Slot[cc,e] * h[cc,rr], sum{rr in RoomInBuilding[b]: rr in Rooms} RoomCapacity[rr] >> "lausn.csv";
