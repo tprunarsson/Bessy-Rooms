@@ -81,6 +81,7 @@ set AllRooms := setof{r in (Rooms union ComputerRooms union SpecialRooms union S
 param RoomCapacity{AllRooms} default 0;
 param RoomStaff{r in AllRooms} := max(1,round(RoomCapacity[r]/20));
 param RoomId{AllRooms} default 0;
+param Ratio := 0.6;
 
 set Building;
 set Cluster;
@@ -132,7 +133,7 @@ subject to FixH{c in CidAssign, r in AllRooms: hfix[c,r] > 0}:
 
 # there is another possible fixing defined by the user, you can't fix more students than that registered
 printf{c in CidAssign}: "%s %d %d\n", c, sum{r in Rooms} hdef[c,r], cidCount[c]-SpeCidCount[c];
-#check{c in CidAssign}: sum{r in Rooms} hdef[c,r] <= (cidCount[c]-SpeCidCount[c]);
+check{c in CidAssign}: sum{r in Rooms} hdef[c,r] <= (cidCount[c]-SpeCidCount[c]);
 
 # this min trick will only work if the user has fixed only one room!
 subject to FixD{c in CidAssign, r in AllRooms: hdef[c,r] > 1}:
@@ -169,12 +170,12 @@ subject to RegularCoursesReq{c in CidAssign: c not in CidAssignComp}:
   sum{r in Rooms} h[c,r] = cidCount[c] - SpeCidCount[c];
 
 # You don't want to have one course taking more than half the capacity, then we cannot alternate seats
-subject to BalanceRatioU{c in CidAssign, r in Rooms}: h[c,r]  <= ceil(0.5 * RoomCapacity[r]);
+subject to BalanceRatioU{c in CidAssign, r in Rooms}: h[c,r]  <= max(hdef[c,r],ceil(Ratio * RoomCapacity[r]));
 #subject to BalanceRatioL{c in CidAssign, r in Rooms: (cidCount[c]-SpeCidCount[c])/RoomCapacity[r] >= 0.3}: h[c,r] / RoomCapacity[r] >= 0.2*w[c,r]; # balanceH;
 
 # The number of students in a room should not go over the limit
 # n.b. this is the total number of useful seats (reduce the number if there a "bad seats" in the room)
-subject to RoomCapacityLimit{r in AllRooms}: sum{c in CidAssign} h[c,r] <=  RoomCapacity[r];
+subject to RoomCapacityLimit{r in AllRooms}: sum{c in CidAssign} h[c,r] <= max(sum{cc in CidAssign} hdef[cc,r],RoomCapacity[r]);
 
 # A constraint for the indicator binary variable is course c in room r, the 1.0001 is a hack needed ?!
 # the sum sum{cc in CidAssign} cidCount[cc] corresponds to a big value, i.e. Big-M approach
@@ -189,7 +190,9 @@ subject to CourseInRoom2{c in CidAssign, r in AllRooms}:
 
 # The number of courses in any room should be more than one if we are going to be using it
 # also we would like to balance the number of students
-subject to CountNumber{r in AllRooms: RoomCapacity[r] >= 20}: sum{c in CidAssign} w[c,r] >= 2*wr[r];
+# this constraint cannot hold when the director of examinations has filled it with a single course!
+param RoomFilled{r in AllRooms} := if (max {c in CidAssign} hdef[c,r] >= Ratio * RoomCapacity[r]) then 1 else 0;
+subject to CountNumber{r in AllRooms: RoomCapacity[r] >= 20 and RoomFilled[r] == 0}: sum{c in CidAssign} w[c,r] >= 2*wr[r];
 
 # Don't put courses that do not have the same length (duration) in the same room
 subject to NotTheSameRoom{r in AllRooms, c1 in CidAssign, c2 in CidAssign: c1 < c2 and duration[c1] != duration[c2]}:
@@ -276,7 +279,7 @@ minimize Objective:
 # 5.) minimize the number of buildings used, weight should be equal to Required or higher?
 # + 1 * sum{c in CidAssign, b in Building} wb[c,b]
 # the number of buildings used should be minimal, to avoid teacher visising too many
-#+ 0.00001 * sum{c in CidAssign} NumberOfBuildings[c]
++ sum{c in CidAssign} NumberOfBuildings[c]
 # + 0.00001 * sum{b in Building} wbused[b]
 #+ 10000 * maxcluster
 # + 10000 * balanceH
