@@ -191,8 +191,8 @@ subject to CourseInRoom2{c in CidAssign, r in AllRooms}:
 # The number of courses in any room should be more than one if we are going to be using it
 # also we would like to balance the number of students
 # this constraint cannot hold when the director of examinations has filled it with a single course!
-param RoomFilled{r in AllRooms} := if (max {c in CidAssign} hdef[c,r] >= Ratio * RoomCapacity[r]) then 1 else 0;
-subject to CountNumber{r in AllRooms: RoomCapacity[r] >= 20 and RoomFilled[r] == 0}: sum{c in CidAssign} w[c,r] >= 2*wr[r];
+#param RoomFilled{r in AllRooms} := if (max {c in CidAssign} hdef[c,r] >= Ratio * RoomCapacity[r]) then 1 else 0;
+#subject to CountNumber{r in AllRooms: RoomCapacity[r] >= 20 and RoomFilled[r] == 0}: sum{c in CidAssign} w[c,r] >= 2*wr[r];
 
 # Don't put courses that do not have the same length (duration) in the same room
 subject to NotTheSameRoom{r in AllRooms, c1 in CidAssign, c2 in CidAssign: c1 < c2 and duration[c1] != duration[c2]}:
@@ -279,8 +279,8 @@ minimize Objective:
 # 5.) minimize the number of buildings used, weight should be equal to Required or higher?
 # + 1 * sum{c in CidAssign, b in Building} wb[c,b]
 # the number of buildings used should be minimal, to avoid teacher visising too many
-+ sum{c in CidAssign} NumberOfBuildings[c]
-# + 0.00001 * sum{b in Building} wbused[b]
++ 10.0 * sum{c in CidAssign} (NumberOfBuildings[c]-1.0)
++ 100.0 * sum{b in Building} wbused[b]
 #+ 10000 * maxcluster
 # + 10000 * balanceH
 # 6.) Empty rooms when possible, will cost one staff member 100%
@@ -291,7 +291,7 @@ minimize Objective:
 #+ (1/card(CidAssign)) * sum{c in CidAssign,r in Rooms} w[c,r]
 #- 10 * sum{c in CidAssign,r in Rooms} w[c,r]
 #+ 100*sum{c in CidAssign} w[c,'HT204']
-+ 100*sum{c in CidAssign} maxcu[c]
++ 1000*sum{c in CidAssign} maxcu[c]
 ;
 
 # Some debugging now for the data supplied:
