@@ -10,7 +10,7 @@ echo "param SolveSlot := "$1";" > SolveSlot.dat
 cat SolveSlot.dat
 
 glpsol --check --math BessyRoomsDev.mod -d SolveSlot.dat -d courses.dat -d resources.dat -d conjoined.dat -d RoomData.dat -d default.dat -d SplitForPhase.dat --wlp TEST.lp
-gurobi_cl Threads=8 TimeLimit=1000 ResultFile=test.sol TEST.lp
+gurobi_cl Threads=8 TimeLimit=2000 ResultFile=test.sol TEST.lp
 cat test.sol | grep 'h(' | grep -v ') 0' > rusl.txt
 sed -i 's/,/ /g' rusl.txt
 sed -i 's/h(/ /g' rusl.txt
@@ -22,7 +22,7 @@ echo "end;" >> hfix.dat
 glpsol --math BessyRoomsDev.mod -d SolveSlot.dat  -d courses.dat -d resources.dat -d conjoined.dat -d default.dat -d RoomData.dat -d SplitForPhase.dat -d hfix.dat
 
 glpsol --check --math BessyRoomsDev.mod -d SolveSlot.dat -d courses.dat -d resources.dat -d conjoined.dat -d RoomData.dat -d default.dat -d SplitForPhase.dat -d phase2.dat --wlp TEST.lp
-gurobi_cl Threads=8 TimeLimit=2000 ResultFile=test.sol TEST.lp
+gurobi_cl Threads=8 TimeLimit=10000 ResultFile=test.sol TEST.lp
 cat test.sol | grep 'h(' | grep -v ') 0' > rusl.txt
 sed -i 's/,/ /g' rusl.txt
 sed -i 's/h(/ /g' rusl.txt

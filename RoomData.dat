@@ -12,9 +12,10 @@ Stakkahlid_Hamar
 Stakkahlid_Klettur
 VR_2
 ;
-set Cluster :=  Holtid Eirberg;
+set Cluster :=  Holtid Eirberg Other;
 set BuildingsInCluster['Holtid'] := Stakkahlid_Hamar Stakkahlid_Klettur Stakkahlid_Enni;
 set BuildingsInCluster['Eirberg'] := ;
+set BuildingsInCluster['Other'] := Adalbygging Arnagardur Askja Gimli Haskolatorg HusVigdisar Logberg Oddi VR_2;
 set Rooms := 
 A050
 A051
@@ -32,7 +33,6 @@ HT105
 L102
 L103
 O201
-O202
 E301
 E303
 H101
@@ -86,7 +86,6 @@ L103_special 472
 O102 581
 O102_special 581
 O201 608
-O202 609
 O301 638
 E301 1343
 E303 1348
@@ -133,10 +132,10 @@ A304_special 10
 A311 26
 G101 21
 G101_special 7
-HT102 80
+HT102 85
 HT103 54
 HT103_special 2
-HT104 81
+HT104 54
 HT105 85
 HT204 40
 HT204_special 3
@@ -146,7 +145,6 @@ L103_special 1
 O102 18
 O102_special 18
 O201 65
-O202 20
 O301 38
 E301 30
 E303 14
@@ -208,7 +206,7 @@ set RoomInBuilding['Gimli'] :=  G101 G101_special;
 set RoomInBuilding['Haskolatorg'] :=  HT102 HT103 HT103_special HT104 HT105 HT204 HT204_special;
 set RoomInBuilding['HusVigdisar'] :=  VHV007;
 set RoomInBuilding['Logberg'] :=  L102 L103 L103_special;
-set RoomInBuilding['Oddi'] :=  O102 O102_special O201 O202 O301;
+set RoomInBuilding['Oddi'] :=  O102 O102_special O201 O301;
 set RoomInBuilding['Stakkahlid_Enni'] :=  E301 E303 E303_special;
 set RoomInBuilding['Stakkahlid_Hamar'] :=  H101 H201 H202 H203 H204 H205 H206 H206_special H207;
 set RoomInBuilding['Stakkahlid_Klettur'] :=  K204 K204_special K205 K206 K206_special K207 K208;
@@ -228,7 +226,7 @@ set RoomInBuildingFloor['Logberg',0] :=  L103_special;
 set RoomInBuildingFloor['Logberg',1] :=  L102 L103;
 set RoomInBuildingFloor['Oddi',0] :=  O102_special;
 set RoomInBuildingFloor['Oddi',1] :=  O102;
-set RoomInBuildingFloor['Oddi',2] :=  O201 O202;
+set RoomInBuildingFloor['Oddi',2] :=  O201;
 set RoomInBuildingFloor['Oddi',3] :=  O301;
 set RoomInBuildingFloor['Stakkahlid_Enni',0] :=  E303_special;
 set RoomInBuildingFloor['Stakkahlid_Enni',3] :=  E301 E303;
