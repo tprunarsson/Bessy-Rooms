@@ -82,7 +82,7 @@ set AllRooms := setof{r in (Rooms union ComputerRooms union SpecialRooms union S
 param RoomCapacity{AllRooms} default 0;
 param RoomStaff{r in AllRooms} := max(1,round(RoomCapacity[r]/20));
 param RoomId{AllRooms} default 0;
-param Ratio := 0.5;
+param Ratio := 0.6;
 
 set Building;
 set Cluster;
@@ -240,8 +240,10 @@ subject to IsCidInBuildingFloor{b in Building, f in Floors,c in CidAssign, r in 
 
 # Can only be in one building if not then on the green!
 var NumberOfBuildings{CidAssign}, >= 0, <= card(Building);
+var maxNumberOfBuildings, >= 0;
 #subject to OnlyOneUnlessInBuildingCluster{c in CidAssign, g in Cluster, t in BuildingsInCluster[g]}:
 subject to OnlyOneBuilding{c in CidAssign}: sum{b in Building} wb[c,b] <= NumberOfBuildings[c];
+subject to maxOnlyOneBuilding{c in CidAssign}: NumberOfBuildings[c] <= maxNumberOfBuildings;
 
 var wbused{Building}, binary;
 subject to isBuildingUsed{b in Building, c in CidAssign}: wb[c,b] <= wbused[b];
@@ -278,8 +280,9 @@ minimize Objective:
 # 4.) Avoid buildings that are not on your list, note that this adds to RequiredBuildings, so not too big please
 #+ 25 * sum{c in CidAssign, b in Building: b not in PriorityBuildings[c]} wb[c,b]
 #+ 25 * sum{c in CidAssign, b in Building: b not in RequiredBuildings[c]} wb[c,b]
-+ (1 - objec) * sum{c in CidAssign, r in AllRooms: r not in CourseInRoom[c]} w[c,r]
-+ (1 - objec) * sum{c in CidAssign, b in Building: b not in CourseInBuilding[c]} wb[c,b]
+# can be removed by (1 - objec) *
++ sum{c in CidAssign, r in AllRooms: r not in CourseInRoom[c]} w[c,r]
++ sum{c in CidAssign, b in Building: b not in CourseInBuilding[c]} wb[c,b]
 # 5.) minimize the number of buildings used, weight should be equal to Required or higher?
 # + 1 * sum{c in CidAssign, b in Building} wb[c,b]
 # the number of buildings used should be minimal, to avoid teacher visising too many
@@ -288,14 +291,16 @@ minimize Objective:
 #+ 10000 * maxcluster
 # + 10000 * balanceH
 # 6.) Empty rooms when possible, will cost one staff member 100%
-+ objec * sum{r in AllRooms} wr[r] * RoomStaff[r]
+# can be added by objec *
++ sum{r in AllRooms} wr[r] * RoomStaff[r]
 # 7.) Leave also empty floors!!! each floor cost one staff member
-+ objec * sum{f in Floors, b in Building} wf[f,b]
++ sum{f in Floors, b in Building} wf[f,b]
 # 8.) Use as many rooms as possible also but with smaller priority
 #+ (1/card(CidAssign)) * sum{c in CidAssign,r in Rooms} w[c,r]
 #- 10 * sum{c in CidAssign,r in Rooms} w[c,r]
 #+ 100*sum{c in CidAssign} w[c,'HT204']
 + 1000*sum{c in CidAssign} maxcu[c]
++ 1000*maxNumberOfBuildings
 ;
 
 # Some debugging now for the data supplied:
