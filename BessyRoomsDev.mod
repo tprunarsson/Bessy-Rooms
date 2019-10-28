@@ -133,8 +133,9 @@ subject to FixH{c in CidAssign, r in AllRooms: hfix[c,r] > 0}:
   h[c,r] = hfix[c,r];
 
 # there is another possible fixing defined by the user, you can't fix more students than that registered
-printf{c in CidAssign}: "%s %d %d\n", c, sum{r in Rooms} hdef[c,r], cidCount[c]-SpeCidCount[c];
-check{c in CidAssign}: sum{r in Rooms} hdef[c,r] <= (cidCount[c]-SpeCidCount[c]);
+printf{c in CidAssign}: "%s: %d %d\n", c, sum{r in Rooms} hdef[c,r], cidCount[c]-SpeCidCount[c];
+
+#check{c in CidAssign}: sum{r in Rooms} hdef[c,r] <= (cidCount[c]-SpeCidCount[c]);
 
 # this min trick will only work if the user has fixed only one room!
 subject to FixD{c in CidAssign, r in AllRooms: hdef[c,r] > 1}:
