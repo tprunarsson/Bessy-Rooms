@@ -20,6 +20,7 @@ set Rooms :=
 A050
 A051
 A052
+A069
 Askja130
 Askja131
 A201
@@ -63,6 +64,7 @@ A051 61
 A051_special 61
 A052 15
 A052_special 15
+A069 1446
 Askja130 1245
 Askja131 1246
 Askja166 1290
@@ -116,12 +118,13 @@ V260 766
 V261 767
 ;
 param RoomCapacity := 
-A050 8
+A050 15
 A050_special 10
 A051 12
 A051_special 12
-A052 8
+A052 18
 A052_special 11
+A069 12
 Askja130 20
 Askja131 30
 Askja166 24
@@ -144,10 +147,10 @@ L103 25
 L103_special 1
 O102 18
 O102_special 18
-O201 65
+O201 44
 O301 38
 E301 30
-E303 14
+E303 20
 E303_special 6
 H101 22
 H201 25
@@ -199,7 +202,7 @@ G101_special
 HT204_special
 O102_special
 ;
-set RoomInBuilding['Adalbygging'] :=  A050 A050_special A051 A051_special A052 A052_special;
+set RoomInBuilding['Adalbygging'] :=  A050 A050_special A051 A051_special A052 A052_special A069;
 set RoomInBuilding['Arnagardur'] :=  A201 A301 A304 A304_special A311;
 set RoomInBuilding['Askja'] :=  Askja130 Askja131 Askja166;
 set RoomInBuilding['Gimli'] :=  G101 G101_special;
@@ -211,7 +214,7 @@ set RoomInBuilding['Stakkahlid_Enni'] :=  E301 E303 E303_special;
 set RoomInBuilding['Stakkahlid_Hamar'] :=  H101 H201 H202 H203 H204 H205 H206 H206_special H207;
 set RoomInBuilding['Stakkahlid_Klettur'] :=  K204 K204_special K205 K206 K206_special K207 K208;
 set RoomInBuilding['VR_2'] :=  V147 V152 V155 V156 V258 V260 V261;
-set RoomInBuildingFloor['Adalbygging',0] :=  A050 A050_special A051 A051_special A052 A052_special;
+set RoomInBuildingFloor['Adalbygging',0] :=  A050 A050_special A051 A051_special A052 A052_special A069;
 set RoomInBuildingFloor['Arnagardur',0] :=  A304_special;
 set RoomInBuildingFloor['Arnagardur',2] :=  A201;
 set RoomInBuildingFloor['Arnagardur',3] :=  A301 A304 A311;

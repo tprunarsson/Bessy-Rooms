@@ -32,7 +32,6 @@ udates = sort(unique(yday(dates)))
 # PATCH for using only dates that have many exams, more than 10 (not a good solution)
 udates = udates[which(summary(as.factor(format(dates, format='%Y-%m-%d')))>10)]
 
-
 uudates = as.Date(udates-1, origin = sprintf("%d-01-01",year(dates[1])))
 uhours = sort(table(sprintf("%02d:%02d",hour(dates),minute(dates))),decreasing = TRUE)
 morningafternoon = sort(hm(names(uhours)[1:2]))
@@ -54,7 +53,16 @@ for (c in cid) {
     if (Data[[c]]$preferredRoom != "" & (length(as.numeric(Data[[c]]$preferredRoomSeats))>0)) {
       strcat = cname
       roomname = room[which(as.numeric(Data[[c]]$preferredRoom)==roomID)]
+      roomname = roomname[1]
       print(roomname)
+      # not when room is also a special room
+      if (nchar(roomname) > 7) {
+        special = identical('special',substr(roomname, nchar(roomname)-7+1, nchar(roomname)))
+        if (TRUE == special) {
+          roomname = substr(roomname,1,nchar(roomname-8))
+          print(special)
+        }
+      }
       strcat = sprintf("%s %s %d", cname, roomname, as.numeric(Data[[c]]$preferredRoomSeats) )
       write(strcat, file = "SplitForPhase.dat", append = T)
     }
