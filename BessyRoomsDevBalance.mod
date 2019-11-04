@@ -80,9 +80,9 @@ set SpecialComputerRooms;
 set AllRooms := setof{r in (Rooms union ComputerRooms union SpecialRooms union SpecialComputerRooms)} r;
 
 param RoomCapacity{AllRooms} default 0;
+param RoomDensity{AllRooms} default 50;
 param RoomStaff{r in AllRooms} := max(1,round(RoomCapacity[r]/20));
 param RoomId{AllRooms} default 0;
-param Ratio := 0.6;
 
 set Building;
 set Cluster;
@@ -179,8 +179,7 @@ subject to RegularCoursesReq{c in CidAssign: c not in CidAssignComp}:
   sum{r in Rooms} h[c,r] = cidCount[c] - SpeCidCount[c];
 
 # You don't want to have one course taking more than half the capacity, then we cannot alternate seats
-subject to BalanceRatioU{c in CidAssign, r in Rooms: CidInspera[c] == 0}: h[c,r]  <= max(hdef[c,r],ceil(Ratio * RoomCapacity[r]));
-#subject to BalanceRatioL{c in CidAssign, r in Rooms: (cidCount[c]-SpeCidCount[c])/RoomCapacity[r] >= 0.3}: h[c,r] / RoomCapacity[r] >= 0.2*w[c,r]; # balanceH;
+subject to BalanceRatioU{c in CidAssign, r in Rooms: CidInspera[c] == 0}: h[c,r]  <= max(hdef[c,r],ceil((RoomDensity[r]/100) * RoomCapacity[r]));
 
 # The number of students in a room should not go over the limit
 # n.b. this is the total number of useful seats (reduce the number if there a "bad seats" in the room)

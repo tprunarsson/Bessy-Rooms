@@ -12,6 +12,7 @@ Data <- Ugla.Raw$data
 props <- names(Data[[1]])
 room = character(0)
 roomID = character(0)
+roomDensity = numeric(0)
 roomCapacity = numeric(0)
 roomType = numeric(0)
 buildingID = numeric(0)
@@ -31,6 +32,7 @@ for (i in c(1:length(Data))) {
   computerRoomSpecial <- Data[[i]]$computerRoomSpecial
   roomid <- Data[[i]]$room_id
   roomID <- c(roomID,roomid)
+  roomDensity <- c(roomDensity, Data[[i]]$density)
   buildingname <- Data[[i]]$building
   buildingname <- chartr(c('ÍÁÆÖÝÐÞÓÚÉíáæöýðþóúé-'),c('IAAOYDTOUEiaaoydtoue_'), buildingname)
   buildingname <- gsub(" ", "", buildingname, fixed = TRUE)
@@ -49,6 +51,7 @@ for (i in c(1:length(Data))) {
     roomFloor <- c(roomFloor,NA)
     roomCapacity = c(roomCapacity,capacitySpecial)
     roomID <- c(roomID,roomid) # has same room id
+    roomDensity <- c(roomDensity, Data[[i]]$density)
     buildingName = c(buildingName,buildingname)
     buildingID = c(buildingID, as.numeric(Data[[i]]$building_id))
 
@@ -127,6 +130,14 @@ for (i in c(1:length(room))) {
   write(strcat, file = "RoomData.dat", append = T)
 }
 write(";", file = "RoomData.dat", append = T)
+
+write("param RoomDensity := ", file = "RoomData.dat", append = T)
+for (i in c(1:length(room))) {
+  strcat <- sprintf('%s %d', room[i], roomDensity[i])
+  write(strcat, file = "RoomData.dat", append = T)
+}
+write(";", file = "RoomData.dat", append = T)
+
 
 write("set ComputerRooms := ", file = "RoomData.dat", append = T)
 for (i in c(1:length(room))) {
