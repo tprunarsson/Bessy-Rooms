@@ -32,8 +32,8 @@ echo "end;" >> hfix.dat
 
 glpsol --math BessyRoomsDev.mod -d SolveSlot.dat  -d courses.dat -d resources.dat -d conjoined.dat -d default.dat -d RoomData.dat -d SplitForPhase.dat -d hfix.dat
 
-#cp hreinn.csv lausn$1.csv
-#cp lausn.csv lausndetail$1.csv
-#cp import.csv import$1.csv
-#git commit lausn$1.csv -m "generated on `date +'%Y-%m-%d %H:%M:%S'`"
-#git push
+cp hreinn.csv lausn$1.csv
+cp lausn.csv lausndetail$1.csv
+cp import.csv import$1.csv
+git commit lausn$1.csv -m "generated on `date +'%Y-%m-%d %H:%M:%S'`"
+git push
