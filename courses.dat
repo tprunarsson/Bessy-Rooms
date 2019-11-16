@@ -491,7 +491,7 @@ EDL506G 1
 VID304G 21
 VID504G 49
 LIF315G 39
-LOG306G 61
+LOG306G 59
 TAN401G 7
 LSS604M 57
 HBV501G 93
@@ -510,11 +510,11 @@ ENS102G 90
 STA304G 7
 SAL308G 142
 KYN101F 21
-SAL102G 332
+SAL102G 331
 TAN208G 8
-LEI102G 157
+LEI102G 156
 SAG102G 50
-TSM102G 10
+TSM102G 9
 KYN106G 36
 HAG514M 23
 RAF503G 14
@@ -552,7 +552,7 @@ HBV103M 17
 LAK112G 70
 TYS502G 12
 FER111F 1
-STA108G 207
+STA108G 206
 FER510G 35
 ISL301G 20
 ISL306G 14
@@ -582,13 +582,13 @@ SAG339G 36
 TAN524G 8
 HIT001G 80
 TAL307F 15
-NSR007F 35
+NSR007F 34
 HJU151F 44
 DAN313G 4
 TAN632G 7
 NLF109F 3
 LAK307G 9
-MVS202F 24
+MVS202F 22
 EFN304G 10
 HAG512G 20
 VID523G 30
@@ -597,7 +597,7 @@ UPP105F 15
 TSM302G 5
 SJU509G 35
 SAL504G 91
-GSL101G 33
+GSL101G 32
 IDN501G 37
 SAL137F 5
 SAL136F 21
@@ -609,7 +609,7 @@ FEL109G 57
 MEX020G 21
 BYG501G 19
 ISE309G 38
-IET101G 226
+IET101G 224
 VID103G 291
 JAR312G 23
 LOG108G 112
@@ -630,14 +630,14 @@ EDL520M 3
 HJU715G 84
 LAN516G 14
 LAK124G 45
-UME502G 38
-TSM103G 10
+UME502G 37
+TSM103G 9
 BYG121F 8
 GFR511M 2
 BYG302G 34
 TJO333G 22
 ENS339G 25
-KME110F 106
+KME110F 105
 LAN113F 1
 ISL334G 5
 IDN103G 85
@@ -652,9 +652,9 @@ UPP101G 92
 VID506G 95
 STA301G 7
 LEF302G 54
-JED505M 19
+JED505M 18
 LYF124F 15
-LYF516G 22
+LYF516G 21
 ITA329G 10
 LIS102G 26
 FRG109G 94
@@ -667,7 +667,7 @@ HJU321G 89
 LYF102G 51
 GSL302G 17
 LEI402G 21
-GSL104G 160
+GSL104G 159
 JAR509M 12
 SJU306G 28
 SJU107G 34
@@ -694,14 +694,14 @@ NAR503M 7
 TRS310G 50
 EFN108G 144
 RAF302G 22
-LIF102G 48
+LIF102G 47
 DET101G 35
 DET102G 81
 GFR110G 20
 HAG101G 88
 HAG512M 11
 VID501G 54
-GKY101G 44
+GKY101G 43
 ISL109G 44
 TYD102F 6
 STJ317G 58
@@ -716,7 +716,7 @@ LSS303F 22
 IET301G 21
 FRA101G 17
 TOS307G 16
-EFN112G 140
+EFN112G 139
 STJ325G 56
 ISE102G 89
 EFN301G 79
@@ -730,12 +730,12 @@ UAU108M 13
 EFN106G 72
 HJU714G 83
 RAF301G 19
-UME503G 39
-TSM101G 10
+UME503G 38
+TSM101G 9
 TOL303G 144
 ISE002G 99
 GSL307G 10
-LEI107G 144
+LEI107G 143
 HAG106G 80
 MAT303G 3
 HJU135F 34
@@ -746,7 +746,7 @@ TYS310G 6
 LEI501G 15
 GRI103G 8
 HAG508G 17
-LOG304G 64
+LOG304G 63
 TJO108F 10
 STJ301M 35
 LIF536M 1
@@ -785,7 +785,7 @@ VID147F 24
 LOG176F 29
 NAR505M 6
 VID505G 44
-MAT103G 63
+MAT103G 62
 MAN103G 46
 SFG301G 36
 TJO104G 16
@@ -804,7 +804,7 @@ IDN113F 7
 LYF515G 23
 TOL305G 66
 LYF301G 21
-GSL105G 32
+GSL105G 31
 RUS308G 4
 LIS004G 24
 TSM304G 5
@@ -819,7 +819,7 @@ LIF313G 19
 LAN104G 45
 BYG120F 5
 LOG103G 119
-ITA420G 9
+ITA420G 8
 FRA307G 10
 SAN106G 14
 JAP101G 25
@@ -828,7 +828,7 @@ DAN110G 3
 ENS346G 61
 GFR104G 18
 STM109F 37
-KME102F 72
+KME102F 71
 LJO003F 14
 SAL135F 22
 SAG101G 45
@@ -847,7 +847,7 @@ INT101G 22
 UMS301G 29
 ISE030G 97
 SAL501M 27
-TAN107G 80
+TAN107G 79
 GSL303G 10
 ASK105F 28
 SJU308G 30
@@ -866,7 +866,7 @@ STJ303M 18
 TOL107G 170
 UMV302G 40
 KME301G 113
-EFN309G 87
+EFN309G 86
 SAL141F 3
 ISE105G 85
 TYS311G 7
@@ -895,9 +895,9 @@ VID502G 79
 KME101G 153
 TOV501M 5
 LAT307G 1
-GSL103G 41
+GSL103G 40
 SPA306G 6
-LOG303G 52
+LOG303G 51
 EDL107G 44
 EDL509M 2
 EDL101G 25
@@ -910,7 +910,7 @@ VID302G 190
 FEL309G 134
 LSS101G 57
 MMB301G 42
-LIF109G 112
+LIF109G 111
 LIF540G 1
 UMV501M 9
 TOL301G 118
@@ -937,7 +937,7 @@ RAF504G 8
 HAG105G 74
 ISE032G 99
 SAG703M 12
-LEI108G 154
+LEI108G 153
 IDN101M 47
 VEL501M 8
 VID513G 102
@@ -957,7 +957,7 @@ LAK116G 38
 TOL304G 118
 BYG503G 16
 BYG301G 28
-SFG101F 32
+SFG101F 31
 SFG302G 132
 EDL515M 4
 ITH114F 20
@@ -1056,12 +1056,12 @@ LIF315G LIF513M 2
 LOG306G LOG102F 1
 LOG306G LOG503G 2
 LOG306G LOG108G 7
-LOG306G LOG304G 56
+LOG306G LOG304G 54
 LOG306G LOG504G 2
 LOG306G LAK120G 1
 LOG306G FEL102G 1
-LOG306G LOG103G 2
-LOG306G LOG303G 52
+LOG306G LOG103G 1
+LOG306G LOG303G 50
 LOG306G FEL309G 1
 LOG306G LOG502G 1
 LOG306G LAK115G 1
@@ -1356,7 +1356,7 @@ SAL102G SAL503G 4
 SAL102G SAL320G 1
 SAL102G SAL103G 283
 SAL102G VID101G 1
-SAL102G ISL110G 19
+SAL102G ISL110G 18
 SAL102G VID509G 2
 SAL102G SAL115G 277
 SAL102G FEL309G 3
@@ -1366,17 +1366,17 @@ TAN208G LAK310G 8
 TAN208G GSL103G 8
 TAN208G LAK212G 8
 LEI102G STA108G 8
-LEI102G GSL101G 33
-LEI102G GSL104G 149
+LEI102G GSL101G 32
+LEI102G GSL104G 148
 LEI102G EFN108G 2
 LEI102G EFN112G 1
-LEI102G LEI107G 139
-LEI102G GSL105G 32
+LEI102G LEI107G 138
+LEI102G GSL105G 31
 LEI102G LEI103G 119
 LEI102G EDL102G 1
-LEI102G GSL103G 33
+LEI102G GSL103G 32
 LEI102G STA107G 1
-LEI102G LEI108G 146
+LEI102G LEI108G 145
 SAG102G FER510G 1
 SAG102G TJO103G 1
 SAG102G SAG339G 3
@@ -1387,9 +1387,9 @@ SAG102G SAG306G 5
 SAG102G SAG101G 41
 SAG102G RUS106G 1
 SAG102G LAT101G 1
-TSM102G TSM103G 10
-TSM102G TSM101G 10
-TSM102G TAN107G 10
+TSM102G TSM103G 9
+TSM102G TSM101G 9
+TSM102G TAN107G 9
 KYN106G TJO328G 1
 KYN106G ISL301G 1
 KYN106G FEL306G 10
@@ -1476,7 +1476,7 @@ GRI250G LAT101G 1
 ITA119G FER510G 1
 ITA119G DET101G 3
 ITA119G DET102G 2
-ITA119G ITA420G 4
+ITA119G ITA420G 3
 ISL111G DET101G 1
 ISL111G ISL109G 23
 ISL111G IET301G 1
@@ -1712,8 +1712,8 @@ STA108G LYF102G 48
 STA108G GSL104G 10
 STA108G LIF516M 1
 STA108G EFN108G 91
-STA108G LIF102G 36
-STA108G EFN112G 83
+STA108G LIF102G 35
+STA108G EFN112G 82
 STA108G SAL503G 1
 STA108G LEI107G 3
 STA108G JAR101G 16
@@ -1727,7 +1727,7 @@ STA108G MAN330G 1
 STA108G EFN309G 51
 STA108G EDL107G 2
 STA108G EDL101G 23
-STA108G LIF109G 89
+STA108G LIF109G 88
 STA108G EFN311G 2
 STA108G LEI108G 8
 FER510G UME502G 1
@@ -1804,7 +1804,7 @@ UAU101F UAU121F 4
 UAU101F LOG110F 1
 JAR513M JAR312G 1
 JAR513M BYG121F 1
-JAR513M JED505M 4
+JAR513M JED505M 3
 JAR513M JAR509M 8
 JAR513M UAU111F 2
 JAR513M JAR508M 16
@@ -1991,11 +1991,11 @@ SAL504G VID509G 1
 SAL504G SAL501M 15
 SAL504G SAL115G 2
 SAL504G FEL309G 12
-GSL101G GSL104G 33
-GSL101G LEI107G 33
-GSL101G GSL105G 32
-GSL101G GSL103G 33
-GSL101G LEI108G 33
+GSL101G GSL104G 32
+GSL101G LEI107G 32
+GSL101G GSL105G 31
+GSL101G GSL103G 32
+GSL101G LEI108G 32
 IDN501G VEL502G 1
 IDN501G IDN103G 1
 IDN501G VID301G 1
@@ -2224,7 +2224,7 @@ LAN516G JAR508M 1
 LAN516G JED505G 1
 LAN516G LAN305G 4
 LAK124G EFN112G 41
-LAK124G MAT103G 44
+LAK124G MAT103G 43
 UME502G UME503G 41
 UME502G FRG103G 1
 UME502G SFG301G 10
@@ -2233,8 +2233,8 @@ UME502G UMS301G 6
 UME502G FEL309G 1
 UME502G MMB301G 2
 UME502G SFG302G 13
-TSM103G TSM101G 10
-TSM103G TAN107G 10
+TSM103G TSM101G 9
+TSM103G TAN107G 9
 BYG121F UAU111F 1
 BYG121F JAR508M 2
 BYG121F BYG120F 3
@@ -2392,7 +2392,7 @@ LEF302G EFN311G 17
 LEF302G VEL301G 3
 LEF302G IDN101M 1
 LEF302G EDL515M 1
-JED505M JAR508M 9
+JED505M JAR508M 8
 JED505M JED505G 1
 JED505M UMV501M 1
 LYF124F LYF122F 16
@@ -2462,12 +2462,12 @@ LEI402G LEI103G 1
 GSL104G EFN108G 2
 GSL104G EFN112G 1
 GSL104G SAL503G 1
-GSL104G LEI107G 138
+GSL104G LEI107G 137
 GSL104G VID311G 1
-GSL104G GSL105G 32
+GSL104G GSL105G 31
 GSL104G LEI103G 123
-GSL104G GSL103G 33
-GSL104G LEI108G 148
+GSL104G GSL103G 32
+GSL104G LEI108G 147
 JAR509M EDL306G 2
 JAR509M JAR508M 5
 JAR509M EDL302G 1
@@ -2665,9 +2665,9 @@ RAF302G EDL102G 3
 RAF302G TOV501M 1
 RAF302G EDL301G 19
 RAF302G STA107G 1
-LIF102G EFN112G 40
+LIF102G EFN112G 39
 LIF102G LIF313G 6
-LIF102G LIF109G 42
+LIF102G LIF109G 41
 LIF102G LAT101G 1
 DET101G DET102G 4
 DET101G FRA101G 1
@@ -2675,7 +2675,6 @@ DET101G TYS310G 2
 DET101G GRI103G 2
 DET101G LAT306G 1
 DET101G SPA107G 5
-DET101G ITA420G 1
 DET101G SAN106G 1
 DET101G JAP101G 8
 DET101G JAP302G 3
@@ -2807,13 +2806,13 @@ FRA101G ENS346G 1
 FRA101G STJ106G 1
 EFN112G LEI107G 1
 EFN112G JAR101G 1
-EFN112G MAT103G 43
+EFN112G MAT103G 42
 EFN112G LIF313G 1
 EFN112G LEI103G 1
 EFN112G EFN309G 42
 EFN112G EDL102G 1
 EFN112G EDL101G 1
-EFN112G LIF109G 38
+EFN112G LIF109G 37
 EFN112G LAN305G 1
 EFN112G LEI108G 1
 EFN112G LAK212G 1
@@ -2911,7 +2910,7 @@ UME503G UMS301G 6
 UME503G FEL309G 1
 UME503G MMB301G 2
 UME503G SFG302G 13
-TSM101G TAN107G 10
+TSM101G TAN107G 9
 TOL303G TOL101G 3
 TOL303G IDN502G 6
 TOL303G SAL103G 1
@@ -2939,10 +2938,10 @@ ISE002G ISE030G 95
 ISE002G ISE105G 1
 ISE002G ISE032G 95
 GSL307G GSL303G 10
-LEI107G GSL105G 32
+LEI107G GSL105G 31
 LEI107G LEI103G 110
-LEI107G GSL103G 33
-LEI107G LEI108G 138
+LEI107G GSL103G 32
+LEI107G LEI108G 137
 HAG106G VID105G 1
 HAG106G HAG107G 78
 HAG106G VID302G 2
@@ -2990,8 +2989,8 @@ HAG508G HAG107G 1
 HAG508G VID302G 5
 HAG508G HAG304G 3
 LOG304G LOG504G 4
-LOG304G LOG103G 2
-LOG304G LOG303G 52
+LOG304G LOG103G 1
+LOG304G LOG303G 51
 LOG304G LOG502G 3
 TJO108F TJO104G 1
 TJO108F BLF314F 1
@@ -3188,8 +3187,8 @@ TOL305G TOV501M 1
 TOL305G TOL301G 31
 TOL305G STA107G 1
 TOL305G TOL304G 21
-GSL105G GSL103G 32
-GSL105G LEI108G 32
+GSL105G GSL103G 31
+GSL105G LEI108G 31
 LIS004G SAG340G 1
 LIS004G TOL107G 1
 FRG314G FRG508G 4
@@ -3225,7 +3224,7 @@ RAF501G RAF504G 3
 LIF313G LIF109G 4
 LAN104G VID102G 1
 LAN104G LAN305G 2
-LOG103G LOG303G 2
+LOG103G LOG303G 1
 FRA307G ENS333G 1
 FRA307G LAT101G 2
 SAN106G VEL301G 1
@@ -3370,7 +3369,7 @@ KME101G KME102G 141
 KME101G SFG302G 4
 TOV501M EDL301G 1
 TOV501M RAF504G 1
-GSL103G LEI108G 33
+GSL103G LEI108G 32
 GSL103G LAK212G 8
 EDL107G TOL301G 1
 EDL107G STA106G 19
@@ -3918,6 +3917,7 @@ ISE002G 1
 LIF110G 1
 LAN514G 1
 FRG103G 1
+SAL103G 1
 VID505G 1
 TSM304G 1
 UMS101M 1
@@ -3939,6 +3939,8 @@ FRG501G 1
 set CourseInBuilding[BLF112F] :=  Oddi;
 set CourseInRoom[LOG111F] :=  L102;
 set CourseInBuilding[LOG111F] :=  Logberg;
+set CourseInRoom[HJU710G] :=  E101 E101_special E103C;
+set CourseInBuilding[HJU710G] :=  Eirberg;
 set CourseInRoom[STJ102G] :=  A201 L102;
 set CourseInBuilding[STJ102G] :=  Arnagardur Logberg;
 set CourseInRoom[EDL506G] :=  V147;
@@ -3951,7 +3953,7 @@ set CourseInRoom[LOG306G] :=  A301;
 set CourseInBuilding[LOG306G] :=  Arnagardur Oddi;
 set CourseInRoom[LSS604M] :=  E301 H203 K207;
 set CourseInBuilding[LSS604M] :=  Stakkahlid_Enni Stakkahlid_Hamar Stakkahlid_Klettur;
-set CourseInRoom[HBV501G] :=  HT103 HT103_special HT104 V152;
+set CourseInRoom[HBV501G] :=  HT103 HT104 V152;
 set CourseInBuilding[HBV501G] :=  Haskolatorg VR_2;
 set CourseInRoom[FRG102G] :=  HT104 HT105;
 set CourseInBuilding[FRG102G] :=  Haskolatorg;
@@ -3961,12 +3963,13 @@ set CourseInBuilding[HJU115G] :=  Stakkahlid_Hamar;
 set CourseInRoom[EFN515M] :=  V155;
 set CourseInBuilding[EFN515M] :=  VR_2;
 set CourseInBuilding[LEF509M] :=  VR_2;
+set CourseInRoom[ITH513G] :=  H209;
 set CourseInBuilding[ITH513G] :=  Stakkahlid_Hamar;
-set CourseInRoom[STA104G] :=  A050 A050_special A052 A052_special Askja130 Askja131 HT105 L102 V147 V152 V155 V156 V261;
+set CourseInRoom[STA104G] :=  A050 A052 Askja130 Askja131 HT105 L102 V147 V152 V155 V156 V261;
 set CourseInBuilding[STA104G] :=  Adalbygging Askja Haskolatorg Logberg HusVigdisar VR_2;
 set CourseInRoom[LAK515G] :=  H201 H205;
 set CourseInBuilding[LAK515G] :=  Stakkahlid_Hamar;
-set CourseInRoom[STA302G] :=  Askja131 HT102 L103 L103_special;
+set CourseInRoom[STA302G] :=  Askja131 HT102 L103;
 set CourseInBuilding[STA302G] :=  Askja Haskolatorg Logberg VR_2;
 set CourseInBuilding[KIN302G] :=  HusVigdisar;
 set CourseInBuilding[ENS102G] :=  HusVigdisar;
@@ -3986,18 +3989,21 @@ set CourseInBuilding[HAG514M] :=  Arnagardur Logberg Oddi;
 set CourseInBuilding[RAF503G] :=  VR_2;
 set CourseInBuilding[SNU001M] :=  Stakkahlid_Klettur;
 set CourseInBuilding[SPA105G] :=  VR_2;
+set CourseInRoom[RUS103G] :=  VHV104;
 set CourseInBuilding[RUS103G] :=  HusVigdisar;
-set CourseInRoom[LEI303G] :=  A201;
-set CourseInBuilding[LEI303G] :=  Askja Arnagardur;
+set CourseInRoom[LEI303G] :=  A201 E201C;
+set CourseInBuilding[LEI303G] :=  Askja Arnagardur Eirberg;
 set CourseInBuilding[GRI250G] :=  HusVigdisar;
+set CourseInRoom[ITA119G] :=  VHV103 VHV107 VHV231Tungumalamidstod;
 set CourseInBuilding[ITA119G] :=  HusVigdisar;
 set CourseInRoom[ISL111G] :=  A201;
 set CourseInBuilding[ISL111G] :=  Arnagardur;
-set CourseInRoom[GFR212G] :=  A051 A051_special;
+set CourseInRoom[GFR212G] :=  A051;
 set CourseInBuilding[GFR212G] :=  Adalbygging;
 set CourseInBuilding[KIN107G] :=  HusVigdisar;
 set CourseInRoom[FER112F] :=  V147;
 set CourseInBuilding[FER112F] :=  Askja VR_2;
+set CourseInRoom[FRA113G] :=  VHV103;
 set CourseInBuilding[FRA113G] :=  HusVigdisar;
 set CourseInBuilding[SNU002M] :=  Stakkahlid_Klettur;
 set CourseInRoom[FER101G] :=  V147;
@@ -4006,25 +4012,28 @@ set CourseInRoom[KME302G] :=  K204 K204_special K205 K206 K206_special K207;
 set CourseInBuilding[KME302G] :=  Stakkahlid_Hamar Stakkahlid_Klettur;
 set CourseInRoom[HIT501G] :=  E301;
 set CourseInBuilding[HIT501G] :=  Stakkahlid_Enni;
+set CourseInRoom[JAP106G] :=  VHV104;
 set CourseInBuilding[JAP106G] :=  HusVigdisar;
 set CourseInRoom[ITH108G] :=  E301 H203 H207;
 set CourseInBuilding[ITH108G] :=  Stakkahlid_Enni Stakkahlid_Hamar;
+set CourseInRoom[HJU309G] :=  E103C E203C;
+set CourseInBuilding[HJU309G] :=  Eirberg;
 set CourseInRoom[SJU309G] :=  H205;
 set CourseInBuilding[SJU309G] :=  Stakkahlid_Hamar;
 set CourseInRoom[JED104G] :=  V147;
 set CourseInBuilding[JED104G] :=  Askja VR_2;
-set CourseInRoom[HSP310G] :=  L103 L103_special;
+set CourseInRoom[HSP310G] :=  L103;
 set CourseInBuilding[HSP310G] :=  Logberg;
 set CourseInRoom[LAN517G] :=  V155;
 set CourseInBuilding[LAN517G] :=  Askja VR_2;
 set CourseInBuilding[LOG102F] :=  Oddi;
-set CourseInRoom[LAK025M] :=  A201;
-set CourseInBuilding[LAK025M] :=  Askja Arnagardur;
+set CourseInRoom[LAK025M] :=  A201 E201C;
+set CourseInBuilding[LAK025M] :=  Askja Arnagardur Eirberg;
 set CourseInRoom[HAG103G] :=  HT102 HT105;
 set CourseInBuilding[HAG103G] :=  Haskolatorg;
 set CourseInRoom[VEL120F] :=  V156;
 set CourseInBuilding[VEL120F] :=  VR_2;
-set CourseInRoom[ILT102F] :=  V155 V258;
+set CourseInRoom[ILT102F] :=  VHV103 V155 V258;
 set CourseInBuilding[ILT102F] :=  HusVigdisar VR_2;
 set CourseInBuilding[TJO328G] :=  Oddi;
 set CourseInBuilding[TYS502G] :=  HusVigdisar;
@@ -4038,8 +4047,9 @@ set CourseInRoom[ISL301G] :=  HT104;
 set CourseInBuilding[ISL301G] :=  Haskolatorg HusVigdisar;
 set CourseInRoom[ISL306G] :=  A311;
 set CourseInBuilding[ISL306G] :=  Arnagardur HusVigdisar;
-set CourseInRoom[ISE014G] :=  A201 L103 L103_special;
+set CourseInRoom[ISE014G] :=  A201 L103;
 set CourseInBuilding[ISE014G] :=  Arnagardur Logberg;
+set CourseInRoom[TYS103G] :=  VHV108;
 set CourseInBuilding[TYS103G] :=  HusVigdisar;
 set CourseInRoom[UAU101F] :=  V152 V155;
 set CourseInBuilding[UAU101F] :=  VR_2;
@@ -4047,7 +4057,7 @@ set CourseInBuilding[JAR513M] :=  Askja;
 set CourseInBuilding[RUS313G] :=  HusVigdisar;
 set CourseInRoom[ABF305G] :=  HT104;
 set CourseInBuilding[ABF305G] :=  Haskolatorg HusVigdisar;
-set CourseInRoom[FEL306G] :=  G101 G101_special HT102 O301;
+set CourseInRoom[FEL306G] :=  G101 HT102 O301;
 set CourseInBuilding[FEL306G] :=  Askja Arnagardur Gimli Haskolatorg Oddi;
 set CourseInRoom[TJO103G] :=  L102;
 set CourseInBuilding[TJO103G] :=  Logberg Oddi;
@@ -4055,22 +4065,25 @@ set CourseInRoom[LOG503G] :=  L102;
 set CourseInBuilding[LOG503G] :=  Logberg;
 set CourseInBuilding[SAN107G] :=  Askja;
 set CourseInBuilding[STA101G] :=  VR_2;
-set CourseInRoom[GFR204G] :=  A050 A050_special;
+set CourseInRoom[GFR204G] :=  A050;
 set CourseInBuilding[GFR204G] :=  Adalbygging;
 set CourseInRoom[STA105G] :=  A301 A304 A304_special HT102 HT104 HT105 O201;
 set CourseInBuilding[STA105G] :=  Askja Arnagardur Haskolatorg Oddi;
 set CourseInRoom[TRS308G] :=  E301 H202 H203 H204 H207 K205 K207 K208;
 set CourseInBuilding[TRS308G] :=  Stakkahlid_Enni Stakkahlid_Hamar Stakkahlid_Klettur;
 set CourseInBuilding[LOG175F] :=  Logberg;
+set CourseInRoom[ISE501G] :=  A303 A310;
 set CourseInBuilding[ISE501G] :=  Arnagardur;
 set CourseInBuilding[SPA305G] :=  HusVigdisar;
 set CourseInRoom[ENS329G] :=  A201;
 set CourseInBuilding[ENS329G] :=  Arnagardur;
 set CourseInRoom[SAG339G] :=  A304 A304_special A311;
 set CourseInBuilding[SAG339G] :=  Arnagardur;
-set CourseInRoom[HIT001G] :=  E301 H207;
+set CourseInRoom[HIT001G] :=  E301 H207 H209;
 set CourseInBuilding[HIT001G] :=  Stakkahlid_Enni Stakkahlid_Hamar;
 set CourseInBuilding[NSR007F] :=  Logberg;
+set CourseInRoom[HJU151F] :=  E201C;
+set CourseInBuilding[HJU151F] :=  Eirberg;
 set CourseInBuilding[DAN313G] :=  HusVigdisar;
 set CourseInBuilding[NLF109F] :=  HusVigdisar;
 set CourseInRoom[MVS202F] :=  H207;
@@ -4082,35 +4095,37 @@ set CourseInBuilding[HAG512G] :=  Adalbygging;
 set CourseInBuilding[VID523G] :=  Gimli;
 set CourseInRoom[MIS105F] :=  A311;
 set CourseInBuilding[MIS105F] :=  Arnagardur;
-set CourseInRoom[UPP105F] :=  HT103 HT103_special;
+set CourseInRoom[UPP105F] :=  HT103;
 set CourseInBuilding[UPP105F] :=  Haskolatorg Oddi;
 set CourseInRoom[SJU509G] :=  H202 H203;
 set CourseInBuilding[SJU509G] :=  Stakkahlid_Hamar;
-set CourseInRoom[SAL504G] :=  HT105;
-set CourseInBuilding[SAL504G] :=  Haskolatorg;
+set CourseInRoom[SAL504G] :=  E201C HT105;
+set CourseInBuilding[SAL504G] :=  Eirberg Haskolatorg;
 set CourseInRoom[GSL101G] :=  Askja130 Askja131;
 set CourseInBuilding[GSL101G] :=  Askja;
 set CourseInBuilding[IDN501G] :=  VR_2;
 set CourseInBuilding[SAL136F] :=  Oddi;
+set CourseInRoom[MAF102G] :=  VHV108;
 set CourseInBuilding[MAF102G] :=  Logberg HusVigdisar;
+set CourseInBuilding[HJU142F] :=  Eirberg;
 set CourseInBuilding[VEL502G] :=  VR_2;
 set CourseInBuilding[FEL109G] :=  Arnagardur;
 set CourseInRoom[MEX020G] :=  K204 K204_special K205;
 set CourseInBuilding[MEX020G] :=  Stakkahlid_Klettur;
 set CourseInBuilding[BYG501G] :=  VR_2;
-set CourseInRoom[ISE309G] :=  L103 L103_special;
+set CourseInRoom[ISE309G] :=  L103;
 set CourseInBuilding[ISE309G] :=  Logberg;
 set CourseInRoom[IET101G] :=  H101 H201 H202 H203 H204 H206 H206_special;
 set CourseInBuilding[IET101G] :=  Stakkahlid_Hamar;
-set CourseInRoom[VID103G] :=  A301 HT103 HT103_special;
+set CourseInRoom[VID103G] :=  A301 HT103 O202;
 set CourseInBuilding[VID103G] :=  Askja Arnagardur Haskolatorg Logberg Oddi;
 set CourseInBuilding[JAR312G] :=  Askja;
-set CourseInRoom[LOG108G] :=  HT103 HT103_special L103 L103_special;
+set CourseInRoom[LOG108G] :=  HT103 L103;
 set CourseInBuilding[LOG108G] :=  Haskolatorg Logberg;
 set CourseInRoom[ASK102F] :=  L102;
 set CourseInBuilding[ASK102F] :=  Gimli Logberg;
 set CourseInBuilding[LAN101G] :=  Askja Oddi;
-set CourseInRoom[ISE103G] :=  L103 L103_special VHV007;
+set CourseInRoom[ISE103G] :=  L103 VHV007;
 set CourseInBuilding[ISE103G] :=  Logberg HusVigdisar;
 set CourseInBuilding[STJ101G] :=  Oddi;
 set CourseInBuilding[HJU114G] :=  Stakkahlid_Hamar;
@@ -4125,7 +4140,11 @@ set CourseInBuilding[STJ106F] :=  Adalbygging Haskolatorg;
 set CourseInRoom[EFN307G] :=  V156;
 set CourseInBuilding[EFN307G] :=  VR_2;
 set CourseInBuilding[EDL520M] :=  VR_2;
+set CourseInRoom[HJU715G] :=  E103C E201C;
+set CourseInBuilding[HJU715G] :=  Eirberg;
 set CourseInBuilding[LAN516G] :=  Askja;
+set CourseInRoom[LAK124G] :=  E103C E201C;
+set CourseInBuilding[LAK124G] :=  Eirberg;
 set CourseInRoom[UME502G] :=  H206 H206_special K207;
 set CourseInBuilding[UME502G] :=  Stakkahlid_Hamar Stakkahlid_Klettur;
 set CourseInRoom[TSM103G] :=  Askja130;
@@ -4140,10 +4159,11 @@ set CourseInBuilding[ENS339G] :=  HusVigdisar;
 set CourseInRoom[KME110F] :=  E301 H207;
 set CourseInBuilding[KME110F] :=  Stakkahlid_Enni Stakkahlid_Hamar;
 set CourseInBuilding[LAN113F] :=  Askja;
+set CourseInRoom[ISL334G] :=  A303;
 set CourseInBuilding[ISL334G] :=  Arnagardur;
 set CourseInRoom[IDN103G] :=  HT104 HT105 V258 V261;
 set CourseInBuilding[IDN103G] :=  Haskolatorg HusVigdisar VR_2;
-set CourseInRoom[SAG103G] :=  A301 L103 L103_special;
+set CourseInRoom[SAG103G] :=  A301 L103;
 set CourseInBuilding[SAG103G] :=  Arnagardur Logberg;
 set CourseInRoom[LSS504G] :=  H206 H206_special K205;
 set CourseInBuilding[LSS504G] :=  Stakkahlid_Hamar Stakkahlid_Klettur;
@@ -4154,19 +4174,20 @@ set CourseInBuilding[LIF118F] :=  Askja Haskolatorg;
 set CourseInBuilding[TOL309G] :=  VR_2;
 set CourseInRoom[SFG004G] :=  K204 K204_special;
 set CourseInBuilding[SFG004G] :=  Stakkahlid_Klettur;
-set CourseInRoom[UPP101G] :=  HT103 HT103_special;
+set CourseInRoom[UPP101G] :=  HT103;
 set CourseInBuilding[UPP101G] :=  Haskolatorg Oddi;
 set CourseInRoom[VID506G] :=  O201;
 set CourseInBuilding[VID506G] :=  Oddi;
 set CourseInRoom[STA301G] :=  V156 V258;
 set CourseInBuilding[STA301G] :=  VR_2;
 set CourseInBuilding[LEF302G] :=  HusVigdisar VR_2;
-set CourseInRoom[JED505M] :=  A051 A051_special Askja131 Askja166;
+set CourseInRoom[JED505M] :=  A051 Askja131 Askja166;
 set CourseInBuilding[JED505M] :=  Adalbygging Askja;
 set CourseInRoom[LYF124F] :=  A311;
 set CourseInBuilding[LYF124F] :=  Arnagardur;
 set CourseInRoom[LYF516G] :=  A311;
 set CourseInBuilding[LYF516G] :=  Arnagardur;
+set CourseInRoom[ITA329G] :=  VHV104;
 set CourseInBuilding[ITA329G] :=  HusVigdisar;
 set CourseInRoom[LIS102G] :=  A201 A304 A304_special;
 set CourseInBuilding[LIS102G] :=  Arnagardur;
@@ -4175,8 +4196,11 @@ set CourseInBuilding[SNU015G] :=  Stakkahlid_Klettur;
 set CourseInBuilding[ISE001G] :=  Askja;
 set CourseInBuilding[FVS102M] :=  Logberg;
 set CourseInBuilding[LOG131F] :=  Logberg;
+set CourseInRoom[HJU321G] :=  E103C E203C;
+set CourseInBuilding[HJU321G] :=  Eirberg;
 set CourseInRoom[LYF102G] :=  HT104;
 set CourseInBuilding[LYF102G] :=  Haskolatorg;
+set CourseInBuilding[LEI402G] :=  Eirberg;
 set CourseInBuilding[GSL104G] :=  Stakkahlid_Hamar;
 set CourseInBuilding[JAR509M] :=  Askja;
 set CourseInRoom[SJU107G] :=  HT104;
@@ -4185,7 +4209,7 @@ set CourseInRoom[ITH516G] :=  H203;
 set CourseInBuilding[ITH516G] :=  Stakkahlid_Hamar;
 set CourseInRoom[LAK516G] :=  HT104;
 set CourseInBuilding[LAK516G] :=  Haskolatorg;
-set CourseInRoom[ISE310G] :=  A311 L103 L103_special;
+set CourseInRoom[ISE310G] :=  A311 L103;
 set CourseInBuilding[ISE310G] :=  Arnagardur Logberg;
 set CourseInRoom[ITH113G] :=  E301;
 set CourseInBuilding[ITH113G] :=  Stakkahlid_Enni;
@@ -4195,13 +4219,13 @@ set CourseInBuilding[BYG101M] :=  VR_2;
 set CourseInRoom[LAN107G] :=  Askja131;
 set CourseInBuilding[LAN107G] :=  Askja;
 set CourseInBuilding[UAU111F] :=  Logberg VR_2;
-set CourseInRoom[SAL313G] :=  G101 G101_special HT105;
+set CourseInRoom[SAL313G] :=  G101 HT105;
 set CourseInBuilding[SAL313G] :=  Gimli Haskolatorg;
 set CourseInRoom[VID301G] :=  HT102 HT105;
 set CourseInBuilding[VID301G] :=  Haskolatorg;
 set CourseInBuilding[HAG513G] :=  Adalbygging Oddi;
 set CourseInBuilding[MAF108G] :=  Askja HusVigdisar;
-set CourseInRoom[KME109F] :=  H101 H201 H202 H204 H205;
+set CourseInRoom[KME109F] :=  H101 H201 H202 H204 H205 H208;
 set CourseInBuilding[KME109F] :=  Stakkahlid_Hamar;
 set CourseInRoom[UAU102F] :=  V152 V155 V156;
 set CourseInBuilding[UAU102F] :=  VR_2;
@@ -4209,11 +4233,11 @@ set CourseInBuilding[LIF516M] :=  Askja;
 set CourseInBuilding[VEL302G] :=  VR_2;
 set CourseInRoom[TOL104G] :=  HT102 HT104 HT105 V147 V261;
 set CourseInBuilding[TOL104G] :=  Haskolatorg VR_2;
-set CourseInRoom[TOL025M] :=  A051 A051_special;
+set CourseInRoom[TOL025M] :=  A051;
 set CourseInBuilding[TOL025M] :=  Adalbygging;
 set CourseInRoom[UMV102G] :=  V261;
 set CourseInBuilding[UMV102G] :=  VR_2;
-set CourseInRoom[TRS310G] :=  H101 K205 K206 K206_special;
+set CourseInRoom[TRS310G] :=  H101 H208 K205 K206 K206_special;
 set CourseInBuilding[TRS310G] :=  Stakkahlid_Hamar Stakkahlid_Klettur;
 set CourseInBuilding[EFN108G] :=  VR_2;
 set CourseInRoom[RAF302G] :=  V258;
@@ -4222,9 +4246,10 @@ set CourseInRoom[LIF102G] :=  Askja131;
 set CourseInBuilding[LIF102G] :=  Askja VR_2;
 set CourseInRoom[DET101G] :=  VHV007;
 set CourseInBuilding[DET101G] :=  HusVigdisar;
+set CourseInRoom[DET102G] :=  VHV103;
 set CourseInBuilding[DET102G] :=  HusVigdisar;
 set CourseInBuilding[GFR110G] :=  Adalbygging;
-set CourseInRoom[HAG101G] :=  A201 HT102 HT103 HT103_special L102;
+set CourseInRoom[HAG101G] :=  A201 HT102 HT103 L102;
 set CourseInBuilding[HAG101G] :=  Arnagardur Haskolatorg Logberg Oddi;
 set CourseInBuilding[HAG512M] :=  Oddi;
 set CourseInBuilding[VID501G] :=  Oddi;
@@ -4234,6 +4259,7 @@ set CourseInRoom[ISL109G] :=  A201 A301;
 set CourseInBuilding[ISL109G] :=  Arnagardur;
 set CourseInRoom[STJ317G] :=  HT104;
 set CourseInBuilding[STJ317G] :=  Haskolatorg Oddi;
+set CourseInRoom[ITH515G] :=  H209;
 set CourseInBuilding[ITH515G] :=  Stakkahlid_Hamar;
 set CourseInBuilding[LOG114F] :=  Logberg;
 set CourseInRoom[LOG174F] :=  L102;
@@ -4250,6 +4276,7 @@ set CourseInRoom[LSS303F] :=  E301 H207 K204 K204_special K207;
 set CourseInBuilding[LSS303F] :=  Stakkahlid_Enni Stakkahlid_Hamar Stakkahlid_Klettur;
 set CourseInRoom[IET301G] :=  K208;
 set CourseInBuilding[IET301G] :=  Stakkahlid_Klettur;
+set CourseInRoom[FRA101G] :=  VHV104;
 set CourseInBuilding[FRA101G] :=  HusVigdisar;
 set CourseInRoom[TOS307G] :=  H202;
 set CourseInBuilding[TOS307G] :=  Stakkahlid_Hamar Stakkahlid_Klettur;
@@ -4270,28 +4297,32 @@ set CourseInBuilding[SNU701M] :=  Stakkahlid_Klettur;
 set CourseInRoom[VID503G] :=  HT204 HT204_special;
 set CourseInBuilding[VID503G] :=  Haskolatorg;
 set CourseInBuilding[UAU108M] :=  Oddi;
-set CourseInRoom[EFN106G] :=  A201 A301 HT103 HT103_special HT104 HT105 L102 V156;
+set CourseInRoom[EFN106G] :=  A201 A301 HT103 HT104 HT105 L102 V156;
 set CourseInBuilding[EFN106G] :=  Askja Arnagardur Haskolatorg Logberg VR_2;
+set CourseInRoom[HJU714G] :=  E103C E201C;
+set CourseInBuilding[HJU714G] :=  Eirberg;
 set CourseInRoom[RAF301G] :=  V258;
 set CourseInBuilding[RAF301G] :=  VR_2;
 set CourseInRoom[UME503G] :=  K207;
 set CourseInBuilding[UME503G] :=  Stakkahlid_Klettur;
 set CourseInRoom[TOL303G] :=  V152 V156 V258 V261;
 set CourseInBuilding[TOL303G] :=  HusVigdisar VR_2;
-set CourseInRoom[ISE002G] :=  A052 A052_special HT104 VHV007;
+set CourseInRoom[ISE002G] :=  A052 HT104 VHV007;
 set CourseInBuilding[ISE002G] :=  Adalbygging Haskolatorg Oddi HusVigdisar;
 set CourseInRoom[LEI107G] :=  HT105;
 set CourseInBuilding[LEI107G] :=  Haskolatorg;
 set CourseInRoom[HAG106G] :=  V152;
 set CourseInBuilding[HAG106G] :=  Oddi VR_2;
-set CourseInRoom[HJU135F] :=  O301;
-set CourseInBuilding[HJU135F] :=  Oddi;
-set CourseInRoom[TAK102G] :=  A051 A051_special;
+set CourseInRoom[HJU135F] :=  E103C E201C O301;
+set CourseInBuilding[HJU135F] :=  Eirberg Oddi;
+set CourseInRoom[TAK102G] :=  A051 VHV231Tungumalamidstod;
 set CourseInBuilding[TAK102G] :=  Adalbygging HusVigdisar;
-set CourseInRoom[TOL101G] :=  A050 A050_special A052 A052_special HT102 VHV007 V152;
+set CourseInRoom[TOL101G] :=  A050 A052 HT102 O202 VHV007 V152;
 set CourseInBuilding[TOL101G] :=  Adalbygging Askja Haskolatorg Oddi HusVigdisar VR_2;
 set CourseInBuilding[LIF110G] :=  Stakkahlid_Hamar;
+set CourseInRoom[TYS310G] :=  A303;
 set CourseInBuilding[TYS310G] :=  Arnagardur;
+set CourseInRoom[GRI103G] :=  VHV104 VHV108;
 set CourseInBuilding[GRI103G] :=  HusVigdisar;
 set CourseInBuilding[HAG508G] :=  Oddi;
 set CourseInBuilding[LOG304G] :=  Logberg;
@@ -4309,7 +4340,7 @@ set CourseInRoom[VID311G] :=  HT102 HT105;
 set CourseInBuilding[VID311G] :=  Haskolatorg;
 set CourseInRoom[FRG103G] :=  O201;
 set CourseInBuilding[FRG103G] :=  Oddi;
-set CourseInRoom[SAL320G] :=  G101 G101_special HT105;
+set CourseInRoom[SAL320G] :=  G101 HT105;
 set CourseInBuilding[SAL320G] :=  Gimli Haskolatorg;
 set CourseInRoom[JAR508M] :=  Askja130 Askja131 V152;
 set CourseInBuilding[JAR508M] :=  Askja VR_2;
@@ -4323,12 +4354,13 @@ set CourseInRoom[LSS105G] :=  E301 K204 K204_special;
 set CourseInBuilding[LSS105G] :=  Stakkahlid_Enni Stakkahlid_Klettur;
 set CourseInRoom[LIF108G] :=  HT105 V261;
 set CourseInBuilding[LIF108G] :=  Askja Haskolatorg VR_2;
-set CourseInRoom[HJU316G] :=  O301;
-set CourseInBuilding[HJU316G] :=  Oddi;
+set CourseInRoom[HJU316G] :=  E101 E101_special E103C E203C O301;
+set CourseInBuilding[HJU316G] :=  Eirberg Oddi;
 set CourseInRoom[HAG303G] :=  HT204 HT204_special O201 O301;
 set CourseInBuilding[HAG303G] :=  Haskolatorg Oddi;
 set CourseInBuilding[GFR325G] :=  Adalbygging;
 set CourseInBuilding[SAL103G] :=  Stakkahlid_Hamar;
+set CourseInRoom[LAT306G] :=  VHV107;
 set CourseInBuilding[LAT306G] :=  HusVigdisar;
 set CourseInRoom[ENS101G] :=  HT104;
 set CourseInBuilding[ENS101G] :=  Haskolatorg;
@@ -4340,7 +4372,7 @@ set CourseInRoom[EFN114G] :=  V260;
 set CourseInBuilding[EFN114G] :=  Askja VR_2;
 set CourseInRoom[ITH321G] :=  H201;
 set CourseInBuilding[ITH321G] :=  Stakkahlid_Enni Stakkahlid_Hamar;
-set CourseInRoom[IET201G] :=  E303 E303_special H101 H202 H204;
+set CourseInRoom[IET201G] :=  E303 H101 H202 H204;
 set CourseInBuilding[IET201G] :=  Stakkahlid_Enni Stakkahlid_Hamar;
 set CourseInRoom[KME103F] :=  H207 K207 K208;
 set CourseInBuilding[KME103F] :=  Haskolatorg Stakkahlid_Hamar Stakkahlid_Klettur;
@@ -4349,15 +4381,22 @@ set CourseInBuilding[VID147F] :=  Haskolatorg Oddi;
 set CourseInBuilding[LOG176F] :=  Logberg;
 set CourseInRoom[VID505G] :=  A201;
 set CourseInBuilding[VID505G] :=  Arnagardur;
+set CourseInRoom[MAT103G] :=  E101 E101_special E103C E201C E203C;
+set CourseInBuilding[MAT103G] :=  Eirberg;
 set CourseInBuilding[MAN103G] :=  Arnagardur;
-set CourseInRoom[SFG301G] :=  H201 H203;
+set CourseInRoom[SFG301G] :=  H201 H203 H209;
 set CourseInBuilding[SFG301G] :=  Stakkahlid_Hamar;
 set CourseInBuilding[TJO104G] :=  Logberg;
+set CourseInRoom[ISL515M] :=  A303;
 set CourseInBuilding[ISL515M] :=  Arnagardur;
 set CourseInRoom[FOM001F] :=  O301;
 set CourseInBuilding[FOM001F] :=  Oddi;
 set CourseInRoom[LEF501M] :=  V147;
 set CourseInBuilding[LEF501M] :=  VR_2;
+set CourseInRoom[LAK121G] :=  E103C E203C;
+set CourseInBuilding[LAK121G] :=  Eirberg;
+set CourseInRoom[LAK120G] :=  E103C E203C;
+set CourseInBuilding[LAK120G] :=  Eirberg;
 set CourseInBuilding[SPA107G] :=  Logberg Oddi;
 set CourseInRoom[UAU112F] :=  V147;
 set CourseInBuilding[UAU112F] :=  Logberg VR_2;
@@ -4366,8 +4405,11 @@ set CourseInBuilding[LIF541G] :=  Askja VR_2;
 set CourseInRoom[TOL305G] :=  HT104;
 set CourseInBuilding[TOL305G] :=  Haskolatorg Logberg VR_2;
 set CourseInBuilding[LYF301G] :=  Arnagardur;
+set CourseInRoom[GSL105G] :=  E103C E201C;
+set CourseInBuilding[GSL105G] :=  Eirberg;
+set CourseInRoom[RUS308G] :=  VHV108;
 set CourseInBuilding[RUS308G] :=  HusVigdisar;
-set CourseInRoom[LIS004G] :=  A052 A052_special HT104;
+set CourseInRoom[LIS004G] :=  A052 HT104;
 set CourseInBuilding[LIS004G] :=  Adalbygging Haskolatorg;
 set CourseInRoom[ISL110G] :=  A301;
 set CourseInBuilding[ISL110G] :=  Arnagardur;
@@ -4385,22 +4427,25 @@ set CourseInBuilding[BYG120F] :=  VR_2;
 set CourseInBuilding[LOG103G] :=  Logberg;
 set CourseInBuilding[ITA420G] :=  HusVigdisar;
 set CourseInBuilding[FRA307G] :=  HusVigdisar;
+set CourseInRoom[SAN106G] :=  VHV107;
 set CourseInBuilding[SAN106G] :=  HusVigdisar;
-set CourseInRoom[JAP101G] :=  HT103 HT103_special;
+set CourseInRoom[JAP101G] :=  HT103 VHV107;
 set CourseInBuilding[JAP101G] :=  Haskolatorg HusVigdisar;
+set CourseInRoom[JAP302G] :=  VHV107;
 set CourseInBuilding[JAP302G] :=  Logberg HusVigdisar;
 set CourseInBuilding[DAN110G] :=  HusVigdisar;
 set CourseInBuilding[ENS346G] :=  HusVigdisar;
-set CourseInRoom[GFR104G] :=  A050 A050_special A052 A052_special;
+set CourseInRoom[GFR104G] :=  A050 A052;
 set CourseInBuilding[GFR104G] :=  Adalbygging;
 set CourseInRoom[STM109F] :=  H203 H204 H206 H206_special K208;
 set CourseInBuilding[STM109F] :=  Stakkahlid_Hamar Stakkahlid_Klettur;
 set CourseInRoom[KME102F] :=  H202 K204 K204_special K205 K208;
 set CourseInBuilding[KME102F] :=  Stakkahlid_Hamar Stakkahlid_Klettur;
+set CourseInBuilding[LJO003F] :=  Eirberg;
 set CourseInBuilding[SAL135F] :=  Oddi;
 set CourseInRoom[SAG101G] :=  A301;
 set CourseInBuilding[SAG101G] :=  Arnagardur;
-set CourseInRoom[HSP321G] :=  A050 A050_special L103 L103_special;
+set CourseInRoom[HSP321G] :=  A050 L103;
 set CourseInBuilding[HSP321G] :=  Adalbygging Logberg;
 set CourseInRoom[OSS101F] :=  A301 A304 A304_special;
 set CourseInBuilding[OSS101F] :=  Arnagardur Oddi;
@@ -4412,29 +4457,30 @@ set CourseInBuilding[VEL114F] :=  VR_2;
 set CourseInBuilding[KVI101G] :=  HusVigdisar;
 set CourseInRoom[ISE301G] :=  V261;
 set CourseInBuilding[ISE301G] :=  VR_2;
-set CourseInRoom[ISL321G] :=  A052 A052_special A301;
+set CourseInRoom[ISL321G] :=  A052 A301;
 set CourseInBuilding[ISL321G] :=  Adalbygging Arnagardur;
-set CourseInRoom[LAK514G] :=  H205;
-set CourseInBuilding[LAK514G] :=  Stakkahlid_Hamar;
+set CourseInRoom[LAK514G] :=  E103C H205;
+set CourseInBuilding[LAK514G] :=  Eirberg Stakkahlid_Hamar;
 set CourseInRoom[INT101G] :=  H206 H206_special K204 K204_special K206 K206_special;
 set CourseInBuilding[INT101G] :=  Stakkahlid_Hamar Stakkahlid_Klettur;
-set CourseInRoom[UMS301G] :=  H206 H206_special;
+set CourseInRoom[UMS301G] :=  H206 H206_special H208;
 set CourseInBuilding[UMS301G] :=  Stakkahlid_Hamar Stakkahlid_Klettur;
-set CourseInRoom[ISE030G] :=  A050 A050_special A052 A052_special A069 L103 L103_special;
+set CourseInRoom[ISE030G] :=  A050 A052 A069 L103;
 set CourseInBuilding[ISE030G] :=  Adalbygging Logberg Oddi HusVigdisar;
 set CourseInRoom[SAL501M] :=  V261;
 set CourseInBuilding[SAL501M] :=  VR_2;
 set CourseInBuilding[ASK105F] :=  Adalbygging;
 set CourseInRoom[VID511G] :=  HT204 HT204_special;
 set CourseInBuilding[VID511G] :=  Haskolatorg Oddi;
-set CourseInRoom[LEI103G] :=  A301 HT104 HT105;
-set CourseInBuilding[LEI103G] :=  Arnagardur Haskolatorg Stakkahlid_Hamar;
+set CourseInRoom[LEI103G] :=  A301 E103C E203C HT104 HT105;
+set CourseInBuilding[LEI103G] :=  Arnagardur Eirberg Haskolatorg Stakkahlid_Hamar;
+set CourseInRoom[RUS106G] :=  VHV107;
 set CourseInBuilding[RUS106G] :=  Arnagardur Logberg HusVigdisar;
 set CourseInRoom[TOV301G] :=  Askja130 Askja131;
 set CourseInBuilding[TOV301G] :=  Askja VR_2;
-set CourseInRoom[HAG503G] :=  L103 L103_special;
+set CourseInRoom[HAG503G] :=  L103;
 set CourseInBuilding[HAG503G] :=  Logberg;
-set CourseInRoom[SAG340G] :=  A311;
+set CourseInRoom[SAG340G] :=  A311 VHV108;
 set CourseInBuilding[SAG340G] :=  Adalbygging Arnagardur HusVigdisar;
 set CourseInBuilding[MAN330G] :=  Oddi;
 set CourseInRoom[LSS501G] :=  K206 K206_special K207 K208;
@@ -4445,19 +4491,21 @@ set CourseInBuilding[FRG508G] :=  Arnagardur;
 set CourseInRoom[IDN301G] :=  V155 V156;
 set CourseInBuilding[IDN301G] :=  VR_2;
 set CourseInBuilding[STJ303M] :=  Oddi;
-set CourseInRoom[TOL107G] :=  A052 A052_special Askja131 L102 VHV007 V258;
+set CourseInRoom[TOL107G] :=  A052 Askja131 L102 VHV007 V258;
 set CourseInBuilding[TOL107G] :=  Adalbygging Askja Logberg HusVigdisar VR_2;
 set CourseInRoom[UMV302G] :=  V152 V156;
 set CourseInBuilding[UMV302G] :=  VR_2;
-set CourseInRoom[KME301G] :=  E301 H201 H203 H207;
+set CourseInRoom[KME301G] :=  E301 H201 H203 H207 H208 H209;
 set CourseInBuilding[KME301G] :=  Stakkahlid_Enni Stakkahlid_Hamar;
 set CourseInRoom[EFN309G] :=  HT102;
 set CourseInBuilding[EFN309G] :=  Haskolatorg VR_2;
 set CourseInRoom[SAL141F] :=  V261;
 set CourseInBuilding[SAL141F] :=  VR_2;
-set CourseInRoom[ISE105G] :=  A050 A050_special A051 A051_special A069 VHV007;
+set CourseInRoom[ISE105G] :=  A050 A051 A069 A310 VHV007 VHV104;
 set CourseInBuilding[ISE105G] :=  Adalbygging Arnagardur Logberg Oddi HusVigdisar;
+set CourseInRoom[TYS311G] :=  VHV107;
 set CourseInBuilding[TYS311G] :=  HusVigdisar;
+set CourseInRoom[KIN108G] :=  VHV103;
 set CourseInBuilding[KIN108G] :=  HusVigdisar;
 set CourseInRoom[JED505G] :=  Askja131 V147 V261;
 set CourseInBuilding[JED505G] :=  Askja VR_2;
@@ -4469,12 +4517,14 @@ set CourseInRoom[UAU121F] :=  A069;
 set CourseInBuilding[UAU121F] :=  Adalbygging Oddi;
 set CourseInRoom[STJ106G] :=  O201;
 set CourseInBuilding[STJ106G] :=  Oddi;
-set CourseInRoom[VID105G] :=  A301 HT102 HT103 HT103_special O201;
+set CourseInRoom[VID105G] :=  A301 HT102 HT103 O201;
 set CourseInBuilding[VID105G] :=  Arnagardur Haskolatorg Oddi;
+set CourseInRoom[HJU711G] :=  E103C E201C;
+set CourseInBuilding[HJU711G] :=  Eirberg;
 set CourseInBuilding[HJU108G] :=  Stakkahlid_Hamar;
 set CourseInRoom[ITH109G] :=  E301 H101 H207;
 set CourseInBuilding[ITH109G] :=  Stakkahlid_Enni Stakkahlid_Hamar;
-set CourseInRoom[TYS108G] :=  A051 A051_special A052 A052_special;
+set CourseInRoom[TYS108G] :=  A051 A052;
 set CourseInBuilding[TYS108G] :=  Adalbygging Oddi;
 set CourseInRoom[HAG107G] :=  A201 A301 O201;
 set CourseInBuilding[HAG107G] :=  Askja Arnagardur Oddi;
@@ -4482,7 +4532,7 @@ set CourseInBuilding[BLF314F] :=  Oddi;
 set CourseInRoom[LOG110F] :=  A069;
 set CourseInBuilding[LOG110F] :=  Adalbygging Logberg;
 set CourseInBuilding[LOG119F] :=  Logberg;
-set CourseInRoom[EDL102G] :=  A050 A050_special A304 A304_special L103 L103_special V155 V156 V261;
+set CourseInRoom[EDL102G] :=  A050 A304 A304_special L103 V155 V156 V261;
 set CourseInBuilding[EDL102G] :=  Adalbygging Arnagardur Logberg VR_2;
 set CourseInBuilding[STA508M] :=  VR_2;
 set CourseInBuilding[UMV502G] :=  VR_2;
@@ -4493,14 +4543,16 @@ set CourseInBuilding[VID502G] :=  Oddi;
 set CourseInRoom[KME101G] :=  H101 H201 H202 H203 H204 H205 K205 K206 K206_special K207 K208;
 set CourseInBuilding[KME101G] :=  Stakkahlid_Hamar Stakkahlid_Klettur;
 set CourseInBuilding[TOV501M] :=  VR_2;
+set CourseInRoom[GSL103G] :=  E201C;
+set CourseInBuilding[GSL103G] :=  Eirberg;
 set CourseInBuilding[SPA306G] :=  Logberg;
-set CourseInRoom[LOG303G] :=  HT103 HT103_special;
+set CourseInRoom[LOG303G] :=  HT103;
 set CourseInBuilding[LOG303G] :=  Arnagardur Haskolatorg Logberg;
 set CourseInBuilding[EDL107G] :=  VR_2;
 set CourseInBuilding[EDL509M] :=  VR_2;
 set CourseInRoom[EDL101G] :=  V258;
 set CourseInBuilding[EDL101G] :=  Logberg VR_2;
-set CourseInRoom[UME101G] :=  H201 H207;
+set CourseInRoom[UME101G] :=  H201 H207 H208;
 set CourseInBuilding[UME101G] :=  Stakkahlid_Hamar;
 set CourseInRoom[FRG101G] :=  HT105;
 set CourseInBuilding[FRG101G] :=  Haskolatorg;
@@ -4533,38 +4585,43 @@ set CourseInRoom[LOG502G] :=  L102;
 set CourseInBuilding[LOG502G] :=  Logberg;
 set CourseInRoom[EDL301G] :=  V147 V156;
 set CourseInBuilding[EDL301G] :=  VR_2;
-set CourseInRoom[KME301F] :=  E301 H101 H201 H202 H203 H204 H205 H206 H206_special H207 K204 K204_special K205;
+set CourseInRoom[HJU313G] :=  E103C E201C E203C;
+set CourseInBuilding[HJU313G] :=  Eirberg;
+set CourseInRoom[KME301F] :=  E301 H101 H201 H202 H203 H204 H205 H206 H206_special H207 H208 H209 K204 K204_special K205;
 set CourseInBuilding[KME301F] :=  Stakkahlid_Enni Stakkahlid_Hamar Stakkahlid_Klettur;
 set CourseInRoom[STA106G] :=  V152 V261;
 set CourseInBuilding[STA106G] :=  VR_2;
+set CourseInRoom[ISE302G] :=  VHV103 VHV104;
 set CourseInBuilding[ISE302G] :=  HusVigdisar;
 set CourseInRoom[STA107G] :=  Askja131 HT102 V147 V156 V258 V261;
 set CourseInBuilding[STA107G] :=  Askja Haskolatorg VR_2;
-set CourseInRoom[EFN311G] :=  L102 V152 V156;
+set CourseInRoom[EFN311G] :=  L102 VHV103 V152 V156;
 set CourseInBuilding[EFN311G] :=  Logberg HusVigdisar VR_2;
 set CourseInRoom[HAG304G] :=  Askja130 A301 A311 O201;
 set CourseInBuilding[HAG304G] :=  Askja Arnagardur Oddi;
-set CourseInRoom[IET102M] :=  E303 E303_special H204;
+set CourseInRoom[IET102M] :=  E303 H204;
 set CourseInBuilding[IET102M] :=  Stakkahlid_Enni Stakkahlid_Hamar Stakkahlid_Klettur;
 set CourseInBuilding[TYS308G] :=  HusVigdisar;
 set CourseInRoom[VEL301G] :=  V261;
 set CourseInBuilding[VEL301G] :=  VR_2;
 set CourseInBuilding[RAF504G] :=  VR_2;
-set CourseInRoom[HAG105G] :=  A201 A311 HT103 HT103_special;
+set CourseInRoom[HAG105G] :=  A201 A311 HT103;
 set CourseInBuilding[HAG105G] :=  Askja Arnagardur Haskolatorg;
-set CourseInRoom[ISE032G] :=  A069 Askja130 G101 G101_special HT104 L103 L103_special VHV007;
+set CourseInRoom[ISE032G] :=  A069 Askja130 G101 HT104 L103 VHV007;
 set CourseInBuilding[ISE032G] :=  Adalbygging Askja Gimli Haskolatorg Logberg HusVigdisar;
 set CourseInBuilding[SAG703M] :=  Arnagardur;
 set CourseInBuilding[IDN101M] :=  VR_2;
-set CourseInRoom[VEL501M] :=  Askja130;
+set CourseInRoom[VEL501M] :=  Askja130 A303;
 set CourseInBuilding[VEL501M] :=  Askja Arnagardur;
 set CourseInBuilding[VID513G] :=  Oddi;
+set CourseInRoom[HJU528G] :=  E203C;
+set CourseInBuilding[HJU528G] :=  Eirberg;
 set CourseInBuilding[HJU109G] :=  Stakkahlid_Hamar;
 set CourseInRoom[KME102G] :=  K204 K204_special K205 K206 K206_special K207 K208;
 set CourseInBuilding[KME102G] :=  Stakkahlid_Hamar Stakkahlid_Klettur;
 set CourseInRoom[KME115F] :=  H101 H204 H205 K208;
 set CourseInBuilding[KME115F] :=  Stakkahlid_Hamar Stakkahlid_Klettur;
-set CourseInRoom[ISL320G] :=  A052 A052_special;
+set CourseInRoom[ISL320G] :=  A052 A310;
 set CourseInBuilding[ISL320G] :=  Adalbygging Arnagardur;
 set CourseInBuilding[LIF513M] :=  Askja;
 set CourseInRoom[FRG501G] :=  L102;
@@ -4572,7 +4629,12 @@ set CourseInBuilding[FRG501G] :=  Logberg;
 set CourseInRoom[LAK306F] :=  H206 H206_special;
 set CourseInBuilding[LAK306F] :=  Stakkahlid_Hamar;
 set CourseInBuilding[DAN307G] :=  HusVigdisar;
+set CourseInRoom[LAT101G] :=  VHV104 VHV108;
 set CourseInBuilding[LAT101G] :=  HusVigdisar;
+set CourseInRoom[LAK115G] :=  E103C E203C;
+set CourseInBuilding[LAK115G] :=  Eirberg;
+set CourseInRoom[LAK116G] :=  E103C E203C;
+set CourseInBuilding[LAK116G] :=  Eirberg;
 set CourseInRoom[TOL304G] :=  Askja131 HT102 V155 V261;
 set CourseInBuilding[TOL304G] :=  Askja Haskolatorg HusVigdisar VR_2;
 set CourseInBuilding[BYG503G] :=  VR_2;
@@ -4587,6 +4649,7 @@ set CourseInBuilding[ITH114F] :=  Stakkahlid_Hamar;
 param DebugCourseRooms :=
 BLF112F "O-105:Oddi"
 LOG111F "L201 L102:Logberg"
+HJU710G "E103C EIR-223B EIR201A-fundarh/seminar E101 :Eirberg"
 STJ102G "L102 Á201:Arnagardur Logberg"
 EDL506G "Tg-227 V147 Verk- og náttúruvísindasvið:VR_2"
 VID304G "N-121 V156:Askja VR_2"
@@ -4600,7 +4663,7 @@ HJU115G "Skriða:Stakkahlid_Hamar"
 EFN515M "V155 V138:VR_2"
 LEF509M "V02-151 Naustið, VoN:VR_2"
 ITH513G " H209:Stakkahlid_Hamar"
-STA104G "HB-1 V155 Askja130 L102 V147 V02-158 A052 A050 L-101 V261 V15"
+STA104G "HB-1 V155 Askja130 L102 V147 V02-158 A052 L-101 A050 V261 V15"
 LAK515G "H-205 H201 Hagi-213:Stakkahlid_Hamar"
 STA302G "Askja131 HB-1 HT102 V02-158 L103 Askja132 N-128:Askja Haskola"
 KIN302G "VHV-227 VHV-207:HusVigdisar"
@@ -4619,7 +4682,7 @@ SPA105G "V138:VR_2"
 RUS103G "VHV-207 VHV-228 VHV104:HusVigdisar"
 LEI303G "Á201 Askja132 Stapi 213, sérstofa E201C Lg-229:Askja Arnagard"
 GRI250G "VHV-207 VHV-228:HusVigdisar"
-ITA119G "VHV103 VHV107 VHV-231 Tungumálamiðstöð:HusVigdisar"
+ITA119G "VHV103 VHV107 VHV-231 Tungumálamiðstöð VHV-227:HusVigdisar"
 ISL111G "Á201:Arnagardur"
 GFR212G "A229 A051:Adalbygging"
 KIN107G "VHV-227:HusVigdisar"
@@ -4627,16 +4690,17 @@ FER112F "V147 N-128:Askja VR_2"
 FRA113G "VHV103:HusVigdisar"
 SNU002M "K-103:Stakkahlid_Klettur"
 FER101G "N-128 V147:Askja VR_2"
-KME302G "K205 K-206 K-207 Bratti K-102 K204:Stakkahlid_Hamar Stakkahli"
+KME302G "K205 K-206 K-207 Bratti K204 Skriða K-102:Stakkahlid_Hamar St"
 HIT501G "E-301:Stakkahlid_Enni"
 JAP106G "VHV104:HusVigdisar"
 ITH108G "Bratti Skriða E-301 H203 H207 :Stakkahlid_Enni Stakkahlid_Ham"
+HJU309G "Lg-122, verknám E203C E103C EIR201A-fundarh/seminar EIR203B, "
 SJU309G "Stapi 210 HB-4 H-205:Stakkahlid_Hamar"
 JED104G "N-120 V147:Askja VR_2"
 HSP310G "L103:Logberg"
 LAN517G "N-121 V155 Naustið, VoN N-120:Askja VR_2"
 LOG102F "O-101:Oddi"
-LAK025M "Á201 Askja132 E201C:Askja Arnagardur"
+LAK025M "Á201 Askja132 E201C:Askja Arnagardur Eirberg"
 HAG103G "HB-1 HT102 HT105:Haskolatorg"
 VEL120F "V02-148, sérstofa VR-2 V156:VR_2"
 ILT102F "V155 V258 Verk- og náttúruvísindasvið VHV103:HusVigdisar VR_2"
@@ -4668,10 +4732,10 @@ ENS329G "Á201:Arnagardur"
 SAG339G "Á304 Á311:Arnagardur"
 HIT001G "Bratti E-301 H207 H209:Stakkahlid_Enni Stakkahlid_Hamar"
 NSR007F "L201:Logberg"
+HJU151F "E201C Lg-124:Eirberg"
 DAN313G "VHV-223:HusVigdisar"
 TAN632G ":HusVigdisar"
 NLF109F "VHV-228 Stapi 216:HusVigdisar"
-LAK307G ":HusVigdisar"
 MVS202F "H207 K-103:Stakkahlid_Hamar Stakkahlid_Klettur"
 EFN304G "V138 V147:VR_2"
 HAG512G "A069:Adalbygging"
@@ -4679,17 +4743,18 @@ VID523G "G-102:Gimli"
 MIS105F "Á311:Arnagardur"
 UPP105F "O-106 Stapi 108 HT103:Haskolatorg Oddi"
 SJU509G "Stapi 210 Lg-201 Stapi 108 H203 H202 Verklegt utan H.Í. Lg-12"
-SAL504G "HT105 HB-4 E201C:Haskolatorg"
+SAL504G "HT105 HB-4 E201C:Eirberg Haskolatorg"
 GSL101G "Askja132 Askja130 Askja131 Stapi 210:Askja"
 IDN501G "V02-262, heimast.:VR_2"
 SAL136F "O-206:Oddi"
 MAF102G "L205 VHV108:Logberg HusVigdisar"
+HJU142F "EIR325B:Eirberg"
 VEL502G "V02-262, heimast. V03-118:VR_2"
 FEL109G "Ág-422:Arnagardur"
 MEX020G "K204 K-102 K205:Stakkahlid_Klettur"
 BYG501G "V02-354, heimast. V03-102:VR_2"
 ISE309G "L103:Logberg"
-IET101G "H202 H203 H-204 H-206 H-101 Bratti H201:Stakkahlid_Hamar"
+IET101G "H202 H-204 H203 H-206 H-101 H201 Skriða Bratti:Stakkahlid_Ham"
 VID103G "HB-1 Á301 O202 Askja132 HT103 L-101:Askja Arnagardur Haskolat"
 JAR312G "N-264:Askja"
 LOG108G "HB-3 HT103 L103:Haskolatorg Logberg"
@@ -4705,7 +4770,9 @@ STJ107G "A-220 HT300:Adalbygging Haskolatorg"
 STJ106F "A-220 HT300:Adalbygging Haskolatorg"
 EFN307G "V156:VR_2"
 EDL520M "V138 Verk- og náttúruvísindasvið:VR_2"
+HJU715G "E103C EIR325B EIR321B E201C:Eirberg"
 LAN516G "N-192 Tg-227 N-120:Askja"
+LAK124G "Lg-201 Lg-124 Lg-344 E201C Lg-343 E103C:Eirberg"
 UME502G "K-207 H-206:Stakkahlid_Hamar Stakkahlid_Klettur"
 TSM103G "Askja132 Lg-310 Lg-212, sérstofa Stapi 210 Askja130 Lg-312, s"
 BYG121F "V138 N-128:Askja VR_2"
@@ -4730,17 +4797,19 @@ LEF302G "V02-158 V02-157 VHV-023:HusVigdisar VR_2"
 JED505M "A051 Askja131 Askja166 N-128:Adalbygging Askja"
 LYF124F "Hagi-104 Á311 HB-4:Arnagardur"
 LYF516G "Hagi-104 Á311 HB-4:Arnagardur"
-ITA329G "VHV104:HusVigdisar"
+ITA329G "VHV104 VHV-227:HusVigdisar"
 LIS102G "Á201 Á304:Arnagardur"
 SAL104G "Skriða:Stakkahlid_Hamar"
 SNU015G "K-103:Stakkahlid_Klettur"
 ISE001G "Askja132:Askja"
 FVS102M "L-101:Logberg"
 LOG131F "L-101:Logberg"
-LYF102G "HT104 Hagi-104 Hagi-213:Haskolatorg"
+HJU321G "E203C E103C:Eirberg"
+LYF102G "HT104 Hagi-104 Hagi-213 Heilbrigðisvísindasvið:Haskolatorg"
+LEI402G "Stapi 213, sérstofa Verklegt utan H.Í. EIR105C - tölvuver Hug"
 GSL104G "Bratti HB-3:Stakkahlid_Hamar"
 JAR509M "N-121 N-128:Askja"
-SJU107G "HT104 Lg-201 Stapi 108 Heilbrigðisvísindasvið Lg-166 Stapi 21"
+SJU107G "HT104 Stapi 108 Lg-166 Lg-201 Stapi 210 Heilbrigðisvísindasvi"
 ITH516G "Verklegt utan H.Í. H203:Stakkahlid_Hamar"
 LAK516G "HT104 Lg-308:Haskolatorg"
 ISE310G "L103 Á311:Arnagardur Logberg"
@@ -4770,7 +4839,7 @@ GFR110G "A229:Adalbygging"
 HAG101G "HT102 HT103 Á201 L102 O-106 Stapi 216 Ág-422:Arnagardur Hasko"
 HAG512M "O-106:Oddi"
 VID501G "O-101:Oddi"
-GKY101G "H201 K-202 Skriða H-205 K204:Stakkahlid_Hamar Stakkahlid_Klet"
+GKY101G "H201 K-202 K204 Skriða H-205:Stakkahlid_Hamar Stakkahlid_Klet"
 ISL109G "Á201 Á301:Arnagardur"
 STJ317G "O-101 HT104:Haskolatorg Oddi"
 ITH515G "H209:Stakkahlid_Hamar"
@@ -4796,15 +4865,16 @@ SNU701M "K-102:Stakkahlid_Klettur"
 VID503G "HB-3 HT204:Haskolatorg"
 UAU108M "O-205 O-106:Oddi"
 EFN106G "Askja132 HB-2 HB-1 HT105 L102 N-128 V156 Á301 Á201 HT103 HT10"
+HJU714G "E103C EIR-223B E201C EIR321B EIR203B, seminar EIR325B:Eirberg"
 RAF301G "V258:VR_2"
 UME503G "K-207:Stakkahlid_Klettur"
 TOL303G "V02-157 V156 V152 V261 V258 Veröld-008 VHV-023:HusVigdisar VR"
 ISE002G "VHV007 A052 Veröld-008 O-105 HT104:Adalbygging Haskolatorg Od"
 LEI107G "HB-2 HB-3 Lg-229 HT105:Haskolatorg"
 HAG106G "O-101 O-106 V152 HB-4:Oddi VR_2"
-HJU135F "E201C O301 EIR-223B E103C:Oddi"
+HJU135F "E201C O301 EIR-223B E103C:Eirberg Oddi"
 TAK102G "A051 VHV-231 Tungumálamiðstöð:Adalbygging HusVigdisar"
-TOL101G "Naustið, VoN HT102 V02-148, sérstofa VR-2 Askja132 V152 VHV00"
+TOL101G "Naustið, VoN HT102 V152 Askja132 V02-148, sérstofa VR-2 Veröl"
 LIF110G "Skriða:Stakkahlid_Hamar"
 TYS310G "Á303:Arnagardur"
 GRI103G "VHV104 VHV108 Veröld-008:HusVigdisar"
@@ -4829,7 +4899,7 @@ IDN502G "V02-158:VR_2"
 VID180F "HT101:Haskolatorg"
 LSS105G "K-102 K-103 E-301 K-202 K204:Stakkahlid_Enni Stakkahlid_Klett"
 LIF108G "N-196 V02-158 V261 HT105:Askja Haskolatorg VR_2"
-HJU316G "E203C O301 E103C E101:Oddi"
+HJU316G "E203C O301 E103C E101:Eirberg Oddi"
 HAG303G "O-101 O201 O301 HT204:Haskolatorg Oddi"
 GFR512M ":Haskolatorg Oddi"
 GFR325G "A229 HB-3:Adalbygging"
@@ -4845,17 +4915,22 @@ KME103F "K-208 H207 K-207 :Haskolatorg Stakkahlid_Hamar Stakkahlid_Kle"
 VID147F "HT101 O201:Haskolatorg Oddi"
 LOG176F "L204:Logberg"
 VID505G "HB-4 Á201:Arnagardur"
+MAT103G "E103C E203C E101 E201C:Eirberg"
 MAN103G "Ág-422 HB-4:Arnagardur"
 SFG301G "H201 H209 H203:Stakkahlid_Hamar"
 TJO104G "L201 L204:Logberg"
 ISL515M "Á303:Arnagardur"
 FOM001F "O-106 O301 O-104:Oddi"
 LEF501M "V01-118 V147:VR_2"
+LAK121G "Lg-344 E103C Lg-310 E203C Lg-343 Hugvísindasvið:Eirberg"
+LAK120G "Lg-344 E103C E203C Lg-343:Eirberg"
+TAN422G ":Eirberg"
 SPA107G "L205 O-104:Logberg Oddi"
 UAU112F "L204 V147:Logberg VR_2"
 LIF541G "V155 N-161 N-128:Askja VR_2"
 TOL305G "V02-157 HT104 L-101:Haskolatorg Logberg VR_2"
 LYF301G "HB-5 Hagi-104 Stapi 213, sérstofa Hagi-213 Lg-201 Á101:Arnaga"
+GSL105G "E201C Lg-124 Lg-201 E103C Stapi 108:Eirberg"
 RUS308G "VHV108 VHV-207:HusVigdisar"
 LIS004G "A052 HT104:Adalbygging Haskolatorg"
 ISL110G "Á301:Arnagardur"
@@ -4878,6 +4953,7 @@ ENS346G "VHV-023:HusVigdisar"
 GFR104G "A052 A050:Adalbygging"
 STM109F "H203 K-208 H-204 H-206:Stakkahlid_Hamar Stakkahlid_Klettur"
 KME102F "H202 Bratti K204 K205 K-208:Stakkahlid_Hamar Stakkahlid_Klett"
+LJO003F "EIR321B Heilbrigðisvísindasvið:Eirberg"
 SAL135F "O-206 Stapi 108:Oddi"
 SAG101G "Á101 Á301:Arnagardur"
 HSP321G "A050 L103:Adalbygging Logberg"
@@ -4888,7 +4964,7 @@ VEL114F "V138 V147 V260:VR_2"
 KVI101G "HB-4 VHV-023:HusVigdisar"
 ISE301G "V261 Hugvísindasvið:VR_2"
 ISL321G "A052 Á301:Adalbygging Arnagardur"
-LAK514G "H-205 Lg-343 E103C:Stakkahlid_Hamar"
+LAK514G "H-205 Lg-343 E103C:Eirberg Stakkahlid_Hamar"
 INT101G "K-206 H-206 K204:Stakkahlid_Hamar Stakkahlid_Klettur"
 UMS301G "H208 H-206 K-202:Stakkahlid_Hamar Stakkahlid_Klettur"
 ISE030G "A069 A050 Stapi 214 L205 O-205 L204 L103 A052 O-206 VHV-207:A"
@@ -4920,6 +4996,7 @@ EDL302G "V155 V02-157 VHV007:HusVigdisar VR_2"
 UAU121F "A069 O-204 O-203:Adalbygging Oddi"
 STJ106G "O201:Oddi"
 VID105G "HB-1 Á301 O201 HT103 HT102:Arnagardur Haskolatorg Oddi"
+HJU711G "EIR203B, seminar EIR321B E103C E201C:Eirberg"
 HJU108G "Skriða:Stakkahlid_Hamar"
 ITH109G "Bratti  H207 H-101 E-301 Skriða:Stakkahlid_Enni Stakkahlid_Ha"
 TYS108G "O-205 A052 A051:Adalbygging Oddi"
@@ -4935,6 +5012,7 @@ VID502G "O-101 O301:Oddi"
 KME101G "Bratti H202 H203 H-205 H201 K-206 K-207 K-208 Skriða H-101 H-"
 TOV501M "V02-352, heimast. V03-113:VR_2"
 LAT307G ":VR_2"
+GSL103G "Lg-201 E201C Lg-212, sérstofa Lg-343 Lg-227:Eirberg"
 SPA306G "L204:Logberg"
 LOG303G "L-101 Ág-422 HT103:Arnagardur Haskolatorg Logberg"
 EDL107G "HB-1 V02-157 HB-2 V02-158:VR_2"
@@ -4960,10 +5038,11 @@ LAN305G "N-129 Askja131:Askja"
 SFG402G "K204 K-202:Stakkahlid_Klettur"
 LOG502G "L-101 L102:Logberg"
 EDL301G "V01-112 V156 V138 HB-2 V147 Naustið, VoN:VR_2"
-KME301F "H202 H-204 H203 H-206 H209 H208 Bratti H207 H201 E-301 H-205 "
+HJU313G "E205C Heilbrigðisvísindasvið E203C EIR321B EIR227B - heimasto"
+KME301F "H203 H202 H-204 H-206 H207 H209 H208 Bratti H201 E-301 H-205 "
 STA106G "HB-1 V152 V02-158 V261:VR_2"
 ISE302G "VHV103 VHV104:HusVigdisar"
-STA107G "HB-1 V02-157 V261 V156 V258 V147 Askja131 HB-2 HB-3 HB-4 HT10"
+STA107G "HB-1 V02-157 V261 V156 V147 V258 Askja131 HB-2 HB-3 HB-4 HT10"
 EFN311G "V152 VHV103 V156 L102:Logberg HusVigdisar VR_2"
 HAG304G "O201 Askja130 Á301 Á311:Askja Arnagardur Oddi"
 IET102M "E-303 K-202 H-204:Stakkahlid_Enni Stakkahlid_Hamar Stakkahlid"
@@ -4976,6 +5055,7 @@ SAG703M "Á101:Arnagardur"
 IDN101M "V02-262, heimast.:VR_2"
 VEL501M "N-120 Á303 N-121 Askja130:Askja Arnagardur"
 VID513G "O-101:Oddi"
+HJU528G "E203C E205C:Eirberg"
 HJU109G "Skriða:Stakkahlid_Hamar"
 KME102G "K-206 K-207 Bratti K205 K-208 K-202 K204 Skriða:Stakkahlid_Ha"
 KME115F "H-101 H-204 K-208 H-205:Stakkahlid_Hamar Stakkahlid_Klettur"
@@ -4985,6 +5065,8 @@ FRG501G "L102:Logberg"
 LAK306F "Lg-343 H-206 Lg-201 Lg-124:Stakkahlid_Hamar"
 DAN307G "VHV-222 VHV-228:HusVigdisar"
 LAT101G "VHV104 VHV108 VHV-223 Veröld-008:HusVigdisar"
+LAK115G "Lg-344 E203C E103C:Eirberg"
+LAK116G "Lg-344 E203C E103C Lg-343:Eirberg"
 TOL304G "Askja132 V02-158 V155 Veröld-008 HT102 V261 Askja131 VHV-023:"
 BYG503G "V02-354, heimast.:VR_2"
 BYG301G "V02-354, heimast. V147 V155 O-203 V138 VHV007:Oddi HusVigdisa"

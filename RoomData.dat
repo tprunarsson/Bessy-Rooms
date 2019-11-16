@@ -2,6 +2,7 @@ set Building :=
 Adalbygging
 Arnagardur
 Askja
+Eirberg
 Gimli
 Haskolatorg
 HusVigdisar
@@ -14,7 +15,7 @@ VR_2
 ;
 set Cluster :=  Holtid Eirberg Other;
 set BuildingsInCluster['Holtid'] := Stakkahlid_Hamar Stakkahlid_Klettur Stakkahlid_Enni;
-set BuildingsInCluster['Eirberg'] := ;
+set BuildingsInCluster['Eirberg'] := Eirberg;
 set BuildingsInCluster['Other'] := Adalbygging Arnagardur Askja Gimli Haskolatorg HusVigdisar Logberg Oddi VR_2;
 set Rooms := 
 A050
@@ -27,6 +28,10 @@ A201
 A301
 A304
 A311
+E101
+E103C
+E201C
+E203C
 HT102
 HT103
 HT104
@@ -34,6 +39,7 @@ HT105
 L102
 L103
 O201
+O202
 E301
 E303
 H101
@@ -59,39 +65,40 @@ V261
 ;
 param RoomId := 
 A050 60
-A050_special 60
 A051 61
-A051_special 61
 A052 15
-A052_special 15
 A069 1446
 Askja130 1245
 Askja131 1246
 Askja166 1290
 A201 914
 A301 915
+A303 1275
 A304 1276
 A304_special 1276
+A310 884
 A311 1277
+E101 1395
+E101_special 1395
+E103C 1396
+E201C 1397
+E203C 1398
 G101 1458
-G101_special 1458
 HT102 1311
 HT103 1313
-HT103_special 1313
 HT104 1314
 HT105 1312
 HT204 1457
 HT204_special 1457
 L102 471
 L103 472
-L103_special 472
 O102 581
 O102_special 581
 O201 608
+O202 609
 O301 638
 E301 1343
 E303 1348
-E303_special 1348
 H101 1351
 H201 1352
 H202 1353
@@ -101,6 +108,8 @@ H205 1356
 H206 1357
 H206_special 1357
 H207 1358
+H208 1359
+H209 1360
 K204 1363
 K204_special 1363
 K205 1364
@@ -109,6 +118,12 @@ K206_special 1365
 K207 1366
 K208 1367
 VHV007 1781
+VHV103 1784
+VHV104 1785
+VHV107 1786
+VHV108 1787
+VHV230Tungumalamidstod 1795
+VHV231Tungumalamidstod 1794
 V147 739
 V152 742
 V155 743
@@ -119,39 +134,40 @@ V261 767
 ;
 param RoomCapacity := 
 A050 15
-A050_special 10
 A051 12
-A051_special 12
 A052 18
-A052_special 11
 A069 12
 Askja130 20
 Askja131 30
 Askja166 24
 A201 48
 A301 48
+A303 12
 A304 20
-A304_special 10
+A304_special 20
+A310 14
 A311 26
+E101 12
+E101_special 12
+E103C 50
+E201C 44
+E203C 50
 G101 21
-G101_special 7
 HT102 85
 HT103 54
-HT103_special 2
 HT104 54
 HT105 85
 HT204 40
 HT204_special 3
 L102 25
 L103 25
-L103_special 1
 O102 18
 O102_special 18
 O201 44
+O202 20
 O301 38
 E301 30
 E303 20
-E303_special 6
 H101 22
 H201 25
 H202 19
@@ -161,14 +177,22 @@ H205 25
 H206 21
 H206_special 1
 H207 34
+H208 16
+H209 16
 K204 15
 K204_special 15
-K205 20
-K206 20
+K205 25
+K206 25
 K206_special 20
 K207 25
 K208 25
 VHV007 44
+VHV103 10
+VHV104 10
+VHV107 10
+VHV108 10
+VHV230Tungumalamidstod 8
+VHV231Tungumalamidstod 25
 V147 15
 V152 36
 V155 22
@@ -178,64 +202,73 @@ V260 21
 V261 30
 ;
 param RoomDensity := 
-A050 50
-A050_special 50
-A051 50
-A051_special 50
-A052 50
-A052_special 50
-A069 50
-Askja130 50
-Askja131 50
-Askja166 50
-A201 50
-A301 50
-A304 50
-A304_special 50
-A311 50
-G101 50
-G101_special 50
-HT102 50
-HT103 50
-HT103_special 50
-HT104 50
-HT105 50
-HT204 50
-HT204_special 50
-L102 50
-L103 50
-L103_special 50
-O102 50
-O102_special 50
-O201 50
-O301 50
-E301 50
-E303 50
-E303_special 50
-H101 50
-H201 50
-H202 50
-H203 50
-H204 50
-H205 50
-H206 50
-H206_special 50
-H207 50
-K204 50
-K204_special 50
-K205 50
-K206 50
-K206_special 50
-K207 50
-K208 50
-VHV007 50
-V147 50
-V152 50
-V155 50
-V156 50
-V258 50
-V260 50
-V261 50
+A050 75
+A051 75
+A052 75
+A069 75
+Askja130 75
+Askja131 75
+Askja166 75
+A201 75
+A301 75
+A303 75
+A304 75
+A304_special 75
+A310 75
+A311 75
+E101 75
+E101_special 75
+E103C 75
+E201C 75
+E203C 75
+G101 75
+HT102 75
+HT103 75
+HT104 75
+HT105 75
+HT204 75
+HT204_special 75
+L102 75
+L103 75
+O102 75
+O102_special 75
+O201 75
+O202 75
+O301 75
+E301 75
+E303 75
+H101 75
+H201 75
+H202 75
+H203 75
+H204 75
+H205 75
+H206 75
+H206_special 75
+H207 75
+H208 75
+H209 75
+K204 75
+K204_special 75
+K205 75
+K206 75
+K206_special 75
+K207 75
+K208 75
+VHV007 75
+VHV103 75
+VHV104 75
+VHV107 75
+VHV108 75
+VHV230Tungumalamidstod 75
+VHV231Tungumalamidstod 75
+V147 75
+V152 75
+V155 75
+V156 75
+V258 75
+V260 75
+V261 75
 ;
 set ComputerRooms := 
 Askja166
@@ -243,59 +276,66 @@ G101
 HT204
 O102
 O301
+VHV230Tungumalamidstod
+VHV231Tungumalamidstod
 V260
 ;
 set SpecialRooms := 
-A050_special
-A051_special
-A052_special
+A303
 A304_special
-HT103_special
-L103_special
-E303_special
+A310
+E101_special
 H206_special
+H208
+H209
 K204_special
 K206_special
+VHV103
+VHV104
+VHV107
+VHV108
 ;
 set SpecialComputerRooms := 
-G101_special
 HT204_special
 O102_special
 ;
-set RoomInBuilding['Adalbygging'] :=  A050 A050_special A051 A051_special A052 A052_special A069;
-set RoomInBuilding['Arnagardur'] :=  A201 A301 A304 A304_special A311;
+set RoomInBuilding['Adalbygging'] :=  A050 A051 A052 A069;
+set RoomInBuilding['Arnagardur'] :=  A201 A301 A303 A304 A304_special A310 A311;
 set RoomInBuilding['Askja'] :=  Askja130 Askja131 Askja166;
-set RoomInBuilding['Gimli'] :=  G101 G101_special;
-set RoomInBuilding['Haskolatorg'] :=  HT102 HT103 HT103_special HT104 HT105 HT204 HT204_special;
-set RoomInBuilding['HusVigdisar'] :=  VHV007;
-set RoomInBuilding['Logberg'] :=  L102 L103 L103_special;
-set RoomInBuilding['Oddi'] :=  O102 O102_special O201 O301;
-set RoomInBuilding['Stakkahlid_Enni'] :=  E301 E303 E303_special;
-set RoomInBuilding['Stakkahlid_Hamar'] :=  H101 H201 H202 H203 H204 H205 H206 H206_special H207;
+set RoomInBuilding['Eirberg'] :=  E101 E101_special E103C E201C E203C;
+set RoomInBuilding['Gimli'] :=  G101;
+set RoomInBuilding['Haskolatorg'] :=  HT102 HT103 HT104 HT105 HT204 HT204_special;
+set RoomInBuilding['HusVigdisar'] :=  VHV007 VHV103 VHV104 VHV107 VHV108 VHV230Tungumalamidstod VHV231Tungumalamidstod;
+set RoomInBuilding['Logberg'] :=  L102 L103;
+set RoomInBuilding['Oddi'] :=  O102 O102_special O201 O202 O301;
+set RoomInBuilding['Stakkahlid_Enni'] :=  E301 E303;
+set RoomInBuilding['Stakkahlid_Hamar'] :=  H101 H201 H202 H203 H204 H205 H206 H206_special H207 H208 H209;
 set RoomInBuilding['Stakkahlid_Klettur'] :=  K204 K204_special K205 K206 K206_special K207 K208;
 set RoomInBuilding['VR_2'] :=  V147 V152 V155 V156 V258 V260 V261;
-set RoomInBuildingFloor['Adalbygging',0] :=  A050 A050_special A051 A051_special A052 A052_special A069;
+set RoomInBuildingFloor['Adalbygging',0] :=  A050 A051 A052 A069;
 set RoomInBuildingFloor['Arnagardur',0] :=  A304_special;
 set RoomInBuildingFloor['Arnagardur',2] :=  A201;
-set RoomInBuildingFloor['Arnagardur',3] :=  A301 A304 A311;
+set RoomInBuildingFloor['Arnagardur',3] :=  A301 A303 A304 A310 A311;
 set RoomInBuildingFloor['Askja',1] :=  Askja130 Askja131 Askja166;
-set RoomInBuildingFloor['Gimli',0] :=  G101_special;
+set RoomInBuildingFloor['Eirberg',0] :=  E101_special;
+set RoomInBuildingFloor['Eirberg',1] :=  E101 E103C;
+set RoomInBuildingFloor['Eirberg',2] :=  E201C E203C;
 set RoomInBuildingFloor['Gimli',1] :=  G101;
-set RoomInBuildingFloor['Haskolatorg',0] :=  HT103_special HT204_special;
+set RoomInBuildingFloor['Haskolatorg',0] :=  HT204_special;
 set RoomInBuildingFloor['Haskolatorg',1] :=  HT102 HT103 HT104 HT105;
 set RoomInBuildingFloor['Haskolatorg',2] :=  HT204;
 set RoomInBuildingFloor['HusVigdisar',0] :=  VHV007;
-set RoomInBuildingFloor['Logberg',0] :=  L103_special;
+set RoomInBuildingFloor['HusVigdisar',1] :=  VHV103 VHV104 VHV107 VHV108;
+set RoomInBuildingFloor['HusVigdisar',2] :=  VHV230Tungumalamidstod VHV231Tungumalamidstod;
 set RoomInBuildingFloor['Logberg',1] :=  L102 L103;
 set RoomInBuildingFloor['Oddi',0] :=  O102_special;
 set RoomInBuildingFloor['Oddi',1] :=  O102;
-set RoomInBuildingFloor['Oddi',2] :=  O201;
+set RoomInBuildingFloor['Oddi',2] :=  O201 O202;
 set RoomInBuildingFloor['Oddi',3] :=  O301;
-set RoomInBuildingFloor['Stakkahlid_Enni',0] :=  E303_special;
 set RoomInBuildingFloor['Stakkahlid_Enni',3] :=  E301 E303;
 set RoomInBuildingFloor['Stakkahlid_Hamar',0] :=  H206_special;
 set RoomInBuildingFloor['Stakkahlid_Hamar',1] :=  H101;
-set RoomInBuildingFloor['Stakkahlid_Hamar',2] :=  H201 H202 H203 H204 H205 H206 H207;
+set RoomInBuildingFloor['Stakkahlid_Hamar',2] :=  H201 H202 H203 H204 H205 H206 H207 H208 H209;
 set RoomInBuildingFloor['Stakkahlid_Klettur',0] :=  K204_special K206_special;
 set RoomInBuildingFloor['Stakkahlid_Klettur',2] :=  K204 K205 K206 K207 K208;
 set RoomInBuildingFloor['VR_2',1] :=  V147 V152 V155 V156;
