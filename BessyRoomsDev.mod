@@ -58,7 +58,7 @@ param CidCommonStudents {CidExam, CidExam} default 0;
 param cidCount{CidExam} default 0;
 
 # The density of student in any given room
-param CidCompress{CidAssign} default 0;
+param CidCompress{CidExam} default 0;
 
 # The long number identification for the exam, used for printing solution
 param CidId{CidExam} default 0;

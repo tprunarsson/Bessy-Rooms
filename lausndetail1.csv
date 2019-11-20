@@ -1,174 +1,165 @@
 Dagur;Tími;ID;Námskeið;Bygging;Stofa;Fjöldi;Lengd prófs;Heildarfjöldi;Hámarksfjöldi;Fjöldi námskeiða í stofu;Ósk um fjölda í stofu;Inspera;
-2019.12.2;09:00;70990720196;HJU115G;Adalbygging;A050;12;3;;;;0;1;Skriða:Stakkahlid_Hamar
-;;;;;A050;;;12;15;1;;
-2019.12.2;09:00;70990720196;HJU115G;Adalbygging;A051;12;3;;;;0;1;Skriða:Stakkahlid_Hamar
-;;;;;A051;;;12;12;1;;
-2019.12.2;09:00;70990720196;HJU115G;Adalbygging;A052;12;3;;;;0;1;Skriða:Stakkahlid_Hamar
-;;;;;A052;;;12;18;1;;
-2019.12.2;09:00;09512120196;LIF315G;Adalbygging;A069;7;3;;;;0;1;V152 V02-157:VR_2
-2019.12.2;09:00;70990720196;HJU115G;Adalbygging;A069;5;3;;;;0;1;Skriða:Stakkahlid_Hamar
-;;;;;A069;;;12;12;2;;
-;;;;Adalbygging;;;;48;57;;;;
+2019.12.2;09:00;04520520196;HAG301G;Arnagardur;A201;18;3;;;;0;0;Á101 O-101 Askja131:Askja Arnagardur Oddi
 2019.12.2;09:00;09101120196;STA104G;Arnagardur;A201;16;3;;;;0;0;HB-1 V155 Askja130 L102 V147 V02-158 A052 A050 L-101 V261 V15
-2019.12.2;09:00;09816020196;MAT304G;Arnagardur;A201;10;3;;;;0;0; 
-;;;;;A201;;;26;48;2;;
-2019.12.2;09:00;04520520196;HAG301G;Arnagardur;A301;16;3;;;;0;0;Á101 O-101 Askja131:Askja Arnagardur Oddi
+;;;;;A201;;;34;48;2;;
+2019.12.2;09:00;04520520196;HAG301G;Arnagardur;A301;17;3;;;;0;0;Á101 O-101 Askja131:Askja Arnagardur Oddi
 2019.12.2;09:00;09101120196;STA104G;Arnagardur;A301;16;3;;;;0;0;HB-1 V155 Askja130 L102 V147 V02-158 A052 A050 L-101 V261 V15
-;;;;;A301;;;32;48;2;;
+;;;;;A301;;;33;48;2;;
 2019.12.2;09:00;09101120196;STA104G;Arnagardur;A304;10;3;;;;0;0;HB-1 V155 Askja130 L102 V147 V02-158 A052 A050 L-101 V261 V15
 ;;;;;A304;;;10;20;1;;
-2019.12.2;09:00;04520520196;HAG301G;Arnagardur;A311;9;3;;;;0;0;Á101 O-101 Askja131:Askja Arnagardur Oddi
 2019.12.2;09:00;09101120196;STA104G;Arnagardur;A311;9;3;;;;0;0;HB-1 V155 Askja130 L102 V147 V02-158 A052 A050 L-101 V261 V15
-;;;;;A311;;;18;26;2;;
-;;;;Arnagardur;;;;86;142;;;;
-2019.12.2;09:00;09101120196;STA104G;Askja;Askja130;10;3;;;;0;0;HB-1 V155 Askja130 L102 V147 V02-158 A052 A050 L-101 V261 V15
-2019.12.2;09:00;09816020196;MAT304G;Askja;Askja130;10;3;;;;0;0; 
+2019.12.2;09:00;07074720196;TAN401G;Arnagardur;A311;5;3;;;;0;0; 
+;;;;;A311;;;14;26;2;;
+;;;;Arnagardur;;;;91;142;;;;
+2019.12.2;09:00;09512120196;LIF315G;Askja;Askja130;10;3;;;;0;1;V152 V02-157:VR_2
+2019.12.2;09:00;10060320196;FRG102G;Askja;Askja130;10;3;;;;0;1;HT104 HT105:Haskolatorg
 ;;;;;Askja130;;;20;20;2;;
-2019.12.2;09:00;08715120196;HBV501G;Askja;Askja131;10;3;;;;0;0;V152 HT104 HT103 Stapi 210:Haskolatorg VR_2
-2019.12.2;09:00;09101120196;STA104G;Askja;Askja131;15;3;;;;0;0;HB-1 V155 Askja130 L102 V147 V02-158 A052 A050 L-101 V261 V15
-;;;;;Askja131;;;25;30;2;;
-;;;;Askja;;;;45;50;;;;
+2019.12.2;09:00;02013520196;LAK515G;Askja;Askja131;11;3;;;;0;0;H205 H201 Hagi-213:Stakkahlid_Hamar
+2019.12.2;09:00;09101120196;STA104G;Askja;Askja131;19;3;;;;0;0;HB-1 V155 Askja130 L102 V147 V02-158 A052 A050 L-101 V261 V15
+;;;;;Askja131;;;30;30;2;;
+;;;;Askja;;;;50;50;;;;
+2019.12.2;09:00;09101120196;STA104G;Eirberg;E103C;38;3;;;;0;0;HB-1 V155 Askja130 L102 V147 V02-158 A052 A050 L-101 V261 V15
+2019.12.2;09:00;09816020196;MAT304G;Eirberg;E103C;10;3;;;;0;0; 
+;;;;;E103C;;;48;50;2;;
+2019.12.2;09:00;70990720196;HJU115G;Eirberg;E201C;14;3;;;;0;1;Skriða:Stakkahlid_Hamar
+2019.12.2;09:00;10060320196;FRG102G;Eirberg;E201C;14;3;;;;0;1;HT104 HT105:Haskolatorg
+;;;;;E201C;;;28;40;2;;
+2019.12.2;09:00;10060320196;FRG102G;Eirberg;E203C;27;3;;;;0;1;HT104 HT105:Haskolatorg
+;;;;;E203C;;;27;50;1;;
+;;;;Eirberg;;;;103;140;;;;
 ;;;;Gimli;;;;0;0;;;;
 2019.12.2;09:00;70990720196;HJU115G;Haskolatorg;HT102;80;3;;;;80;1;Skriða:Stakkahlid_Hamar
 ;;;;;HT102;;;80;85;1;;
-2019.12.2;09:00;10060320196;FRG102G;Haskolatorg;HT103;18;3;;;;0;1;HT104 HT105:Haskolatorg
-2019.12.2;09:00;70990720196;HJU115G;Haskolatorg;HT103;18;3;;;;0;1;Skriða:Stakkahlid_Hamar
-;;;;;HT103;;;36;54;2;;
-2019.12.2;09:00;10060320196;FRG102G;Haskolatorg;HT104;51;3;;;;0;1;HT104 HT105:Haskolatorg
-;;;;;HT104;;;51;54;1;;
-2019.12.2;09:00;70896520196;HJU710G;Haskolatorg;HT105;70;3;;;;70;1; 
-;;;;;HT105;;;70;85;1;;
-;;;;Haskolatorg;;;;237;278;;;;
-2019.12.2;09:00;09512120196;LIF315G;HusVigdisar;VHV007;29;3;;;;0;1;V152 V02-157:VR_2
+2019.12.2;09:00;09101120196;STA104G;Haskolatorg;HT103;18;3;;;;0;0;HB-1 V155 Askja130 L102 V147 V02-158 A052 A050 L-101 V261 V15
+;;;;;HT103;;;18;54;1;;
+2019.12.2;09:00;09101120196;STA104G;Haskolatorg;HT104;18;3;;;;0;0;HB-1 V155 Askja130 L102 V147 V02-158 A052 A050 L-101 V261 V15
+2019.12.2;09:00;09816020196;MAT304G;Haskolatorg;HT104;10;3;;;;0;0; 
+;;;;;HT104;;;28;54;2;;
+2019.12.2;09:00;70896520196;HJU710G;Haskolatorg;HT105;69;3;;;;70;1;E103C EIR-223B EIR201A-fundarh/seminar E101 :Eirberg
+;;;;;HT105;;;69;85;1;;
+;;;;Haskolatorg;;;;195;278;;;;
 2019.12.2;09:00;70990720196;HJU115G;HusVigdisar;VHV007;15;3;;;;0;1;Skriða:Stakkahlid_Hamar
-;;;;;VHV007;;;44;44;2;;
-;;;;HusVigdisar;;;;44;44;;;;
-2019.12.2;09:00;04520520196;HAG301G;Logberg;L102;11;3;;;;0;0;Á101 O-101 Askja131:Askja Arnagardur Oddi
-2019.12.2;09:00;09101120196;STA104G;Logberg;L102;13;3;;;;0;0;HB-1 V155 Askja130 L102 V147 V02-158 A052 A050 L-101 V261 V15
-;;;;;L102;;;24;25;2;;
-2019.12.2;09:00;09101120196;STA104G;Logberg;L103;13;3;;;;0;0;HB-1 V155 Askja130 L102 V147 V02-158 A052 A050 L-101 V261 V15
+;;;;;VHV007;;;15;44;1;;
+;;;;HusVigdisar;;;;15;44;;;;
+2019.12.2;09:00;70990720196;HJU115G;Logberg;L102;13;3;;;;0;1;Skriða:Stakkahlid_Hamar
+;;;;;L102;;;13;25;1;;
+2019.12.2;09:00;70990720196;HJU115G;Logberg;L103;13;3;;;;0;1;Skriða:Stakkahlid_Hamar
 ;;;;;L103;;;13;25;1;;
-;;;;Logberg;;;;37;50;;;;
+;;;;Logberg;;;;26;50;;;;
 2019.12.2;09:00;10090120196;STJ102G;Oddi;O201;44;3;;;;44;1;L102 Á201:Arnagardur Logberg
 ;;;;;O201;;;44;44;1;;
 ;;;;Oddi;;;;44;44;;;;
-2019.12.2;09:00;08715120196;HBV501G;Stakkahlid_Enni;E301;10;3;;;;0;0;V152 HT104 HT103 Stapi 210:Haskolatorg VR_2
-2019.12.2;09:00;09101120196;STA104G;Stakkahlid_Enni;E301;15;3;;;;0;0;HB-1 V155 Askja130 L102 V147 V02-158 A052 A050 L-101 V261 V15
-;;;;;E301;;;25;30;2;;
-2019.12.2;09:00;10060320196;FRG102G;Stakkahlid_Enni;E303;9;3;;;;0;1;HT104 HT105:Haskolatorg
-2019.12.2;09:00;70990720196;HJU115G;Stakkahlid_Enni;E303;11;3;;;;0;1;Skriða:Stakkahlid_Hamar
-;;;;;E303;;;20;20;2;;
-;;;;Stakkahlid_Enni;;;;45;50;;;;
-2019.12.2;09:00;08715120196;HBV501G;Stakkahlid_Hamar;H101;8;3;;;;0;0;V152 HT104 HT103 Stapi 210:Haskolatorg VR_2
-2019.12.2;09:00;09101120196;STA104G;Stakkahlid_Hamar;H101;8;3;;;;0;0;HB-1 V155 Askja130 L102 V147 V02-158 A052 A050 L-101 V261 V15
-;;;;;H101;;;16;22;2;;
-2019.12.2;09:00;08715120196;HBV501G;Stakkahlid_Hamar;H201;9;3;;;;0;0;V152 HT104 HT103 Stapi 210:Haskolatorg VR_2
-2019.12.2;09:00;09101120196;STA104G;Stakkahlid_Hamar;H201;9;3;;;;0;0;HB-1 V155 Askja130 L102 V147 V02-158 A052 A050 L-101 V261 V15
+2019.12.2;09:00;70990720196;HJU115G;Stakkahlid_Hamar;H101;14;3;;;;0;1;Skriða:Stakkahlid_Hamar
+2019.12.2;09:00;10060320196;FRG102G;Stakkahlid_Hamar;H101;8;3;;;;0;1;HT104 HT105:Haskolatorg
+;;;;;H101;;;22;22;2;;
+2019.12.2;09:00;02013520196;LAK515G;Stakkahlid_Hamar;H201;9;3;;;;0;0;H205 H201 Hagi-213:Stakkahlid_Hamar
+2019.12.2;09:00;08715120196;HBV501G;Stakkahlid_Hamar;H201;9;3;;;;0;0;V152 HT104 HT103 L102 L201 L-101 Stapi 210:Haskolatorg Logber
 ;;;;;H201;;;18;25;2;;
-2019.12.2;09:00;08715120196;HBV501G;Stakkahlid_Hamar;H202;7;3;;;;0;0;V152 HT104 HT103 Stapi 210:Haskolatorg VR_2
-2019.12.2;09:00;09101120196;STA104G;Stakkahlid_Hamar;H202;8;3;;;;0;0;HB-1 V155 Askja130 L102 V147 V02-158 A052 A050 L-101 V261 V15
-;;;;;H202;;;15;19;2;;
-2019.12.2;09:00;08715120196;HBV501G;Stakkahlid_Hamar;H203;7;3;;;;0;0;V152 HT104 HT103 Stapi 210:Haskolatorg VR_2
+2019.12.2;09:00;09101120196;STA104G;Stakkahlid_Hamar;H202;7;3;;;;0;0;HB-1 V155 Askja130 L102 V147 V02-158 A052 A050 L-101 V261 V15
+2019.12.2;09:00;08715120196;HBV501G;Stakkahlid_Hamar;H202;7;3;;;;0;0;V152 HT104 HT103 L102 L201 L-101 Stapi 210:Haskolatorg Logber
+;;;;;H202;;;14;19;2;;
 2019.12.2;09:00;09101120196;STA104G;Stakkahlid_Hamar;H203;7;3;;;;0;0;HB-1 V155 Askja130 L102 V147 V02-158 A052 A050 L-101 V261 V15
+2019.12.2;09:00;08715120196;HBV501G;Stakkahlid_Hamar;H203;7;3;;;;0;0;V152 HT104 HT103 L102 L201 L-101 Stapi 210:Haskolatorg Logber
 ;;;;;H203;;;14;19;2;;
-2019.12.2;09:00;08715120196;HBV501G;Stakkahlid_Hamar;H204;7;3;;;;0;0;V152 HT104 HT103 Stapi 210:Haskolatorg VR_2
-2019.12.2;09:00;09101120196;STA104G;Stakkahlid_Hamar;H204;8;3;;;;0;0;HB-1 V155 Askja130 L102 V147 V02-158 A052 A050 L-101 V261 V15
-;;;;;H204;;;15;20;2;;
-2019.12.2;09:00;08715120196;HBV501G;Stakkahlid_Hamar;H205;9;3;;;;0;0;V152 HT104 HT103 Stapi 210:Haskolatorg VR_2
-2019.12.2;09:00;09101120196;STA104G;Stakkahlid_Hamar;H205;9;3;;;;0;0;HB-1 V155 Askja130 L102 V147 V02-158 A052 A050 L-101 V261 V15
+2019.12.2;09:00;02013520196;LAK515G;Stakkahlid_Hamar;H204;7;3;;;;0;0;H205 H201 Hagi-213:Stakkahlid_Hamar
+2019.12.2;09:00;08715120196;HBV501G;Stakkahlid_Hamar;H204;7;3;;;;0;0;V152 HT104 HT103 L102 L201 L-101 Stapi 210:Haskolatorg Logber
+;;;;;H204;;;14;20;2;;
+2019.12.2;09:00;02013520196;LAK515G;Stakkahlid_Hamar;H205;9;3;;;;0;0;H205 H201 Hagi-213:Stakkahlid_Hamar
+2019.12.2;09:00;08715120196;HBV501G;Stakkahlid_Hamar;H205;9;3;;;;0;0;V152 HT104 HT103 L102 L201 L-101 Stapi 210:Haskolatorg Logber
 ;;;;;H205;;;18;25;2;;
-2019.12.2;09:00;08715120196;HBV501G;Stakkahlid_Hamar;H206;7;3;;;;0;0;V152 HT104 HT103 Stapi 210:Haskolatorg VR_2
-2019.12.2;09:00;09101120196;STA104G;Stakkahlid_Hamar;H206;7;3;;;;0;0;HB-1 V155 Askja130 L102 V147 V02-158 A052 A050 L-101 V261 V15
-;;;;;H206;;;14;21;2;;
-2019.12.2;09:00;08715120196;HBV501G;Stakkahlid_Hamar;H207;12;3;;;;0;0;V152 HT104 HT103 Stapi 210:Haskolatorg VR_2
-2019.12.2;09:00;09101120196;STA104G;Stakkahlid_Hamar;H207;12;3;;;;0;0;HB-1 V155 Askja130 L102 V147 V02-158 A052 A050 L-101 V261 V15
+2019.12.2;09:00;09512120196;LIF315G;Stakkahlid_Hamar;H206;16;3;;;;0;1;V152 V02-157:VR_2
+;;;;;H206;;;16;22;1;;
+2019.12.2;09:00;02013520196;LAK515G;Stakkahlid_Hamar;H207;12;3;;;;0;0;H205 H201 Hagi-213:Stakkahlid_Hamar
+2019.12.2;09:00;08715120196;HBV501G;Stakkahlid_Hamar;H207;12;3;;;;0;0;V152 HT104 HT103 L102 L201 L-101 Stapi 210:Haskolatorg Logber
 ;;;;;H207;;;24;34;2;;
-;;;;Stakkahlid_Hamar;;;;134;185;;;;
-2019.12.2;09:00;09101120196;STA104G;Stakkahlid_Klettur;K204;8;3;;;;0;0;HB-1 V155 Askja130 L102 V147 V02-158 A052 A050 L-101 V261 V15
-2019.12.2;09:00;02013520196;LAK515G;Stakkahlid_Klettur;K204;5;3;;;;0;0;H-205 H201 Hagi-213:Stakkahlid_Hamar
-;;;;;K204;;;13;15;2;;
-2019.12.2;09:00;09101120196;STA104G;Stakkahlid_Klettur;K205;7;3;;;;0;0;HB-1 V155 Askja130 L102 V147 V02-158 A052 A050 L-101 V261 V15
-2019.12.2;09:00;02013520196;LAK515G;Stakkahlid_Klettur;K205;7;3;;;;0;0;H-205 H201 Hagi-213:Stakkahlid_Hamar
-;;;;;K205;;;14;20;2;;
-2019.12.2;09:00;09101120196;STA104G;Stakkahlid_Klettur;K206;7;3;;;;0;0;HB-1 V155 Askja130 L102 V147 V02-158 A052 A050 L-101 V261 V15
-2019.12.2;09:00;02013520196;LAK515G;Stakkahlid_Klettur;K206;7;3;;;;0;0;H-205 H201 Hagi-213:Stakkahlid_Hamar
-;;;;;K206;;;14;20;2;;
-2019.12.2;09:00;09101120196;STA104G;Stakkahlid_Klettur;K207;9;3;;;;0;0;HB-1 V155 Askja130 L102 V147 V02-158 A052 A050 L-101 V261 V15
-2019.12.2;09:00;02013520196;LAK515G;Stakkahlid_Klettur;K207;9;3;;;;0;0;H-205 H201 Hagi-213:Stakkahlid_Hamar
-;;;;;K207;;;18;25;2;;
-2019.12.2;09:00;09101120196;STA104G;Stakkahlid_Klettur;K208;9;3;;;;0;0;HB-1 V155 Askja130 L102 V147 V02-158 A052 A050 L-101 V261 V15
-2019.12.2;09:00;02013520196;LAK515G;Stakkahlid_Klettur;K208;9;3;;;;0;0;H-205 H201 Hagi-213:Stakkahlid_Hamar
-;;;;;K208;;;18;25;2;;
-;;;;Stakkahlid_Klettur;;;;77;105;;;;
-2019.12.2;09:00;09214620196;EDL506G;VR_2;V147;1;3;;;;0;0;Tg-227 V147 Verk- og náttúruvísindasvið:VR_2
+2019.12.2;09:00;09512120196;LIF315G;Stakkahlid_Hamar;H209;10;3;;;;0;1;V152 V02-157:VR_2
+2019.12.2;09:00;10060320196;FRG102G;Stakkahlid_Hamar;H209;6;3;;;;0;1;HT104 HT105:Haskolatorg
+;;;;;H209;;;16;16;2;;
+;;;;Stakkahlid_Hamar;;;;156;202;;;;
+2019.12.2;09:00;09101120196;STA104G;Stakkahlid_Klettur;K202;10;3;;;;0;0;HB-1 V155 Askja130 L102 V147 V02-158 A052 A050 L-101 V261 V15
+2019.12.2;09:00;08715120196;HBV501G;Stakkahlid_Klettur;K202;5;3;;;;0;0;V152 HT104 HT103 L102 L201 L-101 Stapi 210:Haskolatorg Logber
+;;;;;K202;;;15;15;2;;
+2019.12.2;09:00;09101120196;STA104G;Stakkahlid_Klettur;K204;13;3;;;;0;0;HB-1 V155 Askja130 L102 V147 V02-158 A052 A050 L-101 V261 V15
+2019.12.2;09:00;08715120196;HBV501G;Stakkahlid_Klettur;K204;7;3;;;;0;0;V152 HT104 HT103 L102 L201 L-101 Stapi 210:Haskolatorg Logber
+;;;;;K204;;;20;20;2;;
+2019.12.2;09:00;09101120196;STA104G;Stakkahlid_Klettur;K205;13;3;;;;0;0;HB-1 V155 Askja130 L102 V147 V02-158 A052 A050 L-101 V261 V15
+2019.12.2;09:00;08715120196;HBV501G;Stakkahlid_Klettur;K205;7;3;;;;0;0;V152 HT104 HT103 L102 L201 L-101 Stapi 210:Haskolatorg Logber
+;;;;;K205;;;20;20;2;;
+2019.12.2;09:00;09101120196;STA104G;Stakkahlid_Klettur;K206;13;3;;;;0;0;HB-1 V155 Askja130 L102 V147 V02-158 A052 A050 L-101 V261 V15
+2019.12.2;09:00;08715120196;HBV501G;Stakkahlid_Klettur;K206;7;3;;;;0;0;V152 HT104 HT103 L102 L201 L-101 Stapi 210:Haskolatorg Logber
+;;;;;K206;;;20;20;2;;
+2019.12.2;09:00;09101120196;STA104G;Stakkahlid_Klettur;K207;16;3;;;;0;0;HB-1 V155 Askja130 L102 V147 V02-158 A052 A050 L-101 V261 V15
+2019.12.2;09:00;08715120196;HBV501G;Stakkahlid_Klettur;K207;9;3;;;;0;0;V152 HT104 HT103 L102 L201 L-101 Stapi 210:Haskolatorg Logber
+;;;;;K207;;;25;25;2;;
+2019.12.2;09:00;70990720196;HJU115G;Stakkahlid_Klettur;K208;14;3;;;;0;1;Skriða:Stakkahlid_Hamar
+2019.12.2;09:00;10060320196;FRG102G;Stakkahlid_Klettur;K208;11;3;;;;0;1;HT104 HT105:Haskolatorg
+;;;;;K208;;;25;25;2;;
+;;;;Stakkahlid_Klettur;;;;125;125;;;;
 2019.12.2;09:00;09101120196;STA104G;VR_2;V147;8;3;;;;0;0;HB-1 V155 Askja130 L102 V147 V02-158 A052 A050 L-101 V261 V15
+2019.12.2;09:00;09214620196;EDL506G;VR_2;V147;1;3;;;;0;0;Tg-227 V147 Verk- og náttúruvísindasvið:VR_2
 ;;;;;V147;;;9;15;2;;
-2019.12.2;09:00;70069020196;LEF509M;VR_2;V152;10;3;;;;0;0;V02-151 Naustið, VoN:VR_2
+2019.12.2;09:00;04419920196;VID304G;VR_2;V152;9;3;;;;0;0;N-121 V156:Askja VR_2
 2019.12.2;09:00;09101120196;STA104G;VR_2;V152;12;3;;;;0;0;HB-1 V155 Askja130 L102 V147 V02-158 A052 A050 L-101 V261 V15
-;;;;;V152;;;22;36;2;;
-2019.12.2;09:00;70549920196;EFN515M;VR_2;V155;6;3;;;;0;0;V155 V138:VR_2
+;;;;;V152;;;21;36;2;;
 2019.12.2;09:00;09101120196;STA104G;VR_2;V155;8;3;;;;0;0;HB-1 V155 Askja130 L102 V147 V02-158 A052 A050 L-101 V261 V15
+2019.12.2;09:00;70549920196;EFN515M;VR_2;V155;6;3;;;;0;0;V155 V138:VR_2
 ;;;;;V155;;;14;22;2;;
 2019.12.2;09:00;04419920196;VID304G;VR_2;V156;8;3;;;;0;0;N-121 V156:Askja VR_2
 2019.12.2;09:00;09101120196;STA104G;VR_2;V156;8;3;;;;0;0;HB-1 V155 Askja130 L102 V147 V02-158 A052 A050 L-101 V261 V15
 ;;;;;V156;;;16;22;2;;
-2019.12.2;09:00;09101120196;STA104G;VR_2;V258;11;3;;;;0;0;HB-1 V155 Askja130 L102 V147 V02-158 A052 A050 L-101 V261 V15
-2019.12.2;09:00;02013520196;LAK515G;VR_2;V258;11;3;;;;0;0;H-205 H201 Hagi-213:Stakkahlid_Hamar
-;;;;;V258;;;22;22;2;;
-2019.12.2;09:00;04419920196;VID304G;VR_2;V261;9;3;;;;0;0;N-121 V156:Askja VR_2
-2019.12.2;09:00;07074720196;TAN401G;VR_2;V261;6;3;;;;0;0; 
+2019.12.2;09:00;09101120196;STA104G;VR_2;V258;10;3;;;;0;0;HB-1 V155 Askja130 L102 V147 V02-158 A052 A050 L-101 V261 V15
+;;;;;V258;;;10;22;1;;
+2019.12.2;09:00;70069020196;LEF509M;VR_2;V261;8;3;;;;0;0;V02-151 Naustið, VoN O201:Oddi VR_2
 2019.12.2;09:00;09101120196;STA104G;VR_2;V261;10;3;;;;0;0;HB-1 V155 Askja130 L102 V147 V02-158 A052 A050 L-101 V261 V15
-;;;;;V261;;;25;30;3;;
-;;;;VR_2;;;;108;147;;;;
+;;;;;V261;;;18;30;2;;
+;;;;VR_2;;;;88;147;;;;
 Tölvustofur;;;;;;;;;;;;;
-;;;;Adalbygging;;;;0;0;;;;
 ;;;;Arnagardur;;;;0;0;;;;
 ;;;;;Askja166;;;0;24;0;;;;;Askja;;;;0;24;;;;
+;;;;Eirberg;;;;0;0;;;;
 ;;;;;G101;;;0;21;0;;;;;Gimli;;;;0;21;;;;
 ;;;;;HT204;;;0;40;0;;;;;Haskolatorg;;;;0;40;;;;
-;;;;HusVigdisar;;;;0;0;;;;
+;;;;;VHV230;;;0;8;0;;;;;;VHV231;;;0;16;0;;;;;HusVigdisar;;;;0;24;;;;
 ;;;;Logberg;;;;0;0;;;;
 ;;;;;O102;;;0;18;0;;;;;;O301;;;0;38;0;;;;;Oddi;;;;0;56;;;;
-;;;;Stakkahlid_Enni;;;;0;0;;;;
 ;;;;Stakkahlid_Hamar;;;;0;0;;;;
 ;;;;Stakkahlid_Klettur;;;;0;0;;;;
 ;;;;;V260;;;0;21;0;;;;;VR_2;;;;0;21;;;;
 Sérúrræði;;;;;;;;;;;;
-;;;;;A050_special;;;0;10;0;;
-;;;;;A051_special;;;0;12;0;;
-;;;;;A052_special;;;0;11;0;;
-;;;;Adalbygging;;;;0;33;;;;
-;;;;;A304_special;;;0;10;0;;
-;;;;Arnagardur;;;;0;10;;;;
+;;;;;A303;;;0;12;0;;
+;;;;;A310;;;0;14;0;;
+;;;;Arnagardur;;;;0;26;;;;
 ;;;;Askja;;;;0;0;;;;
+;;;;Eirberg;;;;0;0;;;;
 ;;;;Gimli;;;;0;0;;;;
-;;;;;HT103_special;;;0;2;0;;
-;;;;Haskolatorg;;;;0;2;;;;
-;;;;HusVigdisar;;;;0;0;;;;
-;;;;;L103_special;;;0;1;0;;
-;;;;Logberg;;;;0;1;;;;
+;;;;;HT300;;;0;8;0;;
+;;;;Haskolatorg;;;;0;8;;;;
+;;;;;VHV103;;;0;10;0;;
+;;;;;VHV104;;;0;10;0;;
+;;;;;VHV107;;;0;10;0;;
+;;;;;VHV108;;;0;10;0;;
+;;;;HusVigdisar;;;;0;40;;;;
+;;;;;L201;;;0;19;0;;
+;;;;;L204;;;0;12;0;;
+;;;;;L205;;;0;12;0;;
+;;;;Logberg;;;;0;43;;;;
 ;;;;Oddi;;;;0;0;;;;
-;;;;;E303_special;;;0;6;0;;
-;;;;Stakkahlid_Enni;;;;0;6;;;;
-;;;;;H206_special;;;0;1;0;;
-;;;;Stakkahlid_Hamar;;;;0;1;;;;
-;;;;;K204_special;;;0;15;0;;
-;;;;;K206_special;;;0;20;0;;
-;;;;Stakkahlid_Klettur;;;;0;35;;;;
+;;;;;H208;;;0;16;0;;
+;;;;;H209_special;;;0;16;0;;
+;;;;Stakkahlid_Hamar;;;;0;32;;;;
+;;;;Stakkahlid_Klettur;;;;0;0;;;;
 ;;;;VR_2;;;;0;0;;;;
 Sérúrræði tölvustofur;;;;;;;;;;
-;;;;Adalbygging;;;;0;0;;;;;
 ;;;;Arnagardur;;;;0;0;;;;;
 ;;;;Askja;;;;0;0;;;;;
-;;;;;G101_special;;;0;7;0;;
-;;;;Gimli;;;;0;7;;;;;
-;;;;;HT204_special;;;0;3;0;;
-;;;;Haskolatorg;;;;0;3;;;;;
+;;;;Eirberg;;;;0;0;;;;;
+;;;;Gimli;;;;0;0;;;;;
+;;;;Haskolatorg;;;;0;0;;;;;
 ;;;;HusVigdisar;;;;0;0;;;;;
 ;;;;Logberg;;;;0;0;;;;;
 ;;;;;O102_special;;;0;18;0;;
-;;;;Oddi;;;;0;18;;;;;
-;;;;Stakkahlid_Enni;;;;0;0;;;;;
+;;;;;O103;;;0;10;0;;
+;;;;Oddi;;;;0;28;;;;;
 ;;;;Stakkahlid_Hamar;;;;0;0;;;;;
 ;;;;Stakkahlid_Klettur;;;;0;0;;;;;
 ;;;;VR_2;;;;0;0;;;;;

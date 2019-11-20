@@ -95,6 +95,12 @@ for (i in c(1:length(ubuildings))) {
 }
 write(";", file = "RoomData.dat", append = T)
 
+cat("", file="buildings.txt",sep="")
+for (i in c(1:length(ubuildings))) {
+  write(ubuildings[i], file = "buildings.txt", append = T)
+}
+
+
 write("set Cluster :=  Holtid Eirberg Other;", file = "RoomData.dat", append = T)
 
 #write("set BuildingsInCluster['Torfan'] := Gimli Haskolatorg Logberg HusVigdisar;", file = "RoomData.dat", append = T)
@@ -115,6 +121,14 @@ for (i in c(1:length(room))) {
   }
 }
 write(";", file = "RoomData.dat", append = T)
+
+cat("", file="rooms.txt", sep="")
+for (i in c(1:length(room))) {
+  if (roomType[i] == 1) {
+    write(room[i], file = "rooms.txt", append = T)
+  }
+}
+
 
 
 write("param RoomId := ", file = "RoomData.dat", append = T)
