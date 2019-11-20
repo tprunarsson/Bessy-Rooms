@@ -133,7 +133,7 @@ write(";", file = "RoomData.dat", append = T)
 
 write("param RoomDensity := ", file = "RoomData.dat", append = T)
 for (i in c(1:length(room))) {
-  strcat <- sprintf('%s %d', room[i], roomDensity[i])
+  strcat <- sprintf('%s %s', room[i], roomDensity[i])
   write(strcat, file = "RoomData.dat", append = T)
 }
 write(";", file = "RoomData.dat", append = T)
