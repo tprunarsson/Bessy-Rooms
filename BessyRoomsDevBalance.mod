@@ -57,6 +57,9 @@ param CidCommonStudents {CidExam, CidExam} default 0;
 # Total number of students for each course
 param cidCount{CidExam} default 0;
 
+# The density of student in any given room
+param CidCompress{CidAssign} default 0;
+
 # The long number identification for the exam, used for printing solution
 param CidId{CidExam} default 0;
 
@@ -179,7 +182,7 @@ subject to RegularCoursesReq{c in CidAssign: c not in CidAssignComp}:
   sum{r in Rooms} h[c,r] = cidCount[c] - SpeCidCount[c];
 
 # You don't want to have one course taking more than half the capacity, then we cannot alternate seats
-subject to BalanceRatioU{c in CidAssign, r in Rooms: CidInspera[c] == 0}: h[c,r]  <= max(hdef[c,r],ceil((RoomDensity[r]/100) * RoomCapacity[r]));
+subject to BalanceRatioU{c in CidAssign, r in Rooms: CidInspera[c] == 0 and CidCompress[c] == 0}: h[c,r]  <= max(hdef[c,r],ceil((RoomDensity[r]/100) * RoomCapacity[r]));
 
 # The number of students in a room should not go over the limit
 # n.b. this is the total number of useful seats (reduce the number if there a "bad seats" in the room)
